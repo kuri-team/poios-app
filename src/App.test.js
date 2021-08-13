@@ -1,3 +1,5 @@
+// TODO: Delete this file later if it is not needed in the production build
+
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
