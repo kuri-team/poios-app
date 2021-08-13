@@ -6,12 +6,12 @@ const Nav = () => (
   <nav className={style["nav"]}>
     <ul>
       <li>
-        <NavLink to="/" activeClassName={style["active"]} exact>
+        <NavLink to="/" activeStyle={{ opacity: 1 }} exact>
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to="/page2" activeClassName={style["active"]} exact>
+        <NavLink to="/page2" activeStyle={{ opacity: 1 }} exact>
           Page2
         </NavLink>
       </li>

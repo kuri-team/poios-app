@@ -33,12 +33,7 @@
   opacity: 0.5;
 }
 
-.nav ul a:hover,
-.nav ul a:focus {
+.nav ul a:hover {
   text-decoration: underline;
-  opacity: 1;
-}
-
-.active {
   opacity: 1;
 }
