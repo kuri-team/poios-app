@@ -1,5 +1,4 @@
 import Layout from "../components/Layout";
-
 import * as style from "./Home.module.css";
 
 const Page2 = () => (

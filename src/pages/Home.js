@@ -1,5 +1,5 @@
-import * as style from "./Home.module.css";
 import Layout from "../components/Layout";
+import * as style from "./Home.module.css";
 
 const Home = () => {
   return (
