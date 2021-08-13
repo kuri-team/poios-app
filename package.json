@@ -13,10 +13,10 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
     "serve": "serve -s build",
-    "test": "react-scripts test",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
     "check-format": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,css}\""
@@ -40,7 +40,10 @@
     ]
   },
   "devDependencies": {
+    "postcss-custom-media": "^7.0.8",
     "prettier": "2.3.2",
-    "prettier-plugin-style-order": "^0.2.2"
+    "prettier-plugin-style-order": "^0.2.2",
+    "react-app-rewire-postcss": "^3.0.2",
+    "react-app-rewired": "^2.1.8"
   }
 }

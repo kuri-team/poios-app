@@ -33,15 +33,11 @@
   --transition-extra-slow: 800ms;
 }
 
-@custom-media --viewport-phone-s (max-width: 425px);
-
+@custom-media --viewport-phone-small (max-width: 424px);
 @custom-media --viewport-phone (max-width: 767px);
-
-@custom-media --viewport-extra-narrow (max-width: 1023px);
-
-@custom-media --viewport-narrow (max-width: 1279px);
-
-@custom-media --viewport-regular (max-width: 1919px);
+@custom-media --viewport-tablet (max-width: 1023px);
+@custom-media --viewport-desktop (max-width: 1279px);
+@custom-media --viewport-desktop-large (max-width: 1919px);
 
 /* Custom scrollbar */
 :root {
