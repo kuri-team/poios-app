@@ -1,14 +1,21 @@
-import * as style from "./App.module.css";
-import Layout from "./components/Layout";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-const App = () => {
-  return (
-    <Layout className={style["container"]}>
-      <p>
-        Edit <code>src/App.js</code> and save to hot-reload.
-      </p>
-    </Layout>
-  );
-};
+import Nav from "./components/Nav";
+import Home from "./pages/Home";
+import Page2 from "./pages/Page2";
+
+const App = () => (
+  <BrowserRouter>
+    <Nav />
+    <Switch>
+      <Route path="/page2">
+        <Page2 />
+      </Route>
+      <Route path="/">
+        <Home />
+      </Route>
+    </Switch>
+  </BrowserRouter>
+);
 
 export default App;
