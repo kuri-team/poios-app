@@ -3,29 +3,29 @@
   "description": "",
   "contributors": [
     {
-      "name" : "Tuong-Minh 'Mike' Vo",
-      "email" : "info@miketvo.com",
-      "url" : "https://miketvo.com/"
+      "name": "Tuong-Minh 'Mike' Vo",
+      "email": "info@miketvo.com",
+      "url": "https://miketvo.com/"
     },
     {
-      "name" : "Doan Yen Nhi",
-      "url" : "https://github.com/doanyennhi"
+      "name": "Doan Yen Nhi",
+      "url": "https://github.com/doanyennhi"
     },
     {
-      "name" : "Nguyen Hoang Linh",
-      "url" : "https://github.com/hlinh88"
+      "name": "Nguyen Hoang Linh",
+      "url": "https://github.com/hlinh88"
     },
     {
-      "name" : "Nguyen Hoang To Nhu",
-      "url" : "https://github.com/lacnham"
+      "name": "Nguyen Hoang To Nhu",
+      "url": "https://github.com/lacnham"
     },
     {
-      "name" : "Vu Bui Khanh Linh",
-      "url" : "https://github.com/Linh-0v0"
+      "name": "Vu Bui Khanh Linh",
+      "url": "https://github.com/Linh-0v0"
     },
     {
-      "name" : "Duc Duc Manh",
-      "url" : "https://github.com/rider3458"
+      "name": "Duc Duc Manh",
+      "url": "https://github.com/rider3458"
     }
   ],
   "version": "0.1.0",
@@ -36,6 +36,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
