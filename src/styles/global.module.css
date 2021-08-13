@@ -1,0 +1,65 @@
+:root {
+  /* Fonts */
+  --header-font: "Arial", sans-serif;
+  --body-font: "Arial", sans-serif;
+
+  /* Colors */
+  --transparent: rgba(0, 0, 0, 0);
+  --black: #000000;
+  --shadow-black: rgba(18, 14, 13, 0.25);
+  --deep-shadow-black: rgba(18, 14, 13, 0.75);
+  --white: #ffffff;
+  --scrollbar-primary: hsl(0, 0%, 10%);
+  --scrollbar-thumb: hsl(0, 0%, 30%);
+
+  /* Sizes and widths */
+  --content-w-ultra-wide: 2560px;
+  --content-w-wide: 1920px;
+  --content-w-regular: 1280px;
+  --content-w-narrow: 1024px;
+  --content-w-extra-narrow: 768px;
+  --content-w-min: 320px;
+
+  /* Transition timing */
+  --transition-near-instant: 25ms;
+  --transition-extra-rapid: 50ms;
+  --transition-rapid: 100ms;
+  --transition-medium-rapid: 150ms;
+  --transition-medium: 200ms;
+  --transition-medium-relaxed: 250ms;
+  --transition-relaxed: 300ms;
+  --transition-relaxed-slow: 450ms;
+  --transition-slow: 600ms;
+  --transition-extra-slow: 800ms;
+}
+
+@custom-media --viewport-phone-s (max-width: 425px);
+
+@custom-media --viewport-phone (max-width: 767px);
+
+@custom-media --viewport-extra-narrow (max-width: 1023px);
+
+@custom-media --viewport-narrow (max-width: 1279px);
+
+@custom-media --viewport-regular (max-width: 1919px);
+
+/* Custom scrollbar */
+:root {
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-primary);
+}
+
+:root::-webkit-scrollbar {
+  width: 8px;
+  height: 15px;
+}
+
+:root::-webkit-scrollbar-track-piece {
+  background-color: var(--scrollbar-primary);
+}
+
+:root::-webkit-scrollbar-thumb:vertical {
+  height: 30px;
+  background-color: var(--scrollbar-thumb);
+}

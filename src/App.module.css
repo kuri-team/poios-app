@@ -12,3 +12,7 @@
   text-align: -moz-center;
   text-align: center;
 }
+
+.container:before {
+  content: "Ultra-wide screen";
+}
