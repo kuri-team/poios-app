@@ -1,6 +1,35 @@
 {
   "name": "poios-app",
+  "description": "",
+  "contributors": [
+    {
+      "name" : "Tuong-Minh 'Mike' Vo",
+      "email" : "info@miketvo.com",
+      "url" : "https://miketvo.com/"
+    },
+    {
+      "name" : "Doan Yen Nhi",
+      "url" : "https://github.com/doanyennhi"
+    },
+    {
+      "name" : "Nguyen Hoang Linh",
+      "url" : "https://github.com/hlinh88"
+    },
+    {
+      "name" : "Nguyen Hoang To Nhu",
+      "url" : "https://github.com/lacnham"
+    },
+    {
+      "name" : "Vu Bui Khanh Linh",
+      "url" : "https://github.com/Linh-0v0"
+    },
+    {
+      "name" : "Duc Duc Manh",
+      "url" : "https://github.com/rider3458"
+    }
+  ],
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -46,5 +75,13 @@
     "prettier-plugin-style-order": "^0.2.2",
     "react-app-rewire-postcss": "^3.0.2",
     "react-app-rewired": "^2.1.8"
+  },
+  "homepage": "https://github.com/kuri-team/poios-app#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuri-team/poios-app"
+  },
+  "bugs": {
+    "url": "https://github.com/kuri-team/poios-app/issues"
   }
 }
