@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Poios App - Fullstack Web App with ReactJS, NodeJS, MongoDB
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
