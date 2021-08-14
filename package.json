@@ -51,12 +51,6 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
     "check-format": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,css}\""
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -76,7 +70,6 @@
     "react-app-rewire-postcss": "^3.0.2",
     "react-app-rewired": "^2.1.8"
   },
-  "homepage": "https://github.com/kuri-team/poios-app#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/kuri-team/poios-app"
