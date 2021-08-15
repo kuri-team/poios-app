@@ -1,4 +1,5 @@
-# Poios App -  Tutor Instant Messaging Application (Fullstack Web App with ReactJS, NodeJS, MongoDB)
+# POIOS
+## Student - Tutor Instant Messaging Application
 ![banner](banner.png)
 ***
 
