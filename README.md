@@ -30,7 +30,7 @@ whiteboard (optional), to assist the study session. After finishing the tutoring
 can leave a star rating and constructive feedback for the tutor.
 
 ### 3. Technologies
-- Front-end stack: ReactJS
+- Front-end stack: ReactJS, PostCSS
 - Back-end stack: NodeJS, MongoDB
 - Hosting: Netlify, AWS/ Firebase
 
@@ -84,9 +84,9 @@ modified by the tutor.
 ## Implementation
 
 ### 1. Deployment
-#### Poios web/mobile tutor instant messaging application, deployed with Netlify: https://www.netlify.com/ (`main` branch)
-#### Database hosted with AWS/ Firebase
-**Usage Notice:**  **crtl /**
+#### - Poios web/mobile tutor instant messaging application, deployed with Netlify: https://www.netlify.com/ (`main` branch)
+#### - Database hosted with AWS/ Firebase
+#### - App demo video: 
 
 
 ### 2. Coding styles & conventions
@@ -99,8 +99,11 @@ modified by the tutor.
 
 #### Further readings
 **crtl /**
+***
 
-### 3. Key people
+## Work distribution
+
+### Key people
 
 - Instructor: Thanh Ngoc Nguyen, PhD. [thanh.nguyenngoc@rmit.edu.vn](thanh.nguyenngoc@rmit.edu.vn)
 - Student: Mike Vo [@miketvo](https://github.com/miketvo) | [website](https://miketvo.com)
