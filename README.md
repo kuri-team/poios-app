@@ -3,7 +3,7 @@
 ***
 
 ## Project Details
-### Motivation
+### 1. Motivation
 Due to the COVID-19 situation, many higher education students struggle with online
 learning. They may miss or do not understand some important concepts, or easily lose
 their focus during lecture time. This problem is further exacerbated because of the nature
@@ -17,7 +17,7 @@ more knowledge. For some, it can be challenging to find the support they need on
 since traditional tutoring has not been adequately prepared for such a transition to online
 learning.
 
-### Topic
+### 2. Topic
 We came up with an idea to build a real-time online instant messaging service aimed
 specifically at higher education students to connect 1-on-1 with tutors.
 With this service, the user needs to register as a student or tutor, then set up their profile
@@ -29,7 +29,13 @@ The application provides features including text messaging, voice call, video ca
 whiteboard (optional), to assist the study session. After finishing the tutoring session, the student
 can leave a star rating and constructive feedback for the tutor.
 
-### Functional Requirements
+### 3. Technologies
+- Front-end stack: ReactJS
+- Back-end stack: NodeJS, MongoDB
+- Hosting: Netlify, AWS/ Firebase
+
+
+### 4. Functional Requirements
 - User can register a student account.
 - User can register a tutor account.
 - User can login to their respective account and manage their information:
@@ -40,6 +46,7 @@ can leave a star rating and constructive feedback for the tutor.
     + Tutor user can choose a subject that they want to mentor.
     + Tutor user can manage their appointment schedule.
     + Tutor user can choose to accept or decline an appointment booking from their students.
+    
 - The student and the tutor have the option to communicate 1-on-1 using real-time
 messaging.
 - The student and the tutor have the option to communicate 1-on-1 using voice
@@ -47,13 +54,14 @@ call.
 - The student and the tutor have the option to communicate 1-on-1 using video
 call.
 - The student and the tutor can share files to each other.
-- The student and the tutor have access to a real-time online “whiteboard”:
+- (Optional - can implement if we have time) The student and the tutor have access to a real-time online “whiteboard”:
     + They can both post virtual “post-it-notes”.
     + They can both draw on the board.
     + They can both put text boxes on the board.
     + They can both upload images and put them on the board.
     + They can both erase each other’s content on the board.
     + They can both “undo” and “redo” their operations on the board.
+    
 - The study session between the student and the tutor must be 1-on-1 to ensure
 quality learning and reduce the risk of technology “hick-ups”, as mentioned in the
 proposal above.
@@ -63,7 +71,7 @@ optional text message feedback.
 modified by the tutor.
 - Tutors are ranked by their rating.
 
-### Non-functional Requirements
+### 5. Non-functional Requirements
 - All the user-inputs should be validated before submission (Pay attention on XSS bugs and SQL Injection)
 - The front-end will be hosted on Netlify
 - AWS or Firebase is used for cloud storage and back-end hosting.
@@ -100,4 +108,3 @@ modified by the tutor.
 - Student: Du Duc Manh [@rider3458](https://github.com/rider3458)
 - Student: Nguyen Hoang To Nhu [@lacnham](https://github.com/lacnham)
 - Student: Vu Bui Khanh Linh [@Linh-0v0](https://github.com/Linh-0v0)
-***
