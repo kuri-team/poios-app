@@ -85,6 +85,7 @@ modified by the tutor.
 
 ### 1. Deployment
 #### Poios web/mobile tutor instant messaging application, deployed with Netlify: https://www.netlify.com/ (`main` branch)
+#### Database hosted with AWS/ Firebase
 **Usage Notice:**  **crtl /**
 
 
@@ -108,3 +109,13 @@ modified by the tutor.
 - Student: Du Duc Manh [@rider3458](https://github.com/rider3458)
 - Student: Nguyen Hoang To Nhu [@lacnham](https://github.com/lacnham)
 - Student: Vu Bui Khanh Linh [@Linh-0v0](https://github.com/Linh-0v0)
+***
+
+## Submission Instructions
+Only 1 of the group members (preferably the group leader) needs to:
+- Students must submit in group if they work in group. Please do not submit multiple copies.
+- Submit a zip file including frontend and backend, db backup data  to Canvas
+- There is no demo for this assignment but students must submit a Readme.txt file in which it states all member names and ids, detailed work distribution between team members. Make sure that everyone contributes equally to the whole project and less marks will be given to students who did less work.
+- Students who do not deploy the project on cloud will not get 6 marks for deployment. However, they must make a video to demo the functionality of their system  and upload it on youtube. Write the URL of the video on the Readme.txt file. No deployment and no video the work can't be marked.
+- Students must write a short report (max 20 pages) to justify and explain their application with regard to motivation, relevant alternatives and architecture/technology decision, including design considerations for security. Students include their group member names and their contribution in this report. 
+- Students include the URL of the deployment system in the Report file.
