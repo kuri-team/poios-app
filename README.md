@@ -2,8 +2,8 @@
 ![banner](banner.png)
 ***
 
-# Assessment Details
-#### Motivation
+## Project Details
+### Motivation
 Due to the COVID-19 situation, many higher education students struggle with online
 learning. They may miss or do not understand some important concepts, or easily lose
 their focus during lecture time. This problem is further exacerbated because of the nature
@@ -16,7 +16,8 @@ This means they would need more academic help and support outside of class to ga
 more knowledge. For some, it can be challenging to find the support they need online,
 since traditional tutoring has not been adequately prepared for such a transition to online
 learning.
-#### Solution
+
+### Topic
 We came up with an idea to build a real-time online instant messaging service aimed
 specifically at higher education students to connect 1-on-1 with tutors.
 With this service, the user needs to register as a student or tutor, then set up their profile
@@ -25,25 +26,20 @@ After logging in, the student user can view the timetable (appointment schedule)
 tutor to see their schedule and book a 1-on-1 “Study Session” with that tutor when they
 are available. The tutor can choose to accept or decline the student’s appointment.
 The application provides features including text messaging, voice call, video call, and a
-whiteboard, to assist the study session. After finishing the tutoring session, the student
+whiteboard (optional), to assist the study session. After finishing the tutoring session, the student
 can leave a star rating and constructive feedback for the tutor.
 
-#### Initial Requirements Analysis
-*Functional Requirements:*
+### Functional Requirements
 - User can register a student account.
 - User can register a tutor account.
 - User can login to their respective account and manage their information:
-- Both the student and tutor account have an “avatar” and a “bio” section.
-- Student user can choose a subject that they’re interested in.
-- Student user can book an appointment with a tutor at the tutor’s available
-time. No double-booking.
-- When booking an appointment with a tutor, the student decides the
-duration of the meeting, given there is no conflict with that tutor’s
-schedule.
-- Tutor user can choose a subject that they want to mentor.
-- Tutor user can manage their appointment schedule.
-- Tutor user can choose to accept or decline an appointment booking from
-their students.
+    + Both the student and tutor account have an “avatar” and a “bio” section.
+    + Student user can choose a subject that they’re interested in.
+    + Student user can book an appointment with a tutor at the tutor’s available time. No double-booking.
+    + When booking an appointment with a tutor, the student decides the duration of the meeting, given there is no conflict with that tutor’s schedule.
+    + Tutor user can choose a subject that they want to mentor.
+    + Tutor user can manage their appointment schedule.
+    + Tutor user can choose to accept or decline an appointment booking from their students.
 - The student and the tutor have the option to communicate 1-on-1 using real-time
 messaging.
 - The student and the tutor have the option to communicate 1-on-1 using voice
@@ -52,12 +48,12 @@ call.
 call.
 - The student and the tutor can share files to each other.
 - The student and the tutor have access to a real-time online “whiteboard”:
-- They can both post virtual “post-it-notes”.
-- They can both draw on the board.
-- They can both put text boxes on the board.
-- They can both upload images and put them on the board.
-- They can both erase each other’s content on the board.
-- They can both “undo” and “redo” their operations on the board.
+    + They can both post virtual “post-it-notes”.
+    + They can both draw on the board.
+    + They can both put text boxes on the board.
+    + They can both upload images and put them on the board.
+    + They can both erase each other’s content on the board.
+    + They can both “undo” and “redo” their operations on the board.
 - The study session between the student and the tutor must be 1-on-1 to ensure
 quality learning and reduce the risk of technology “hick-ups”, as mentioned in the
 proposal above.
@@ -67,11 +63,12 @@ optional text message feedback.
 modified by the tutor.
 - Tutors are ranked by their rating.
 
-*Non-functional Requirements:*
-- Front-end stack includes ReactJS.
-- The front-end will be hosted on Netlify.
-- Back-end stack includes NodeJS, MongoDB.
+### Non-functional Requirements
+- All the user-inputs should be validated before submission (Pay attention on XSS bugs and SQL Injection)
+- The front-end will be hosted on Netlify
 - AWS or Firebase is used for cloud storage and back-end hosting.
+- Write a report
+
 
 ### More specific details provided on [RMIT Canvas](https://rmit.instructure.com/courses/88702/assignments/596400) (Login with RMIT ID)
 ***
