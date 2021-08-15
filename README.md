@@ -106,7 +106,7 @@ modified by the tutor.
 
 ### Key people
 
-- Instructor: Thanh Ngoc Nguyen, PhD. [thanh.nguyenngoc@rmit.edu.vn](thanh.nguyenngoc@rmit.edu.vn)
+- Instructor: Thanh Ngoc Nguyen, PhD. | [thanh.nguyenngoc@rmit.edu.vn](thanh.nguyenngoc@rmit.edu.vn)
 - Student: Mike Vo [@miketvo](https://github.com/miketvo) | [website](https://miketvo.com)
 - Student: Nguyen Hoang Linh [@hlinh88](https://github.com/hlinh88)
 - Student: Doan Yen Nhi [@doanyennhi](https://github.com/doanyennhi)
