@@ -85,7 +85,7 @@ modified by the tutor.
 ## Implementation
 
 ### 1. Deployment
-#### - Poios web/mobile tutor instant messaging application, deployed with Netlify: https://www.netlify.com/ (`main` branch)
+#### - Poios web/mobile tutor instant messaging application, deployed with Netlify: https://poios.netlify.app (`main` branch)
 #### - Database hosted with AWS/ Firebase
 #### - App demo video: 
 
