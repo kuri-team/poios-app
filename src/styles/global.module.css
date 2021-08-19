@@ -5,12 +5,23 @@
 
   /* Colors */
   --transparent: rgba(0, 0, 0, 0);
-  --black: #000000;
   --shadow-black: rgba(18, 14, 13, 0.25);
   --deep-shadow-black: rgba(18, 14, 13, 0.75);
-  --white: #ffffff;
   --scrollbar-primary: hsl(0, 0%, 10%);
   --scrollbar-thumb: hsl(0, 0%, 30%);
+
+  /* Official Poios color palette */
+  --black: #181818;
+  --light-black: #2a2a2a;
+  --lighter-black: #353535;
+  --dark-blue: #17619c;
+  --blue: #196bac;
+  --dark-cyan: #079edf;
+  --cyan: #00aeef;
+  --gray: #cccccc;
+  --light-gray: #e6e6e6;
+  --lighter-gray: #f2f2f2;
+  --white: #ffffff;
 
   /* Sizes and widths */
   --content-w-ultra-wide: 2560px;
