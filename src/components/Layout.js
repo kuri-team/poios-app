@@ -1,11 +1,14 @@
 import Header from "./Header";
 import Footer from "./Footer";
 
-const Layout = ({ className, children }) => (
+/**
+ * Needs to be wrapped around all pages
+ */
+const Layout = ({ className, header, footer, children }) => (
   <div className={className}>
-    <Header />
+    {header ? <Header /> : null}
     <main>{children}</main>
-    <Footer />
+    {footer ? <Footer /> : null}
   </div>
 );
 
