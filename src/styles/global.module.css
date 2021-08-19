@@ -1,7 +1,7 @@
 :root {
   /* Fonts */
-  --header-font: "Arial", sans-serif;
-  --body-font: "Arial", sans-serif;
+  --header-font: "Open Sans", sans-serif;
+  --body-font: "Montserrat", sans-serif;
 
   /* Colors */
   --transparent: rgba(0, 0, 0, 0);

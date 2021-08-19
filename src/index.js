@@ -1,8 +1,17 @@
+// Libraries
 import React from "react";
 import ReactDOM from "react-dom";
 
+// Application Components
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
+// Fonts
+import "@fontsource/open-sans"; // Header font
+import "@fontsource/montserrat"; // Body font
+import "@fontsource/roboto-mono"; // Code (preformatted) font
+
+// Stylesheets
 import "normalize.css";
 import "./styles/animations.css";
 import "./styles/global.module.css";
