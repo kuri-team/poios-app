@@ -1,4 +1,4 @@
-const MajorSelectList = () => {
+const MajorSelectList = ({ className }) => {
   const majors = [
     { code: "BP162", name: "Information Technology" },
     { code: "BP251", name: "Economics and Finance" },
@@ -8,7 +8,7 @@ const MajorSelectList = () => {
   ];
 
   return (
-    <select name="major" id="major">
+    <select className={className} name="major" id="major">
       {majors.map(major => (
         <option key={major.code} value={major.code}>
           {major.name}

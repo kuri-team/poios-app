@@ -1,0 +1,10 @@
+.h1 {
+  margin: 3%;
+}
+
+.select {
+  min-width: var(--content-w-min);
+  padding: 8px;
+  border-radius: 5px;
+  outline: none;
+}
