@@ -1,0 +1,18 @@
+.tutor-element {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 130px;
+}
+
+.avatar {
+  display: block;
+  border-radius: 50%;
+}
+
+.avatar-details {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
