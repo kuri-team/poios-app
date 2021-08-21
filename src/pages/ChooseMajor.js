@@ -1,4 +1,5 @@
 import Layout from "../components/Layout";
+import SubjectBoxes from "../components/SubjectBoxes";
 
 const ChooseMajor = () => {
   return (
@@ -9,9 +10,12 @@ const ChooseMajor = () => {
         <option value="ecofin">Economics and Finance</option>
         <option value="digital-mkt">Digital Marketing</option>
         <option value="design">Design Studies</option>
+        <option value="profcom">Professional Communication</option>
+        <option value="lang">Languages</option>
       </select>
 
       <p>WHICH SUBJECTS ARE YOU INTERESTED IN?</p>
+      <SubjectBoxes />
     </Layout>
   );
 };
