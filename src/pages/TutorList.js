@@ -1,8 +1,7 @@
 import Layout from "../components/Layout";
-import Searchbar from "../components/Searchbar";
-import TutorListElement from "../components/TutorListElement";
+import Searchbar from "../components/TutorList/Searchbar";
+import TutorListElement from "../components/TutorList/TutorListElement";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import * as style from "../styles/TutorList.module.css";
 
 //currently testing 'searching function'

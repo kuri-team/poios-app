@@ -1,4 +1,4 @@
-import * as style from "../styles/Searchbar.module.css";
+import * as style from "../../styles/Searchbar.module.css";
 
 const Searchbar = ({ searchQuery, setSearchQuery }) => {
   return (
