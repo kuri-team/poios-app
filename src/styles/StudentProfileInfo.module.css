@@ -1,0 +1,107 @@
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  width: 85%;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.upload-image-form {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.upload-image-form img {
+  width: 3rem;
+}
+
+.user-avatar {
+  padding: 3rem 0 1rem 2rem;
+}
+
+.user-info-row {
+  overflow: visible;
+  list-style: none;
+}
+
+.user-info-display {
+  width: 60%;
+  color: #181818;
+}
+
+.user-info-row > li {
+  display: inline-block;
+}
+
+.user-info-row li label {
+  margin-right: 8rem;
+  margin-left: 5rem;
+}
+
+.user-info-element {
+  position: relative;
+}
+
+.user-info-element img {
+  position: absolute;
+  top: 0.5rem;
+  right: 4.5rem;
+  width: 3rem;
+}
+
+hr {
+  display: block;
+  width: 80%;
+  border: 1px solid var(--gray);
+  opacity: 0.6;
+}
+
+.savebutton {
+  display: block;
+  margin-top: 3rem;
+  margin-right: auto;
+  margin-bottom: 3rem;
+  margin-left: auto;
+  padding: 10px 80px;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  background-color: #079edf;
+  border: none;
+  border-radius: 15px;
+}
+
+@media only screen and (--viewport-tablet) {
+  .user-info-row li label {
+    margin-right: 2rem;
+    margin-left: 3rem;
+  }
+
+  .user-info-display {
+    width: 100%;
+    color: #181818;
+  }
+}
+
+@media only screen and (--viewport-desktop) {
+  .user-info-row li label {
+    margin: 0 4rem;
+  }
+}
+
+@media only screen and (--viewport-phone) {
+  .user-info-row li label {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  .user-info-element img {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    width: 3rem;
+  }
+}
