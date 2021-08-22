@@ -1,3 +1,5 @@
+import * as style from "./ChooseMajor.module.css";
+
 const SubjectBoxes = () => {
   const subjects = [
     "Introduction to Programming",
@@ -14,7 +16,11 @@ const SubjectBoxes = () => {
     "Introduction to Fashion Enterprise",
   ];
 
-  return subjects.map((subject, id) => <div key={id}>{subject}</div>);
+  return subjects.map((subject, id) => (
+    <div key={id} className={style["subject-box"]}>
+      {subject}
+    </div>
+  ));
 };
 
 export default SubjectBoxes;

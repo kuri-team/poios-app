@@ -1,9 +1,25 @@
+.container {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 70%;
+  height: 100vh;
+  text-align: -webkit-center;
+  text-align: -moz-center;
+  text-align: center;
+}
+
 .h1 {
   margin: 3%;
 }
 
 .select {
-  min-width: var(--content-w-min);
+  width: 100%;
   padding: 8px;
   border-radius: 5px;
   outline: none;
