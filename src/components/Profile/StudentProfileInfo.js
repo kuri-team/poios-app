@@ -1,4 +1,4 @@
-import * as style from "../styles/StudentProfileInfo.module.css";
+import * as style from "../../styles/StudentProfileInfo.module.css";
 import { useState } from "react";
 
 const StudentProfileInfo = () => {

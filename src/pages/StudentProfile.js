@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import StudentProfileInfo from "../components/StudentProfileInfo";
+import StudentProfileInfo from "../components/Profile/StudentProfileInfo";
 import * as style from "../styles/StudentProfileInfo.module.css";
 
 const StudentProfile = () => {

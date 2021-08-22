@@ -4,7 +4,7 @@
   align-content: center;
   justify-content: space-around;
   width: 85%;
-  background-color: white;
+  background-color: var(--white);
   border-radius: 25px;
 }
 
@@ -29,7 +29,7 @@
 
 .user-info-display {
   width: 60%;
-  color: #181818;
+  color: var(--black);
 }
 
 .user-info-row > li {
@@ -66,10 +66,10 @@ hr {
   margin-bottom: 3rem;
   margin-left: auto;
   padding: 10px 80px;
-  color: white;
+  color: var(--white);
   font-size: 1.2rem;
   text-align: center;
-  background-color: #079edf;
+  background-color: var(--dark-cyan);
   border: none;
   border-radius: 15px;
 }
@@ -82,7 +82,7 @@ hr {
 
   .user-info-display {
     width: 100%;
-    color: #181818;
+    color: var(--black);
   }
 }
 
