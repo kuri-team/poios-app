@@ -32,3 +32,16 @@
   border: 5px solid var(--cyan);
   cursor: pointer;
 }
+
+@media only screen and (--viewport-tablet) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (--viewport-phone) {
+  .container {
+    grid-gap: 2.5em;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
