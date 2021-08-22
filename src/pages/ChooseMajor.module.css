@@ -7,8 +7,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 70%;
-  height: 100vh;
+  width: 80%;
+  height: 100%;
+  margin: auto;
   text-align: -webkit-center;
   text-align: -moz-center;
   text-align: center;
@@ -19,7 +20,7 @@
 }
 
 .select {
-  width: 100%;
+  min-width: 50%;
   padding: 8px;
   border-radius: 5px;
   outline: none;

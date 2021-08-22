@@ -1,0 +1,21 @@
+.container {
+  display: -ms-grid;
+  display: -moz-grid;
+  display: grid;
+  grid-gap: 1.5em;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.subject-box {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 65%;
+  padding: 1em;
+  color: var(--black);
+  background: var(--lighter-gray);
+}
