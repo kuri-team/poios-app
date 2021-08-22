@@ -54,6 +54,14 @@
   background: var(--cyan);
 }
 
+.landing-login-btn:hover {
+  background: var(--blue);
+}
+
 .landing-signup-btn {
   background: var(--gray);
+}
+
+.landing-signup-btn:hover {
+  background: var(--deep-shadow-black);
 }
