@@ -29,3 +29,20 @@
 .subheading {
   margin-top: 5em;
 }
+
+.btn {
+  width: 20%;
+  margin: 5em auto 5em;
+  padding: 1em 2em;
+  color: var(--white);
+  font-weight: bold;
+  background: var(--cyan);
+  border: none;
+  border-radius: 15px;
+  outline: none;
+}
+
+.btn:hover {
+  background: var(--dark-cyan);
+  cursor: pointer;
+}

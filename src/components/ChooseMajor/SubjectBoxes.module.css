@@ -2,7 +2,7 @@
   display: -ms-grid;
   display: -moz-grid;
   display: grid;
-  grid-gap: 1.5em;
+  grid-gap: 1.75em;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 2em;
 }
@@ -19,4 +19,10 @@
   padding: 1em;
   color: var(--black);
   background: var(--lighter-gray);
+}
+
+.subject-box:hover {
+  box-sizing: border-box;
+  border: 5px solid var(--cyan);
+  cursor: pointer;
 }

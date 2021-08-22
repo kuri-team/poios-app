@@ -12,7 +12,7 @@ const ChooseMajor = () => {
 
       <p className={style["subheading"]}>WHICH SUBJECTS ARE YOU INTERESTED IN?</p>
       <SubjectBoxes />
-      <button>SET</button>
+      <button className={style["btn"]}>SET</button>
     </Layout>
   );
 };
