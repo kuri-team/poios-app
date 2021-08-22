@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import * as style from "../styles/TutorList.module.css";
 
+//currently testing 'searching function'
 const dummyTutors = [
   { id: 1, name: "Eula" },
   { id: 2, name: "Mona" },
@@ -32,13 +33,30 @@ const TutorList = () => {
 
   return (
     <Layout className={style["container"]} header footer>
-      <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <ul>
-        {filteredTutors.map(tutor => (
-          <li key={tutor.id}>{tutor.name}</li>
-        ))}
-      </ul>
-      <TutorListElement />
+      <div className={style["searchbar"]}>
+        <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      </div>
+      {/*<ul>*/}
+      {/*  {filteredTutors.map(tutor => (*/}
+      {/*    <li key={tutor.id}>{tutor.name}</li>*/}
+      {/*  ))}*/}
+      {/*</ul>*/}
+      <div className={style["tutor-list"]}>
+        <TutorListElement />
+        <TutorListElement />
+        <TutorListElement />
+        <TutorListElement />
+
+        <TutorListElement />
+        <TutorListElement />
+        <TutorListElement />
+        <TutorListElement />
+
+        <TutorListElement />
+        <TutorListElement />
+        <TutorListElement />
+        <TutorListElement />
+      </div>
     </Layout>
   );
 };

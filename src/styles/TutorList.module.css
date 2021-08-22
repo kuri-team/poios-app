@@ -1,0 +1,10 @@
+.searchbar {
+  padding: 2rem 0;
+}
+
+.tutor-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 3rem 5rem;
+}

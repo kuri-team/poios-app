@@ -1,0 +1,24 @@
+.tutor-element {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: var(--content-w-min);
+  margin: 25px 45px;
+}
+
+.avatar,
+.avatar-name,
+.avatar-subject {
+  text-align: center;
+}
+
+.avatar-subject {
+  font-size: 16px;
+}
+
+.avatar img {
+  width: 16rem;
+  border-radius: 50%;
+}

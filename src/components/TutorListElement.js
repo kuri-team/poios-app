@@ -1,17 +1,17 @@
-import * as style from "../styles/TutorListElement.css";
+import * as style from "../styles/TutorListElement.module.css";
 
 const TutorListElement = () => {
   return (
     <>
       <div className={style["tutor-element"]}>
         <div className={style["avatar"]}>
-          <img src={"../../public/media/venti.jpg"} alt="Tutor" />
+          <img src={"media/venti.jpg"} alt="Tutor" />
         </div>
 
-        <div className={style["avatar-details"]}>
+        <div className={style["avatar-name"]}>
           <h3>Venti</h3>
-          <p>Tone-Deaf Bard</p>
         </div>
+        <div className={style["avatar-subject"]}>Tone-Deaf Bard</div>
       </div>
     </>
   );
