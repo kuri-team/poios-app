@@ -16,7 +16,7 @@
 }
 
 .h1 {
-  margin: 3%;
+  margin: 3em auto 1em;
 }
 
 .select {
@@ -24,4 +24,8 @@
   padding: 8px;
   border-radius: 5px;
   outline: none;
+}
+
+.subheading {
+  margin-top: 5em;
 }
