@@ -3,7 +3,7 @@ import * as style from "./Home.module.css";
 
 const Home = () => {
   return (
-    <Layout className={style["container"]}>
+    <Layout className={style["container"] + " " + style["home"]}>
       <img src={"/media/bg.jpg"} alt="" className={style["background"]} />
       <div className={style["login-signup-box"]}>
         <div className={style["brand-display"]}>
@@ -11,7 +11,7 @@ const Home = () => {
         </div>
         <div className={style["landing-btn-box"]}>
           <button className={style["landing-login-btn"] + " " + style["landing-btn"]}>LOGIN</button> <br />
-          <button className={style["landing-signup-btn"] + " " + style["landing-btn"]}>SIGNUP</button>
+          <button className={style["landing-signup-btn"] + " " + style["landing-btn"]}>SIGN UP</button>
         </div>
       </div>
     </Layout>
