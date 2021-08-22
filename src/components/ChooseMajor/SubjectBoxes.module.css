@@ -7,7 +7,8 @@
   margin-top: 2em;
 }
 
-.subject-box {
+.subject-box,
+.subject-box-selected {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -19,10 +20,15 @@
   padding: 1em;
   color: var(--black);
   background: var(--lighter-gray);
+  border: 5px solid var(--lighter-gray);
 }
 
-.subject-box:hover {
-  box-sizing: border-box;
+.subject-box-selected {
+  border: 5px solid var(--cyan);
+}
+
+.subject-box:hover,
+.subject-box-selected:hover {
   border: 5px solid var(--cyan);
   cursor: pointer;
 }

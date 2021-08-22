@@ -1,3 +1,4 @@
+import { useState } from "react";
 import * as style from "./SubjectBoxes.module.css";
 
 const SubjectBoxes = () => {
@@ -16,10 +17,24 @@ const SubjectBoxes = () => {
     "Introduction to Fashion Enterprise",
   ];
 
+  const [selectedIds, setSelectedIds] = useState([]);
+
+  let newSelectedIds = selectedIds;
+
+  const handleClick = id => {
+    selectedIds.includes(id) ? newSelectedIds.splice(selectedIds.indexOf(id), 1) : newSelectedIds.push(id);
+    setSelectedIds(newSelectedIds);
+    console.log(selectedIds);
+  };
+
   return (
     <div className={style["container"]}>
       {subjects.map((subject, id) => (
-        <div key={id} className={style["subject-box"]}>
+        <div
+          key={id}
+          className={selectedIds.includes(id) ? style["subject-box-selected"] : style["subject-box"]}
+          onClick={id => handleClick(id)}
+        >
           {subject}
         </div>
       ))}
