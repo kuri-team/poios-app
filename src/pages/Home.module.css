@@ -94,6 +94,10 @@ Responsive
     display: none;
   }
 
+  .go-back {
+    display: none;
+  }
+
   .login-signup-box {
     width: 100vw;
     height: 100vh;
