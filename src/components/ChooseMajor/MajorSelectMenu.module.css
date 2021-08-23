@@ -1,5 +1,5 @@
 .select {
-  min-width: 60%;
+  width: var(--content-w-extra-narrow);
   padding: 10px;
   border-radius: 5px;
   outline: none;
@@ -7,6 +7,6 @@
 
 @media only screen and (--viewport-tablet) {
   .select {
-    width: 80%;
+    width: var(--content-w-min);
   }
 }

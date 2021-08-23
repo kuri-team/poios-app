@@ -62,12 +62,10 @@ const SubjectBoxes = () => {
   }, [currentPage]);
 
   // const [selectedIds, setSelectedIds] = useState([]);
-  //
-  // let newSelectedIds = selectedIds;
+  // let newSelectedIds = [];
   //
   // const handleClick = id => {
-  //   selectedIds.includes(id) ? newSelectedIds.splice(selectedIds.indexOf(id), 1) : newSelectedIds.push(id);
-  //   setSelectedIds(newSelectedIds);
+  //   newSelectedIds.includes(id) ? newSelectedIds.splice(selectedIds.indexOf(id), 1) : newSelectedIds.push(id);
   //   console.log(selectedIds);
   // };
 
@@ -76,11 +74,13 @@ const SubjectBoxes = () => {
       <div className={style["prev-btn"]}>
         <ToggleButton src={"/media/chevron-left.svg.png"} onClick={event => togglePrevPage(event)} />
       </div>
-      {subjectList.map((subject, id) => (
-        <div key={id} className={style["subject-box"]}>
-          {subject}
-        </div>
-      ))}
+      <div className={style["subject-container"]}>
+        {subjectList.map((subject, id) => (
+          <div key={id} className={style["subject-box"]}>
+            {subject}
+          </div>
+        ))}
+      </div>
       <div className={style["next-btn"]}>
         <ToggleButton src={"/media/chevron-right.svg.png"} onClick={event => toggleNextPage(event)} />
       </div>
