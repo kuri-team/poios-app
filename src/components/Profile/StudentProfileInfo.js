@@ -1,5 +1,5 @@
-import * as style from "../../styles/StudentProfileInfo.module.css";
 import { useState } from "react";
+import * as style from "./StudentProfileInfo.module.css";
 
 const StudentProfileInfo = () => {
   const [name, setName] = useState("");
@@ -10,7 +10,6 @@ const StudentProfileInfo = () => {
 
   return (
     <div className={style["profile-bigcontainer"]}>
-      <h1>Profile</h1>
       <div className={style["profile-container"]}>
         <div className={style["user-avatar"]}>
           <img src={"media/kequing.jpg"} />

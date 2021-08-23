@@ -8,11 +8,11 @@ import StudentProfile from "./pages/StudentProfile";
 const App = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route exact path="/Profile">
+      <Route path="/profile">
         <StudentProfile />
+      </Route>
+      <Route path="/">
+        <Home />
       </Route>
     </Switch>
   </BrowserRouter>

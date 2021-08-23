@@ -1,0 +1,52 @@
+.timetable-bigcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  background: var(--white);
+  border-radius: 25px;
+}
+
+.navigate-time {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  margin: 2.6rem 0;
+}
+
+.navigate-time span {
+  margin-top: 0.5rem;
+  padding-left: 3rem;
+  color: black;
+  font-size: 1.4rem;
+  font-family: var(--header-font);
+}
+
+.left-arrow,
+.right-arrow {
+  width: 37px;
+  height: auto;
+  padding: 0 14px;
+}
+
+.schedule-container {
+  width: 100%;
+}
+
+.schedule {
+  display: flex;
+  flex-flow: row wrap;
+  flex-shrink: 0;
+  align-items: center;
+  width: 100%;
+}
+
+@media only screen and (--viewport-phone) {
+  .navigate-time span {
+    padding-left: 1rem;
+  }
+}

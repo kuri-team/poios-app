@@ -1,0 +1,30 @@
+.box {
+  position: relative;
+  width: 12%;
+  height: 8vh;
+  margin: 12px 10px;
+  background-color: var(--light-gray);
+  border-radius: 3px;
+  transition: var(--transition-medium) ease-in 0s;
+}
+
+.box div {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+  color: var(--black);
+  font-size: 1.2rem;
+}
+
+@media only screen and (--viewport-tablet) {
+  .box {
+    margin: 6px;
+  }
+}
+
+@media only screen and (max-width: 524px) {
+  .box {
+    width: 11%;
+  }
+}
