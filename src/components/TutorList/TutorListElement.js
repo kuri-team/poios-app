@@ -1,4 +1,4 @@
-import * as style from "../../styles/TutorListElement.module.css";
+import * as style from "./TutorListElement.module.css";
 
 const TutorListElement = () => {
   return (

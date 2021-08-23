@@ -8,11 +8,11 @@ import TutorList from "./pages/TutorList";
 const App = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route exact path="/Tutors">
+      <Route path="/tutors">
         <TutorList />
+      </Route>
+      <Route path="/">
+        <Home />
       </Route>
     </Switch>
   </BrowserRouter>

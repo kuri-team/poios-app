@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import Searchbar from "../components/TutorList/Searchbar";
 import TutorListElement from "../components/TutorList/TutorListElement";
 import { useState } from "react";
-import * as style from "../styles/TutorList.module.css";
+import * as style from "./TutorList.module.css";
 
 //currently testing 'searching function'
 const dummyTutors = [
