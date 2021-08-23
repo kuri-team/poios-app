@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as style from "./SubjectBoxes.module.css";
+import ToggleButton from "./ToggleButton";
 
 const SubjectBoxes = () => {
   const subjects = [
@@ -29,6 +30,7 @@ const SubjectBoxes = () => {
 
   return (
     <div className={style["container"]}>
+      <ToggleButton src={"/media/chevron-left.svg.png"} />
       {subjects.map((subject, id) => (
         <div
           key={id}
@@ -38,6 +40,7 @@ const SubjectBoxes = () => {
           {subject}
         </div>
       ))}
+      <ToggleButton src={"/media/chevron-right.svg.png"} />
     </div>
   );
 };
