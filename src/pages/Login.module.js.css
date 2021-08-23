@@ -10,8 +10,8 @@
 }
 
 .go-back {
-  margin: 1em 0 4em;
-  padding: 2em;
+  margin: 1em;
+  padding: 0.5em;
   color: var(--lighter-black);
   font-size: 9pt;
 }
