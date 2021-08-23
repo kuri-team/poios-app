@@ -26,7 +26,7 @@ const Login = () => {
             </div>
             <label className={["login-field-label"]}>Password</label>
             <br />
-            <input className={["login-field-input"]} type={"textarea"} />
+            <input className={["login-field-input"]} type={"password"} />
           </div>
           <div className={["login-btn-box"]}>
             <button className={["login-btn"]}>LOGIN</button> <br />
