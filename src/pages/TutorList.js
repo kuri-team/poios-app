@@ -32,6 +32,9 @@ const TutorList = () => {
 
   return (
     <Layout className={style["container"]} header footer>
+      <div className={style["searchbar-h1"]}>
+        <h1>OUR TUTORS</h1>
+      </div>
       <div className={style["searchbar"]}>
         <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       </div>

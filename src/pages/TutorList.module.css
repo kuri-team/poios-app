@@ -1,5 +1,10 @@
 .searchbar {
-  padding: 2rem 0;
+  padding: 0 0 2rem 0;
+}
+
+.searchbar-h1 {
+  padding-top: 1rem;
+  text-align: center;
 }
 
 .tutor-list {
