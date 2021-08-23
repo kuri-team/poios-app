@@ -1,3 +1,17 @@
+.login-box {
+  margin-right: 40rem;
+  padding: 1em 2em;
+  background: var(--light-black);
+  border-radius: 1em;
+}
+
+.login-field-wrapper {
+  margin: 0.5em 0;
+}
+
+/*
+Brand
+ */
 .brand-display {
   margin: 3em 3em 2em;
   padding: 2em 2em 0;
@@ -13,20 +27,13 @@
   margin: 1em;
   padding: 0.5em;
   color: var(--lighter-black);
+  font-weight: bold;
   font-size: 9pt;
 }
 
-.login-box {
-  margin-right: 40rem;
-  padding: 1em 2em;
-  background: var(--light-black);
-  border-radius: 1em;
-}
-
-.login-field-wrapper {
-  margin: 0.5em 0;
-}
-
+/*
+Login fields
+ */
 .login-field-input {
   height: 2em;
   margin: 0.1em 0;
@@ -44,7 +51,9 @@
 
 .forgot-password {
   color: var(--lighter-black);
+  font-weight: bold;
   font-size: 8pt;
+  text-decoration: none;
   background: transparent;
 }
 /*
