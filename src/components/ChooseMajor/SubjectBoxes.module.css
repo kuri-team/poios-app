@@ -3,8 +3,31 @@
   display: -moz-grid;
   display: grid;
   grid-gap: 1.75em;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "prevBtn . . . . nextBtn"
+    "prevBtn . . . . nextBtn"
+    "prevBtn . . . . nextBtn";
+  grid-template-columns: repeat(6, 1fr);
   margin-top: 2em;
+}
+
+.prev-btn,
+.next-btn {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prev-btn {
+  grid-area: prevBtn;
+}
+
+.next-btn {
+  grid-area: nextBtn;
 }
 
 .subject-box,

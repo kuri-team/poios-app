@@ -30,7 +30,9 @@ const SubjectBoxes = () => {
 
   return (
     <div className={style["container"]}>
-      <ToggleButton disabled={true} src={"/media/chevron-left.svg.png"} />
+      <div className={style["prev-btn"]}>
+        <ToggleButton disabled={true} src={"/media/chevron-left.svg.png"} />
+      </div>
       {subjects.map((subject, id) => (
         <div
           key={id}
@@ -40,7 +42,9 @@ const SubjectBoxes = () => {
           {subject}
         </div>
       ))}
-      <ToggleButton src={"/media/chevron-right.svg.png"} />
+      <div className={style["next-btn"]}>
+        <ToggleButton src={"/media/chevron-right.svg.png"} />
+      </div>
     </div>
   );
 };
