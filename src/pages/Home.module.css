@@ -14,36 +14,152 @@
   text-align: center;
 }
 
-.container:before {
-  content: "Ultra-wide screen";
+/*
+Make image become background image
+ */
+.home {
+  overflow: hidden;
 }
 
-@media only screen and (--viewport-desktop-large) {
-  .container:before {
-    content: "Large screen";
-  }
+.background {
+  position: absolute;
+  z-index: -999;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  inset: 0;
 }
 
-@media only screen and (--viewport-desktop) {
-  .container:before {
-    content: "Regular screen";
-  }
+/*
+Brand
+ */
+.brand-display {
+  margin: 3em;
+  padding: 2.5em 1em;
 }
+
+.brand-name {
+  width: 14em;
+  height: 3.5em;
+}
+
+/*
+Buttons
+ */
+.login-signup-box {
+  margin-right: 45rem;
+  background: var(--light-black);
+  border-radius: 1em;
+}
+
+.landing-btn {
+  width: 12em;
+  height: 3em;
+  margin: 1em;
+  padding: 1em;
+  color: var(--white);
+  font-weight: bolder;
+  font-size: 7pt;
+  border: none;
+  border-radius: 1em;
+}
+
+.landing-btn-box {
+  margin: 2em;
+  padding: 2em;
+}
+
+.landing-login-btn {
+  background: var(--cyan);
+}
+
+.landing-login-btn:hover {
+  background: var(--blue);
+}
+
+.landing-signup-btn {
+  background: var(--gray);
+}
+
+.landing-signup-btn:hover {
+  background: var(--deep-shadow-black);
+}
+
+/*
+Responsive
+ */
 
 @media only screen and (--viewport-tablet) {
-  .container:before {
-    content: "Tablet screen";
+  .background {
+    display: none;
+  }
+
+  .login-signup-box {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: var(--black);
+    border-radius: 0;
+  }
+
+  .brand-display {
+    margin: 15em 2em 10em;
+    padding: 2em;
+  }
+
+  .brand-name {
+    width: 40em;
+    height: 10em;
+  }
+
+  .landing-btn-box {
+    margin: 1rem 2rem 10rem;
+    padding: 5rem;
+  }
+
+  .landing-btn {
+    width: 20em;
+    height: 5em;
+    margin: 0.5em;
+    font-size: 12pt;
+    border-radius: 2em;
+  }
+
+  .landing-signup-btn {
+    margin-bottom: 2em;
   }
 }
 
 @media only screen and (--viewport-phone) {
-  .container:before {
-    content: "Phone screen";
+  .brand-display {
+    margin: 15em 2em 5em;
+  }
+
+  .brand-name {
+    width: 14em;
+    height: 3.5em;
+  }
+
+  .landing-btn-box {
+    margin: 0 0 5rem;
+    padding: 3rem;
+  }
+
+  .landing-btn {
+    width: 10em;
+    height: 3em;
+    margin: 0.5em;
+    font-size: 9pt;
+    border-radius: 2em;
+  }
+
+  .landing-signup-btn {
+    margin-bottom: 2em;
   }
 }
 
 @media only screen and (--viewport-phone-small) {
-  .container:before {
-    content: "Small phone screen";
+  .brand-display {
+    margin: 15em 0 5em;
   }
 }
