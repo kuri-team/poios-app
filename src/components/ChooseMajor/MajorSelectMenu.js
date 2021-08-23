@@ -1,4 +1,6 @@
-const MajorSelectList = ({ className }) => {
+import * as style from "./MajorSelectMenu.module.css";
+
+const MajorSelectMenu = () => {
   const majors = [
     { code: "BP162", name: "Information Technology" },
     { code: "BP251", name: "Economics and Finance" },
@@ -8,7 +10,7 @@ const MajorSelectList = ({ className }) => {
   ];
 
   return (
-    <select className={className} name="major" id="major">
+    <select className={style["select"]} name="major" id="major">
       {majors.map(major => (
         <option key={major.code} value={major.code}>
           {major.name}
@@ -18,4 +20,4 @@ const MajorSelectList = ({ className }) => {
   );
 };
 
-export default MajorSelectList;
+export default MajorSelectMenu;

@@ -10,6 +10,14 @@
   margin-top: 2em;
 }
 
+.prev-btn {
+  grid-area: prevBtn;
+}
+
+.next-btn {
+  grid-area: nextBtn;
+}
+
 .prev-btn,
 .next-btn {
   display: -webkit-flex;
@@ -19,14 +27,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.prev-btn {
-  grid-area: prevBtn;
-}
-
-.next-btn {
-  grid-area: nextBtn;
 }
 
 .subject-box,

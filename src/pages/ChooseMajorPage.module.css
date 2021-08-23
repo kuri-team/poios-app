@@ -19,20 +19,13 @@
   margin: 3em auto 1em;
 }
 
-.select {
-  min-width: 60%;
-  padding: 10px;
-  border-radius: 5px;
-  outline: none;
-}
-
 .subheading {
   margin-top: 5em;
 }
 
 .btn {
   width: 30%;
-  margin: 5em auto 5em;
+  margin: 5em auto 7em;
   padding: 1em 2em;
   color: var(--white);
   font-weight: bold;
@@ -48,10 +41,6 @@
 }
 
 @media only screen and (--viewport-tablet) {
-  .select {
-    width: 80%;
-  }
-
   .btn {
     width: 50%;
   }

@@ -2,7 +2,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Page2 from "./pages/Page2";
-import ChooseMajor from "./pages/ChooseMajor";
+import ChooseMajorPage from "./pages/ChooseMajorPage";
 
 import "./App.module.css";
 
@@ -16,7 +16,7 @@ const App = () => (
         <Home />
       </Route>
       <Route path="/choose-major">
-        <ChooseMajor />
+        <ChooseMajorPage />
       </Route>
     </Switch>
   </BrowserRouter>
