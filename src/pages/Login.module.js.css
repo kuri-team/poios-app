@@ -79,7 +79,7 @@ Buttons
 }
 
 .login-btn:hover {
-  color: var(--blue);
+  background: var(--blue);
 }
 
 /*
