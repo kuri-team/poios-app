@@ -42,7 +42,7 @@
 
 @media only screen and (--viewport-tablet) {
   .btn {
-    width: 50%;
+    width: 40%;
   }
 }
 

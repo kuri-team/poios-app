@@ -18,27 +18,43 @@ const SubjectBoxes = () => {
     "Introduction to Fashion Enterprise",
   ];
 
-  const [selectedIds, setSelectedIds] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [subjectList, setSubjectList] = useState(subjects);
 
-  let newSelectedIds = selectedIds;
+  const MAX_BOX_PER_PAGE = 12;
+  let numPage =
+    subjects.length % MAX_BOX_PER_PAGE === 0
+      ? subjects.length / MAX_BOX_PER_PAGE
+      : subjects.length / MAX_BOX_PER_PAGE + 1;
 
-  const handleClick = id => {
-    selectedIds.includes(id) ? newSelectedIds.splice(selectedIds.indexOf(id), 1) : newSelectedIds.push(id);
-    setSelectedIds(newSelectedIds);
-    console.log(selectedIds);
+  const togglePrevPage = event => {
+    if (currentPage <= 1) {
+      console.log("Page 1");
+      event.preventDefault();
+    } else {
+      setCurrentPage(currentPage - 1);
+      setSubjectList(subjects.slice((currentPage - 1) * MAX_BOX_PER_PAGE, currentPage * MAX_BOX_PER_PAGE));
+      console.log(`page ${currentPage}`);
+    }
   };
+
+  // const [selectedIds, setSelectedIds] = useState([]);
+  //
+  // let newSelectedIds = selectedIds;
+  //
+  // const handleClick = id => {
+  //   selectedIds.includes(id) ? newSelectedIds.splice(selectedIds.indexOf(id), 1) : newSelectedIds.push(id);
+  //   setSelectedIds(newSelectedIds);
+  //   console.log(selectedIds);
+  // };
 
   return (
     <div className={style["container"]}>
       <div className={style["prev-btn"]}>
-        <ToggleButton disabled={true} src={"/media/chevron-left.svg.png"} />
+        <ToggleButton src={"/media/chevron-left.svg.png"} onClick={event => togglePrevPage(event)} />
       </div>
       {subjects.map((subject, id) => (
-        <div
-          key={id}
-          className={selectedIds.includes(id) ? style["subject-box-selected"] : style["subject-box"]}
-          onClick={id => handleClick(id)}
-        >
+        <div key={id} className={style["subject-box"]}>
           {subject}
         </div>
       ))}
