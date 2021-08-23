@@ -1,0 +1,12 @@
+.btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
