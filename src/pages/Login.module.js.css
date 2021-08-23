@@ -78,7 +78,7 @@ Buttons
   border-radius: 1em;
 }
 
-.login-button:hover {
+.login-btn:hover {
   color: var(--blue);
 }
 
