@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import * as style from "./SubjectBoxes.module.css";
+
 import ToggleButton from "./ToggleButton";
+import SubjectBox from "./SubjectBox";
+import * as style from "./SubjectBoxes.module.css";
 
 const SubjectBoxes = () => {
   const subjects = [
@@ -31,15 +33,15 @@ const SubjectBoxes = () => {
     "Business Statistics 1",
   ];
 
-  const MAX_BOX_PER_PAGE = 12;
+  const maxBoxPerPage = 12;
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [subjectList, setSubjectList] = useState(subjects.slice(0, MAX_BOX_PER_PAGE));
+  const [subjectList, setSubjectList] = useState(subjects.slice(0, maxBoxPerPage));
 
   let numPage =
-    subjects.length % MAX_BOX_PER_PAGE === 0
-      ? subjects.length / MAX_BOX_PER_PAGE
-      : Math.ceil(subjects.length / MAX_BOX_PER_PAGE);
+    subjects.length % maxBoxPerPage === 0
+      ? subjects.length / maxBoxPerPage
+      : Math.ceil(subjects.length / maxBoxPerPage);
 
   const togglePrevPage = event => {
     if (currentPage <= 1) {
@@ -58,16 +60,8 @@ const SubjectBoxes = () => {
   };
 
   useEffect(() => {
-    setSubjectList(subjects.slice((currentPage - 1) * MAX_BOX_PER_PAGE, currentPage * MAX_BOX_PER_PAGE));
+    setSubjectList(subjects.slice((currentPage - 1) * maxBoxPerPage, currentPage * maxBoxPerPage));
   }, [currentPage]);
-
-  // const [selectedIds, setSelectedIds] = useState([]);
-  // let newSelectedIds = [];
-  //
-  // const handleClick = id => {
-  //   newSelectedIds.includes(id) ? newSelectedIds.splice(selectedIds.indexOf(id), 1) : newSelectedIds.push(id);
-  //   console.log(selectedIds);
-  // };
 
   return (
     <div className={style["container"]}>
@@ -76,9 +70,7 @@ const SubjectBoxes = () => {
       </div>
       <div className={style["subject-container"]}>
         {subjectList.map((subject, id) => (
-          <div key={id} className={style["subject-box"]}>
-            {subject}
-          </div>
+          <SubjectBox id={id} subject={subject} />
         ))}
       </div>
       <div className={style["next-btn"]}>
