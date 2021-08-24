@@ -5,11 +5,16 @@
   border: none;
   border-radius: 50%;
   outline: none;
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-extra-rapid);
+  will-change: background;
 }
 
 .btn:hover {
   background: var(--gray);
   cursor: pointer;
+  transition: var(--transition-rapid);
+  transition-delay: var(--transition-near-instant);
 }
 
 .btn-disabled {

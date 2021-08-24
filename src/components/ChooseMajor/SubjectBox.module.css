@@ -13,21 +13,30 @@
   margin: 1em;
   padding: 1em;
   color: var(--black);
-  background: var(--lighter-gray);
+  background: var(--white);
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-medium-rapid);
+  will-change: background, border;
 }
 
 .subject-box {
-  border: 5px solid var(--lighter-gray);
+  border: 5px solid var(--white);
 }
 
-.subject-box-selected,
 .subject-box:hover {
+  border: 5px solid var(--gray);
+}
+
+.subject-box-selected {
   border: 5px solid var(--cyan);
 }
 
 .subject-box:hover,
 .subject-box-selected:hover {
+  background: var(--gray);
   cursor: pointer;
+  transition: var(--transition-rapid);
+  transition-delay: var(--transition-near-instant);
 }
 
 @media only screen and (--viewport-phone) {

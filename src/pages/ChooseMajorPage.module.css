@@ -33,11 +33,22 @@
   border: none;
   border-radius: 15px;
   outline: none;
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-extra-rapid);
+  will-change: background;
 }
 
 .btn:hover {
   background: var(--dark-cyan);
   cursor: pointer;
+  transition: var(--transition-rapid);
+  transition-delay: var(--transition-near-instant);
+}
+
+.btn:active {
+  background: var(--cyan);
+  transition: var(--transition-rapid);
+  transition-delay: var(--transition-near-instant);
 }
 
 @media only screen and (--viewport-phone) {
