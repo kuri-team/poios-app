@@ -11,5 +11,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 3rem 5rem;
+  margin: 3rem 2rem;
+}
+
+@media only screen and (--viewport-phone) {
+  .searchbar {
+    padding: 0;
+  }
 }
