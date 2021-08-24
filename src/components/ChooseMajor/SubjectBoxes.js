@@ -33,51 +33,63 @@ const SubjectBoxes = () => {
     "Business Statistics 1",
   ];
 
-  const maxBoxPerPage = 12;
+  const boxesPerPage = 12;
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const [isDisabled, setIsDisabled] = useState(false);
-  const [subjectList, setSubjectList] = useState(subjects.slice(0, maxBoxPerPage));
+  const [currentPage, setCurrentPage] = useState(0);
+  const [visibleSubjectsIndex, setVisibleSubjectsIndex] = useState({
+    startIndex: 0,
+    endIndex: 11,
+  });
 
-  let numPage =
-    subjects.length % maxBoxPerPage === 0
-      ? subjects.length / maxBoxPerPage
-      : Math.ceil(subjects.length / maxBoxPerPage);
+  let numPages =
+    subjects.length % boxesPerPage === 0 ? subjects.length / boxesPerPage : Math.ceil(subjects.length / boxesPerPage);
 
-  const togglePrevPage = event => {
-    if (currentPage <= 1) {
-      setIsDisabled(true);
-      event.preventDefault();
-    } else {
+  const togglePrevPage = () => {
+    if (currentPage > 0) {
       setCurrentPage(currentPage - 1);
     }
   };
 
-  const toggleNextPage = event => {
-    if (currentPage >= numPage) {
-      setIsDisabled(true);
-      event.preventDefault();
-    } else {
+  const toggleNextPage = () => {
+    if (currentPage < numPages - 1) {
       setCurrentPage(currentPage + 1);
     }
   };
 
   useEffect(() => {
-    setSubjectList(subjects.slice((currentPage - 1) * maxBoxPerPage, currentPage * maxBoxPerPage));
+    setVisibleSubjectsIndex({
+      startIndex: currentPage * boxesPerPage,
+      endIndex:
+        currentPage * boxesPerPage + boxesPerPage - 1 < subjects.length
+          ? currentPage * boxesPerPage + boxesPerPage - 1
+          : subjects.length - 1,
+    });
   }, [currentPage]);
 
   return (
     <div className={style["container"]}>
       <div className={style["prev-btn"]}>
-        <ToggleButton src={"/media/chevron_left.svg"} onClick={event => togglePrevPage(event)} />
+        {currentPage === 0 ? (
+          <ToggleButton src={"/media/chevron_left.svg"} onClick={() => togglePrevPage()} disabled />
+        ) : (
+          <ToggleButton src={"/media/chevron_left.svg"} onClick={() => togglePrevPage()} />
+        )}
       </div>
       <div className={style["subject-container"]}>
-        {subjectList.map((subject, id) => (
-          <SubjectBox id={id} subject={subject} />
-        ))}
+        {subjects.map((subject, i) =>
+          visibleSubjectsIndex.startIndex <= i && i <= visibleSubjectsIndex.endIndex ? (
+            <SubjectBox key={i} subject={subject} />
+          ) : (
+            <SubjectBox key={i} subject={subject} styleObject={{ display: "none" }} />
+          ),
+        )}
       </div>
       <div className={style["next-btn"]}>
-        <ToggleButton src={"/media/chevron_right.svg"} onClick={event => toggleNextPage(event)} />
+        {currentPage === numPages - 1 ? (
+          <ToggleButton src={"/media/chevron_right.svg"} onClick={() => toggleNextPage()} disabled />
+        ) : (
+          <ToggleButton src={"/media/chevron_right.svg"} onClick={() => toggleNextPage()} />
+        )}
       </div>
     </div>
   );
