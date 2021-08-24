@@ -1,9 +1,14 @@
+.profile-bigcontainer {
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .profile-container {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-around;
-  width: 85%;
   background-color: var(--white);
   border-radius: 25px;
 }
@@ -12,6 +17,14 @@
   display: flex;
   align-content: center;
   justify-content: center;
+  margin-top: 8px;
+}
+
+.upload-image-form form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28%;
 }
 
 .upload-image-form img {
@@ -19,7 +32,16 @@
 }
 
 .user-avatar {
-  padding: 3rem 0 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+}
+
+.avatar-image {
+  width: 19rem;
+  border-radius: 25px;
 }
 
 .user-info-row {
@@ -29,6 +51,7 @@
 
 .user-info-display {
   width: 60%;
+  margin-top: 1rem;
   color: var(--black);
 }
 

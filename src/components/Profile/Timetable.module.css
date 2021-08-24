@@ -1,10 +1,8 @@
 .timetable-bigcontainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+  width: 90%;
   height: auto;
+  margin-right: auto;
+  margin-left: auto;
   background: var(--white);
   border-radius: 25px;
 }
@@ -15,7 +13,7 @@
   align-content: center;
   justify-content: center;
   width: 100%;
-  margin: 2.6rem 0;
+  padding: 2.9rem 0;
 }
 
 .navigate-time span {
@@ -33,8 +31,22 @@
   padding: 0 14px;
 }
 
+.day-name {
+  display: flex;
+  color: var(--black);
+  font-family: var(--body-font);
+}
+
+.day-name span {
+  width: calc(98% / 7);
+  text-align: center;
+}
+
 .schedule-container {
-  width: 100%;
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 2.9rem;
 }
 
 .schedule {
@@ -42,7 +54,6 @@
   flex-flow: row wrap;
   flex-shrink: 0;
   align-items: center;
-  width: 100%;
 }
 
 @media only screen and (--viewport-phone) {

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import * as style from "./StudentProfileInfo.module.css";
+import * as style from "./OwnProfileInfo.module.css";
 
-const StudentProfileInfo = () => {
+const OwnProfileInfo = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,15 +12,13 @@ const StudentProfileInfo = () => {
     <div className={style["profile-bigcontainer"]}>
       <div className={style["profile-container"]}>
         <div className={style["user-avatar"]}>
-          <img src={"media/kequing.jpg"} />
+          <img className={style["avatar-image"]} src={"media/kequing.jpg"} alt="" />
           <div className={style["upload-image-form"]}>
+            <form>
+              <input type="file" value={file} onChange={e => setFile(e.target.files[0])} />
+            </form>
             <div>
-              <form>
-                <input type="file" value={file} onChange={e => setFile(e.target.files[0])} />
-              </form>
-            </div>
-            <div>
-              <img src={"media/icons/pencil-edit-button copy.svg"} />
+              <img src={"media/icons/pencil-edit-button copy.svg"} alt="" />
             </div>
           </div>
         </div>
@@ -35,7 +33,7 @@ const StudentProfileInfo = () => {
                 <p>Sup Lo</p>
               </li>
             </ul>
-            <img src={"media/icons/pencil-edit-button copy.svg"} />
+            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" />
             <hr />
           </div>
 
@@ -48,7 +46,7 @@ const StudentProfileInfo = () => {
                 <p>s1234567@rmit.edu.vn</p>
               </li>
             </ul>
-            <img src={"media/icons/pencil-edit-button copy.svg"} />
+            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" />
             <hr />
           </div>
 
@@ -61,7 +59,7 @@ const StudentProfileInfo = () => {
                 <p>*********</p>
               </li>
             </ul>
-            <img src={"media/icons/pencil-edit-button copy.svg"} />
+            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" />
             <hr />
           </div>
 
@@ -74,7 +72,7 @@ const StudentProfileInfo = () => {
                 <p>s1234567@rmit.edu.vn</p>
               </li>
             </ul>
-            <img src={"media/icons/pencil-edit-button copy.svg"} />
+            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" />
             <hr />
           </div>
 
@@ -130,4 +128,4 @@ const StudentProfileInfo = () => {
   );
 };
 
-export default StudentProfileInfo;
+export default OwnProfileInfo;

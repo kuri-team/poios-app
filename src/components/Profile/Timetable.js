@@ -13,6 +13,15 @@ const Timetable = () => {
           <span>Fri, Aug 13th, 2021</span>
         </div>
         <div className={style["schedule-container"]}>
+          <div className={style["day-name"]}>
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+            <span>Sun</span>
+          </div>
           <div className={style["schedule"]}>
             <TimetableDay />
             <TimetableDay />
