@@ -16,6 +16,7 @@
   display: -ms-flex;
   display: -o-flex;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
@@ -29,12 +30,15 @@
 
 .subject-box,
 .subject-box-selected {
-  width: 120px;
+  width: 170px;
   height: 70px;
   margin: 1em;
   padding: 1em;
   color: var(--black);
   background: var(--lighter-gray);
+}
+
+.subject-box {
   border: 5px solid var(--lighter-gray);
 }
 
@@ -48,8 +52,9 @@
   cursor: pointer;
 }
 
-@media only screen and (--viewport-tablet) {
-}
-
 @media only screen and (--viewport-phone) {
+  .subject-box,
+  .subject-box-selected {
+    width: 200px;
+  }
 }

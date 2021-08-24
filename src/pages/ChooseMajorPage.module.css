@@ -24,9 +24,9 @@
 }
 
 .btn {
-  width: 30%;
+  width: 250px;
   margin: 5em auto 7em;
-  padding: 1em 2em;
+  padding: 1.25em 2em;
   color: var(--white);
   font-weight: bold;
   background: var(--cyan);
@@ -40,14 +40,12 @@
   cursor: pointer;
 }
 
-@media only screen and (--viewport-tablet) {
-  .btn {
-    width: 40%;
-  }
-}
-
-@media only screen and (--viewport-phone-small) {
+@media only screen and (--viewport-phone) {
   .subheading {
     margin: 4em 5% 1em;
+  }
+
+  .btn {
+    width: 200px;
   }
 }
