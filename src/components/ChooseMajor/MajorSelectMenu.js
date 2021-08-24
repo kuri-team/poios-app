@@ -10,13 +10,18 @@ const MajorSelectMenu = () => {
   ];
 
   return (
-    <select className={style["select"]} name="major" id="major">
-      {majors.map(major => (
-        <option key={major.code} value={major.code}>
-          {major.name}
-        </option>
-      ))}
-    </select>
+    <div className={style["wrapper"]}>
+      <select className={style["select"]} name="major" id="major">
+        {majors.map(major => (
+          <option key={major.code} value={major.code}>
+            {major.name}
+          </option>
+        ))}
+      </select>
+      <button className={style["button"]}>
+        <img src={"/media/expand_more_black_24dp.svg"} alt="" />
+      </button>
+    </div>
   );
 };
 

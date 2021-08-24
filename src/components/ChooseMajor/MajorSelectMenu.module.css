@@ -1,12 +1,52 @@
-.select {
+.wrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
   width: var(--content-w-extra-narrow);
-  padding: 10px;
+  margin: 0 auto;
+  padding: 10px 10px 10px 14px;
+  color: var(--black);
+  background: var(--white);
   border-radius: 5px;
+}
+
+.wrapper .select {
+  width: var(--content-w-extra-narrow);
+  color: inherit;
+  background-color: inherit;
+  border: none;
   outline: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.wrapper .button {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.wrapper:hover,
+.wrapper .select:hover,
+.wrapper .button:hover {
+  cursor: inherit;
 }
 
 @media only screen and (--viewport-tablet) {
-  .select {
+  .wrapper .select {
     width: var(--content-w-min);
   }
 }
