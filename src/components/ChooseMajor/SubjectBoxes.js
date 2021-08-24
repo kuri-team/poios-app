@@ -36,6 +36,7 @@ const SubjectBoxes = () => {
   const maxBoxPerPage = 12;
 
   const [currentPage, setCurrentPage] = useState(1);
+  const [isDisabled, setIsDisabled] = useState(false);
   const [subjectList, setSubjectList] = useState(subjects.slice(0, maxBoxPerPage));
 
   let numPage =
@@ -45,6 +46,7 @@ const SubjectBoxes = () => {
 
   const togglePrevPage = event => {
     if (currentPage <= 1) {
+      setIsDisabled(true);
       event.preventDefault();
     } else {
       setCurrentPage(currentPage - 1);
@@ -53,6 +55,7 @@ const SubjectBoxes = () => {
 
   const toggleNextPage = event => {
     if (currentPage >= numPage) {
+      setIsDisabled(true);
       event.preventDefault();
     } else {
       setCurrentPage(currentPage + 1);
