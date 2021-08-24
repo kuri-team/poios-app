@@ -66,7 +66,7 @@ const SubjectBoxes = () => {
   return (
     <div className={style["container"]}>
       <div className={style["prev-btn"]}>
-        <ToggleButton src={"/media/chevron-left.svg.png"} onClick={event => togglePrevPage(event)} />
+        <ToggleButton src={"/media/chevron_left.svg"} onClick={event => togglePrevPage(event)} />
       </div>
       <div className={style["subject-container"]}>
         {subjectList.map((subject, id) => (
@@ -74,7 +74,7 @@ const SubjectBoxes = () => {
         ))}
       </div>
       <div className={style["next-btn"]}>
-        <ToggleButton src={"/media/chevron-right.svg.png"} onClick={event => toggleNextPage(event)} />
+        <ToggleButton src={"/media/chevron_right.svg"} onClick={event => toggleNextPage(event)} />
       </div>
     </div>
   );
