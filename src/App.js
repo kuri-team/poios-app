@@ -10,7 +10,7 @@ import "./App.module.css";
 const App = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/studentprofile">
+      <Route path="/profile">
         <OwnProfile />
       </Route>
       <Route path="/tutorprofile">
