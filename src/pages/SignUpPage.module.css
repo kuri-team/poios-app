@@ -32,7 +32,7 @@
 
 /* Back link */
 .back {
-  color: var(--lighter-black);
+  color: var(--gray);
 }
 
 .back:hover {
@@ -54,7 +54,7 @@
     width: 15em;
   }
 
-  .SignUp-box {
+  .signup-box {
     align-items: center;
     background-color: var(--black);
   }

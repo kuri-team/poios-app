@@ -15,29 +15,35 @@
 }
 
 .container:before {
+  content: "Ultra-wide screen";
 }
 
 @media only screen and (--viewport-desktop-large) {
   .container:before {
+    content: "Large screen";
   }
 }
 
 @media only screen and (--viewport-desktop) {
   .container:before {
+    content: "Regular screen";
   }
 }
 
 @media only screen and (--viewport-tablet) {
   .container:before {
+    content: "Tablet screen";
   }
 }
 
 @media only screen and (--viewport-phone) {
   .container:before {
+    content: "Phone screen";
   }
 }
 
 @media only screen and (--viewport-phone-small) {
   .container:before {
+    content: "Small phone screen";
   }
 }
