@@ -17,6 +17,12 @@
   font-size: 16px;
 }
 
+.avatar,
+.avatar-name,
+.avatar-subject:hover {
+  cursor: pointer;
+}
+
 .avatar img {
   width: 14rem;
   border-radius: 50%;

@@ -42,6 +42,10 @@
   font-size: 0.8rem;
 }
 
+.subject-result-element:hover {
+  cursor: pointer;
+}
+
 .subject-general {
   display: flex;
   align-items: center;

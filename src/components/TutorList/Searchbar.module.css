@@ -37,6 +37,10 @@
   height: auto;
 }
 
+.filterIcon:hover {
+  cursor: pointer;
+}
+
 .form-control {
   top: 13.5rem;
   left: 23.5rem;
@@ -47,7 +51,7 @@
 
 .search-container form input[type="text"] {
   box-sizing: border-box;
-  padding: 0 38px;
+  padding: 0 48px;
 }
 
 @media only screen and (--viewport-phone) {
@@ -55,6 +59,11 @@
     box-sizing: border-box;
     padding-left: 2.7rem;
     font-size: 11.5px;
+  }
+
+  .search-container form input[type="text"] {
+    box-sizing: border-box;
+    padding: 0 35px;
   }
 
   .search-icon-container {
