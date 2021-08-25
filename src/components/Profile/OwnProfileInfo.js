@@ -1,7 +1,7 @@
 import { useState } from "react";
 import * as style from "./OwnProfileInfo.module.css";
 
-const OwnProfileInfo = () => {
+const OwnProfileInfo = (editName, editEmail, editPassword) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,54 +25,54 @@ const OwnProfileInfo = () => {
 
         <div className={style["user-info-display"]}>
           <div className={style["user-info-element"]}>
-            <ul className={style["user-info-row"]}>
-              <li>
-                <label htmlFor="name">Name: </label>
-              </li>
-              <li>
+            <div className={style["user-info-row"]}>
+              <label htmlFor="name">Name: </label>
+              <div>
                 <p>Sup Lo</p>
-              </li>
-            </ul>
-            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" />
+              </div>
+            </div>
+            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" onClick={editName} />
             <hr />
           </div>
 
           <div className={style["user-info-element"]}>
-            <ul className={style["user-info-row"]}>
-              <li>
-                <label htmlFor="name">Email: </label>
-              </li>
-              <li>
+            <div className={style["user-info-row"]}>
+              <label htmlFor="name">Email: </label>
+              <div>
                 <p>s1234567@rmit.edu.vn</p>
-              </li>
-            </ul>
-            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" />
+              </div>
+            </div>
+            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" onClick={editEmail} />
             <hr />
           </div>
 
           <div className={style["user-info-element"]}>
-            <ul className={style["user-info-row"]}>
-              <li>
-                <label htmlFor="name">Password: </label>
-              </li>
-              <li>
+            <div className={style["user-info-row"]}>
+              <label htmlFor="name">Password: </label>
+              <div>
                 <p>*********</p>
-              </li>
-            </ul>
-            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" />
+              </div>
+            </div>
+            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" onClick={editPassword} />
             <hr />
           </div>
 
           <div className={style["user-info-element"]}>
-            <ul className={style["user-info-row"]}>
-              <li>
-                <label htmlFor="name">Subject: </label>
-              </li>
-              <li>
-                <p>s1234567@rmit.edu.vn</p>
-              </li>
-            </ul>
-            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" />
+            <div className={style["user-info-row"]}>
+              <label htmlFor="name">Subject: </label>
+              <div>
+                <div className={style["subject-list"]}>
+                  <div>JavaScript</div>
+                  <div>ReactJS</div>
+                  <div>NoSQL</div>
+                  <div>PHP</div>
+                  <div>PHP</div>
+                  <div>PHP</div>
+                  <div>PHP</div>
+                </div>
+              </div>
+            </div>
+            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" onClick={editEmail} />
             <hr />
           </div>
 
