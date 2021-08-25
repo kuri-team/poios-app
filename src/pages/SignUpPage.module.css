@@ -14,15 +14,21 @@
   padding: 2em 2em;
 }
 
+/* Back link */
 .back {
   color: var(--lighter-black);
 }
 
-.SignUp-box {
+.back:hover {
+  color: var(--cyan);
+}
+
+.signup-box {
   padding: 2em 8em;
-  background-color: var(--light-black);
+  background-color: var(--black);
   border-radius: 1em;
 }
+
 /*Responsive*/
 @media only screen and (--viewport-phone) {
   .background {

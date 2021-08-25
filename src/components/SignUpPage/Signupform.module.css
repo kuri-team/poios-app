@@ -69,9 +69,14 @@
 }
 
 @media only screen and (--viewport-phone) {
-  /*User radio*/
-
   .signup-input {
     width: 100%;
+  }
+  .signup-input-field {
+    width: 12em;
+  }
+  .signup-btn {
+    width: 13em;
+    margin-left: 0.5em;
   }
 }

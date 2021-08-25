@@ -6,7 +6,7 @@ const SignUpPage = () => {
   return (
     <Layout className={style["container"]}>
       <img src={"/media/poios_background.jpg"} alt="" className={SignUpstyle["background"]} />
-      <div className={SignUpstyle["SignUp-box"]}>
+      <div className={SignUpstyle["signup-box"]}>
         <div className={SignUpstyle["Poios-logo"]}>
           <img src={"/media/logo_Wordmark_Primary.png"} alt="" className={SignUpstyle["logo-pic"]} />
         </div>
