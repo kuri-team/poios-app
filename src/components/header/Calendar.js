@@ -2,7 +2,7 @@ import * as commonStyle from "./common.module.css";
 
 const Calendar = ({ active }) => {
   return (
-    <>
+    <div className={commonStyle["wrapper"]}>
       <button className={commonStyle["button"]}>
         {active ? <div className={commonStyle["active-indicator"]} /> : null}
         {active ? (
@@ -11,7 +11,7 @@ const Calendar = ({ active }) => {
           <img src={"/media/calendar_black_24dp.svg"} alt={"Notifications"} />
         )}
       </button>
-    </>
+    </div>
   );
 };
 
