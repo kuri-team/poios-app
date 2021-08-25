@@ -1,10 +1,9 @@
 import Layout from "../components/Layout";
-import * as style from "./Home.module.css";
 import * as SignUpstyle from "./SignUpPage.module.css";
 import Signupform from "../components/SignUpPage/Signupform";
 const SignUpPage = () => {
   return (
-    <Layout className={style["container"]}>
+    <Layout className={SignUpstyle["container"]}>
       <img src={"/media/poios_background.jpg"} alt="" className={SignUpstyle["background"]} />
       <div className={SignUpstyle["signup-box"]}>
         <div className={SignUpstyle["Poios-logo"]}>
