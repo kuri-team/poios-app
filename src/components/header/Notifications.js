@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import * as commonStyle from "./common.module.css";
@@ -33,8 +33,30 @@ const Notifications = ({ active }) => {
     },
   ];
 
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (open) {
+      const handleEscapeDown = e => {
+        if (e.key === "Escape") {
+          setOpen(false);
+          window.removeEventListener("keydown", handleEscapeDown);
+        }
+      };
+      window.addEventListener("keydown", handleEscapeDown);
+
+      const handleClickOutside = e => {
+        if (e.target !== ref.current && !ref.current.contains(e.target)) {
+          setOpen(false);
+          window.removeEventListener("click", handleClickOutside);
+        }
+      };
+      window.addEventListener("click", handleClickOutside);
+    }
+  }, [open]);
+
   return (
-    <div className={commonStyle["wrapper"]}>
+    <div className={commonStyle["wrapper"]} ref={ref}>
       <button
         className={commonStyle["button"]}
         onClick={() => {
@@ -53,12 +75,18 @@ const Notifications = ({ active }) => {
           <h2>Notifications</h2>
         </div>
         <div className={commonStyle["content"]}>
-          {notifications.map(notification => (
-            <div className={commonStyle["item"]}>
-              <h2>{notification.title}</h2>
-              <p>{notification.description}</p>
+          {notifications.length === 0 ? (
+            <div className={commonStyle["empty"]}>
+              <p>Nothing new for now...</p>
             </div>
-          ))}
+          ) : (
+            notifications.map(notification => (
+              <div className={commonStyle["item"]}>
+                <h2>{notification.title}</h2>
+                <p>{notification.description}</p>
+              </div>
+            ))
+          )}
         </div>
         <div className={commonStyle["footer"]}>
           <Link to="/">All notifications</Link>
