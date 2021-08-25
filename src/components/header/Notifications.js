@@ -1,7 +1,11 @@
-import * as commonStyle from "./common.module.css";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import * as commonStyle from "./common.module.css";
+
 const Notifications = ({ active }) => {
+  const [open, setOpen] = useState(false);
+
   const notifications = [
     {
       title: "Request Accepted",
@@ -31,7 +35,12 @@ const Notifications = ({ active }) => {
 
   return (
     <div className={commonStyle["wrapper"]}>
-      <button className={commonStyle["button"]}>
+      <button
+        className={commonStyle["button"]}
+        onClick={() => {
+          setOpen(!open);
+        }}
+      >
         {active ? <div className={commonStyle["active-indicator"]} /> : null}
         {active ? (
           <img src={"/media/notifications_active_black_24dp.svg"} alt={"Notifications"} />
@@ -39,7 +48,7 @@ const Notifications = ({ active }) => {
           <img src={"/media/notifications_black_24dp.svg"} alt={"Notifications"} />
         )}
       </button>
-      <div className={commonStyle["menu"]}>
+      <div className={open ? commonStyle["menu"] : [commonStyle["menu"], commonStyle["hidden"]].join(" ")}>
         <div className={commonStyle["header"]}>
           <h2>Notifications</h2>
         </div>

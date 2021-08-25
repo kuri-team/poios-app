@@ -67,7 +67,7 @@
   height: 420px;
   background: var(--white);
   border-radius: 8px;
-  box-shadow: 0 0 120px 0 var(--shadow-black);
+  box-shadow: 0 0 60px 0 var(--shadow-black);
 }
 
 .menu .header {
@@ -94,6 +94,22 @@
 .menu .content {
   height: 340px;
   overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--black) transparent;
+}
+
+.menu .content::-webkit-scrollbar {
+  width: 8px;
+  height: 15px;
+}
+
+.menu .content::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+
+.menu .content::-webkit-scrollbar-thumb:vertical {
+  height: 30px;
+  background-color: var(--gray);
 }
 
 .menu .content .item {
@@ -123,4 +139,8 @@
 
 .menu .footer a {
   color: var(--lighter-black);
+}
+
+.hidden {
+  display: none;
 }
