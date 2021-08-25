@@ -30,6 +30,7 @@
   --content-w-narrow: 1024px;
   --content-w-extra-narrow: 768px;
   --content-w-min: 320px;
+  --header-height: 65px;
 
   /* Transition timing */
   --transition-near-instant: 25ms;

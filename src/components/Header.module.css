@@ -1,0 +1,45 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99999;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 120px;
+  color: var(--black);
+  background: var(--white);
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 3px 12px 0 var(--deep-shadow-black);
+}
+
+.header .main-nav {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .main-nav .brand {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+}
+
+.header .main-nav .brand img {
+  width: auto;
+  height: calc(var(--header-height) * 0.4);
+  transform: translateY(calc(var(--header-height) * 0.05));
+}

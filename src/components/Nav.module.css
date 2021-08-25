@@ -1,11 +1,5 @@
 .nav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 75px;
-  color: var(--black);
-  background: var(--white);
+  padding-left: 36px;
 }
 
 .nav ul {
@@ -23,17 +17,34 @@
 }
 
 .nav ul li {
-  margin: 0 20px;
+  position: relative;
+  margin: 0 18px;
   list-style: none;
 }
 
 .nav ul a {
   color: inherit;
+  font-weight: 700;
   text-decoration: none;
-  opacity: 0.5;
 }
 
-.nav ul a:hover {
-  text-decoration: underline;
-  opacity: 1;
+.nav ul a:before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--black);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-medium-rapid);
+  content: "";
+  will-change: transform;
+}
+
+.nav ul a:hover:before {
+  transform: scaleX(1);
+  transition: var(--transition-medium-rapid);
+  transition-delay: var(--transition-near-instant);
 }
