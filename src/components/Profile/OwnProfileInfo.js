@@ -1,7 +1,7 @@
 import { useState } from "react";
 import * as style from "./OwnProfileInfo.module.css";
 
-const OwnProfileInfo = (editName, editEmail, editPassword) => {
+const OwnProfileInfo = (editAva, editName, editEmail, editPassword, editSubject) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,7 +18,7 @@ const OwnProfileInfo = (editName, editEmail, editPassword) => {
               <input type="file" value={file} onChange={e => setFile(e.target.files[0])} />
             </form>
             <div>
-              <img src={"media/icons/pencil-edit-button copy.svg"} alt="" />
+              <img src={"media/icons/pencil-edit-button copy.svg"} alt="" onClick={editAva} />
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@ const OwnProfileInfo = (editName, editEmail, editPassword) => {
                 </div>
               </div>
             </div>
-            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" onClick={editEmail} />
+            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" onClick={editSubject} />
             <hr />
           </div>
 
