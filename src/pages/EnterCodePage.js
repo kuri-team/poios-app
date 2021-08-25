@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import * as ForgotPwdstyle from "./ForgotPwd.module.css";
 const EnterCodePage = () => {
@@ -6,12 +8,14 @@ const EnterCodePage = () => {
       <img src={"/media/poios_background.jpg"} alt="" className={ForgotPwdstyle["background"]} />
       <div className={ForgotPwdstyle["reset-password-box"]}>
         <div className={ForgotPwdstyle["Poios-logo"]}>
-          <img src={"/media/logo_Wordmark_Primary.png"} alt="" className={ForgotPwdstyle["logo-pic"]} />
+          <img src={"/media/logo_Wordmark_Primary.png"} alt="" className={ForgotPwdstyle["logo-pic-entercode-page"]} />
         </div>
-        <p> A verification code has been sent to your email</p>
-        <a href={""} className={ForgotPwdstyle["change-email"]}>
-          Change email
-        </a>
+        <div className={ForgotPwdstyle["notice"]}>
+          <p> A verification code has been sent to your email</p>
+          <a href={""} className={ForgotPwdstyle["change-email"]}>
+            Change email
+          </a>
+        </div>
         <form className={ForgotPwdstyle["forgot-pass-form"]} method={"post"}>
           <div className={ForgotPwdstyle["forgot-input"]}>
             <label className={ForgotPwdstyle["forgot-input-label"]}>ENTER VERIFICATION CODE</label>
@@ -20,7 +24,9 @@ const EnterCodePage = () => {
           </div>
           <div className={ForgotPwdstyle["forgot-btn-bx"]}>
             <button className={ForgotPwdstyle["deny-btn"]}>Resend</button>
-            <button className={ForgotPwdstyle["accept-btn"]}>Verify</button>
+            <Link to="/UpdatePwd">
+              <button className={ForgotPwdstyle["accept-btn"]}>Verify</button>
+            </Link>
           </div>
         </form>
       </div>

@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import * as ForgotPwdstyle from "./ForgotPwd.module.css";
 const ForgotPwdPage = () => {
@@ -16,7 +18,9 @@ const ForgotPwdPage = () => {
           </div>
           <div className={ForgotPwdstyle["forgot-btn-bx"]}>
             <button className={ForgotPwdstyle["deny-btn"]}>Cancel</button>
-            <button className={ForgotPwdstyle["accept-btn"]}>Send</button>
+            <Link to="/EnterCode">
+              <button className={ForgotPwdstyle["accept-btn"]}>Send</button>
+            </Link>
           </div>
         </form>
       </div>

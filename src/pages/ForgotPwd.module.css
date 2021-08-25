@@ -24,14 +24,15 @@
 }
 
 /*Logo*/
-.logo-pic {
+.logo-pic,
+.logo-pic-entercode-page {
   width: 15em;
   height: 100%;
   padding: 2em 2em;
 }
 
 .change-email {
-  color: var(--lighter-black);
+  color: var(--gray);
 }
 
 /*Reset Password field*/
@@ -43,25 +44,27 @@
 
 .forgot-input-label {
   margin-top: 3em;
+  margin-left: 0.3em;
   font-weight: bold;
 }
 
 .forgot-input-field {
   width: 12.7em;
-  height: 1.8em;
+  height: 2em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  margin-left: 0.3em;
   border: none;
   border-radius: 1em;
 }
 
 .accept-btn,
 .deny-btn {
-  width: 13.6em;
+  width: 13em;
   height: 2.5em;
   margin-top: 1em;
-  margin-left: 1em;
-  padding: 2%;
+  margin-left: 0.3em;
+  padding: 1%;
   color: var(--white);
   font-weight: bold;
   border: none;
@@ -78,4 +81,26 @@
 
 .signup-btn:hover {
   color: var(--blue);
+}
+
+@media only screen and (--viewport-phone) {
+  .background {
+    display: none;
+  }
+  .reset-password-box {
+    background-color: var(--black);
+  }
+  .logo-pic {
+    margin-bottom: 8em;
+  }
+  .logo-pic-entercode-page {
+    margin-bottom: 1em;
+  }
+  .notice {
+    margin-bottom: 5em;
+  }
+
+  .forgot-btn-bx {
+    margin-top: 5em;
+  }
 }
