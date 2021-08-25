@@ -28,6 +28,7 @@ const FilterWindow = ({ filterQuery, setFilterQuery, filteredSubject }) => {
           })}
         </ul>
       </div>
+
       <div className={style["subject-result-element"]}>
         <div className={style["subject-general"]}>
           <img className={style["arrow-drop-down"]} src={"media/icons/arrow_drop_down_black_24dp.svg"} alt="" />
