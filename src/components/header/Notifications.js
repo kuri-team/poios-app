@@ -1,68 +1,49 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import useDetectCloseDropdown from "../../hooks/header/useDetectCloseDropdown";
 import * as commonStyle from "./common.module.css";
 
 const Notifications = ({ active }) => {
   const [open, setOpen] = useState(false);
+  const ref = useDetectCloseDropdown(setOpen, [open]);
 
   const notifications = [
     {
+      link: "/",
       title: "Request Accepted",
       description: "Lacnham accepted your tutor request",
     },
     {
+      link: "/",
       title: "Request Declined",
       description: "miketvo declined your tutor request",
     },
     {
+      link: "/",
       title: "Request Accepted",
       description: "Lacnham accepted your tutor request",
     },
     {
+      link: "/",
       title: "Request Declined",
       description: "miketvo declined your tutor request",
     },
     {
+      link: "/",
       title: "Request Accepted",
       description: "Lacnham accepted your tutor request",
     },
     {
+      link: "/",
       title: "Request Declined",
       description: "miketvo declined your tutor request",
     },
   ];
 
-  const ref = useRef(null);
-
-  useEffect(() => {
-    if (open) {
-      const handleEscapeDown = e => {
-        if (e.key === "Escape") {
-          setOpen(false);
-          window.removeEventListener("keydown", handleEscapeDown);
-        }
-      };
-      window.addEventListener("keydown", handleEscapeDown);
-
-      const handleClickOutside = e => {
-        if (ref.current && !ref.current.contains(e.target)) {
-          setOpen(false);
-          window.removeEventListener("click", handleClickOutside);
-        }
-      };
-      window.addEventListener("click", handleClickOutside);
-    }
-  }, [open]);
-
   return (
     <div className={commonStyle["wrapper"]} ref={ref}>
-      <button
-        className={commonStyle["button"]}
-        onClick={() => {
-          setOpen(!open);
-        }}
-      >
+      <button className={commonStyle["button"]} onClick={() => setOpen(!open)}>
         {active ? <div className={commonStyle["active-indicator"]} /> : null}
         {active ? (
           <img src={"/media/notifications_active_black_24dp.svg"} alt={"Notifications"} />
@@ -82,7 +63,9 @@ const Notifications = ({ active }) => {
           ) : (
             notifications.map(notification => (
               <div className={commonStyle["item"]}>
-                <h2>{notification.title}</h2>
+                <Link to={notification.link}>
+                  <h2>{notification.title}</h2>
+                </Link>
                 <p>{notification.description}</p>
               </div>
             ))

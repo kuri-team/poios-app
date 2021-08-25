@@ -89,6 +89,7 @@
 .menu .header h2 {
   color: var(--cyan);
   font-size: inherit;
+  text-transform: uppercase;
 }
 
 .menu .content {
@@ -126,9 +127,14 @@
 }
 
 .menu .content .item {
+  margin: 1px 0;
   padding: 12px 20px;
   font-size: 12px;
   box-shadow: 0 20px 2px -20px var(--gray);
+}
+
+.menu .content .item a {
+  color: inherit;
 }
 
 .menu .content .item h2 {

@@ -1,9 +1,3 @@
-.button img {
-  width: 22px;
-  height: auto;
-  transform: translateY(1px);
-}
-
 .item {
   display: -webkit-flex;
   display: -moz-flex;
@@ -37,15 +31,12 @@
   margin-top: 0;
 }
 
-.item .content .message,
-.item .content .status {
+.item .content .subject,
+.item .content .time {
   width: 100%;
   margin: 0;
   overflow: hidden !important;
+  color: var(--black);
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-
-.item .content .status {
-  color: var(--gray);
 }
