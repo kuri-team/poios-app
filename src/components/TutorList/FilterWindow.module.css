@@ -1,5 +1,5 @@
 .window-container {
-  width: 180px;
+  width: 190px;
   height: 320px;
   overflow-y: scroll;
   color: var(--black);
@@ -16,9 +16,9 @@
 }
 
 .search-input-container form input[type="text"] {
-  width: calc(100% - (10px * 2));
+  width: calc(100% - 23px - 13px);
   height: 40px;
-  padding: 0 10px;
+  padding: 0 23px 0 13px;
   font-size: 0.8rem;
   border: none;
   border-bottom: 2px solid var(--lighter-gray);
@@ -33,7 +33,7 @@
 .searchIcon {
   position: absolute;
   top: 12px;
-  right: 6px;
+  right: 4px;
   width: 16px;
 }
 
