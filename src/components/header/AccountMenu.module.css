@@ -1,6 +1,6 @@
 .button img {
   width: auto;
-  height: 36px;
+  height: 36px !important;
 }
 
 .menu {

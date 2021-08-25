@@ -46,7 +46,7 @@ const Notifications = ({ active }) => {
       window.addEventListener("keydown", handleEscapeDown);
 
       const handleClickOutside = e => {
-        if (e.target !== ref.current && !ref.current.contains(e.target)) {
+        if (ref.current && !ref.current.contains(e.target)) {
           setOpen(false);
           window.removeEventListener("click", handleClickOutside);
         }
