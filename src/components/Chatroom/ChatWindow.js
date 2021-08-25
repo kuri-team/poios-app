@@ -51,20 +51,46 @@ function ChatWindow() {
             <span className={style["tooltipText-2"]}>Sasuke</span>
           </div>
           <div className={style["function-button"]}>
-            <img className={style["function-icon"]} src={"/media/chatroom-icons/invite-icon.png"} alt="Invite icon" />
+            <img className={style["function-icon"]} src={"/media/chatroom-icons/invite.svg"} alt="Invite icon" />
           </div>
         </div>
       </div>
 
       <div className={style["chat-window-content"]}>
         <div className={style["message-list"]}>
-          <Message text="Test" photoURL={null} displayName="hlinh" createdAt={123123123123123} />
-          <Message text="Test" photoURL={null} displayName="hlinh" createdAt={123123123123123} />
-          <Message text="Test" photoURL={null} displayName="hlinh" createdAt={123123123123123} />
-          <Message text="Test" photoURL={null} displayName="hlinh" createdAt={123123123123123} />
+          <Message
+            text="Test"
+            photoURL={"/media/chatroom-icons/hacker.svg"}
+            displayName="hlinh"
+            createdAt={123123123123123}
+          />
+          <Message
+            text="Test"
+            photoURL={"/media/chatroom-icons/hacker.svg"}
+            displayName="hlinh"
+            createdAt={123123123123123}
+          />
+          <Message
+            text="Test"
+            photoURL={"/media/chatroom-icons/hacker.svg"}
+            displayName="hlinh"
+            createdAt={123123123123123}
+          />
+          <Message
+            text="Test"
+            photoURL={"/media/chatroom-icons/hacker.svg"}
+            displayName="hlinh"
+            createdAt={123123123123123}
+          />
         </div>
-        <form>
-          <div>
+        <form className={style["form"]}>
+          <div className={style["attach-button"]}>
+            <img className={style["function-icon"]} src={"/media/chatroom-icons/photo.svg"} alt="Send photo icon" />
+          </div>
+          <div className={style["attach-button"]}>
+            <img className={style["function-icon"]} src={"/media/chatroom-icons/attachment.svg"} alt="Send file icon" />
+          </div>
+          <div className={style["input-message-content"]}>
             <input
               type="text"
               className={style["input-message"]}
@@ -72,7 +98,9 @@ function ChatWindow() {
               placeholder="Write a message..."
             />
           </div>
-          <div className={style["send-message-button"]}>Send</div>
+          <div className={style["send-button"]}>
+            <img className={style["function-icon"]} src={"/media/chatroom-icons/send.svg"} alt="Send icon" />
+          </div>
         </form>
       </div>
     </div>

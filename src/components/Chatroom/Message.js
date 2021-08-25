@@ -5,12 +5,12 @@ import * as style from "./Chatroom.module.css";
 function Message({ text, displayName, createdAt, photoURL }) {
   return (
     <div className={style["message"]}>
-      <div>
+      <div className={style["message-header"]}>
         <img src={photoURL} alt="avatar" className={style["avatar"]} />
         <div className={style["author"]}>{displayName}</div>
         <div className={style["date"]}>{createdAt}</div>
       </div>
-      <div>
+      <div className={style["message-content"]}>
         <div className={style["texting-message"]}>{text}</div>
       </div>
     </div>
