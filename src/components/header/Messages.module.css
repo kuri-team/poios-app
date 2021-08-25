@@ -1,0 +1,5 @@
+.button img {
+  width: 22px;
+  height: auto;
+  transform: translateY(1px);
+}
