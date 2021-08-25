@@ -1,5 +1,11 @@
-.searchbar {
-  padding: 0 0 2rem 0;
+.searchbar-container {
+  position: relative;
+}
+
+.filter-window {
+  position: absolute;
+  right: calc(100% - 75%);
+  z-index: 1;
 }
 
 .searchbar-h1 {

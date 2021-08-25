@@ -45,9 +45,9 @@
   border-radius: 5px;
 }
 
-.search-container form input {
+.search-container form input[type="text"] {
   box-sizing: border-box;
-  padding-left: 4rem;
+  padding: 0 38px;
 }
 
 @media only screen and (--viewport-phone) {
