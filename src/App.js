@@ -22,6 +22,9 @@ const App = () => (
       <Route path="/UpdatePwd">
         <UpdatePwdPage />
       </Route>
+      <Route path="/">
+        <Home />
+      </Route>
     </Switch>
   </BrowserRouter>
 );

@@ -77,6 +77,12 @@
   font-weight: bold;
   border: none;
   border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.accept-btn:hover,
+.deny-btn:hover {
+  color: var(--dark-blue);
 }
 
 .accept-btn {
