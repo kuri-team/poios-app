@@ -6,7 +6,7 @@ const ForgotPwdPage = () => {
   return (
     <Layout className={ForgotPwdstyle["container"]}>
       <img src={"/media/poios_background.jpg"} alt="" className={ForgotPwdstyle["background"]} />
-      <div className={ForgotPwdstyle["reset-password-box"]}>
+      <div className={ForgotPwdstyle["forgot-password-box"]}>
         <div className={ForgotPwdstyle["Poios-logo"]}>
           <img src={"/media/logo_Wordmark_Primary.png"} alt="" className={ForgotPwdstyle["logo-pic"]} />
         </div>

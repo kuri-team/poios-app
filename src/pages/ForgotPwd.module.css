@@ -31,12 +31,16 @@
   padding: 2em 2em;
 }
 
+/*Notice and change email link */
+.notice {
+  margin-bottom: 3em;
+}
 .change-email {
   color: var(--gray);
 }
 
 /*Reset Password field*/
-.reset-password-box {
+.forgot-password-box {
   padding: 3em 5em;
   background-color: var(--light-black);
   border-radius: 1em;
@@ -52,10 +56,14 @@
   width: 12.7em;
   height: 2em;
   margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
   margin-left: 0.3em;
   border: none;
-  border-radius: 1em;
+  border-radius: 0.5em;
+}
+/*button*/
+.signup-btn {
+  margin-top: 2em;
 }
 
 .accept-btn,
@@ -63,12 +71,12 @@
   width: 13em;
   height: 2.5em;
   margin-top: 1em;
-  margin-left: 0.3em;
+  margin-left: 0.4em;
   padding: 1%;
   color: var(--white);
   font-weight: bold;
   border: none;
-  border-radius: 1em;
+  border-radius: 0.5em;
 }
 
 .accept-btn {
@@ -87,7 +95,7 @@
   .background {
     display: none;
   }
-  .reset-password-box {
+  .forgot-password-box {
     background-color: var(--black);
   }
   .logo-pic {
@@ -102,5 +110,8 @@
 
   .forgot-btn-bx {
     margin-top: 5em;
+  }
+  .forgot-password-box {
+    margin-left: 0.3em;
   }
 }
