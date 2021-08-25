@@ -48,7 +48,7 @@
 }
 
 @media only screen and (--viewport-tablet) {
-  .wrapper .select {
-    width: var(--content-w-min);
+  .wrapper {
+    width: 80%;
   }
 }
