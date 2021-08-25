@@ -14,7 +14,7 @@ const OwnProfileInfo = (editAva, editName, editEmail, editPassword, editSubject)
         <div className={style["user-avatar"]}>
           <img className={style["avatar-image"]} src={"media/kequing.jpg"} alt="" />
           <div className={style["upload-image-form"]}>
-            <form>
+            <form className={style["form-image-upload"]}>
               <input type="file" value={file} onChange={e => setFile(e.target.files[0])} />
             </form>
             <div>

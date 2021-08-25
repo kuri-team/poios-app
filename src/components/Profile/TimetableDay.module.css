@@ -8,6 +8,10 @@
   transition: var(--transition-medium) ease-in 0s;
 }
 
+.box:hover {
+  cursor: pointer;
+}
+
 .box div {
   position: absolute;
   top: 5px;

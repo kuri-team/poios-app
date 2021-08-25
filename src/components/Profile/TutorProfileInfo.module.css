@@ -41,6 +41,11 @@
   fill: var(--blue);
 }
 
+.five-stars img,
+.view-comments:hover {
+  cursor: pointer;
+}
+
 .user-avatar {
   display: flex;
   flex-direction: column;
@@ -101,4 +106,9 @@
 
 .message-button {
   background-color: var(--gray);
+}
+
+.book-button,
+.message-button:hover {
+  cursor: pointer;
 }

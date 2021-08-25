@@ -20,7 +20,7 @@
   margin-top: 8px;
 }
 
-.upload-image-form form {
+.upload-image-form .form-image-upload {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,6 +29,11 @@
 
 .upload-image-form img {
   width: 3rem;
+}
+
+.upload-image-form img,
+.form-image-upload input:hover {
+  cursor: pointer;
 }
 
 .user-avatar {
@@ -76,6 +81,10 @@
   width: 3rem;
 }
 
+.user-info-element img:hover {
+  cursor: pointer;
+}
+
 hr {
   display: block;
   width: 80%;
@@ -90,6 +99,10 @@ hr {
   width: 50%;
   margin-bottom: 1rem;
   padding-left: 1rem;
+}
+
+.subject-title {
+  padding-top: 1rem;
 }
 
 .subject-list > div {
@@ -117,10 +130,18 @@ hr {
   border-radius: 15px;
 }
 
+.savebutton:hover {
+  cursor: pointer;
+}
+
 @media only screen and (--viewport-tablet) {
   .user-info-display {
     width: 100%;
     color: var(--black);
+  }
+
+  .user-info-row label {
+    padding-left: 6rem;
   }
 }
 
@@ -138,7 +159,7 @@ hr {
 
 @media only screen and (--viewport-phone) {
   .user-info-row > div:not(label .subject-list) {
-    margin: 0 0rem 0rem 1.5rem;
+    margin: 0 0rem 0rem 0.8rem;
     padding-left: 0;
   }
 
@@ -148,13 +169,13 @@ hr {
   }
 
   .user-info-row label {
-    padding-left: 3rem;
+    padding-left: 4rem;
   }
 
   .user-info-element img {
     position: absolute;
     top: 0.5rem;
-    right: 1rem;
+    right: 3rem;
     width: 3rem;
   }
 }
