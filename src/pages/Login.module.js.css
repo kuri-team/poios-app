@@ -147,6 +147,13 @@ Responsive
     font-size: 9pt;
     border-radius: 1em;
   }
+
+  .login-btn {
+    width: 10em;
+    height: 3em;
+    font-size: 10pt;
+    border-radius: 1em;
+  }
 }
 
 @media only screen and (--viewport-phone-small) {
