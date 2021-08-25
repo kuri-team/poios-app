@@ -13,13 +13,13 @@ const App = () => (
       <Route path="/page2">
         <Page2 />
       </Route>
-      <Route path="/ForgotPwd">
+      <Route path="/forgotpwd">
         <ForgotPwdPage />
       </Route>
-      <Route path="/EnterCode">
+      <Route path="/entercode">
         <EnterCodePage />
       </Route>
-      <Route path="/UpdatePwd">
+      <Route path="/updatepwd">
         <UpdatePwdPage />
       </Route>
       <Route path="/">

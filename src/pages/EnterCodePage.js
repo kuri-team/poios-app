@@ -5,7 +5,7 @@ import * as ForgotPwdstyle from "./ForgotPwd.module.css";
 const EnterCodePage = () => {
   return (
     <Layout className={ForgotPwdstyle["container"]}>
-      <img src={"/media/poios_background.jpg"} alt="" className={ForgotPwdstyle["background"]} />
+      <img src={"/media/poios_background1.jpg"} alt="" className={ForgotPwdstyle["background"]} />
       <div className={ForgotPwdstyle["forgot-password-box"]}>
         <div className={ForgotPwdstyle["Poios-logo"]}>
           <img src={"/media/logo_Wordmark_Primary.png"} alt="" className={ForgotPwdstyle["logo-pic-entercode-page"]} />
@@ -24,7 +24,7 @@ const EnterCodePage = () => {
           </div>
           <div className={ForgotPwdstyle["forgot-btn-bx"]}>
             <button className={ForgotPwdstyle["deny-btn"]}>Resend</button>
-            <Link to="/UpdatePwd">
+            <Link to="/updatepwd">
               <button className={ForgotPwdstyle["accept-btn"]}>Verify</button>
             </Link>
           </div>
