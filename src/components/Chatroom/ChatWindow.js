@@ -16,13 +16,27 @@ function ChatWindow() {
         </div>
 
         <div className={style["header-button-group"]}>
-          {/*<div className={style["function-button"]}>*/}
-          {/*  <img className={style["function-icon"]} src={null} alt="Chat icon" />*/}
-          {/*</div>*/}
+          <div className={style["leave-button"]}>Leave</div>
+          <div className={style["function-button"]}>
+            <img className={style["function-icon"]} src={"/media/chatroom-icons/chat.svg"} alt="Chat icon" />
+          </div>
+          <div className={style["function-button"]}>
+            <img className={style["function-icon"]} src={"/media/chatroom-icons/screen.svg"} alt="Screen share icon" />
+          </div>
+          <div className={style["function-button"]}>
+            <img
+              className={style["function-icon"]}
+              src={"/media/chatroom-icons/video-camera.svg"}
+              alt="Video call icon"
+            />
+          </div>
+          <div className={style["function-button"]}>
+            <img className={style["function-icon"]} src={"/media/chatroom-icons/call.svg"} alt="Voice call icon" />
+          </div>
 
           <div className={style["tooltip-1"]}>
             <img
-              className={style["avatar"]}
+              className={style["avatar-1"]}
               src="https://www.takadada.com/wp-content/uploads/2019/07/avatar-naruto-2.jpg"
               alt="avatar"
             />
@@ -30,14 +44,14 @@ function ChatWindow() {
           </div>
           <div className={style["tooltip-2"]}>
             <img
-              className={style["avatar"]}
+              className={style["avatar-2"]}
               src="https://i1.sndcdn.com/avatars-000538032087-4mfpm1-t500x500.jpg"
               alt="avatar"
             />
             <span className={style["tooltipText-2"]}>Sasuke</span>
           </div>
           <div className={style["function-button"]}>
-            <img className={style["function-icon"]} src={"/media/invite-icon-white.png"} alt="Invite icon" />
+            <img className={style["function-icon"]} src={"/media/chatroom-icons/invite-icon.png"} alt="Invite icon" />
           </div>
         </div>
       </div>

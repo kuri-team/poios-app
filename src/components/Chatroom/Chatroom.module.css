@@ -179,11 +179,32 @@
   display: flex;
   align-items: center;
 }
+.leave-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 20px;
+  margin-left: 5px;
+  padding: 10px;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #ec3a3aff;
+  border-radius: 10%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.leave-button:hover {
+  background-color: #660000;
+  cursor: pointer;
+}
 .function-button {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  margin-right: 5px;
+  width: 20px;
+  margin-right: 10px;
   margin-left: 5px;
   padding: 10px;
   color: var(--white);
@@ -245,6 +266,20 @@
 
 .tooltip-2:hover .tooltipText-2 {
   visibility: visible;
+}
+
+.avatar-1 {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.avatar-2 {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  border-radius: 50%;
 }
 
 .chat-window-content {
