@@ -43,12 +43,12 @@
 }
 
 .signup-input-field {
-  height: 1.8em;
+  height: 2em;
   margin-top: 0.5em;
   margin-bottom: 1em;
   margin-left: 0.5em;
   border: none;
-  border-radius: 1em;
+  border-radius: 0.5em;
 }
 
 /*Sign up button*/
@@ -61,7 +61,7 @@
   font-weight: bold;
   background-color: var(--cyan);
   border: none;
-  border-radius: 1em;
+  border-radius: 0.5em;
 }
 
 .signup-btn:hover {
