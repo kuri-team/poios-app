@@ -24,7 +24,6 @@
   border-radius: 1em;
 }
 /*Responsive*/
-
 @media only screen and (--viewport-phone) {
   .background {
     display: none;
