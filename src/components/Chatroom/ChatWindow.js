@@ -59,28 +59,64 @@ function ChatWindow() {
       <div className={style["chat-window-content"]}>
         <div className={style["message-list"]}>
           <Message
-            text="Test"
+            text="Hello World!"
             photoURL={"/media/chatroom-icons/hacker.svg"}
-            displayName="hlinh"
-            createdAt={123123123123123}
+            displayName="hlinh_pr0_vjp"
+            createdAt={2021}
           />
           <Message
-            text="Test"
+            text="Hello World!"
             photoURL={"/media/chatroom-icons/hacker.svg"}
-            displayName="hlinh"
-            createdAt={123123123123123}
+            displayName="hlinh_pr0_vjp"
+            createdAt={2021}
           />
           <Message
-            text="Test"
+            text="Hello World!"
             photoURL={"/media/chatroom-icons/hacker.svg"}
-            displayName="hlinh"
-            createdAt={123123123123123}
+            displayName="hlinh_pr0_vjp"
+            createdAt={2021}
           />
           <Message
-            text="Test"
+            text="Hello World!"
             photoURL={"/media/chatroom-icons/hacker.svg"}
-            displayName="hlinh"
-            createdAt={123123123123123}
+            displayName="hlinh_pr0_vjp"
+            createdAt={2021}
+          />
+          <Message
+            text="Hello World!"
+            photoURL={"/media/chatroom-icons/hacker.svg"}
+            displayName="hlinh_pr0_vjp"
+            createdAt={2021}
+          />
+          <Message
+            text="Hello World!"
+            photoURL={"/media/chatroom-icons/hacker.svg"}
+            displayName="hlinh_pr0_vjp"
+            createdAt={2021}
+          />
+          <Message
+            text="Hello World!"
+            photoURL={"/media/chatroom-icons/hacker.svg"}
+            displayName="hlinh_pr0_vjp"
+            createdAt={2021}
+          />
+          <Message
+            text="Hello World!"
+            photoURL={"/media/chatroom-icons/hacker.svg"}
+            displayName="hlinh_pr0_vjp"
+            createdAt={2021}
+          />
+          <Message
+            text="Hello World!"
+            photoURL={"/media/chatroom-icons/hacker.svg"}
+            displayName="hlinh_pr0_vjp"
+            createdAt={2021}
+          />
+          <Message
+            text="Hello World!"
+            photoURL={"/media/chatroom-icons/hacker.svg"}
+            displayName="hlinh_pr0_vjp"
+            createdAt={2021}
           />
         </div>
         <form className={style["form"]}>
