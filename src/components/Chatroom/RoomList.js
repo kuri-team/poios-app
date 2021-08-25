@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import "./Chatroom.css";
+import * as style from "./Chatroom.module.css";
 
 function RoomList() {
   const [isActive, setIsActive] = useState(false);
@@ -11,19 +11,19 @@ function RoomList() {
   };
 
   return (
-    <div className="room-list">
+    <div className={style["room-list"]}>
       <div>
-        <div className="dropdown-btn" onClick={showRoomList}>
+        <div className={style["dropdown-btn"]} onClick={showRoomList}>
           Room List
-          <img src={"/media/down-arrow.svg"} alt="Down arrow" className="down-arrow" />
+          <img src={"/media/down-arrow.svg"} alt="Down arrow" className={style["down-arrow"]} />
         </div>
-        <div className={isActive ? "dropdown-content.active" : "dropdown-content"}>
-          <div className="dropdown-item">Room Narutobaco</div>
-          <div className="dropdown-item">Room Sasuketamin</div>
-          <div className="dropdown-item">Room Uchihahaha</div>
-          <div className="dropdown-item">Room Rasengan</div>
-          <div className="add-room">
-            <img src={"/media/plus-icon.svg"} alt="Plus Icon" className="plus-icon" />
+        <div className={isActive ? style["dropdown-content.active"] : style["dropdown-content"]}>
+          <div className={style["dropdown-item"]}>Room Narutobaco</div>
+          <div className={style["dropdown-item"]}>Room Sasuketamin</div>
+          <div className={style["dropdown-item"]}>Room Uchihahaha</div>
+          <div className={style["dropdown-item"]}>Room Rasengan</div>
+          <div className={style["add-room"]}>
+            <img src={"/media/plus-icon.svg"} alt="Plus Icon" className={style["plus-icon"]} />
             Add room
           </div>
         </div>

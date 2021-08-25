@@ -21,6 +21,7 @@
 .user-info {
   display: flex;
   justify-content: space-between;
+  height: 48px;
   padding: 12px 16px;
   border-bottom: 3px solid var(--gray);
 }
@@ -39,22 +40,21 @@
 }
 
 .sign-out {
-  display: inline-block;
-  height: 50%;
-  margin-top: 5px;
-  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 10px;
+  padding: 10px;
   color: var(--white);
   font-weight: bold;
   font-size: 15px;
-  text-align: center;
-  text-decoration: none;
-  background-color: var(--cyan);
-  border: 3px solid var(--black);
-  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .sign-out:hover {
-  background-color: var(--dark-cyan);
+  color: var(--white);
+  background-color: var(--dark-blue);
   cursor: pointer;
 }
 
@@ -150,7 +150,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
   padding: 0 16px;
   background-color: var(--light-black);
   border-bottom: 3px solid var(--gray);
@@ -165,11 +164,11 @@
   margin: 0;
   color: var(--blue);
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
 }
 .header-description {
   color: var(--white);
-  font-size: 15px;
+  font-size: 10px;
 }
 .course-name {
   color: var(--white);
@@ -180,11 +179,12 @@
   display: flex;
   align-items: center;
 }
-.invite-button {
-  display: flex;
+.function-button {
+  display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  margin-right: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
   padding: 10px;
   color: var(--white);
   font-weight: bold;
@@ -193,10 +193,15 @@
   transition: 0.3s;
 }
 
-.invite-button:hover {
+.function-button:hover {
   color: var(--white);
   background-color: var(--dark-blue);
   cursor: pointer;
+}
+.function-icon {
+  width: auto;
+  height: 20px;
+  margin-right: 5px;
 }
 
 .tooltip-1 {
@@ -242,8 +247,24 @@
   visibility: visible;
 }
 
-.invite-icon {
-  width: auto;
-  height: 20px;
-  margin-right: 5px;
+.chat-window-content {
+  height: calc(100% - 100px);
+}
+
+/*Message.js*/
+.message {
+  margin-bottom: 10px;
+}
+
+.message .author {
+  margin-left: 5px;
+  font-weight: bold;
+}
+.message .date {
+  margin-left: 10px;
+  color: var(--light-gray);
+  font-size: 11px;
+}
+.message .texting-message {
+  margin-left: 30px;
 }
