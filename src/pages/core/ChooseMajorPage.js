@@ -1,6 +1,6 @@
-import Layout from "../components/Layout";
-import SubjectBoxes from "../components/ChooseMajor/SubjectBoxes";
-import MajorSelectMenu from "../components/ChooseMajor/MajorSelectMenu";
+import Layout from "../../components/Layout";
+import SubjectBoxes from "../../components/ChooseMajor/SubjectBoxes";
+import MajorSelectMenu from "../../components/ChooseMajor/MajorSelectMenu";
 
 import * as style from "./ChooseMajorPage.module.css";
 

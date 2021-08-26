@@ -1,5 +1,5 @@
-import Layout from "../components/Layout";
-import * as commonStyle from "./Home.module.css";
+import Layout from "../../components/Layout";
+import * as commonStyle from "../Home.module.css";
 import * as style from "./Login.module.js.css";
 
 const LoginPage = () => {

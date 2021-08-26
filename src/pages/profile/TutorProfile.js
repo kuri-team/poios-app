@@ -1,10 +1,10 @@
-import Layout from "../components/Layout";
-import TutorProfileInfo from "../components/Profile/TutorProfileInfo";
-import Timetable from "../components/Profile/Timetable";
-import Reviewer from "../components/Profile/Reviewer";
+import Layout from "../../components/Layout";
+import TutorProfileInfo from "../../components/Profile/TutorProfileInfo";
+import Timetable from "../../components/Profile/Timetable";
+import Reviewer from "../../components/Profile/Reviewer";
 
 import * as style from "./TutorProfile.module.css";
-import OwnProfileInfo from "../components/Profile/OwnProfileInfo";
+import OwnProfileInfo from "../../components/Profile/OwnProfileInfo";
 
 const TutorProfile = () => {
   return (

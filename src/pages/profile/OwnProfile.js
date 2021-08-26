@@ -1,7 +1,7 @@
-import Layout from "../components/Layout";
-import OwnProfileInfo from "../components/Profile/OwnProfileInfo";
-import Timetable from "../components/Profile/Timetable";
-import TimetableDay from "../components/Profile/TimetableDay";
+import Layout from "../../components/Layout";
+import OwnProfileInfo from "../../components/Profile/OwnProfileInfo";
+import Timetable from "../../components/Profile/Timetable";
+import TimetableDay from "../../components/Profile/TimetableDay";
 
 import * as style from "./OwnProfile.module.css";
 

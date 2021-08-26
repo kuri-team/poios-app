@@ -1,8 +1,8 @@
-import Sidebar from "../components/Chatroom/Sidebar";
-import ChatWindow from "../components/Chatroom/ChatWindow";
+import Sidebar from "../../components/Chatroom/Sidebar";
+import ChatWindow from "../../components/Chatroom/ChatWindow";
 
 import * as style from "./Chatroom.module.css";
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 
 const Chatroom = () => {
   return (

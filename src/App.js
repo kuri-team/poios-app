@@ -2,16 +2,16 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Page2 from "./pages/Page2";
-import SignUpPage from "./pages/SignUpPage";
-import LoginPage from "./pages/Login";
-import ChooseMajorPage from "./pages/ChooseMajorPage";
-import ForgotPwdPage from "./pages/ForgotPwdPage";
-import EnterCodePage from "./pages/EnterCodePage";
-import UpdatePwdPage from "./pages/UpdatePwdPage";
-import OwnProfile from "./pages/OwnProfile";
-import TutorProfile from "./pages/TutorProfile";
-import Chatroom from "./pages/Chatroom";
-import TutorList from "./pages/TutorList";
+import SignUpPage from "./pages/signup/SignUpPage";
+import LoginPage from "./pages/authentication/Login";
+import ChooseMajorPage from "./pages/core/ChooseMajorPage";
+import ForgotPwdPage from "./pages/authentication/ForgotPwdPage";
+import EnterCodePage from "./pages/authentication/EnterCodePage";
+import UpdatePwdPage from "./pages/authentication/UpdatePwdPage";
+import OwnProfile from "./pages/profile/OwnProfile";
+import TutorProfile from "./pages/profile/TutorProfile";
+import Chatroom from "./pages/core/Chatroom";
+import TutorList from "./pages/core/TutorList";
 
 import "./App.module.css";
 
@@ -21,13 +21,10 @@ const App = () => (
       <Route path="/chatroom">
         <Chatroom />
       </Route>
-      <Route path="/page2">
-        <Page2 />
-      </Route>
       <Route path="/profile">
         <OwnProfile />
       </Route>
-      <Route path="/tutorprofile">
+      <Route path="/tutor-profile">
         <TutorProfile />
       </Route>
       <Route path="/tutors">

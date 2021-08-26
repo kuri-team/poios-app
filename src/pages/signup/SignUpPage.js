@@ -1,6 +1,6 @@
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 import * as SignUpstyle from "./SignUpPage.module.css";
-import Signupform from "../components/SignUpPage/Signupform";
+import Signupform from "../../components/SignUpPage/Signupform";
 const SignUpPage = () => {
   return (
     <Layout className={SignUpstyle["container"]}>
