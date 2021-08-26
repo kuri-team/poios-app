@@ -39,6 +39,7 @@
   clear: both;
 }
 .signup-input-label {
+  margin-left: 2em;
   font-weight: bold;
 }
 
@@ -46,7 +47,7 @@
   height: 2em;
   margin-top: 0.5em;
   margin-bottom: 1em;
-  margin-left: 0.5em;
+  margin-left: 2em;
   border: none;
   border-radius: 0.5em;
 }
@@ -74,10 +75,13 @@
     width: 100%;
   }
   .signup-input-field {
-    width: 12em;
+    width: 15em;
+    margin-right: 2em;
+  }
+  .signup-input-label {
+    margin-right: 2em;
   }
   .signup-btn {
     width: 13em;
-    margin-left: 0.5em;
   }
 }
