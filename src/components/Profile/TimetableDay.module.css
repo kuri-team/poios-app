@@ -1,0 +1,22 @@
+.box {
+  position: relative;
+  width: calc(95% / 7.8);
+  height: 8vh;
+  margin: calc((95% / 7.4) - (95% / 8));
+  background-color: var(--light-gray);
+  border-radius: 3px;
+  transition: var(--transition-medium) ease-in 0s;
+}
+
+.box:hover {
+  cursor: pointer;
+}
+
+.box div {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+  color: var(--black);
+  font-size: 1.2rem;
+}

@@ -64,6 +64,10 @@ Buttons
   border-radius: 1em;
 }
 
+.landing-btn:hover {
+  cursor: pointer;
+}
+
 .landing-btn-box {
   margin: 2em;
   padding: 2em;
