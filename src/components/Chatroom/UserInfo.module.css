@@ -1,40 +1,68 @@
 /*UserInfo.js*/
 .user-info {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   height: 48px;
   padding: 12px 16px;
-  border-bottom: 3px solid var(--gray);
+  background: var(--black);
 }
+
+.user-info a {
+  text-decoration: none;
+}
+
 .user-info-content {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
   display: flex;
+  align-items: center;
 }
+
 .avatar {
   width: 50px;
   height: 50px;
   vertical-align: middle;
   border-radius: 50%;
 }
+
 .username {
+  height: min-content;
   margin-left: 15px;
   color: var(--white);
 }
 
 .sign-out {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-right: 10px;
   padding: 10px;
   color: var(--white);
-  font-weight: bold;
+  font-weight: 400;
   font-size: 15px;
+  transform: scale(1);
   cursor: pointer;
-  transition: 0.3s;
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-extra-rapid);
+  will-change: transform;
 }
 
 .sign-out:hover {
-  color: var(--white);
-  background-color: var(--dark-blue);
+  transform: scale(1.1);
   cursor: pointer;
+  transition: var(--transition-extra-rapid);
+}
+
+.sign-out:active {
+  transform: scale(1);
 }

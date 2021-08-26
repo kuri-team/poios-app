@@ -1,14 +1,53 @@
-import React from "react";
-import Message from "./Message";
+import { Link } from "react-router-dom";
 
+import Message from "./Message";
 import * as style from "./ChatWindow.module.css";
 
-function ChatWindow() {
+function ChatWindow({ roomName }) {
+  const messages = [
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
+  ];
+
   return (
     <div className={style["chat-window"]}>
       <div className={style["chat-window-header"]}>
         <div className={style["header-info"]}>
-          <p className={style["header-title"]}>Room name</p>
+          <h1 className={style["header-title"]}>{roomName}</h1>
         </div>
 
         <div className={style["header-button-group"]}>
@@ -29,81 +68,18 @@ function ChatWindow() {
           <div className={style["function-button"]}>
             <img className={style["function-icon"]} src={"/media/chatroom-icons/call.svg"} alt="Voice call icon" />
           </div>
-          <div className={style["tooltip"]}>
+          <Link to="/" className={style["profile-wrapper"]}>
             <img
-              className={style["avatar-1"]}
+              className={style["avatar"]}
               src="https://i1.sndcdn.com/avatars-000538032087-4mfpm1-t500x500.jpg"
               alt="avatar"
             />
-            <span className={style["tooltipText"]}>Sasuke</span>
-          </div>
+          </Link>
         </div>
       </div>
 
-      <div className={style["chat-window-content"]}>
-        <div className={style["message-list"]}>
-          <Message
-            text="Hello World!"
-            photoURL={"/media/chatroom-icons/hacker.svg"}
-            displayName="hlinh_pr0_vjp"
-            createdAt={2021}
-          />
-          <Message
-            text="Hello World!"
-            photoURL={"/media/chatroom-icons/hacker.svg"}
-            displayName="hlinh_pr0_vjp"
-            createdAt={2021}
-          />
-          <Message
-            text="Hello World!"
-            photoURL={"/media/chatroom-icons/hacker.svg"}
-            displayName="hlinh_pr0_vjp"
-            createdAt={2021}
-          />
-          <Message
-            text="Hello World!"
-            photoURL={"/media/chatroom-icons/hacker.svg"}
-            displayName="hlinh_pr0_vjp"
-            createdAt={2021}
-          />
-          <Message
-            text="Hello World!"
-            photoURL={"/media/chatroom-icons/hacker.svg"}
-            displayName="hlinh_pr0_vjp"
-            createdAt={2021}
-          />
-          <Message
-            text="Hello World!"
-            photoURL={"/media/chatroom-icons/hacker.svg"}
-            displayName="hlinh_pr0_vjp"
-            createdAt={2021}
-          />
-          <Message
-            text="Hello World!"
-            photoURL={"/media/chatroom-icons/hacker.svg"}
-            displayName="hlinh_pr0_vjp"
-            createdAt={2021}
-          />
-          <Message
-            text="Hello World!"
-            photoURL={"/media/chatroom-icons/hacker.svg"}
-            displayName="hlinh_pr0_vjp"
-            createdAt={2021}
-          />
-          <Message
-            text="Hello World!"
-            photoURL={"/media/chatroom-icons/hacker.svg"}
-            displayName="hlinh_pr0_vjp"
-            createdAt={2021}
-          />
-          <Message
-            text="Hello World!"
-            photoURL={"/media/chatroom-icons/hacker.svg"}
-            displayName="hlinh_pr0_vjp"
-            createdAt={2021}
-          />
-        </div>
-      </div>
+      <div className={style["chat-window-content"]}></div>
+
       <form className={style["form"]}>
         <div className={style["attach-button"]}>
           <img className={style["function-icon"]} src={"/media/chatroom-icons/photo.svg"} alt="Send photo icon" />

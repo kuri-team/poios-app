@@ -1,6 +1,8 @@
 /*ChatWindow.js*/
 .chat-window {
-  height: 100vh;
+  grid-row: 1;
+  grid-column: 2;
+  height: 100%;
   color: var(--black);
   background-color: var(--white);
 }
@@ -10,9 +12,8 @@
   align-items: center;
   justify-content: space-between;
   height: 72px;
-  padding: 0 16px;
-  background-color: var(--light-black);
-  border-bottom: 3px solid var(--gray);
+  padding: 0 42px;
+  background-color: var(--black);
 }
 
 .header-info {
@@ -22,7 +23,7 @@
 }
 .header-title {
   margin: 0;
-  color: var(--blue);
+  color: var(--white);
   font-weight: bold;
   font-size: 20px;
 }
@@ -45,18 +46,20 @@
   justify-content: space-between;
   margin-right: 17px;
   margin-left: 5px;
-  padding: 10px;
+  padding: 10px 40px;
   color: var(--white);
-  font-weight: bold;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: var(--body-font);
   background-color: #ec3a3aff;
+  border: none;
   border-radius: 20px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .leave-button:hover {
-  background-color: #660000;
+  background-color: #c00303;
   cursor: pointer;
 }
 .function-button {
@@ -86,29 +89,11 @@
   margin-right: 5px;
 }
 
-.tooltip {
+.profile-wrapper {
   display: inline-flex;
 }
 
-.tooltip .tooltipText {
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-  width: auto;
-  padding: 5px 0;
-  color: var(--white);
-  font-size: 15px;
-  text-align: center;
-  background-color: var(--dark-cyan);
-  border-radius: 6px;
-  visibility: hidden;
-}
-
-.tooltip:hover .tooltipText {
-  visibility: visible;
-}
-
-.avatar-1 {
+.avatar {
   width: 30px;
   height: 30px;
   vertical-align: middle;
@@ -118,9 +103,27 @@
 .chat-window-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  height: calc(86% - 72px);
+  box-sizing: border-box;
+  height: calc(100% - 144px);
   padding: 15px;
+  overflow-y: scroll;
+  background: var(--light-black);
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+.chat-window-content::-webkit-scrollbar {
+  width: 8px;
+  height: 15px;
+}
+
+.chat-window-content::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+
+.chat-window-content::-webkit-scrollbar-thumb:vertical {
+  height: 30px;
+  background-color: var(--scrollbar-thumb);
 }
 
 .message-list {
@@ -132,10 +135,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  padding: 5px 2px 2px 0;
-  background-color: var(--light-black);
-  border-top: 5px solid black;
+  height: 72px;
+  padding: 0 2px;
+  background-color: var(--black);
 }
 
 .input-message-content {

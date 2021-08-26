@@ -1,5 +1,7 @@
 /*Sidebar.js*/
 .side-bar {
-  height: 100vh;
-  background-color: var(--black);
+  grid-row: 1;
+  grid-column: 1;
+  background-color: var(--alt-black);
+  box-shadow: 3px 0 6px 0 var(--deep-shadow-black);
 }
