@@ -10,13 +10,20 @@ import EnterCodePage from "./pages/EnterCodePage";
 import UpdatePwdPage from "./pages/UpdatePwdPage";
 import OwnProfile from "./pages/OwnProfile";
 import TutorProfile from "./pages/TutorProfile";
+import Chatroom from "./pages/Chatroom";
+import TutorList from "./pages/TutorList";
 
 import "./App.module.css";
-import TutorList from "./pages/TutorList";
 
 const App = () => (
   <BrowserRouter>
     <Switch>
+      <Route path="/chatroom">
+        <Chatroom />
+      </Route>
+      <Route path="/page2">
+        <Page2 />
+      </Route>
       <Route path="/profile">
         <OwnProfile />
       </Route>
