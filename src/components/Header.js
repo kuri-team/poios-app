@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-import Nav from "./Nav";
-import Notifications from "./header/Notifications";
-import Messages from "./header/Messages";
-import Calendar from "./header/Calendar";
-import AccountMenu from "./header/AccountMenu";
+import Nav from "./Header/Nav";
+import Notifications from "./Header/Notifications";
+import Messages from "./Header/Messages";
+import Calendar from "./Header/Calendar";
+import AccountMenu from "./Header/AccountMenu";
 import * as style from "./Header.module.css";
 
 const Header = () => (
