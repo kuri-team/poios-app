@@ -70,3 +70,19 @@
     margin: 0 14px 0 8px;
   }
 }
+
+@media only screen and (--viewport-tablet) {
+  .header {
+    color: var(--white);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .header .main-nav {
+    display: none;
+  }
+
+  .header .controls {
+    display: none;
+  }
+}
