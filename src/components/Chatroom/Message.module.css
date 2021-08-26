@@ -62,6 +62,7 @@
 }
 
 .message .body .from-me {
+  float: right;
   background: var(--blue);
   border-radius: 16px 0 16px 16px;
 }
