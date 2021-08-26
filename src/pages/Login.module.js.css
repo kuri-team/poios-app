@@ -1,0 +1,170 @@
+.login-box {
+  margin-right: 40rem;
+  padding: 1em 2em;
+  background: var(--light-black);
+  border-radius: 1em;
+}
+
+.login-field-wrapper {
+  margin: 0.5em 0;
+}
+
+/*
+Brand
+ */
+.brand-display {
+  margin: 3em 3em 2em;
+  padding: 2em 2em 0;
+}
+
+.brand-name {
+  width: 14em;
+  height: 3.5em;
+  margin: 2em 0;
+}
+
+.go-back {
+  margin: 1em;
+  padding: 0.5em;
+  color: var(--gray);
+  font-weight: bold;
+  font-size: 9pt;
+}
+
+/*
+Login fields
+ */
+.login-field-input {
+  height: 2em;
+  margin: 0.1em 0;
+  padding: 0.5em;
+  font-weight: bold;
+  font-size: 10pt;
+  text-align: center;
+  border: none;
+  border-radius: 1em;
+  outline: none;
+}
+
+.login-field-label {
+  font-weight: bold;
+  font-size: 9pt;
+}
+
+.forgot-password {
+  color: var(--gray);
+  font-weight: bold;
+  font-size: 8pt;
+  text-decoration: none;
+  background: transparent;
+}
+/*
+Buttons
+ */
+
+.login-btn-box {
+  margin: 2em;
+  padding: 2em;
+}
+
+.login-btn {
+  width: 12em;
+  height: 3em;
+  margin: 1em;
+  padding: 1em;
+  color: var(--white);
+  font-weight: bolder;
+  font-size: 7pt;
+  background: var(--cyan);
+  border: none;
+  border-radius: 1em;
+}
+
+.login-btn:hover {
+  background: var(--blue);
+}
+
+/*
+Responsive
+ */
+
+@media only screen and (--viewport-tablet) {
+  .background {
+    display: none;
+  }
+
+  .brand-display {
+    margin: 3em 3em 0;
+    padding: 2em 2em 0;
+  }
+
+  .brand-name {
+    width: 40em;
+    height: 10em;
+  }
+
+  .go-back {
+    display: none;
+  }
+
+  .login-box {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: var(--black);
+    border-radius: 0;
+  }
+
+  .login-field-box {
+    margin: 1rem 2rem 5rem;
+    padding: 5rem;
+  }
+
+  .login-field-input {
+    width: 20em;
+    height: 3em;
+    margin: 0.5em;
+    font-size: 12pt;
+    border-radius: 2em;
+  }
+
+  .login-btn {
+    width: 22em;
+    height: 4em;
+    border-radius: 1.5em;
+  }
+}
+
+@media only screen and (--viewport-phone) {
+  .brand-name {
+    width: 14em;
+    height: 3.5em;
+  }
+
+  .login-field-box {
+    margin: 0;
+    padding: 3rem;
+  }
+
+  .login-field-input {
+    width: 16em;
+    height: 2em;
+    margin: 0.5em;
+    font-size: 9pt;
+    border-radius: 1em;
+  }
+
+  .login-btn {
+    width: 10em;
+    height: 3em;
+    font-size: 10pt;
+    border-radius: 1em;
+  }
+}
+
+@media only screen and (--viewport-phone-small) {
+  .login-btn-box {
+    margin: 0;
+    padding: 0.2em;
+  }
+}
