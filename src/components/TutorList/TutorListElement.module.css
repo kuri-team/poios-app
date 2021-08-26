@@ -1,0 +1,59 @@
+.tutor-element {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin: 1.8rem 3rem;
+}
+
+.avatar,
+.avatar-name,
+.avatar-subject {
+  text-align: center;
+}
+
+.avatar-subject {
+  font-size: 16px;
+}
+
+.avatar,
+.avatar-name,
+.avatar-subject:hover {
+  cursor: pointer;
+}
+
+.avatar img {
+  width: 14rem;
+  border-radius: 50%;
+}
+
+@media only screen and (--viewport-tablet) {
+  .tutor-element {
+    margin: 1.8rem 2rem;
+  }
+}
+
+@media only screen and (--viewport-phone) {
+  .tutor-element {
+    margin: 1.8rem 1.8rem;
+  }
+
+  .avatar img {
+    width: 9.5rem;
+  }
+
+  .avatar-subject {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (--viewport-phone-small) {
+  .avatar img {
+    width: 10rem;
+  }
+
+  .tutor-element {
+    margin: 1.8rem 1rem;
+  }
+}

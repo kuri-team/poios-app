@@ -1,0 +1,47 @@
+.subject-box,
+.subject-box-selected {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 70px;
+  margin: 1em;
+  padding: 1em;
+  color: var(--black);
+  background: var(--white);
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-medium-rapid);
+  will-change: background, border;
+}
+
+.subject-box {
+  border: 5px solid var(--white);
+}
+
+.subject-box:hover {
+  border: 5px solid var(--gray);
+}
+
+.subject-box-selected {
+  border: 5px solid var(--cyan);
+}
+
+.subject-box:hover,
+.subject-box-selected:hover {
+  background: var(--gray);
+  cursor: pointer;
+  transition: var(--transition-rapid);
+  transition-delay: var(--transition-near-instant);
+}
+
+@media only screen and (--viewport-phone) {
+  .subject-box,
+  .subject-box-selected {
+    width: 200px;
+  }
+}

@@ -1,0 +1,41 @@
+.container,
+.prev-btn,
+.next-btn,
+.subject-container {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  margin-top: 2em;
+}
+
+.subject-container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+@media only screen and (--viewport-phone) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .subject-container {
+    order: 1;
+    margin-bottom: 2em;
+  }
+
+  .prev-btn {
+    order: 2;
+    margin-right: 35%;
+  }
+  .next-btn {
+    order: 3;
+  }
+}

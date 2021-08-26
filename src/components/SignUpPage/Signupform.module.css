@@ -1,0 +1,87 @@
+/*Picture upload*/
+.profile-pic {
+  width: 6em;
+  height: 100%;
+  padding: 2em;
+  border-radius: 50%;
+}
+.upload-pic {
+  display: none;
+}
+
+/*User radio*/
+.radio-box {
+  display: inline-block;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.user-radiobox {
+  display: inline;
+  float: left;
+  padding: 0.3em;
+}
+
+/*Sign up field*/
+.signup-form {
+  max-width: 100%;
+  text-align: center;
+}
+
+.signup-input {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+.row-2-input:after {
+  display: table;
+  clear: both;
+}
+.signup-input-label {
+  margin-left: 2em;
+  font-weight: bold;
+}
+
+.signup-input-field {
+  height: 2em;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  margin-left: 2em;
+  border: none;
+  border-radius: 0.5em;
+}
+
+/*Sign up button*/
+.signup-btn {
+  align-items: center;
+  width: 13em;
+  height: 2.5em;
+  margin-top: 1em;
+  color: var(--white);
+  font-weight: bold;
+  background-color: var(--cyan);
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.signup-btn:hover {
+  color: var(--blue);
+}
+
+@media only screen and (--viewport-phone) {
+  .signup-input {
+    width: 100%;
+  }
+  .signup-input-field {
+    width: 15em;
+    margin-right: 2em;
+  }
+  .signup-input-label {
+    margin-right: 2em;
+  }
+  .signup-btn {
+    width: 13em;
+  }
+}

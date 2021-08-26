@@ -1,0 +1,54 @@
+.reviewer-element-bigcontainer {
+  width: 45%;
+}
+
+.reviewer-element-container {
+  padding-left: 1.6rem;
+}
+
+.comment p {
+  color: var(--black);
+}
+
+.avatar-image {
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.avatar-name-star {
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.name-star {
+  padding-left: 1rem;
+}
+
+.name-star span {
+  color: var(--black);
+  font-size: 0.9rem;
+}
+
+.five-stars {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-top: 4px;
+}
+
+.five-stars img {
+  width: 20px;
+  padding-right: 5px;
+}
+
+@media only screen and (--viewport-phone) {
+  .reviewer-element-bigcontainer {
+    width: auto;
+  }
+
+  .reviewer-element-container {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}

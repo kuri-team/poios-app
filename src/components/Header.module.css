@@ -1,0 +1,90 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99999;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 120px;
+  color: var(--black);
+  background: var(--white);
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 3px 12px 0 var(--deep-shadow-black);
+}
+
+.header .main-nav {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .main-nav .brand {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+}
+
+.header .main-nav .brand img {
+  width: auto;
+  height: calc(var(--header-height) * 0.45);
+  transform: translateY(calc(var(--header-height) * 0.05));
+}
+
+.header .controls {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .controls .divider {
+  width: 1px;
+  height: 36px;
+  margin: 0 18px 0 14px;
+  background: var(--black);
+}
+
+@media only screen and (--viewport-desktop) {
+  .header {
+    padding: 0 84px;
+  }
+
+  .header .controls .divider {
+    margin: 0 14px 0 8px;
+  }
+}
+
+@media only screen and (--viewport-tablet) {
+  .header {
+    justify-content: flex-end;
+    padding: 0 20px;
+    color: var(--white);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .header .main-nav {
+    display: none;
+  }
+
+  .header .controls {
+    display: none;
+  }
+}

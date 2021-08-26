@@ -1,0 +1,171 @@
+.wrapper {
+  position: relative;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+}
+
+.button {
+  position: relative;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin: 0 6px;
+  padding: 6px;
+  background: transparent;
+  border: none;
+  outline: none;
+  transform: scale(1);
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-medium-rapid);
+  will-change: tranform;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: var(--transition-medium-rapid);
+  transition-delay: 0ms;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.button img {
+  width: auto;
+  height: 24px;
+}
+
+.button .active-indicator {
+  position: absolute;
+  top: -5%;
+  left: calc(50% - 3px);
+  width: 6px;
+  height: 6px;
+  -webkit-background-image: linear-gradient(30deg, var(--blue), var(--cyan));
+  -moz-background-image: linear-gradient(30deg, var(--blue), var(--cyan));
+  -o-background-image: linear-gradient(30deg, var(--blue), var(--cyan));
+  background-image: linear-gradient(30deg, var(--blue), var(--cyan));
+  border-radius: 50%;
+}
+
+.menu {
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 160px);
+  width: 320px;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 0 60px 0 var(--shadow-black);
+}
+
+.menu .header {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+.menu .header {
+  font-size: 14px;
+  box-shadow: 0 0 8px 0 var(--shadow-black);
+}
+
+.menu .header h2 {
+  color: var(--cyan);
+  font-size: inherit;
+  text-transform: uppercase;
+}
+
+.menu .content {
+  min-height: 120px;
+  max-height: 340px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--black) transparent;
+}
+
+.menu .content::-webkit-scrollbar {
+  width: 8px;
+  height: 15px;
+}
+
+.menu .content::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+
+.menu .content::-webkit-scrollbar-thumb:vertical {
+  height: 30px;
+  background-color: var(--gray);
+}
+
+.menu .content .empty {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  color: var(--gray);
+}
+
+.menu .content .item {
+  margin: 1px 0;
+  padding: 12px 20px;
+  font-size: 12px;
+  box-shadow: 0 20px 2px -20px var(--gray);
+}
+
+.menu .content .item a {
+  color: inherit;
+}
+
+.menu .content .item h2 {
+  font-weight: 500;
+  font-size: 14px;
+  font-family: var(--body-font);
+}
+
+.menu .footer {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  font-size: 12px;
+  box-shadow: 0 0 8px 0 var(--shadow-black);
+}
+
+.menu .footer a {
+  color: var(--lighter-black);
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (--viewport-desktop) {
+  .button {
+    margin: 0;
+  }
+}
