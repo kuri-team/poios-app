@@ -5,13 +5,22 @@ import Page2 from "./pages/Page2";
 import ForgotPwdPage from "./pages/ForgotPwdPage";
 import EnterCodePage from "./pages/EnterCodePage";
 import UpdatePwdPage from "./pages/UpdatePwdPage";
+import OwnProfile from "./pages/OwnProfile";
+import TutorProfile from "./pages/TutorProfile";
+
 import "./App.module.css";
+import TutorList from "./pages/TutorList";
 
 const App = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/page2">
-        <Page2 />
+      <Route path="/profile">
+        <OwnProfile />
+      </Route>
+      <Route path="/tutorprofile">
+        <TutorProfile />
+      <Route path="/tutors">
+        <TutorList />
       </Route>
       <Route path="/forgotpwd">
         <ForgotPwdPage />

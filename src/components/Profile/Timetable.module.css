@@ -1,0 +1,68 @@
+.timetable-bigcontainer {
+  width: 90%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  background: var(--white);
+  border-radius: 25px;
+}
+
+.navigate-time {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2.9rem 0;
+}
+
+.navigate-time span {
+  margin-top: 0.5rem;
+  padding-left: 3rem;
+  color: black;
+  font-size: 1.4rem;
+  font-family: var(--header-font);
+}
+
+.left-arrow,
+.right-arrow {
+  width: 37px;
+  height: auto;
+  padding: 0 14px;
+}
+
+.left-arrow,
+.right-arrow:hover {
+  cursor: pointer;
+}
+
+.day-name {
+  display: flex;
+  color: var(--black);
+  font-family: var(--body-font);
+}
+
+.day-name span {
+  width: calc(98% / 7);
+  text-align: center;
+}
+
+.schedule-container {
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 2.9rem;
+}
+
+.schedule {
+  display: flex;
+  flex-flow: row wrap;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+@media only screen and (--viewport-phone) {
+  .navigate-time span {
+    padding-left: 1rem;
+  }
+}
