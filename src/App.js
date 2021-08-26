@@ -2,6 +2,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Page2 from "./pages/Page2";
+import ChooseMajorPage from "./pages/ChooseMajorPage";
 import ForgotPwdPage from "./pages/ForgotPwdPage";
 import EnterCodePage from "./pages/EnterCodePage";
 import UpdatePwdPage from "./pages/UpdatePwdPage";
@@ -31,8 +32,11 @@ const App = () => (
       <Route path="/updatepwd">
         <UpdatePwdPage />
       </Route>
-      <Route path="/">
+      <Route exact path="/">
         <Home />
+      </Route>
+      <Route path="/choose-major">
+        <ChooseMajorPage />
       </Route>
     </Switch>
   </BrowserRouter>
