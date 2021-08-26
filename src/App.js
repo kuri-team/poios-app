@@ -6,6 +6,7 @@ import OwnProfile from "./pages/OwnProfile";
 import TutorProfile from "./pages/TutorProfile";
 
 import "./App.module.css";
+import TutorList from "./pages/TutorList";
 
 const App = () => (
   <BrowserRouter>
@@ -15,6 +16,8 @@ const App = () => (
       </Route>
       <Route path="/tutorprofile">
         <TutorProfile />
+      <Route path="/tutors">
+        <TutorList />
       </Route>
       <Route path="/">
         <Home />
