@@ -1,0 +1,27 @@
+.searchbar-container {
+  position: relative;
+}
+
+.filter-window {
+  position: absolute;
+  right: calc(100% - 75%);
+  z-index: 1;
+}
+
+.searchbar-h1 {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.tutor-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 3rem 2rem;
+}
+
+@media only screen and (--viewport-phone) {
+  .searchbar {
+    padding: 0;
+  }
+}
