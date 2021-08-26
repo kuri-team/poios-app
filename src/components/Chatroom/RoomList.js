@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import * as style from "./RoomList.module.css";
 
-function RoomList() {
+const RoomList = () => {
   const [isActive, setIsActive] = useState(false);
 
   const showRoomList = () => {
@@ -30,6 +30,6 @@ function RoomList() {
       </div>
     </div>
   );
-}
+};
 
 export default RoomList;

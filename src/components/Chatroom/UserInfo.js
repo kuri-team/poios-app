@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 import * as style from "./UserInfo.module.css";
 
-function UserInfo() {
+const UserInfo = () => {
   return (
     <div className={style["user-info"]}>
       <Link to="/" className={style["user-info-content"]}>
@@ -17,6 +17,6 @@ function UserInfo() {
       <div className={style["sign-out"]}>Sign Out</div>
     </div>
   );
-}
+};
 
 export default UserInfo;

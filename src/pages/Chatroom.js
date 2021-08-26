@@ -4,7 +4,7 @@ import ChatWindow from "../components/Chatroom/ChatWindow";
 import * as style from "./Chatroom.module.css";
 import Layout from "../components/Layout";
 
-function Chatroom() {
+const Chatroom = () => {
   return (
     <Layout>
       <div className={style["chatroom-content"]}>
@@ -13,6 +13,6 @@ function Chatroom() {
       </div>
     </Layout>
   );
-}
+};
 
 export default Chatroom;

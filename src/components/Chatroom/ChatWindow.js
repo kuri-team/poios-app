@@ -3,8 +3,74 @@ import { Link } from "react-router-dom";
 import Message from "./Message";
 import * as style from "./ChatWindow.module.css";
 
-function ChatWindow({ roomName }) {
+const ChatWindow = ({ roomName }) => {
   const messages = [
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
+    {
+      sender: "hlinh_pr0_vjp",
+      photo: "/media/chatroom-icons/hacker.svg",
+      content: "Hello World!",
+      timestamp: "2021",
+    },
     {
       sender: "hlinh_pr0_vjp",
       photo: "/media/chatroom-icons/hacker.svg",
@@ -78,7 +144,16 @@ function ChatWindow({ roomName }) {
         </div>
       </div>
 
-      <div className={style["chat-window-content"]}></div>
+      <div className={style["chat-window-content"]}>
+        {messages.map(message => (
+          <Message
+            sender={message.sender}
+            photo={message.photo}
+            content={message.content}
+            timestamp={message.timestamp}
+          />
+        ))}
+      </div>
 
       <form className={style["form"]}>
         <div className={style["attach-button"]}>
@@ -96,6 +171,6 @@ function ChatWindow({ roomName }) {
       </form>
     </div>
   );
-}
+};
 
 export default ChatWindow;
