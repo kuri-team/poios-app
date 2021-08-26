@@ -1,7 +1,6 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Page2 from "./pages/Page2";
 import SignUpPage from "./pages/signup/SignUpPage";
 import LoginPage from "./pages/authentication/Login";
 import ChooseMajorPage from "./pages/core/ChooseMajorPage";
@@ -30,22 +29,19 @@ const App = () => (
       <Route path="/tutors">
         <TutorList />
       </Route>
-      <Route path="/forgotpwd">
+      <Route path="/forgot-password">
         <ForgotPwdPage />
-      </Route>
-      <Route exact path="/">
-        <Home />
       </Route>
       <Route path="/login">
         <LoginPage />
       </Route>
-      <Route path="/entercode">
+      <Route path="/forgot-password/verify">
         <EnterCodePage />
       </Route>
       <Route path="/signup">
         <SignUpPage />
       </Route>
-      <Route path="/updatepwd">
+      <Route path="/forgot-password/update-password">
         <UpdatePwdPage />
       </Route>
       <Route path="/choose-major">
