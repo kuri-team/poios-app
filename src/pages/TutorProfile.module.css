@@ -1,0 +1,10 @@
+.title-header {
+  margin-top: 6rem;
+  margin-left: 10%;
+  font-size: 1.8rem;
+  font-family: var(--body-font);
+}
+
+.timetable-center-container {
+  margin-bottom: 5rem;
+}
