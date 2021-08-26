@@ -10,12 +10,12 @@ const Signupform = () => {
       </div>
       <div className={SignUp["radio-box"]}>
         <div className={SignUp["user-radiobox"]}>
-          <input className={SignUp["user-radio-input"]} type="radio" id="student" name="student" value="student" />
+          <input className={SignUp["user-radio-input"]} type="radio" id="student" name="user" value="student" />
           <label className={SignUp["label-user-radio"]}> Student</label>
           <br />
         </div>
         <div className={SignUp["user-radiobox"]}>
-          <input className={SignUp["user-radio-input"]} type="radio" id="tutor" name="tutor" value="tutor" />
+          <input className={SignUp["user-radio-input"]} type="radio" id="tutor" name="user" value="tutor" />
           <label className={SignUp["label-user-radio"]}> Tutor</label>
           <br />
         </div>
