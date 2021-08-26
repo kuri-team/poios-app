@@ -73,6 +73,8 @@
 
 @media only screen and (--viewport-tablet) {
   .header {
+    justify-content: flex-end;
+    padding: 0 20px;
     color: var(--white);
     background: transparent;
     box-shadow: none;
