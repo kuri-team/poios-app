@@ -33,9 +33,7 @@ const ChatWindow = ({ roomName }) => {
   return (
     <div className={style["chat-window"]}>
       <div className={style["chat-window-header"]}>
-        <div className={style["header-info"]}>
-          <h1 className={style["header-title"]}>{roomName}</h1>
-        </div>
+        <h1 className={style["header-title"]}>{roomName}</h1>
 
         <div className={style["header-button-group"]}>
           <button className={style["leave-button"]}>Leave</button>

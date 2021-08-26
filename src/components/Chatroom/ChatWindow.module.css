@@ -16,11 +16,6 @@
   background-color: var(--black);
 }
 
-.header-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 .header-title {
   margin: 0;
   color: var(--white);
@@ -190,4 +185,25 @@
 .send-button:hover {
   background-color: var(--dark-blue);
   cursor: pointer;
+}
+@media only screen and (--viewport-phone) {
+  .chat-window-header {
+    justify-content: flex-start;
+  }
+  .header-title {
+    padding-right: 5px;
+    font-size: 11px;
+  }
+
+  .leave-button {
+    padding: 10px 10px;
+  }
+
+  .input-message-content {
+    width: 55%;
+  }
+
+  .form {
+    justify-content: flex-start;
+  }
 }
