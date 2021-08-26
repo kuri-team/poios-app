@@ -1,0 +1,40 @@
+/*UserInfo.js*/
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  height: 48px;
+  padding: 12px 16px;
+  border-bottom: 3px solid var(--gray);
+}
+.user-info-content {
+  display: flex;
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.username {
+  margin-left: 15px;
+  color: var(--white);
+}
+
+.sign-out {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 10px;
+  padding: 10px;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sign-out:hover {
+  color: var(--white);
+  background-color: var(--dark-blue);
+  cursor: pointer;
+}

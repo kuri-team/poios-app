@@ -1,0 +1,5 @@
+/*Sidebar.js*/
+.side-bar {
+  height: 100vh;
+  background-color: var(--black);
+}

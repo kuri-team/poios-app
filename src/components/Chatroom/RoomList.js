@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import * as style from "./Chatroom.module.css";
+import * as style from "./RoomList.module.css";
 
 function RoomList() {
   const [isActive, setIsActive] = useState(false);

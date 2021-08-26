@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "../components/Chatroom/Sidebar";
 import ChatWindow from "../components/Chatroom/ChatWindow";
 
-import * as style from "../components/Chatroom/Chatroom.module.css";
+import * as style from "./Chatroom.module.css";
 
 function Chatroom() {
   return (

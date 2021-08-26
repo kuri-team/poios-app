@@ -1,0 +1,80 @@
+/*RoomList.js*/
+.room-list {
+}
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: var(--gray);
+  font-weight: bold;
+  font-size: 20px;
+  background: var(--cyan);
+  cursor: pointer;
+}
+
+.dropdown-btn:hover {
+  background-color: var(--dark-cyan);
+  cursor: pointer;
+}
+
+.dropdown-content {
+  top: 110%;
+  z-index: -1;
+  padding: 15px;
+  font-weight: 500;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.dropdown-content.active {
+  z-index: 1;
+  transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s, 0s, 0.3s;
+}
+
+.down-arrow {
+  width: auto;
+  height: 20px;
+}
+
+.dropdown-item {
+  margin: 2px;
+  padding: 10px;
+  border: 1px solid var(--cyan);
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.dropdown-item:hover {
+  background-color: var(--cyan);
+}
+
+.plus-icon {
+  width: auto;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.add-room {
+  display: inline-flex;
+  align-items: center;
+  float: right;
+  margin: 10px;
+  padding: 8px;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--cyan);
+  border: 3px solid var(--black);
+  outline: none;
+}
+
+.add-room:hover {
+  background-color: var(--dark-cyan);
+  cursor: pointer;
+}

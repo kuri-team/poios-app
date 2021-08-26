@@ -1,5 +1,5 @@
 import React from "react";
-import * as style from "./Chatroom.module.css";
+import * as style from "./UserInfo.module.css";
 
 function UserInfo() {
   return (
