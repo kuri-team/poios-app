@@ -1,1 +1,0 @@
-Put all static assets in this folder
