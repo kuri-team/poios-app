@@ -160,7 +160,6 @@
   margin-right: 5px;
   margin-left: 5px;
   padding: 10px;
-  color: var(--white);
   font-weight: bold;
   font-size: 20px;
   border-radius: 20px;
@@ -169,7 +168,7 @@
 }
 
 .attach-button:hover {
-  background-color: var(--white);
+  background-color: var(--dark-blue);
   cursor: pointer;
 }
 
@@ -181,7 +180,6 @@
   margin-right: 5px;
   margin-left: 15px;
   padding: 10px;
-  color: var(--white);
   font-weight: bold;
   font-size: 20px;
   border-radius: 20px;
@@ -190,6 +188,6 @@
 }
 
 .send-button:hover {
-  background-color: var(--white);
+  background-color: var(--dark-blue);
   cursor: pointer;
 }
