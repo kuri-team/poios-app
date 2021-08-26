@@ -26,7 +26,7 @@ Brand
 .go-back {
   margin: 1em;
   padding: 0.5em;
-  color: var(--lighter-black);
+  color: var(--gray);
   font-weight: bold;
   font-size: 9pt;
 }
@@ -41,7 +41,9 @@ Login fields
   font-weight: bold;
   font-size: 10pt;
   text-align: center;
+  border: none;
   border-radius: 1em;
+  outline: none;
 }
 
 .login-field-label {
@@ -50,7 +52,7 @@ Login fields
 }
 
 .forgot-password {
-  color: var(--lighter-black);
+  color: var(--gray);
   font-weight: bold;
   font-size: 8pt;
   text-decoration: none;
@@ -99,6 +101,10 @@ Responsive
   .brand-name {
     width: 40em;
     height: 10em;
+  }
+
+  .go-back {
+    display: none;
   }
 
   .login-box {
