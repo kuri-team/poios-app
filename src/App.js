@@ -3,7 +3,6 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import IndexPage from "./pages/IndexPage";
 import SignUpPage from "./pages/signup/SignUpPage";
 import LoginPage from "./pages/authentication/Login";
-import ChooseMajorPage from "./pages/core/ChooseMajorPage";
 import ForgotPwdPage from "./pages/authentication/ForgotPwdPage";
 import EnterCodePage from "./pages/authentication/EnterCodePage";
 import UpdatePwdPage from "./pages/authentication/UpdatePwdPage";
@@ -11,13 +10,14 @@ import OwnProfilePage from "./pages/profile/OwnProfilePage";
 import TutorProfilePage from "./pages/profile/TutorProfilePage";
 import ChatroomPage from "./pages/core/ChatroomPage";
 import TutorListPage from "./pages/core/TutorListPage";
+import ChooseMajorPage from "./pages/core/ChooseMajorPage";
 
 import "./App.module.css";
 
 const App = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/chatroom">
+      <Route path="/chat">
         <ChatroomPage />
       </Route>
       <Route path="/profile">
@@ -35,10 +35,10 @@ const App = () => (
       <Route path="/forgot-password">
         <ForgotPwdPage />
       </Route>
-      <Route path="/forgot-password/verify">
+      <Route exact path="/forgot-password-verify">
         <EnterCodePage />
       </Route>
-      <Route path="/forgot-password/update-password">
+      <Route exact path="/forgot-password-update-password">
         <UpdatePwdPage />
       </Route>
       <Route path="/signup">
