@@ -163,3 +163,9 @@
 .hidden {
   display: none;
 }
+
+@media only screen and (--viewport-desktop) {
+  .button {
+    margin: 0;
+  }
+}

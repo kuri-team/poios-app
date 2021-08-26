@@ -53,3 +53,13 @@
 .hidden {
   display: none;
 }
+
+@media only screen and (--viewport-desktop) {
+  .menu button {
+    margin: 0 8px;
+  }
+
+  .menu button:first-child {
+    margin-left: 0;
+  }
+}

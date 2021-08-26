@@ -48,3 +48,13 @@
   transition: var(--transition-medium-rapid);
   transition-delay: var(--transition-near-instant);
 }
+
+@media only screen and (--viewport-desktop) {
+  .nav {
+    padding-left: 28px;
+  }
+
+  .nav ul li {
+    margin: 0 12px;
+  }
+}
