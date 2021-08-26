@@ -188,7 +188,7 @@
 }
 @media only screen and (--viewport-phone) {
   .chat-window-header {
-    justify-content: flex-start;
+    justify-content: center;
   }
   .header-title {
     padding-right: 5px;
@@ -196,6 +196,7 @@
   }
 
   .leave-button {
+    margin-right: 2px;
     padding: 10px 10px;
   }
 
