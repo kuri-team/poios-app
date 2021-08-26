@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import * as commonStyle from "./Home.module.css";
 import * as style from "./Login.module.js.css";
 
-const Login = () => {
+const LoginPage = () => {
   return (
     <Layout className={commonStyle["container"] + " " + commonStyle["home"]}>
       <img src={"/media/bg.jpg"} alt="" className={commonStyle["background"]} />
@@ -40,4 +40,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;
