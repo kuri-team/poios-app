@@ -5,14 +5,14 @@ import * as ForgotPwdstyle from "./ForgotPwd.module.css";
 const EnterCodePage = () => {
   return (
     <Layout className={ForgotPwdstyle["container"]}>
-      <img src={"/media/poios_background1.jpg"} alt="" className={ForgotPwdstyle["background"]} />
+      <img src={"/media/poios_background.jpg"} alt="" className={ForgotPwdstyle["background"]} />
       <div className={ForgotPwdstyle["forgot-password-box"]}>
         <div className={ForgotPwdstyle["Poios-logo"]}>
           <img src={"/media/logo_Wordmark_Primary.png"} alt="" className={ForgotPwdstyle["logo-pic-entercode-page"]} />
         </div>
         <div className={ForgotPwdstyle["notice"]}>
           <p> A verification code has been sent to your email</p>
-          <a href={""} className={ForgotPwdstyle["change-email"]}>
+          <a href={"/forgotpwd"} className={ForgotPwdstyle["change-email"]}>
             Change email
           </a>
         </div>
