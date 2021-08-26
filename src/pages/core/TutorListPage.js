@@ -28,7 +28,7 @@ const dummySubject = [
   { id: 12, name: "Diplomacy" },
 ];
 
-const TutorList = () => {
+const TutorListPage = () => {
   //"Search functions"
   const { paramsString } = window.location;
   const tutorQuery = new URLSearchParams(paramsString).get("search-result");
@@ -105,4 +105,4 @@ const TutorList = () => {
   );
 };
 
-export default TutorList;
+export default TutorListPage;

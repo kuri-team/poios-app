@@ -6,7 +6,7 @@ import Reviewer from "../../components/Profile/Reviewer";
 import * as style from "./TutorProfile.module.css";
 import OwnProfileInfo from "../../components/Profile/OwnProfileInfo";
 
-const TutorProfile = () => {
+const TutorProfilePage = () => {
   return (
     <Layout className={style["container"]} header footer>
       <div className={style["tutorInfo-center-container"]}>
@@ -24,4 +24,4 @@ const TutorProfile = () => {
   );
 };
 
-export default TutorProfile;
+export default TutorProfilePage;

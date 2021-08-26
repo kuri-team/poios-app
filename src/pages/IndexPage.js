@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
-import * as style from "./Home.module.css";
+import * as style from "./IndexPage.module.css";
 
-const Home = () => {
+const IndexPage = () => {
   return (
     <Layout className={style["container"] + " " + style["home"]}>
       <img src={"/media/bg.jpg"} alt="" className={style["background"]} />
@@ -18,4 +18,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default IndexPage;

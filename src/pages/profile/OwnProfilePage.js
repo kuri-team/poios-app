@@ -5,7 +5,7 @@ import TimetableDay from "../../components/Profile/TimetableDay";
 
 import * as style from "./OwnProfile.module.css";
 
-const OwnProfile = () => {
+const OwnProfilePage = () => {
   return (
     <Layout className={style["container"]} header footer>
       <div className={style["studentInfo-center-container"]}>
@@ -20,4 +20,4 @@ const OwnProfile = () => {
   );
 };
 
-export default OwnProfile;
+export default OwnProfilePage;
