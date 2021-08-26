@@ -6,108 +6,23 @@ import * as style from "./ChatWindow.module.css";
 const ChatWindow = ({ roomName }) => {
   const messages = [
     {
+      fromMe: true,
       sender: "hlinh_pr0_vjp",
       photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
+      content:
+        "Hello World! Hello World! Hello World! Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!",
       timestamp: "2021",
     },
     {
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
+      fromMe: false,
       sender: "hlinh_pr0_vjp",
       photo: "/media/chatroom-icons/hacker.svg",
       content: "Hello World!",
       timestamp: "2021",
     },
   ];
+
+  console.log(messages.length);
 
   return (
     <div className={style["chat-window"]}>
@@ -145,14 +60,17 @@ const ChatWindow = ({ roomName }) => {
       </div>
 
       <div className={style["chat-window-content"]}>
-        {messages.map(message => (
-          <Message
-            sender={message.sender}
-            photo={message.photo}
-            content={message.content}
-            timestamp={message.timestamp}
-          />
-        ))}
+        <div className={style["wrapper"]}>
+          {messages.map(message => (
+            <Message
+              fromMe={message.fromMe}
+              sender={message.sender}
+              photo={message.photo}
+              content={message.content}
+              timestamp={message.timestamp}
+            />
+          ))}
+        </div>
       </div>
 
       <form className={style["form"]}>

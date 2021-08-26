@@ -1,33 +1,67 @@
-/*Message.js*/
+.wrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  width: 100%;
+}
+
 .message {
+  width: 60%;
   margin-bottom: 10px;
 }
 
-.message-header {
+.message .header {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
-.message-avatar {
+
+.message .header .avatar {
   width: 50px;
   height: 50px;
+  margin: 20px;
   vertical-align: middle;
   border-radius: 50%;
 }
 
-.author {
-  margin-left: 5px;
-  font-weight: bold;
+.message .header .sender {
+  font-weight: 600;
+  font-family: var(--header-font);
 }
-.date {
-  margin-left: 10px;
+
+.message .header .timestamp {
+  margin: 0 14px;
   color: var(--light-gray);
   font-size: 11px;
 }
 
-.message-content {
-  margin-left: 25px;
+.message .header .sender,
+.message .header .timestamp {
+  margin-bottom: 20px;
 }
 
-.texting-message {
-  margin-left: 30px;
+.message .body {
+  margin: 0 65px;
+}
+
+.message .body .content {
+  display: inline-block;
+  margin: 0 24px 10px 24px;
+  padding: 24px 36px;
+  background: var(--alt-black);
+  border-radius: 0 16px 16px 16px;
+}
+
+.from-me {
+  justify-content: flex-end;
+}
+
+.message .body .from-me {
+  background: var(--blue);
+  border-radius: 16px 0 16px 16px;
 }

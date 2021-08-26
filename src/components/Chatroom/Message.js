@@ -1,16 +1,24 @@
-import React from "react";
-
 import * as style from "./Message.module.css";
 
-const Message = ({ sender, photo, content, timestamp }) => (
-  <div className={style["message"]}>
-    <div className={style["message-header"]}>
-      <img src={photo} alt="avatar" className={style["message-avatar"]} />
-      <div className={style["author"]}>{sender}</div>
-      <div className={style["date"]}>{timestamp}</div>
-    </div>
-    <div className={style["message-content"]}>
-      <div className={style["texting-message"]}>{content}</div>
+const Message = ({ fromMe, sender, photo, content, timestamp }) => (
+  <div className={fromMe ? [style["wrapper"], style["from-me"]].join(" ") : style["wrapper"]}>
+    <div className={style["message"]}>
+      {fromMe ? (
+        <div className={[style["header"], style["from-me"]].join(" ")}>
+          <div className={style["timestamp"]}>{timestamp}</div>
+          <div className={style["sender"]}>{sender}</div>
+          <img src={photo} alt="avatar" className={style["avatar"]} />
+        </div>
+      ) : (
+        <div className={style["header"]}>
+          <img src={photo} alt="avatar" className={style["avatar"]} />
+          <div className={style["sender"]}>{sender}</div>
+          <div className={style["timestamp"]}>{timestamp}</div>
+        </div>
+      )}
+      <div className={style["body"]}>
+        <div className={fromMe ? [style["content"], style["from-me"]].join(" ") : style["content"]}>{content}</div>
+      </div>
     </div>
   </div>
 );
