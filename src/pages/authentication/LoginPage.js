@@ -1,11 +1,12 @@
 import Layout from "../../components/Layout";
+import PoiosBackground from "../../components/PoiosBackground";
 import * as commonStyle from "../IndexPage.module.css";
 import * as style from "./LoginPage.module.js.css";
 
 const LoginPage = () => {
   return (
     <Layout className={commonStyle["container"] + " " + commonStyle["home"]}>
-      <img src={"/media/poios_background.jpg"} alt="" className={commonStyle["background"]} />
+      <PoiosBackground />
       <div className={["login-box"]}>
         <form className={["login-form"]} method={"post"}>
           <div className={["brand-display"]}>

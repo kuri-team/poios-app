@@ -1,25 +1,23 @@
-import Layout from "../components/Layout";
-import PoiosBackground from "../components/PoiosBackground";
-import * as style from "./IndexPage.module.css";
 import { Link } from "react-router-dom";
+
+import Layout from "../components/Layout";
+import DialogBox from "../components/DialogBox";
+import * as style from "./IndexPage.module.css";
+import * as dialogBoxStyle from "../components/DialogBox.module.css";
 
 const IndexPage = ({ loginUrl, signupUrl }) => {
   return (
     <Layout className={style["container"]}>
-      <PoiosBackground />
-      <div className={style["dialogue-box"]}>
-        <div className={style["brand"]}>
-          <img src={"/media/Wordmark_Primary.svg"} alt="" draggable={false} />
-        </div>
-        <div className={style["button-wrapper"]}>
+      <DialogBox background logo>
+        <div className={[dialogBoxStyle["button-wrapper"], dialogBoxStyle["button-wrapper-col"]].join(" ")}>
           <Link to={loginUrl}>
-            <button className={style["primary"]}>Login</button>
+            <button className={dialogBoxStyle["primary"]}>Login</button>
           </Link>
           <Link to={signupUrl}>
             <button>Signup</button>
           </Link>
         </div>
-      </div>
+      </DialogBox>
     </Layout>
   );
 };
