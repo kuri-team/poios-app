@@ -1,10 +1,10 @@
 import Sidebar from "../../components/Chatroom/Sidebar";
 import ChatWindow from "../../components/Chatroom/ChatWindow";
 
-import * as style from "./ChatroomPage.module.css";
+import * as style from "./ChatPage.module.css";
 import Layout from "../../components/Layout";
 
-const ChatroomPage = () => {
+const ChatPage = () => {
   return (
     <Layout>
       <div className={style["chatroom-content"]}>
@@ -15,4 +15,4 @@ const ChatroomPage = () => {
   );
 };
 
-export default ChatroomPage;
+export default ChatPage;

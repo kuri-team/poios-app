@@ -1,7 +1,7 @@
 import Layout from "../../components/Layout";
-import * as SignUpstyle from "./SignUpPage.module.css";
+import * as SignUpstyle from "./SignupPage.module.css";
 import Signupform from "../../components/SignUpPage/Signupform";
-const SignUpPage = () => {
+const SignupPage = () => {
   return (
     <Layout className={SignUpstyle["container"]}>
       <img src={"/media/poios_background.jpg"} alt="" className={SignUpstyle["background"]} />
@@ -18,4 +18,4 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
+export default SignupPage;

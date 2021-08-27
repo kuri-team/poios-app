@@ -3,9 +3,9 @@ import OwnProfileInfo from "../../components/Profile/OwnProfileInfo";
 import Timetable from "../../components/Profile/Timetable";
 import TimetableDay from "../../components/Profile/TimetableDay";
 
-import * as style from "./OwnProfilePage.module.css";
+import * as style from "./MyProfilePage.module.css";
 
-const OwnProfilePage = () => {
+const MyProfilePage = () => {
   return (
     <Layout className={style["container"]} header footer>
       <div className={style["studentInfo-center-container"]}>
@@ -20,4 +20,4 @@ const OwnProfilePage = () => {
   );
 };
 
-export default OwnProfilePage;
+export default MyProfilePage;

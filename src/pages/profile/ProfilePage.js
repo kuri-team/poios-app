@@ -3,10 +3,10 @@ import TutorProfileInfo from "../../components/Profile/TutorProfileInfo";
 import Timetable from "../../components/Profile/Timetable";
 import Reviewer from "../../components/Profile/Reviewer";
 
-import * as style from "./TutorProfilePage.module.css";
+import * as style from "./ProfilePage.module.css";
 import OwnProfileInfo from "../../components/Profile/OwnProfileInfo";
 
-const TutorProfilePage = () => {
+const ProfilePage = () => {
   return (
     <Layout className={style["container"]} header footer>
       <div className={style["tutorInfo-center-container"]}>
@@ -24,4 +24,4 @@ const TutorProfilePage = () => {
   );
 };
 
-export default TutorProfilePage;
+export default ProfilePage;

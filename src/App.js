@@ -1,51 +1,51 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import IndexPage from "./pages/IndexPage";
-import SignUpPage from "./pages/signup/SignUpPage";
+import SignupPage from "./pages/signup/SignupPage";
 import LoginPage from "./pages/authentication/LoginPage";
-import ForgotPwdPage from "./pages/authentication/ForgotPwdPage";
-import EnterCodePage from "./pages/authentication/EnterCodePage";
-import UpdatePwdPage from "./pages/authentication/UpdatePwdPage";
-import OwnProfilePage from "./pages/profile/OwnProfilePage";
-import TutorProfilePage from "./pages/profile/TutorProfilePage";
-import ChatroomPage from "./pages/core/ChatroomPage";
-import TutorListPage from "./pages/core/TutorListPage";
-import ChooseMajorPage from "./pages/core/ChooseMajorPage";
+import ForgotPasswordPage from "./pages/authentication/ForgotPasswordPage";
+import ForgotPasswordVerifyPage from "./pages/authentication/ForgotPasswordVerifyPage";
+import UpdatePasswordPage from "./pages/authentication/UpdatePasswordPage";
+import MyProfilePage from "./pages/profile/MyProfilePage";
+import ProfilePage from "./pages/profile/ProfilePage";
+import ChatPage from "./pages/core/ChatPage";
+import TutorsPage from "./pages/core/TutorsPage";
+import FieldsOfStudyPage from "./pages/core/FieldsOfStudyPage";
 
 import "./App.module.css";
 
 const App = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/chat">
-        <ChatroomPage />
+      <Route path="/core/chat">
+        <ChatPage />
+      </Route>
+      <Route path="/core/fields-of-study">
+        <FieldsOfStudyPage />
+      </Route>
+      <Route path="/core/tutors">
+        <TutorsPage />
+      </Route>
+      <Route path="/profile/my-profile">
+        <MyProfilePage />
       </Route>
       <Route path="/profile">
-        <OwnProfilePage />
+        <ProfilePage />
       </Route>
-      <Route path="/tutor-profile">
-        <TutorProfilePage />
+      <Route path="/auth/login/forgot-password/update-password">
+        <UpdatePasswordPage />
       </Route>
-      <Route path="/tutors">
-        <TutorListPage />
+      <Route path="/auth/login/forgot-password/verify">
+        <ForgotPasswordVerifyPage />
       </Route>
-      <Route path="/login">
+      <Route path="/auth/login/forgot-password">
+        <ForgotPasswordPage />
+      </Route>
+      <Route path="/auth/login">
         <LoginPage />
       </Route>
-      <Route path="/forgot-password">
-        <ForgotPwdPage />
-      </Route>
-      <Route path="/forgot-password-verify">
-        <EnterCodePage />
-      </Route>
-      <Route path="/forgot-password-update-password">
-        <UpdatePwdPage />
-      </Route>
       <Route path="/signup">
-        <SignUpPage />
-      </Route>
-      <Route path="/choose-major">
-        <ChooseMajorPage />
+        <SignupPage />
       </Route>
       <Route path="/">
         <IndexPage />

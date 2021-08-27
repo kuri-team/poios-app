@@ -2,9 +2,9 @@ import Layout from "../../components/Layout";
 import SubjectBoxes from "../../components/ChooseMajor/SubjectBoxes";
 import MajorSelectMenu from "../../components/ChooseMajor/MajorSelectMenu";
 
-import * as style from "./ChooseMajorPage.module.css";
+import * as style from "./FieldsOfStudy.module.css";
 
-const ChooseMajorPage = () => {
+const FieldsOfStudyPage = () => {
   return (
     <Layout className={style["container"]}>
       <h1 className={style["h1"]}>Choose a major</h1>
@@ -17,4 +17,4 @@ const ChooseMajorPage = () => {
   );
 };
 
-export default ChooseMajorPage;
+export default FieldsOfStudyPage;

@@ -1,6 +1,8 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import Layout from "../../components/Layout";
-import * as ForgotPwdstyle from "./ForgotPwdPage.module.css";
-const ForgotPwdPage = () => {
+import * as ForgotPwdstyle from "./ForgotPasswordPage.module.css";
+const ForgotPasswordPage = () => {
   return (
     <Layout className={ForgotPwdstyle["container"]}>
       <img src={"/media/poios_background.jpg"} alt="" className={ForgotPwdstyle["background"]} />
@@ -10,13 +12,15 @@ const ForgotPwdPage = () => {
         </div>
         <form className={ForgotPwdstyle["forgot-pass-form"]} method={"post"}>
           <div className={ForgotPwdstyle["forgot-input"]}>
-            <label className={ForgotPwdstyle["forgot-input-label"]}>Enter a new password</label>
+            <label className={ForgotPwdstyle["forgot-input-label"]}>Enter your email to retrieve password</label>
             <br />
-            <input className={ForgotPwdstyle["forgot-input-field"]} type={"password"} />
+            <input className={ForgotPwdstyle["forgot-input-field"]} type={"email"} />
           </div>
           <div className={ForgotPwdstyle["forgot-btn-bx"]}>
             <button className={ForgotPwdstyle["deny-btn"]}>Cancel</button>
-            <button className={ForgotPwdstyle["accept-btn"]}>Update</button>
+            <Link to="/entercode">
+              <button className={ForgotPwdstyle["accept-btn"]}>Send</button>
+            </Link>
           </div>
         </form>
       </div>
@@ -24,4 +28,4 @@ const ForgotPwdPage = () => {
   );
 };
 
-export default ForgotPwdPage;
+export default ForgotPasswordPage;

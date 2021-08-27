@@ -3,7 +3,7 @@ import Searchbar from "../../components/TutorList/Searchbar";
 import FilterWindow from "../../components/TutorList/FilterWindow";
 import TutorListElement from "../../components/TutorList/TutorListElement";
 import { useState } from "react";
-import * as style from "./TutorListPage.module.css";
+import * as style from "./TutorsPage.module.css";
 
 //'searching function'
 const dummyTutors = [
@@ -28,7 +28,7 @@ const dummySubject = [
   { id: 12, name: "Diplomacy" },
 ];
 
-const TutorListPage = () => {
+const TutorsPage = () => {
   //"Search functions"
   const { paramsString } = window.location;
   const tutorQuery = new URLSearchParams(paramsString).get("search-result");
@@ -105,4 +105,4 @@ const TutorListPage = () => {
   );
 };
 
-export default TutorListPage;
+export default TutorsPage;
