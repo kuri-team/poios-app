@@ -9,7 +9,7 @@ import * as commonStyle from "../../styles/common.module.css";
 import * as formStyle from "../../styles/form.module.css";
 import * as dialogBoxStyle from "../../components/DialogBox.module.css";
 
-const LoginPage = ({ authRedirectTo, forgotPasswordUrl }) => {
+const LoginPage = ({ prevStepUrl, authRedirectTo, forgotPasswordUrl }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -51,7 +51,12 @@ const LoginPage = ({ authRedirectTo, forgotPasswordUrl }) => {
               Login
             </button>
           </Link>
+        </div>
+        <div className={style["nav"]}>
           <Link to={forgotPasswordUrl}>Forgot Password?</Link>
+          <Link to={prevStepUrl} className={style["primary"]}>
+            Back
+          </Link>
         </div>
       </DialogBox>
     </Layout>

@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import IndexPage from "./pages/IndexPage";
-import SignupPage from "./pages/signup/SignupPage";
+import SignupPage from "./pages/authentication/SignupPage";
 import LoginPage from "./pages/authentication/LoginPage";
 import ForgotPasswordPage from "./pages/authentication/ForgotPasswordPage";
 import ForgotPasswordVerifyPage from "./pages/authentication/ForgotPasswordVerifyPage";
@@ -56,15 +56,17 @@ const App = () => {
     },
     {
       path: "/auth/login",
-      reactComponent: <LoginPage authRedirectTo="/core/tutors" forgotPasswordUrl="/auth/login/forgot-password" />,
+      reactComponent: (
+        <LoginPage prevStepUrl="/" authRedirectTo="/core/tutors" forgotPasswordUrl="/auth/login/forgot-password" />
+      ),
     },
     {
-      path: "/signup",
-      reactComponent: <SignupPage />,
+      path: "/auth/signup",
+      reactComponent: <SignupPage prevStepUrl="/" authRedirectTo="/core/fields-of-study" />,
     },
     {
       path: "/",
-      reactComponent: <IndexPage loginUrl="/auth/login" signupUrl="/signup" />,
+      reactComponent: <IndexPage loginUrl="/auth/login" signupUrl="/auth/signup" />,
     },
   ];
 
