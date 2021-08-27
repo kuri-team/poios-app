@@ -1,7 +1,7 @@
 import Layout from "../../components/Layout";
-import Searchbar from "../../components/TutorList/Searchbar";
-import FilterWindow from "../../components/TutorList/FilterWindow";
-import TutorListElement from "../../components/TutorList/TutorListElement";
+import Searchbar from "../../components/Tutors/Searchbar";
+import FilterWindow from "../../components/Tutors/FilterWindow";
+import TutorListElement from "../../components/Tutors/TutorListElement";
 import { useState } from "react";
 import * as style from "./TutorsPage.module.css";
 

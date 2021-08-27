@@ -8,11 +8,11 @@ const TutorProfileInfo = () => {
           <img className={style["avatar-image"]} src={"media/venti.jpg"} alt="" />
           <div className={style["rating-comment-container"]}>
             <div className={style["five-stars"]}>
-              <img src={"media/icons/star.svg"} alt="" />
-              <img src={"media/icons/star.svg"} alt="" />
-              <img src={"media/icons/star.svg"} alt="" />
-              <img src={"media/icons/star_empty.svg"} alt="" />
-              <img src={"media/icons/star_empty.svg"} alt="" />
+              <img src={"/media/icons/star.svg"} alt="" />
+              <img src={"/media/icons/star.svg"} alt="" />
+              <img src={"/media/icons/star.svg"} alt="" />
+              <img src={"/media/icons/star_empty.svg"} alt="" />
+              <img src={"/media/icons/star_empty.svg"} alt="" />
             </div>
             <span className={style["view-comments"]}>View all comments</span>
           </div>

@@ -18,7 +18,7 @@ const OwnProfileInfo = (editAva, editName, editEmail, editPassword, editSubject)
               <input type="file" value={file} onChange={e => setFile(e.target.files[0])} />
             </form>
             <div>
-              <img src={"media/icons/pencil-edit-button copy.svg"} alt="" onClick={editAva} />
+              <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={editAva} />
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@ const OwnProfileInfo = (editAva, editName, editEmail, editPassword, editSubject)
                 <p>Sup Lo</p>
               </div>
             </div>
-            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" onClick={editName} />
+            <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={editName} />
             <hr />
           </div>
 
@@ -42,7 +42,7 @@ const OwnProfileInfo = (editAva, editName, editEmail, editPassword, editSubject)
                 <p>s1234567@rmit.edu.vn</p>
               </div>
             </div>
-            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" onClick={editEmail} />
+            <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={editEmail} />
             <hr />
           </div>
 
@@ -53,7 +53,7 @@ const OwnProfileInfo = (editAva, editName, editEmail, editPassword, editSubject)
                 <p>*********</p>
               </div>
             </div>
-            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" onClick={editPassword} />
+            <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={editPassword} />
             <hr />
           </div>
 
@@ -72,7 +72,7 @@ const OwnProfileInfo = (editAva, editName, editEmail, editPassword, editSubject)
                 </div>
               </div>
             </div>
-            <img src={"media/icons/pencil-edit-button copy.svg"} alt="" onClick={editSubject} />
+            <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={editSubject} />
             <hr />
           </div>
 

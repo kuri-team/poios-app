@@ -9,11 +9,11 @@ const Reviewer = () => {
           <div className={style["name-star"]}>
             <span>Kequing</span>
             <div className={style["five-stars"]}>
-              <img src={"media/icons/star.svg"} alt="" />
-              <img src={"media/icons/star.svg"} alt="" />
-              <img src={"media/icons/star.svg"} alt="" />
-              <img src={"media/icons/star.svg"} alt="" />
-              <img src={"media/icons/star_empty.svg"} alt="" />
+              <img src={"/media/icons/star.svg"} alt="" />
+              <img src={"/media/icons/star.svg"} alt="" />
+              <img src={"/media/icons/star.svg"} alt="" />
+              <img src={"/media/icons/star.svg"} alt="" />
+              <img src={"/media/icons/star_empty.svg"} alt="" />
             </div>
           </div>
         </div>

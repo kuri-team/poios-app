@@ -5,7 +5,7 @@ const TutorListElement = () => {
     <>
       <div className={style["tutor-element"]}>
         <div className={style["avatar"]}>
-          <img src={"media/venti.jpg"} alt="Tutor" />
+          <img src={"/media/venti.jpg"} alt="Tutor" />
         </div>
 
         <div className={style["avatar-name"]}>
