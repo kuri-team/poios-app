@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import useDetectCloseDropdown from "../../hooks/header/useDetectCloseDropdown";
+import useDetectCloseDropdown from "../../hooks/Header/useDetectCloseDropdown";
 import * as commonStyle from "./common.module.css";
 
 const Notifications = ({ active }) => {
