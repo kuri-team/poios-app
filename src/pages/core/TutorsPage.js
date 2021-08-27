@@ -1,8 +1,9 @@
+import { useState } from "react";
+
 import Layout from "../../components/Layout";
 import Searchbar from "../../components/Tutors/Searchbar";
 import FilterWindow from "../../components/Tutors/FilterWindow";
 import TutorListElement from "../../components/Tutors/TutorListElement";
-import { useState } from "react";
 import * as style from "./TutorsPage.module.css";
 
 //'searching function'
@@ -69,7 +70,7 @@ const TutorsPage = () => {
 
   return (
     <Layout className={style["container"]} header footer>
-      <div className={style["searchbar-h1"]}>
+      <div className={style["title"]}>
         <h1>OUR TUTORS</h1>
       </div>
       <div className={style["searchbar-container"]}>
@@ -90,12 +91,10 @@ const TutorsPage = () => {
         <TutorListElement />
         <TutorListElement />
         <TutorListElement />
-
         <TutorListElement />
         <TutorListElement />
         <TutorListElement />
         <TutorListElement />
-
         <TutorListElement />
         <TutorListElement />
         <TutorListElement />
