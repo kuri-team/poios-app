@@ -24,7 +24,9 @@ const Header = () => (
       <Messages active={true} />
       <Calendar active={true} />
       <span className={style["divider"]} />
-      <AccountMenu />
+      <PagesContext.Provider value={pages.account}>
+        <AccountMenu />
+      </PagesContext.Provider>
     </div>
     <PagesContext.Provider value={pages.mobileNav}>
       <MobileNav />

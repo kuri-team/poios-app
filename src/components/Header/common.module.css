@@ -97,7 +97,7 @@
   max-height: 340px;
   overflow-y: scroll;
   scrollbar-width: thin;
-  scrollbar-color: var(--black) transparent;
+  scrollbar-color: var(--gray) transparent;
 }
 
 .menu .content::-webkit-scrollbar {
