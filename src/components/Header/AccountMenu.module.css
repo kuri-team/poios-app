@@ -7,6 +7,10 @@
   padding-right: 8px;
 }
 
+.menu a {
+  text-decoration: none;
+}
+
 .menu button {
   position: relative;
   margin: 0 10px;

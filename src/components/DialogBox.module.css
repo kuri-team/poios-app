@@ -126,4 +126,9 @@
     background: transparent;
     box-shadow: none;
   }
+
+  .wrapper-scroll .box {
+    padding: 75px 0;
+    border-radius: 0;
+  }
 }

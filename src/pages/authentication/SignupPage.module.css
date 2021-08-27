@@ -78,3 +78,23 @@
   line-height: 2em;
   text-decoration: none;
 }
+
+@media only screen and (--viewport-phone) {
+  .form {
+    display: block;
+  }
+
+  .form select,
+  .form input {
+    box-sizing: border-box;
+    width: 75vw;
+  }
+
+  .form .acc-type {
+    margin-bottom: 36px;
+  }
+
+  .form .acc-type select {
+    background: var(--black);
+  }
+}

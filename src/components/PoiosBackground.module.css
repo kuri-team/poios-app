@@ -9,7 +9,7 @@
   inset: 0;
 }
 
-@media only screen and (--viewport-tablet) {
+@media only screen and (--viewport-phone) {
   .img {
     display: none;
   }
