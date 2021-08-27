@@ -12,7 +12,7 @@
 }
 
 .container {
-  margin-top: 2em;
+  margin: 8px 16px 0 16px;
 }
 
 .subject-container {
@@ -33,7 +33,6 @@
 
   .prev-btn {
     order: 2;
-    margin-right: 35%;
   }
   .next-btn {
     order: 3;

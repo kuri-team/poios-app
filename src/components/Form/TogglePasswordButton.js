@@ -1,7 +1,7 @@
-import "./TogglePasswordButton.module.css";
+import * as style from "./TogglePasswordButton.module.css";
 
 const TogglePasswordButton = ({ state, callback, fill, width, height, margin }) => (
-  <button onClick={() => callback(!state)}>
+  <button className={style["button"]} onClick={() => callback(!state)}>
     {state ? (
       <svg
         xmlns="http://www.w3.org/2000/svg"

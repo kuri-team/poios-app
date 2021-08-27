@@ -2,23 +2,24 @@
 .btn-disabled {
   width: 35px;
   height: 35px;
+  background: none;
   border: none;
   border-radius: 50%;
   outline: none;
   transition: var(--transition-medium);
   transition-delay: var(--transition-extra-rapid);
-  will-change: background;
+  will-change: background, opacity;
 }
 
 .btn:hover {
-  background: var(--gray);
+  background: var(--lighter-black);
   cursor: pointer;
   transition: var(--transition-rapid);
   transition-delay: var(--transition-near-instant);
 }
 
 .btn-disabled {
-  background: var(--lighter-black);
+  opacity: 0.1;
 }
 
 .img {
