@@ -15,7 +15,7 @@ const LoginPage = ({ authRedirectTo, forgotPasswordUrl }) => {
   return (
     <Layout>
       <DialogBox background logo>
-        <div id="login-form" className={style["form"]}>
+        <div id="form" className={style["form"]}>
           <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
             <label htmlFor="userid">Username/Email</label>
             <input id="userid" name="userid" className={commonStyle["text-align-center"]} type="text" />

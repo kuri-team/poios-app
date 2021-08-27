@@ -46,7 +46,7 @@ const App = () => {
     },
     {
       path: "/auth/login/forgot-password",
-      reactComponent: <ForgotPasswordPage />,
+      reactComponent: <ForgotPasswordPage resetUrl="/auth/login" nextStepUrl="/auth/login/forgot-password/verify" />,
     },
     {
       path: "/auth/login",

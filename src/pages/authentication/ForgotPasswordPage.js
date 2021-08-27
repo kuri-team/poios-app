@@ -1,30 +1,31 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import Layout from "../../components/Layout";
-import * as style from "./ForgotPasswordPage.module.css";
 
-const ForgotPasswordPage = () => {
+import Layout from "../../components/Layout";
+import DialogBox from "../../components/DialogBox";
+import * as style from "./ForgotPasswordPage.module.css";
+import * as commonStyle from "../../styles/common.module.css";
+import * as formStyle from "../../styles/form.module.css";
+import * as dialogBoxStyle from "../../components/DialogBox.module.css";
+
+const ForgotPasswordPage = ({ resetUrl, nextStepUrl }) => {
   return (
     <Layout className={style["container"]}>
-      <img src={"/media/poios_background.jpg"} alt="" className={style["background"]} />
-      <div className={style["forgot-password-box"]}>
-        <div className={style["Poios-logo"]}>
-          <img src={"/media/logo_Wordmark_Primary.png"} alt="" className={style["logo-pic"]} />
+      <DialogBox background logo>
+        <div id="form" className={style["form"]}>
+          <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
+            <label className={style["label"]}>Enter your email to retrieve password</label>
+            <input className={commonStyle["text-align-center"]} type="email" />
+          </div>
         </div>
-        <form className={style["forgot-pass-form"]} method={"post"}>
-          <div className={style["forgot-input"]}>
-            <label className={style["forgot-input-label"]}>Enter your email to retrieve password</label>
-            <br />
-            <input className={style["forgot-input-field"]} type={"email"} />
-          </div>
-          <div className={style["forgot-btn-bx"]}>
-            <button className={style["deny-btn"]}>Cancel</button>
-            <Link to="/entercode">
-              <button className={style["accept-btn"]}>Send</button>
-            </Link>
-          </div>
-        </form>
-      </div>
+        <div className={[dialogBoxStyle["button-wrapper"], style["button-wrapper"]].join(" ")}>
+          <Link to={resetUrl}>
+            <button>Cancel</button>
+          </Link>
+          <Link to={nextStepUrl}>
+            <button className={dialogBoxStyle["primary"]}>Send</button>
+          </Link>
+        </div>
+      </DialogBox>
     </Layout>
   );
 };

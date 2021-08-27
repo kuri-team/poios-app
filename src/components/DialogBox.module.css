@@ -39,10 +39,12 @@
   display: -o-flex;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .box .button-wrapper a {
-  margin: 0 24px;
+  margin: 0 12px;
+  text-decoration: none;
 }
 
 .box .button-wrapper a:first-child {
@@ -53,11 +55,11 @@
   margin-right: 0;
 }
 
-.button-wrapper-col {
+.box .button-wrapper-col {
   flex-direction: column;
 }
 
-.box .button-wrapper a {
+.box .button-wrapper-col a {
   margin: 10px 0;
 }
 
