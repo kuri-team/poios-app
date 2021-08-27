@@ -1,5 +1,3 @@
-import "./TogglePasswordButton.module.css";
-
 const TogglePasswordButton = ({ state, callback, fill, width, height, margin }) => (
   <button onClick={() => callback(!state)}>
     {state ? (
