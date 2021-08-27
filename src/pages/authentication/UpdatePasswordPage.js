@@ -1,26 +1,50 @@
-import Layout from "../../components/Layout";
-import * as style from "./ForgotPasswordPage.module.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const UpdatePasswordPage = () => {
+import Layout from "../../components/Layout";
+import DialogBox from "../../components/DialogBox";
+import * as forgotPasswordStyle from "./ForgotPasswordPage.module.css";
+import * as formStyle from "../../styles/form.module.css";
+import * as commonStyle from "../../styles/common.module.css";
+import * as dialogBoxStyle from "../../components/DialogBox.module.css";
+import TogglePasswordButton from "../../components/Form/TogglePasswordButton";
+
+const UpdatePasswordPage = ({ resetUrl, nextStepUrl }) => {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
-    <Layout className={style["container"]}>
-      <img src={"/media/poios_background.jpg"} alt="" className={style["background"]} />
-      <div className={style["forgot-password-box"]}>
-        <div className={style["Poios-logo"]}>
-          <img src={"/media/logo_Wordmark_Primary.png"} alt="" className={style["logo-pic"]} />
+    <Layout>
+      <DialogBox background logo>
+        <div id="form" className={forgotPasswordStyle["form"]}>
+          <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
+            <TogglePasswordButton
+              state={showPassword}
+              callback={setShowPassword}
+              fill="var(--white)"
+              width="auto"
+              height="18px"
+              margin="0 0 16px 0"
+            />
+            <label htmlFor="password" className={forgotPasswordStyle["label"]}>
+              Enter new password
+            </label>
+            <input
+              id="password"
+              name="password"
+              className={commonStyle["text-align-center"]}
+              type={showPassword ? "text" : "password"}
+            />
+          </div>
         </div>
-        <form className={style["forgot-pass-form"]} method={"post"}>
-          <div className={style["forgot-input"]}>
-            <label className={style["forgot-input-label"]}>Enter a new password</label>
-            <br />
-            <input className={style["forgot-input-field"]} type={"password"} />
-          </div>
-          <div className={style["forgot-btn-bx"]}>
-            <button className={style["deny-btn"]}>Cancel</button>
-            <button className={style["accept-btn"]}>Update</button>
-          </div>
-        </form>
-      </div>
+        <div className={[dialogBoxStyle["button-wrapper"], forgotPasswordStyle["button-wrapper"]].join(" ")}>
+          <Link to={resetUrl}>
+            <button>Cancel</button>
+          </Link>
+          <Link to={nextStepUrl}>
+            <button className={dialogBoxStyle["primary"]}>Update</button>
+          </Link>
+        </div>
+      </DialogBox>
     </Layout>
   );
 };

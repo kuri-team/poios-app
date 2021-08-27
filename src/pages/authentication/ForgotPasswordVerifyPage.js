@@ -1,38 +1,35 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import Layout from "../../components/Layout";
-import * as style from "./ForgotPasswordPage.module.css";
 
-const ForgotPasswordVerifyPage = () => {
-  return (
-    <Layout className={style["container"]}>
-      <img src={"/media/poios_background.jpg"} alt="" className={style["background"]} />
-      <div className={style["forgot-password-box"]}>
-        <div className={style["Poios-logo"]}>
-          <img src={"/media/logo_Wordmark_Primary.png"} alt="" className={style["logo-pic-entercode-page"]} />
+import Layout from "../../components/Layout";
+import DialogBox from "../../components/DialogBox";
+import * as style from "./ForgotPasswordVerifyPage.module.css";
+import * as forgotPasswordStyle from "./ForgotPasswordPage.module.css";
+import * as formStyle from "../../styles/form.module.css";
+import * as commonStyle from "../../styles/common.module.css";
+import * as dialogBoxStyle from "../../components/DialogBox.module.css";
+
+const ForgotPasswordVerifyPage = ({ resetUrl, prevStepUrl, nextStepUrl }) => (
+  <Layout>
+    <DialogBox background logo>
+      <div id="form" className={[forgotPasswordStyle["form"], style["form"]].join(" ")}>
+        <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
+          <label htmlFor="code" className={forgotPasswordStyle["label"]}>
+            Please enter the verification code sent to your email to continue
+          </label>
+          <input id="code" name="code" className={commonStyle["text-align-center"]} type="text" />
         </div>
-        <div className={style["notice"]}>
-          <p> A verification code has been sent to your email</p>
-          <a href={"/forgotpwd"} className={style["change-email"]}>
-            Change email
-          </a>
-        </div>
-        <form className={style["forgot-pass-form"]} method={"post"}>
-          <div className={style["forgot-input"]}>
-            <label className={style["forgot-input-label"]}>ENTER VERIFICATION CODE</label>
-            <br />
-            <input className={style["forgot-input-field"]} type={"text"} />
-          </div>
-          <div className={style["forgot-btn-bx"]}>
-            <button className={style["deny-btn"]}>Resend</button>
-            <Link to="/updatepwd">
-              <button className={style["accept-btn"]}>Verify</button>
-            </Link>
-          </div>
-        </form>
+        <Link to={prevStepUrl}>Change email</Link>
       </div>
-    </Layout>
-  );
-};
+      <div className={[dialogBoxStyle["button-wrapper"], forgotPasswordStyle["button-wrapper"]].join(" ")}>
+        <Link to={resetUrl}>
+          <button>Cancel</button>
+        </Link>
+        <Link to={nextStepUrl}>
+          <button className={dialogBoxStyle["primary"]}>Verify</button>
+        </Link>
+      </div>
+    </DialogBox>
+  </Layout>
+);
 
 export default ForgotPasswordVerifyPage;

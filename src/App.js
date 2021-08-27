@@ -38,11 +38,17 @@ const App = () => {
     },
     {
       path: "/auth/login/forgot-password/update-password",
-      reactComponent: <UpdatePasswordPage />,
+      reactComponent: <UpdatePasswordPage resetUrl="/auth/login" nextStepUrl="/auth/login" />,
     },
     {
       path: "/auth/login/forgot-password/verify",
-      reactComponent: <ForgotPasswordVerifyPage />,
+      reactComponent: (
+        <ForgotPasswordVerifyPage
+          resetUrl="/auth/login"
+          prevStepUrl="/auth/login/forgot-password"
+          nextStepUrl="/auth/login/forgot-password/update-password"
+        />
+      ),
     },
     {
       path: "/auth/login/forgot-password",
