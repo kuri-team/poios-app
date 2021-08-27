@@ -3,7 +3,7 @@ import OwnProfileInfo from "../../components/Profile/OwnProfileInfo";
 import Timetable from "../../components/Profile/Timetable";
 import TimetableDay from "../../components/Profile/TimetableDay";
 
-import * as style from "./OwnProfile.module.css";
+import * as style from "./OwnProfilePage.module.css";
 
 const OwnProfilePage = () => {
   return (

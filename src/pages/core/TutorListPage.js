@@ -3,7 +3,7 @@ import Searchbar from "../../components/TutorList/Searchbar";
 import FilterWindow from "../../components/TutorList/FilterWindow";
 import TutorListElement from "../../components/TutorList/TutorListElement";
 import { useState } from "react";
-import * as style from "./TutorList.module.css";
+import * as style from "./TutorListPage.module.css";
 
 //'searching function'
 const dummyTutors = [

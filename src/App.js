@@ -2,7 +2,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import IndexPage from "./pages/IndexPage";
 import SignUpPage from "./pages/signup/SignUpPage";
-import LoginPage from "./pages/authentication/Login";
+import LoginPage from "./pages/authentication/LoginPage";
 import ForgotPwdPage from "./pages/authentication/ForgotPwdPage";
 import EnterCodePage from "./pages/authentication/EnterCodePage";
 import UpdatePwdPage from "./pages/authentication/UpdatePwdPage";

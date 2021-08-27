@@ -3,7 +3,7 @@ import TutorProfileInfo from "../../components/Profile/TutorProfileInfo";
 import Timetable from "../../components/Profile/Timetable";
 import Reviewer from "../../components/Profile/Reviewer";
 
-import * as style from "./TutorProfile.module.css";
+import * as style from "./TutorProfilePage.module.css";
 import OwnProfileInfo from "../../components/Profile/OwnProfileInfo";
 
 const TutorProfilePage = () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Layout from "../../components/Layout";
-import * as ForgotPwdstyle from "./ForgotPwd.module.css";
+import * as ForgotPwdstyle from "./ForgotPwdPage.module.css";
 const EnterCodePage = () => {
   return (
     <Layout className={ForgotPwdstyle["container"]}>

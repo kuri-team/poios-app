@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout";
-import * as ForgotPwdstyle from "./ForgotPwd.module.css";
+import * as ForgotPwdstyle from "./ForgotPwdPage.module.css";
 const ForgotPwdPage = () => {
   return (
     <Layout className={ForgotPwdstyle["container"]}>
