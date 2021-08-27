@@ -1,25 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Layout from "../../components/Layout";
-import * as ForgotPwdstyle from "./ForgotPasswordPage.module.css";
+import * as style from "./ForgotPasswordPage.module.css";
+
 const ForgotPasswordPage = () => {
   return (
-    <Layout className={ForgotPwdstyle["container"]}>
-      <img src={"/media/poios_background.jpg"} alt="" className={ForgotPwdstyle["background"]} />
-      <div className={ForgotPwdstyle["forgot-password-box"]}>
-        <div className={ForgotPwdstyle["Poios-logo"]}>
-          <img src={"/media/logo_Wordmark_Primary.png"} alt="" className={ForgotPwdstyle["logo-pic"]} />
+    <Layout className={style["container"]}>
+      <img src={"/media/poios_background.jpg"} alt="" className={style["background"]} />
+      <div className={style["forgot-password-box"]}>
+        <div className={style["Poios-logo"]}>
+          <img src={"/media/logo_Wordmark_Primary.png"} alt="" className={style["logo-pic"]} />
         </div>
-        <form className={ForgotPwdstyle["forgot-pass-form"]} method={"post"}>
-          <div className={ForgotPwdstyle["forgot-input"]}>
-            <label className={ForgotPwdstyle["forgot-input-label"]}>Enter your email to retrieve password</label>
+        <form className={style["forgot-pass-form"]} method={"post"}>
+          <div className={style["forgot-input"]}>
+            <label className={style["forgot-input-label"]}>Enter your email to retrieve password</label>
             <br />
-            <input className={ForgotPwdstyle["forgot-input-field"]} type={"email"} />
+            <input className={style["forgot-input-field"]} type={"email"} />
           </div>
-          <div className={ForgotPwdstyle["forgot-btn-bx"]}>
-            <button className={ForgotPwdstyle["deny-btn"]}>Cancel</button>
+          <div className={style["forgot-btn-bx"]}>
+            <button className={style["deny-btn"]}>Cancel</button>
             <Link to="/entercode">
-              <button className={ForgotPwdstyle["accept-btn"]}>Send</button>
+              <button className={style["accept-btn"]}>Send</button>
             </Link>
           </div>
         </form>

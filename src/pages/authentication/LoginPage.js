@@ -5,7 +5,7 @@ import * as style from "./LoginPage.module.js.css";
 const LoginPage = () => {
   return (
     <Layout className={commonStyle["container"] + " " + commonStyle["home"]}>
-      <img src={"/media/bg.jpg"} alt="" className={commonStyle["background"]} />
+      <img src={"/media/poios_background.jpg"} alt="" className={commonStyle["background"]} />
       <div className={["login-box"]}>
         <form className={["login-form"]} method={"post"}>
           <div className={["brand-display"]}>
