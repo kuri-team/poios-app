@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+import { pages, PagesContext } from "../Pages";
 import Nav from "./Header/Nav";
 import Notifications from "./Header/Notifications";
 import Messages from "./Header/Messages";
@@ -14,7 +15,9 @@ const Header = () => (
       <Link to="/" className={style["brand"]}>
         <img src={"/media/Wordmark_Secondary.svg"} alt={"Home"} />
       </Link>
-      <Nav />
+      <PagesContext.Provider value={pages.desktopNav}>
+        <Nav />
+      </PagesContext.Provider>
     </div>
     <div className={style["controls"]}>
       <Notifications active={true} />
@@ -23,7 +26,9 @@ const Header = () => (
       <span className={style["divider"]} />
       <AccountMenu />
     </div>
-    <MobileNav />
+    <PagesContext.Provider value={pages.mobileNav}>
+      <MobileNav />
+    </PagesContext.Provider>
   </header>
 );
 

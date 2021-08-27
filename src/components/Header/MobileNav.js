@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
+import { PagesContext } from "../../Pages";
 import * as style from "./MobileNav.module.css";
 
 const MobileNav = () => {
   const [open, setOpen] = useState(false);
+  const navLinks = useContext(PagesContext);
 
   return (
     <div className={style["wrapper"]}>
@@ -18,12 +20,11 @@ const MobileNav = () => {
       </button>
       <div className={open ? style["menu"] : [style["menu"], style["closed"]].join(" ")}>
         <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/page2">Page2</Link>
-          </li>
+          {navLinks.map((navLink, key) => (
+            <li key={key}>
+              <Link to={navLink.path}>{navLink.name}</Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

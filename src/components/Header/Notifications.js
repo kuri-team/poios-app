@@ -46,9 +46,9 @@ const Notifications = ({ active }) => {
       <button className={commonStyle["button"]} onClick={() => setOpen(!open)}>
         {active ? <div className={commonStyle["active-indicator"]} /> : null}
         {active ? (
-          <img src={"/media/notifications_active_black_24dp.svg"} alt={"Notifications"} />
+          <img src={"/media/icons/notifications_active_black_24dp.svg"} alt={"Notifications"} />
         ) : (
-          <img src={"/media/notifications_black_24dp.svg"} alt={"Notifications"} />
+          <img src={"/media/icons/notifications_black_24dp.svg"} alt={"Notifications"} />
         )}
       </button>
       <div className={open ? commonStyle["menu"] : [commonStyle["menu"], commonStyle["hidden"]].join(" ")}>

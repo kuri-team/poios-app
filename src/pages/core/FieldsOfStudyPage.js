@@ -6,7 +6,7 @@ import * as style from "./FieldsOfStudyPage.module.css";
 
 const FieldsOfStudyPage = () => {
   return (
-    <Layout className={style["container"]}>
+    <Layout header footer className={style["container"]}>
       <h1 className={style["h1"]}>Choose a major</h1>
       <MajorSelectMenu />
 

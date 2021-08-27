@@ -49,9 +49,9 @@ const Calendar = ({ active }) => {
       <button className={commonStyle["button"]} onClick={() => setOpen(!open)}>
         {active ? <div className={commonStyle["active-indicator"]} /> : null}
         {active ? (
-          <img src={"/media/event_black_24dp.svg"} alt={"Notifications"} />
+          <img src={"/media/icons/event_black_24dp.svg"} alt={"Notifications"} />
         ) : (
-          <img src={"/media/calendar_black_24dp.svg"} alt={"Notifications"} />
+          <img src={"/media/icons/calendar_black_24dp.svg"} alt={"Notifications"} />
         )}
       </button>
       <div className={open ? commonStyle["menu"] : [commonStyle["menu"], commonStyle["hidden"]].join(" ")}>

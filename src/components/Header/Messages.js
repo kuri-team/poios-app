@@ -38,9 +38,9 @@ const Messages = ({ active }) => {
       <button className={[commonStyle["button"], style["button"]].join(" ")} onClick={() => setOpen(!open)}>
         {active ? <div className={commonStyle["active-indicator"]} /> : null}
         {active ? (
-          <img src={"/media/chat_black_24dp.svg"} alt={"Notifications"} />
+          <img src={"/media/icons/chat_black_24dp.svg"} alt={"Notifications"} />
         ) : (
-          <img src={"/media/chat_black_24dp.svg"} alt={"Notifications"} />
+          <img src={"/media/icons/chat_black_24dp.svg"} alt={"Notifications"} />
         )}
       </button>
       <div className={open ? commonStyle["menu"] : [commonStyle["menu"], commonStyle["hidden"]].join(" ")}>

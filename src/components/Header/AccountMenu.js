@@ -17,7 +17,7 @@ const AccountMenu = () => {
         </button>
       </div>
       <button className={[commonStyle["button"], style["button"]].join(" ")} onClick={() => setOpen(!open)}>
-        <img src={"/media/account_circle_black_24dp.svg"} alt={"Notifications"} />
+        <img src={"/media/icons/account_circle_black_24dp.svg"} alt={"Notifications"} />
       </button>
     </>
   );
