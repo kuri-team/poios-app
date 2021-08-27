@@ -6,11 +6,11 @@ import LoginPage from "./pages/authentication/LoginPage";
 import ForgotPasswordPage from "./pages/authentication/ForgotPasswordPage";
 import ForgotPasswordVerifyPage from "./pages/authentication/ForgotPasswordVerifyPage";
 import UpdatePasswordPage from "./pages/authentication/UpdatePasswordPage";
-import MyProfilePage from "./pages/profile/MyProfilePage";
 import ProfilePage from "./pages/profile/ProfilePage";
-import ChatPage from "./pages/core/ChatPage";
+import MyProfilePage from "./pages/profile/MyProfilePage";
 import TutorsPage from "./pages/core/TutorsPage";
 import FieldsOfStudyPage from "./pages/core/FieldsOfStudyPage";
+import ChatPage from "./pages/core/ChatPage";
 
 import "./App.module.css";
 
