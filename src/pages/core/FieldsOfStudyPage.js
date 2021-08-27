@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout";
-import SubjectBoxes from "../../components/ChooseMajor/SubjectBoxes";
-import MajorSelectMenu from "../../components/ChooseMajor/MajorSelectMenu";
+import SubjectBoxes from "../../components/FieldsOfStudy/SubjectBoxes";
+import MajorSelectMenu from "../../components/FieldsOfStudy/MajorSelectMenu";
 
 import * as style from "./FieldsOfStudy.module.css";
 

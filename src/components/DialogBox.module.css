@@ -78,8 +78,8 @@
   border: none;
   border-radius: var(--border-radius-m);
   transform: scale(1);
-  transition: var(--transition-relaxed);
-  transition-delay: var(--transition-medium-rapid);
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-rapid);
   will-change: background, transform;
 }
 

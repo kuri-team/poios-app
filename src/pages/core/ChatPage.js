@@ -1,5 +1,5 @@
-import Sidebar from "../../components/Chatroom/Sidebar";
-import ChatWindow from "../../components/Chatroom/ChatWindow";
+import Sidebar from "../../components/Chat/Sidebar";
+import ChatWindow from "../../components/Chat/ChatWindow";
 
 import * as style from "./ChatPage.module.css";
 import Layout from "../../components/Layout";
