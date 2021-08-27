@@ -2,7 +2,7 @@ import Layout from "../../components/Layout";
 import SubjectBoxes from "../../components/FieldsOfStudy/SubjectBoxes";
 import MajorSelectMenu from "../../components/FieldsOfStudy/MajorSelectMenu";
 
-import * as style from "./FieldsOfStudy.module.css";
+import * as style from "./FieldsOfStudyPage.module.css";
 
 const FieldsOfStudyPage = () => {
   return (
