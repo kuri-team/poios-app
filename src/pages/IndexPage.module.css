@@ -19,6 +19,7 @@
   padding: 75px;
   background: var(--light-black);
   border-radius: var(--border-radius-m);
+  box-shadow: 0 0 240px 0 var(--deep-shadow-black);
 }
 
 .dialogue-box .brand img {
@@ -87,10 +88,15 @@
 }
 
 @media only screen and (--viewport-tablet) {
+  .dialogue-box {
+    box-shadow: 0 0 16px 0 var(--shadow-black);
+  }
 }
 
 @media only screen and (--viewport-phone) {
-}
-
-@media only screen and (--viewport-phone-small) {
+  .dialogue-box {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+  }
 }
