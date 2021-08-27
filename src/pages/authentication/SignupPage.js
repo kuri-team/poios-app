@@ -44,8 +44,17 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
               aria-hidden
             />
           </div>
-          <div className={[formStyle["field"], formStyle["field-column"], style["acc-type"]].join(" ")}>
-            <label htmlFor="acc-type">Hello, I am a</label>
+          <div
+            className={[
+              formStyle["field"],
+              formStyle["field-column"],
+              style["acc-type"],
+              commonStyle["text-align-center"],
+            ].join(" ")}
+          >
+            <label htmlFor="acc-type" className={commonStyle["text-align-center"]}>
+              Hello, I am a
+            </label>
             <select id="acc-type" name="acc-type" className={commonStyle["text-align-center"]}>
               <option value="student">Student</option>
               <option value="tutor">Tutor</option>

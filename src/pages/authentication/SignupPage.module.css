@@ -41,10 +41,11 @@
 }
 
 .form .acc-type select {
-  padding: 0 0 10px 0 !important;
+  padding: 0 10px 10px 10px !important;
   color: var(--white);
   font-weight: 700;
   background: var(--light-black);
+  border-radius: 0;
   -o-appearance: none;
   -ms-appearance: none;
   -webkit-appearance: none;

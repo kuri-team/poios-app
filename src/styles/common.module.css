@@ -1,5 +1,6 @@
 .text-align-center {
-  text-align: -webkit-center;
-  text-align: -moz-center;
-  text-align: center;
+  text-align: -webkit-center !important;
+  text-align: -moz-center !important;
+  text-align: center !important;
+  text-align-last: center;
 }
