@@ -50,7 +50,7 @@ const App = () => {
     },
     {
       path: "/auth/login",
-      reactComponent: <LoginPage />,
+      reactComponent: <LoginPage authRedirectTo="/core/tutors" forgotPasswordUrl="/auth/login/forgot-password" />,
     },
     {
       path: "/signup",

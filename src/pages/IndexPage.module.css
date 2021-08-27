@@ -1,15 +1,3 @@
-.container {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: var(--content-w-min);
-  height: 100vh;
-  text-align: -webkit-center;
-  text-align: -moz-center;
-  text-align: center;
+.button-wrapper {
+  margin-top: 75px;
 }

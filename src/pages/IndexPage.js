@@ -7,9 +7,15 @@ import * as dialogBoxStyle from "../components/DialogBox.module.css";
 
 const IndexPage = ({ loginUrl, signupUrl }) => {
   return (
-    <Layout className={style["container"]}>
+    <Layout>
       <DialogBox background logo>
-        <div className={[dialogBoxStyle["button-wrapper"], dialogBoxStyle["button-wrapper-col"]].join(" ")}>
+        <div
+          className={[
+            dialogBoxStyle["button-wrapper"],
+            dialogBoxStyle["button-wrapper-col"],
+            style["button-wrapper"],
+          ].join(" ")}
+        >
           <Link to={loginUrl}>
             <button className={dialogBoxStyle["primary"]}>Login</button>
           </Link>
