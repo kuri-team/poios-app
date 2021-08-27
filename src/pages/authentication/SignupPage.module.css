@@ -1,11 +1,21 @@
 .form {
+  display: -moz-grid;
+  display: -ms-grid;
+  display: grid;
+  grid-column-gap: 52px;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto auto;
   margin-bottom: 60px;
+}
+
+.form .avatar {
+  grid-row: 1;
+  grid-column: 1 / span 2;
 }
 
 .form .avatar-preview {
   width: 120px;
   height: 120px;
-  margin-bottom: 18px;
   border-radius: 50%;
   box-shadow: 0 0 12px 0 var(--shadow-black);
   transform: scale(1);

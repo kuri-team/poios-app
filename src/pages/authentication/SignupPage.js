@@ -18,7 +18,7 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
     <Layout>
       <DialogBox background logo>
         <div id="form" className={style["form"]}>
-          <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
+          <div className={[formStyle["field"], formStyle["field-column"], style["avatar"]].join(" ")}>
             <label htmlFor="avatar">
               <img
                 className={style["avatar-preview"]}
