@@ -7,10 +7,21 @@
   height: 120px;
   margin-bottom: 18px;
   border-radius: 50%;
+  box-shadow: 0 0 12px 0 var(--shadow-black);
+  transform: scale(1);
+  transition: var(--transition-medium-relaxed);
+  transition-delay: var(--transition-rapid);
+  will-change: transform;
 }
 
-.form .avatar-upload {
-  background: var(--alt-black);
+.form .avatar-preview:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  transition: var(--transition-medium-rapid);
+}
+
+.form .avatar-preview:active {
+  transform: scale(1);
 }
 
 .nav {

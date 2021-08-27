@@ -73,8 +73,10 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        {pages.map(page => (
-          <Route path={page.path}>{page.reactComponent}</Route>
+        {pages.map((page, key) => (
+          <Route key={key} path={page.path}>
+            {page.reactComponent}
+          </Route>
         ))}
       </Switch>
     </BrowserRouter>

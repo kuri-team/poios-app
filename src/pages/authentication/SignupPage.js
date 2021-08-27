@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import Layout from "../../components/Layout";
@@ -10,9 +10,9 @@ import * as commonStyle from "../../styles/common.module.css";
 import * as dialogBoxStyle from "../../components/DialogBox.module.css";
 
 const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
+  const [avatar, setAvatar] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
   const [showVerifyPassword, setShowVerifyPassword] = useState(false);
-  const avatar = null;
 
   return (
     <Layout>
@@ -24,14 +24,24 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
                 className={style["avatar-preview"]}
                 src={avatar ? avatar : "/media/profile-placeholder_143x143.png"}
                 alt="Upload a photo"
+                draggable={false}
               />
             </label>
             <input
               id="avatar"
               name="avatar"
-              className={[style["avatar-upload"], commonStyle["text-align-center"]].join(" ")}
               type="file"
               accept="image/jpeg,image/png"
+              onChange={e => {
+                const file = new FileReader();
+                file.readAsDataURL(e.target.files[0]);
+                file.onloadend = () => {
+                  setAvatar(file.result);
+                  console.log(file.result);
+                };
+              }}
+              hidden
+              aria-hidden
             />
           </div>
           <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
