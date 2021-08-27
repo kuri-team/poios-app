@@ -33,6 +33,13 @@
   --content-w-extra-narrow: 768px;
   --content-w-min: 320px;
   --header-height: 65px;
+  --border-radius-xxs: 6px;
+  --border-radius-xs: 8px;
+  --border-radius-s: 12px;
+  --border-radius-m: 24px;
+  --border-radius-l: 32px;
+  --border-radius-xl: 42px;
+  --border-radius-xxl: 54px;
 
   /* Transition timing */
   --transition-near-instant: 25ms;

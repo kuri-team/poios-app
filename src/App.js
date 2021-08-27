@@ -14,44 +14,63 @@ import ChatPage from "./pages/core/ChatPage";
 
 import "./App.module.css";
 
-const App = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route path="/core/chat">
-        <ChatPage />
-      </Route>
-      <Route path="/core/fields-of-study">
-        <FieldsOfStudyPage />
-      </Route>
-      <Route path="/core/tutors">
-        <TutorsPage />
-      </Route>
-      <Route path="/profile/my-profile">
-        <MyProfilePage />
-      </Route>
-      <Route path="/profile">
-        <ProfilePage />
-      </Route>
-      <Route path="/auth/login/forgot-password/update-password">
-        <UpdatePasswordPage />
-      </Route>
-      <Route path="/auth/login/forgot-password/verify">
-        <ForgotPasswordVerifyPage />
-      </Route>
-      <Route path="/auth/login/forgot-password">
-        <ForgotPasswordPage />
-      </Route>
-      <Route path="/auth/login">
-        <LoginPage />
-      </Route>
-      <Route path="/signup">
-        <SignupPage />
-      </Route>
-      <Route path="/">
-        <IndexPage />
-      </Route>
-    </Switch>
-  </BrowserRouter>
-);
+const App = () => {
+  const pages = [
+    {
+      path: "/core/chat",
+      reactComponent: <ChatPage />,
+    },
+    {
+      path: "/core/fields-of-study",
+      reactComponent: <FieldsOfStudyPage />,
+    },
+    {
+      path: "/core/tutors",
+      reactComponent: <TutorsPage />,
+    },
+    {
+      path: "/profile/my-profile",
+      reactComponent: <MyProfilePage />,
+    },
+    {
+      path: "/profile",
+      reactComponent: <ProfilePage />,
+    },
+    {
+      path: "/auth/login/forgot-password/update-password",
+      reactComponent: <UpdatePasswordPage />,
+    },
+    {
+      path: "/auth/login/forgot-password/verify",
+      reactComponent: <ForgotPasswordVerifyPage />,
+    },
+    {
+      path: "/auth/login/forgot-password",
+      reactComponent: <ForgotPasswordPage />,
+    },
+    {
+      path: "/auth/login",
+      reactComponent: <LoginPage />,
+    },
+    {
+      path: "/signup",
+      reactComponent: <SignupPage />,
+    },
+    {
+      path: "/",
+      reactComponent: <IndexPage loginUrl="/auth/login" signupUrl="/signup" />,
+    },
+  ];
+
+  return (
+    <BrowserRouter>
+      <Switch>
+        {pages.map(page => (
+          <Route path={page.path}>{page.reactComponent}</Route>
+        ))}
+      </Switch>
+    </BrowserRouter>
+  );
+};
 
 export default App;

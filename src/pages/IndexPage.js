@@ -1,17 +1,23 @@
 import Layout from "../components/Layout";
+import PoiosBackground from "../components/PoiosBackground";
 import * as style from "./IndexPage.module.css";
+import { Link } from "react-router-dom";
 
-const IndexPage = () => {
+const IndexPage = ({ loginUrl, signupUrl }) => {
   return (
-    <Layout className={[style["container"], style["home"]].join(" ")}>
-      <img src={"/media/poios_background.jpg"} alt="" className={style["background"]} />
-      <div className={style["login-signup-box"]}>
-        <div className={style["brand-display"]}>
-          <img src={"/media/Wordmark_Primary.svg"} className={style["brand-name"]} alt="" />
+    <Layout className={style["container"]}>
+      <PoiosBackground />
+      <div className={style["dialogue-box"]}>
+        <div className={style["brand"]}>
+          <img src={"/media/Wordmark_Primary.svg"} alt="" draggable={false} />
         </div>
-        <div className={style["landing-btn-box"]}>
-          <button className={[style["landing-login-btn"], style["landing-btn"]].join(" ")}>LOGIN</button> <br />
-          <button className={[style["landing-signup-btn"], style["landing-btn"]].join(" ")}>SIGN UP</button>
+        <div className={style["button-wrapper"]}>
+          <Link to={loginUrl}>
+            <button className={style["primary"]}>Login</button>
+          </Link>
+          <Link to={signupUrl}>
+            <button>Signup</button>
+          </Link>
         </div>
       </div>
     </Layout>

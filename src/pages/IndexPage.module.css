@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   min-width: var(--content-w-min);
   height: 100vh;
   text-align: -webkit-center;
@@ -14,160 +14,83 @@
   text-align: center;
 }
 
-/*
-Make image become background image
- */
-.home {
-  overflow: hidden;
-}
-
-.background {
-  position: absolute;
-  z-index: -999;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  inset: 0;
-}
-
-/*
-Brand
- */
-.brand-display {
-  margin: 3em;
-  padding: 2.5em 1em;
-}
-
-.brand-name {
-  width: 14em;
-  height: 3.5em;
-}
-
-/*
-Buttons
- */
-.login-signup-box {
-  margin-right: 45rem;
+.dialogue-box {
+  margin: auto;
+  padding: 75px;
   background: var(--light-black);
-  border-radius: 1em;
+  border-radius: var(--border-radius-m);
 }
 
-.landing-btn {
-  width: 12em;
-  height: 3em;
-  margin: 1em;
-  padding: 1em;
-  color: var(--white);
-  font-weight: bolder;
-  font-size: 7pt;
+.dialogue-box .brand img {
+  width: auto;
+  height: 64px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.dialogue-box .button-wrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120px;
+}
+
+.dialogue-box .button-wrapper a {
+  margin: 10px 0;
+}
+
+.dialogue-box .button-wrapper a:first-child {
+  margin-top: 0;
+}
+
+.dialogue-box .button-wrapper a:last-child {
+  margin-bottom: 0;
+}
+
+.dialogue-box .button-wrapper a button {
+  width: 140px;
+  padding: 14px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: var(--white);
   border: none;
-  border-radius: 1em;
+  border-radius: var(--border-radius-m);
+  transform: scale(1);
+  transition: var(--transition-relaxed);
+  transition-delay: var(--transition-medium-rapid);
+  will-change: background, transform;
 }
 
-.landing-btn:hover {
+.dialogue-box .button-wrapper a button:hover {
+  background: var(--gray);
   cursor: pointer;
+  transition: var(--transition-rapid);
 }
 
-.landing-btn-box {
-  margin: 2em;
-  padding: 2em;
+.dialogue-box .button-wrapper a button:active {
+  transform: scale(0.95);
 }
 
-.landing-login-btn {
+.dialogue-box .button-wrapper a .primary {
+  color: var(--white);
   background: var(--cyan);
 }
 
-.landing-login-btn:hover {
+.dialogue-box .button-wrapper a .primary:hover {
   background: var(--blue);
 }
 
-.landing-signup-btn {
-  background: var(--gray);
-}
-
-.landing-signup-btn:hover {
-  background: var(--deep-shadow-black);
-}
-
-/*
-Responsive
- */
-
 @media only screen and (--viewport-tablet) {
-  .background {
-    display: none;
-  }
-
-  .go-back {
-    display: none;
-  }
-
-  .login-signup-box {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    background: var(--black);
-    border-radius: 0;
-  }
-
-  .brand-display {
-    margin: 15em 2em 10em;
-    padding: 2em;
-  }
-
-  .brand-name {
-    width: 40em;
-    height: 10em;
-  }
-
-  .landing-btn-box {
-    margin: 1rem 2rem 10rem;
-    padding: 5rem;
-  }
-
-  .landing-btn {
-    width: 20em;
-    height: 5em;
-    margin: 0.5em;
-    font-size: 12pt;
-    border-radius: 2em;
-  }
-
-  .landing-signup-btn {
-    margin-bottom: 2em;
-  }
 }
 
 @media only screen and (--viewport-phone) {
-  .brand-display {
-    margin: 15em 2em 5em;
-  }
-
-  .brand-name {
-    width: 14em;
-    height: 3.5em;
-  }
-
-  .landing-btn-box {
-    margin: 0 0 5rem;
-    padding: 3rem;
-  }
-
-  .landing-btn {
-    width: 10em;
-    height: 3em;
-    margin: 0.5em;
-    font-size: 9pt;
-    border-radius: 2em;
-  }
-
-  .landing-signup-btn {
-    margin-bottom: 2em;
-  }
 }
 
 @media only screen and (--viewport-phone-small) {
-  .brand-display {
-    margin: 15em 0 5em;
-  }
 }
