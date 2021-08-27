@@ -40,9 +40,19 @@
   transition-delay: var(--transition-near-instant);
 }
 
+@media only screen and (--viewport-tablet) {
+  .subject-box,
+  .subject-box-selected {
+    width: 120px;
+  }
+}
+
 @media only screen and (--viewport-phone) {
   .subject-box,
   .subject-box-selected {
-    width: 200px;
+    box-sizing: border-box;
+    width: 45%;
+    height: 200px;
+    margin: 6px;
   }
 }

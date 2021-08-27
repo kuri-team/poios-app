@@ -51,7 +51,23 @@
   transition-delay: var(--transition-near-instant);
 }
 
+@media only screen and (--viewport-desktop) {
+  .container {
+    padding: 120px 45px;
+  }
+}
+
+@media only screen and (--viewport-tablet) {
+  .container {
+    padding: 120px 20px;
+  }
+}
+
 @media only screen and (--viewport-phone) {
+  .container {
+    padding: 120px 0;
+  }
+
   .subheading {
     margin: 4em 5% 1em;
   }

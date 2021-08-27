@@ -12,13 +12,29 @@
 }
 
 .container {
-  margin: 8px 16px 0 16px;
+  margin-top: 8px;
 }
 
 .subject-container {
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin: 0 16px;
+}
+
+@media only screen and (--viewport-tablet) {
+  .subject-container {
+    justify-content: center;
+    order: 2;
+    margin: 0 12px;
+  }
+
+  .prev-btn {
+    order: 1;
+  }
+  .next-btn {
+    order: 3;
+  }
 }
 
 @media only screen and (--viewport-phone) {
@@ -27,14 +43,8 @@
   }
 
   .subject-container {
+    justify-content: center;
     order: 1;
-    margin-bottom: 2em;
-  }
-
-  .prev-btn {
-    order: 2;
-  }
-  .next-btn {
-    order: 3;
+    margin: 0 12px;
   }
 }
