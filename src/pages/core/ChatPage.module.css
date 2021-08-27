@@ -1,7 +1,3 @@
-:root {
-  overflow-y: hidden !important;
-}
-
 .chatroom-content {
   display: grid;
   grid-template-columns: 400px auto;

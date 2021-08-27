@@ -14,12 +14,21 @@
   text-align: center;
 }
 
+.wrapper-scroll {
+  height: auto;
+}
+
 .box {
   margin: auto;
   padding: 75px;
   background: var(--light-black);
   border-radius: var(--border-radius-m);
   box-shadow: 0 0 240px 0 var(--deep-shadow-black);
+}
+
+.wrapper-scroll .box {
+  padding: 98px 75px;
+  border-radius: 0;
 }
 
 .box .brand img {
