@@ -35,10 +35,10 @@ const App = () => (
       <Route path="/forgot-password">
         <ForgotPwdPage />
       </Route>
-      <Route exact path="/forgot-password-verify">
+      <Route path="/forgot-password-verify">
         <EnterCodePage />
       </Route>
-      <Route exact path="/forgot-password-update-password">
+      <Route path="/forgot-password-update-password">
         <UpdatePwdPage />
       </Route>
       <Route path="/signup">
@@ -47,7 +47,7 @@ const App = () => (
       <Route path="/choose-major">
         <ChooseMajorPage />
       </Route>
-      <Route exact path="/">
+      <Route path="/">
         <IndexPage />
       </Route>
     </Switch>
