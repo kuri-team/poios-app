@@ -8,7 +8,9 @@ const Layout = ({ className, header, footer, children }) => {
   return (
     <>
       {header ? <Header /> : null}
-      <main className={className}>{children}</main>
+      <main className={className} style={header ? { paddingTop: "var(--header-height)" } : null}>
+        {children}
+      </main>
       {footer ? <Footer /> : null}
     </>
   );

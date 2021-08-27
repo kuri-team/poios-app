@@ -15,7 +15,7 @@
   color: var(--black);
   background-color: var(--white);
   border: none;
-  border-radius: 5px;
+  border-radius: var(--border-radius-xxs);
   outline: none;
   -o-appearance: none;
   -ms-appearance: none;

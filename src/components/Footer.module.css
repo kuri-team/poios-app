@@ -12,7 +12,7 @@
   padding: 0 40px;
   color: var(--black);
   background: var(--white);
-  border-radius: 24px 24px 0 0;
+  border-radius: var(--border-radius-m) var(--border-radius-m) 0 0;
   box-shadow: 0 -3px 12px 0 var(--deep-shadow-black);
 }
 

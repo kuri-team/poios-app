@@ -14,6 +14,7 @@
   padding: 1em;
   color: var(--black);
   background: var(--white);
+  border-radius: var(--border-radius-xxs);
   transition: var(--transition-medium);
   transition-delay: var(--transition-medium-rapid);
   will-change: background, border;

@@ -70,9 +70,9 @@ const SubjectBoxes = () => {
     <div className={style["container"]}>
       <div className={style["prev-btn"]}>
         {currentPage === 0 ? (
-          <ToggleButton src={"/media/chevron_left.svg"} onClick={() => togglePrevPage()} disabled />
+          <ToggleButton src={"/media/icons/chevron_left.svg"} onClick={() => togglePrevPage()} disabled />
         ) : (
-          <ToggleButton src={"/media/chevron_left.svg"} onClick={() => togglePrevPage()} />
+          <ToggleButton src={"/media/icons/chevron_left.svg"} onClick={() => togglePrevPage()} />
         )}
       </div>
       <div className={style["subject-container"]}>
@@ -86,9 +86,9 @@ const SubjectBoxes = () => {
       </div>
       <div className={style["next-btn"]}>
         {currentPage === numPages - 1 ? (
-          <ToggleButton src={"/media/chevron_right.svg"} onClick={() => toggleNextPage()} disabled />
+          <ToggleButton src={"/media/icons/chevron_right.svg"} onClick={() => toggleNextPage()} disabled />
         ) : (
-          <ToggleButton src={"/media/chevron_right.svg"} onClick={() => toggleNextPage()} />
+          <ToggleButton src={"/media/icons/chevron_right.svg"} onClick={() => toggleNextPage()} />
         )}
       </div>
     </div>

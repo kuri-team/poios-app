@@ -19,7 +19,7 @@ const MajorSelectMenu = () => {
         ))}
       </select>
       <button className={style["button"]}>
-        <img src={"/media/expand_more_black_24dp.svg"} alt="" />
+        <img src={"/media/icons/expand_more_black_24dp.svg"} alt="" />
       </button>
     </div>
   );
