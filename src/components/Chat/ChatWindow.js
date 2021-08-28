@@ -28,8 +28,6 @@ const ChatWindow = ({ roomName }) => {
     },
   ];
 
-  console.log(messages.length);
-
   return (
     <div className={style["chat-window"]}>
       <div className={style["chat-window-header"]}>
@@ -77,7 +75,7 @@ const ChatWindow = ({ roomName }) => {
         </div>
       </div>
 
-      <form className={style["form"]}>
+      <div className={style["form"]}>
         <div className={style["attach-button"]}>
           <img className={style["function-icon"]} src={"/media/chatroom-icons/photo.svg"} alt="Send photo icon" />
         </div>
@@ -90,7 +88,7 @@ const ChatWindow = ({ roomName }) => {
         <div className={style["send-button"]}>
           <img className={style["function-icon"]} src={"/media/chatroom-icons/send.svg"} alt="Send icon" />
         </div>
-      </form>
+      </div>
     </div>
   );
 };

@@ -6,16 +6,21 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  color: var(--gray);
+  color: var(--white);
   font-weight: bold;
   font-size: 20px;
   background: var(--cyan);
   cursor: pointer;
+  transition: background-color var(--transition-medium-relaxed);
+  transition-delay: var(--transition-extra-rapid);
+  will-change: background-color;
 }
 
 .dropdown-btn:hover {
-  background-color: var(--dark-cyan);
+  background-color: var(--blue);
   cursor: pointer;
+  transition: var(--transition-extra-rapid);
+  transition-delay: 0ms;
 }
 
 .dropdown-content {
@@ -42,14 +47,19 @@
 }
 
 .dropdown-item {
-  margin: 2px;
+  margin: 8px;
   padding: 10px;
   border: 1px solid var(--cyan);
+  border-radius: var(--border-radius-xxs);
   cursor: pointer;
-  transition: all 0.1s;
+  transition: background-color var(--transition-medium-relaxed);
+  transition-delay: var(--transition-extra-rapid);
+  will-change: background-color;
 }
 .dropdown-item:hover {
   background-color: var(--cyan);
+  transition: var(--transition-extra-rapid);
+  transition-delay: 0ms;
 }
 
 .plus-icon {
@@ -63,18 +73,21 @@
   align-items: center;
   float: right;
   margin: 10px;
-  padding: 8px;
+  padding: 12px 18px;
   color: var(--white);
   font-weight: bold;
   font-size: 15px;
   text-align: center;
   text-decoration: none;
   background-color: var(--cyan);
-  border: 3px solid var(--black);
+  border-radius: var(--border-radius-xxs);
   outline: none;
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-extra-rapid);
 }
 
 .add-room:hover {
-  background-color: var(--dark-cyan);
+  background-color: var(--blue);
   cursor: pointer;
+  transition: var(--transition-extra-rapid);
 }

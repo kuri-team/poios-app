@@ -52,9 +52,9 @@
 .message .body .content {
   display: inline-block;
   margin: 0 24px 10px 24px;
-  padding: 24px 36px;
+  padding: 18px 28px;
   background: var(--alt-black);
-  border-radius: 0 16px 16px 16px;
+  border-radius: 0 var(--border-radius-m) var(--border-radius-m) var(--border-radius-m);
 }
 
 .from-me {
@@ -64,5 +64,5 @@
 .message .body .from-me {
   float: right;
   background: var(--blue);
-  border-radius: 16px 0 16px 16px;
+  border-radius: var(--border-radius-m) 0 var(--border-radius-m) var(--border-radius-m);
 }
