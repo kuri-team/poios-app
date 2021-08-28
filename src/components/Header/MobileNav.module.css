@@ -23,7 +23,7 @@
   background: var(--alt-black);
   border: none;
   border-radius: var(--border-radius-xxs);
-  box-shadow: 0 0 6px 0 var(--deep-shadow-black);
+  box-shadow: 0 0 4px 0 var(--deep-shadow-black);
 }
 
 .button .bar {

@@ -75,7 +75,7 @@ const SubjectBoxes = () => {
           <ToggleButton src={"/media/icons/chevron_left.svg"} onClick={() => togglePrevPage()} />
         )}
       </div>
-      <div className={style["subject-container"]}>
+      <div className={style["content"]}>
         {subjects.map((subject, i) =>
           visibleSubjectsIndex.startIndex <= i && i <= visibleSubjectsIndex.endIndex ? (
             <SubjectBox key={i} subject={subject} />

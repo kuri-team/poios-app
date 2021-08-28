@@ -8,10 +8,11 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  width: 170px;
-  height: 70px;
-  margin: 1em;
-  padding: 1em;
+  box-sizing: border-box;
+  width: auto;
+  height: 175px;
+  margin: 10px;
+  padding: 24px 42px;
   color: var(--white);
   background: var(--light-black);
   border-radius: var(--border-radius-xxs);
@@ -40,19 +41,11 @@
   transition-delay: var(--transition-near-instant);
 }
 
-@media only screen and (--viewport-tablet) {
-  .subject-box,
-  .subject-box-selected {
-    width: 120px;
-  }
-}
-
 @media only screen and (--viewport-phone) {
   .subject-box,
   .subject-box-selected {
-    box-sizing: border-box;
-    width: 45%;
-    height: 200px;
-    margin: 6px;
+    margin: 2px;
+    padding: 16px 24px;
+    font-size: 12px;
   }
 }
