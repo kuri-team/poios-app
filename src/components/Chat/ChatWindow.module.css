@@ -8,7 +8,8 @@
 }
 
 .chat-window-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 250px auto;
   align-items: center;
   justify-content: space-between;
   height: 72px;
@@ -90,17 +91,22 @@
 }
 
 .profile-wrapper {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
 }
 
-.avatar {
-  width: 30px;
-  height: 30px;
-  margin-left: 12px;
+.profile-avatar {
+  width: 45px;
+  height: 45px;
   vertical-align: middle;
   border-radius: 50%;
 }
-
+.profile-username {
+  margin-left: 10px;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+}
 .chat-window-content {
   display: flex;
   flex-direction: column;
@@ -202,18 +208,52 @@
   cursor: pointer;
 }
 
-@media only screen and (--viewport-phone) {
+@media only screen and (--viewport-tablet) {
   .chat-window-header {
-    justify-content: center;
+    grid-template-columns: 100px auto;
+    padding: 0 20px;
   }
   .header-title {
-    padding-right: 5px;
-    font-size: 11px;
+    font-size: 14px;
+  }
+
+  .leave-button {
+    margin-right: 0;
+    padding: 10px;
+  }
+  .profile-username {
+    margin-left: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (--viewport-phone) {
+  .chat-window-header {
+    grid-template-columns: 0 auto;
+  }
+  .header-title {
+    display: none;
   }
 
   .leave-button {
     margin-right: 2px;
     padding: 10px 10px;
+  }
+
+  .function-button {
+    width: 8px;
+  }
+
+  .profile-avatar {
+    width: 35px;
+    height: 35px;
+  }
+  .profile-username {
+    display: flex;
+    font-weight: 600;
+    font-size: 13px;
   }
 
   .input-message-content {
@@ -223,4 +263,7 @@
   .form {
     justify-content: flex-start;
   }
+}
+
+@media only screen and (--viewport-phone-small) {
 }

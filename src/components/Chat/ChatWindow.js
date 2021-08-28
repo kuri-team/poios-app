@@ -31,7 +31,13 @@ const ChatWindow = ({ roomName }) => {
   return (
     <div className={style["chat-window"]}>
       <div className={style["chat-window-header"]}>
-        <h1 className={style["header-title"]}>{roomName}</h1>
+        {/*<h1 className={style["header-title"]}>{roomName}</h1>*/}
+        <div className={style["profile-wrapper"]}>
+          <Link to="/">
+            <img className={style["profile-avatar"]} src="/media/chatroom-icons/hacker.svg" alt="avatar" />
+          </Link>
+          <div className={style["profile-username"]}>Username</div>
+        </div>
 
         <div className={style["header-button-group"]}>
           <button className={style["leave-button"]}>Leave</button>
@@ -51,13 +57,6 @@ const ChatWindow = ({ roomName }) => {
           <div className={style["function-button"]}>
             <img className={style["function-icon"]} src={"/media/chatroom-icons/call.svg"} alt="Voice call icon" />
           </div>
-          <Link to="/" className={style["profile-wrapper"]}>
-            <img
-              className={style["avatar"]}
-              src="https://i1.sndcdn.com/avatars-000538032087-4mfpm1-t500x500.jpg"
-              alt="avatar"
-            />
-          </Link>
         </div>
       </div>
 
