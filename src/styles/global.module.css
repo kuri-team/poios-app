@@ -1,16 +1,29 @@
 :root {
   /* Fonts */
-  --header-font: "Arial", sans-serif;
-  --body-font: "Arial", sans-serif;
+  --header-font: "Open Sans", sans-serif;
+  --body-font: "Montserrat", sans-serif;
 
   /* Colors */
   --transparent: rgba(0, 0, 0, 0);
-  --black: #000000;
   --shadow-black: rgba(18, 14, 13, 0.25);
   --deep-shadow-black: rgba(18, 14, 13, 0.75);
-  --white: #ffffff;
   --scrollbar-primary: hsl(0, 0%, 10%);
   --scrollbar-thumb: hsl(0, 0%, 30%);
+
+  /* Official Poios color palette */
+  --black: #181818;
+  --alt-black: #1f1f1f;
+  --light-black: #2a2a2a;
+  --lighter-black: #353535;
+  --dark-blue: #17619c;
+  --blue: #196bac;
+  --dark-cyan: #079edf;
+  --cyan: #00aeef;
+  --gray: #cccccc;
+  --light-gray: #e6e6e6;
+  --lighter-gray: #f2f2f2;
+  --dim-white: #fcfcfc;
+  --white: #ffffff;
 
   /* Sizes and widths */
   --content-w-ultra-wide: 2560px;
@@ -19,6 +32,14 @@
   --content-w-narrow: 1024px;
   --content-w-extra-narrow: 768px;
   --content-w-min: 320px;
+  --header-height: 65px;
+  --border-radius-xxs: 6px;
+  --border-radius-xs: 8px;
+  --border-radius-s: 12px;
+  --border-radius-m: 24px;
+  --border-radius-l: 32px;
+  --border-radius-xl: 42px;
+  --border-radius-xxl: 54px;
 
   /* Transition timing */
   --transition-near-instant: 25ms;
@@ -42,12 +63,12 @@
 /* Custom scrollbar */
 :root {
   overflow-y: scroll;
-  scrollbar-width: thin;
+  scrollbar-width: none;
   scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-primary);
 }
 
 :root::-webkit-scrollbar {
-  width: 8px;
+  width: 0;
   height: 15px;
 }
 

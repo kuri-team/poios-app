@@ -1,0 +1,55 @@
+.wrapper {
+  position: relative;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  width: var(--content-w-extra-narrow);
+  margin: 0 auto;
+}
+
+.wrapper .select {
+  width: 100%;
+  padding: 10px 10px 10px 14px;
+  color: var(--black);
+  font-weight: 600;
+  background-color: var(--white);
+  border: none;
+  border-radius: var(--border-radius-xxs);
+  outline: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.wrapper .button {
+  position: absolute;
+  right: 10px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  padding: 0;
+  background: transparent;
+  border: none;
+  pointer-events: none;
+}
+
+.wrapper:hover,
+.wrapper .select:hover,
+.wrapper .button:hover {
+  cursor: inherit;
+}
+
+@media only screen and (--viewport-tablet) {
+  .wrapper {
+    width: 80%;
+  }
+}

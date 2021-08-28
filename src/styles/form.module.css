@@ -1,0 +1,37 @@
+.field {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px 0;
+}
+
+.field * {
+  outline: none;
+}
+
+.field select,
+.field input {
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-m);
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-rapid);
+  will-change: border;
+}
+
+.field input:focus {
+  border: 2px solid var(--cyan);
+  transition: var(--transition-rapid);
+}
+
+.field-column {
+  flex-direction: column;
+}
+
+.field-column label {
+  margin-bottom: 10px;
+}

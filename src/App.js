@@ -1,21 +1,23 @@
+import { useContext } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Nav from "./components/Nav";
-import Home from "./pages/Home";
-import Page2 from "./pages/Page2";
+import { PagesContext } from "./Pages";
+import "./App.module.css";
 
-const App = () => (
-  <BrowserRouter>
-    <Nav />
-    <Switch>
-      <Route path="/page2">
-        <Page2 />
-      </Route>
-      <Route path="/">
-        <Home />
-      </Route>
-    </Switch>
-  </BrowserRouter>
-);
+const App = () => {
+  const pages = useContext(PagesContext);
+
+  return (
+    <BrowserRouter>
+      <Switch>
+        {pages.map((page, key) => (
+          <Route key={key} path={page.path}>
+            {page.reactComponent}
+          </Route>
+        ))}
+      </Switch>
+    </BrowserRouter>
+  );
+};
 
 export default App;

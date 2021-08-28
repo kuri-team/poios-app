@@ -1,0 +1,226 @@
+/*ChatWindow.js*/
+.chat-window {
+  grid-row: 1;
+  grid-column: 2;
+  height: 100%;
+  color: var(--black);
+  background-color: var(--white);
+}
+
+.chat-window-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 42px;
+  background-color: var(--black);
+}
+
+.header-title {
+  margin: 0;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 20px;
+}
+.header-description {
+  color: var(--white);
+  font-size: 10px;
+}
+.course-name {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 20px;
+}
+.header-button-group {
+  display: flex;
+  align-items: center;
+}
+.leave-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 17px;
+  margin-left: 5px;
+  padding: 10px 40px;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 16px;
+  font-family: var(--body-font);
+  background-color: #ec3a3aff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.leave-button:hover {
+  background-color: #a90707;
+  cursor: pointer;
+}
+
+.leave-button:active {
+  background-color: #ec3a3aff;
+}
+
+.function-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20px;
+  margin-right: 10px;
+  margin-left: 5px;
+  padding: 10px;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.function-button:hover {
+  color: var(--white);
+  background-color: var(--blue);
+  cursor: pointer;
+}
+.function-icon {
+  width: auto;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.profile-wrapper {
+  display: inline-flex;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  margin-left: 12px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.chat-window-content {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: calc(100% - 144px);
+  padding: 15px;
+  overflow-y: scroll;
+  color: var(--white);
+  background: var(--light-black);
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+.chat-window-content::-webkit-scrollbar {
+  width: 8px;
+  height: 15px;
+}
+
+.chat-window-content::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+
+.chat-window-content::-webkit-scrollbar-thumb:vertical {
+  height: 30px;
+  background-color: var(--scrollbar-thumb);
+}
+
+.chat-window-content .wrapper {
+  max-height: 0; /* TODO: Find out why the fuck does this work??? */
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 12px;
+  background-color: var(--black);
+}
+
+.input-message-content {
+  width: 100%;
+  margin: 0 16px;
+}
+
+.input-message {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-m);
+  outline: none;
+  transition: border var(--transition-medium-rapid);
+  transition-delay: var(--transition-extra-rapid);
+}
+
+.input-message:focus {
+  border: 2px solid var(--cyan);
+  transition: border var(--transition-extra-rapid);
+}
+
+.attach-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.attach-button:hover {
+  background-color: var(--blue);
+  cursor: pointer;
+}
+
+.send-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20px;
+  margin: 0 12px 0 0;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.send-button:hover {
+  background-color: var(--blue);
+  cursor: pointer;
+}
+
+@media only screen and (--viewport-phone) {
+  .chat-window-header {
+    justify-content: center;
+  }
+  .header-title {
+    padding-right: 5px;
+    font-size: 11px;
+  }
+
+  .leave-button {
+    margin-right: 2px;
+    padding: 10px 10px;
+  }
+
+  .input-message-content {
+    width: 55%;
+  }
+
+  .form {
+    justify-content: flex-start;
+  }
+}

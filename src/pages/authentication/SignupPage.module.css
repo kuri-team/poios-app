@@ -1,0 +1,142 @@
+.form {
+  display: -moz-grid;
+  display: -ms-grid;
+  display: grid;
+  grid-column-gap: 52px;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: auto auto;
+  margin-bottom: 60px;
+}
+
+.form .avatar {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  margin-bottom: 0 !important;
+}
+
+.form .avatar label {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.form .avatar-preview {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 12px 0 var(--shadow-black);
+  transform: scale(1);
+  transition: var(--transition-medium-relaxed);
+  transition-delay: var(--transition-rapid);
+  will-change: transform;
+}
+
+.form .avatar-preview:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  transition: var(--transition-medium-rapid);
+}
+
+.form .avatar-preview:active {
+  transform: scale(1);
+}
+
+.form .avatar-preview:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: var(--white);
+  background: var(--deep-shadow-black);
+  border-radius: 50%;
+  content: "Change";
+}
+
+.form .acc-type {
+  position: relative;
+  grid-row: 2;
+  grid-column: 1 / span 2;
+}
+
+.form .acc-type select {
+  padding: 0 10px 10px 10px !important;
+  color: var(--white);
+  font-weight: 700;
+  background: var(--light-black);
+  border-radius: 0;
+  -o-appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form .acc-type select:hover {
+  cursor: pointer;
+}
+
+.form .acc-type svg {
+  position: absolute;
+  bottom: -6px;
+  left: calc(50% - 12px);
+  width: 24px;
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-rapid);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.form .acc-type:hover select,
+.form .acc-type:hover svg {
+  transform: scale(1.2);
+  transition: var(--transition-extra-rapid);
+  transition-delay: 0ms;
+}
+
+.nav {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.nav .primary {
+  color: var(--white);
+  opacity: 0.2;
+}
+
+.nav .primary:hover {
+  opacity: 0.5;
+}
+
+.nav a {
+  line-height: 2em;
+  text-decoration: none;
+}
+
+@media only screen and (--viewport-phone) {
+  .form {
+    display: block;
+  }
+
+  .form select,
+  .form input {
+    box-sizing: border-box;
+    width: 75vw;
+  }
+
+  .form .acc-type {
+    margin-bottom: 36px;
+  }
+
+  .form .acc-type select {
+    background: var(--black);
+  }
+}

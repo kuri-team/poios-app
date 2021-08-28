@@ -1,0 +1,78 @@
+.container {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px;
+  text-align: -webkit-center;
+  text-align: -moz-center;
+  text-align: center;
+}
+
+.h1 {
+  margin: 3em auto 1em;
+}
+
+.subheading {
+  margin-top: 5em;
+}
+
+.btn {
+  width: 250px;
+  margin: 5em 0 0 0;
+  padding: 1.25em 2em;
+  color: var(--white);
+  font-weight: bold;
+  background: var(--cyan);
+  border: none;
+  border-radius: var(--border-radius-s);
+  outline: none;
+  transform: scale(1) !important;
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-extra-rapid);
+  will-change: background, transform;
+}
+
+.btn:hover {
+  background: var(--blue);
+  transform: scale(1.05) !important;
+  cursor: pointer;
+  transition: var(--transition-rapid);
+  transition-delay: var(--transition-near-instant);
+}
+
+.btn:active {
+  transform: scale(1) !important;
+  transition: var(--transition-rapid);
+  transition-delay: var(--transition-near-instant);
+}
+
+@media only screen and (--viewport-desktop) {
+  .container {
+    padding: 120px 45px;
+  }
+}
+
+@media only screen and (--viewport-tablet) {
+  .container {
+    padding: 120px 20px;
+  }
+}
+
+@media only screen and (--viewport-phone) {
+  .container {
+    padding: 120px 0;
+  }
+
+  .subheading {
+    margin: 4em 5% 1em;
+  }
+
+  .btn {
+    width: 200px;
+  }
+}

@@ -1,0 +1,51 @@
+.subject-box,
+.subject-box-selected {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: auto;
+  height: 175px;
+  margin: 10px;
+  padding: 24px 42px;
+  color: var(--white);
+  background: var(--light-black);
+  border-radius: var(--border-radius-xxs);
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-medium-rapid);
+  will-change: background, border;
+}
+
+.subject-box {
+  border: 2px solid var(--light-black);
+}
+
+.subject-box:hover {
+  border: 2px solid var(--lighter-black);
+}
+
+.subject-box-selected {
+  border: 2px solid var(--cyan);
+}
+
+.subject-box:hover,
+.subject-box-selected:hover {
+  background: var(--lighter-black);
+  cursor: pointer;
+  transition: var(--transition-rapid);
+  transition-delay: var(--transition-near-instant);
+}
+
+@media only screen and (--viewport-phone) {
+  .subject-box,
+  .subject-box-selected {
+    margin: 2px;
+    padding: 16px 24px;
+    font-size: 12px;
+  }
+}

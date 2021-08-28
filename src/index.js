@@ -1,8 +1,32 @@
+// Libraries
 import React from "react";
 import ReactDOM from "react-dom";
 
+// Application Components
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
+// Fonts
+import "@fontsource/open-sans/700.css";
+import "@fontsource/open-sans/700-italic.css";
+import "@fontsource/montserrat/200.css";
+import "@fontsource/montserrat/200-italic.css";
+import "@fontsource/montserrat/300.css";
+import "@fontsource/montserrat/300-italic.css";
+import "@fontsource/montserrat/400.css";
+import "@fontsource/montserrat/400-italic.css";
+import "@fontsource/montserrat/500.css";
+import "@fontsource/montserrat/500-italic.css";
+import "@fontsource/montserrat/600.css";
+import "@fontsource/montserrat/600-italic.css";
+import "@fontsource/montserrat/700.css";
+import "@fontsource/montserrat/700-italic.css";
+import "@fontsource/roboto-mono/400.css";
+import "@fontsource/roboto-mono/400-italic.css";
+import "@fontsource/roboto-mono/700.css";
+import "@fontsource/roboto-mono/700-italic.css";
+
+// Stylesheets
 import "normalize.css";
 import "./styles/animations.css";
 import "./styles/global.module.css";

@@ -1,0 +1,112 @@
+.room-list {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-btn {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 20px;
+  background: var(--cyan);
+  cursor: pointer;
+  transition: background-color var(--transition-medium-relaxed);
+  transition-delay: var(--transition-extra-rapid);
+  will-change: background-color;
+}
+
+.dropdown-btn:hover {
+  background-color: var(--blue);
+  cursor: pointer;
+  transition: var(--transition-extra-rapid);
+  transition-delay: 0ms;
+}
+
+.dropdown-content {
+  top: 110%;
+  z-index: -1;
+  padding: 15px;
+  font-weight: 500;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.active {
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s, 0s, 0.3s;
+}
+
+.down-arrow {
+  width: auto;
+  height: 20px;
+}
+
+.dropdown-item {
+  box-sizing: border-box;
+  margin: 8px;
+  padding: 10px;
+  border: 1px solid var(--cyan);
+  border-radius: var(--border-radius-xxs);
+  cursor: pointer;
+  transition: background-color var(--transition-medium-relaxed);
+  transition-delay: var(--transition-extra-rapid);
+  will-change: background-color;
+}
+.dropdown-item:hover {
+  background-color: var(--cyan);
+  transition: var(--transition-extra-rapid);
+  transition-delay: 0ms;
+}
+
+.plus-icon {
+  width: auto;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.add-room {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  margin: 0 8px;
+  padding: 12px 18px;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--cyan);
+  border-radius: var(--border-radius-xxs);
+  outline: none;
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-extra-rapid);
+}
+
+.add-room:hover {
+  background-color: var(--blue);
+  cursor: pointer;
+  transition: var(--transition-extra-rapid);
+}

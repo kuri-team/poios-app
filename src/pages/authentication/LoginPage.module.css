@@ -1,0 +1,29 @@
+.form {
+  margin-bottom: 60px;
+}
+
+.nav {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.nav .primary {
+  color: var(--white);
+  opacity: 0.2;
+}
+
+.nav .primary:hover {
+  opacity: 0.5;
+}
+
+.nav a {
+  line-height: 2em;
+  text-decoration: none;
+}

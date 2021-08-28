@@ -1,0 +1,68 @@
+.wrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  width: 100%;
+}
+
+.message {
+  width: 60%;
+  margin-bottom: 10px;
+}
+
+.message .header {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: flex-end;
+}
+
+.message .header .avatar {
+  width: 50px;
+  height: 50px;
+  margin: 20px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.message .header .sender {
+  font-weight: 600;
+  font-family: var(--header-font);
+}
+
+.message .header .timestamp {
+  margin: 0 14px;
+  color: var(--light-gray);
+  font-size: 11px;
+}
+
+.message .header .sender,
+.message .header .timestamp {
+  margin-bottom: 20px;
+}
+
+.message .body {
+  margin: 0 65px;
+}
+
+.message .body .content {
+  display: inline-block;
+  margin: 0 24px 10px 24px;
+  padding: 18px 28px;
+  background: var(--alt-black);
+  border-radius: 0 var(--border-radius-m) var(--border-radius-m) var(--border-radius-m);
+}
+
+.from-me {
+  justify-content: flex-end;
+}
+
+.message .body .from-me {
+  float: right;
+  background: var(--blue);
+  border-radius: var(--border-radius-m) 0 var(--border-radius-m) var(--border-radius-m);
+}

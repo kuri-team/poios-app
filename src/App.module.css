@@ -1,0 +1,133 @@
+html {
+  color: var(--white);
+  font-size: 16px;
+  font-family: var(--body-font);
+  background: var(--black);
+  scroll-behavior: smooth !important;
+}
+
+main {
+  min-width: var(--content-w-min);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-family: var(--header-font);
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 27px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 21px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+a {
+  color: var(--cyan);
+}
+
+a:hover {
+  color: var(--dark-cyan);
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.6;
+}
+
+@media only screen and (--viewport-desktop) {
+  html {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 19px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+
+  h6 {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (--viewport-desktop-large) {
+  /* Media rules here */
+}
+
+@media only screen and (--viewport-desktop) {
+  /* Media rules here */
+}
+
+@media only screen and (--viewport-tablet) {
+  /* Media rules here */
+}
+
+@media only screen and (--viewport-phone) {
+  html {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 19px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  h5 {
+    font-size: 15px;
+  }
+
+  h6 {
+    font-size: 15px;
+  }
+}

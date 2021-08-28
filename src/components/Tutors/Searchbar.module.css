@@ -1,0 +1,96 @@
+.search-bigcontainer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.search-container {
+  position: relative;
+  width: 50%;
+}
+
+.search-icon-container {
+  position: absolute;
+  top: 0.7rem;
+  left: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-icon-container {
+  position: absolute;
+  top: 0.8rem;
+  right: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchIcon {
+  width: 28px;
+  height: auto;
+}
+
+.filterIcon {
+  width: 25px;
+  height: auto;
+}
+
+.filterIcon:hover {
+  cursor: pointer;
+}
+
+.form-control {
+  top: 13.5rem;
+  left: 23.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 3.5rem;
+  padding: 0 48px;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-xs);
+  outline: none;
+  transition: border var(--transition-medium);
+}
+
+.form-control:focus {
+  border: 2px solid var(--cyan);
+}
+
+@media only screen and (--viewport-phone) {
+  .search-container form input {
+    box-sizing: border-box;
+    padding-left: 2.7rem;
+    font-size: 12px;
+  }
+
+  .search-container form input[type="text"] {
+    box-sizing: border-box;
+    padding: 0 35px;
+  }
+
+  .search-icon-container {
+    top: 0.7rem;
+    left: 1rem;
+  }
+
+  .filter-icon-container {
+    top: 0.7rem;
+    right: 0.8rem;
+  }
+
+  .searchIcon {
+    width: 20px;
+    height: auto;
+  }
+
+  .filterIcon {
+    width: 20px;
+    height: auto;
+  }
+
+  .form-control {
+    height: 3rem;
+  }
+}
