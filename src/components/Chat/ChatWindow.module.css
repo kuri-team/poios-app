@@ -54,9 +54,14 @@
 }
 
 .leave-button:hover {
-  background-color: #c00303;
+  background-color: #a90707;
   cursor: pointer;
 }
+
+.leave-button:active {
+  background-color: #ec3a3aff;
+}
+
 .function-button {
   display: inline-flex;
   align-items: center;
@@ -75,7 +80,7 @@
 
 .function-button:hover {
   color: var(--white);
-  background-color: var(--dark-blue);
+  background-color: var(--blue);
   cursor: pointer;
 }
 .function-icon {
@@ -91,6 +96,7 @@
 .avatar {
   width: 30px;
   height: 30px;
+  margin-left: 12px;
   vertical-align: middle;
   border-radius: 50%;
 }
@@ -123,7 +129,7 @@
 }
 
 .chat-window-content .wrapper {
-  max-height: 0; /* Why the fuck does this work??? */
+  max-height: 0; /* TODO: Find out why the fuck does this work??? */
 }
 
 .form {
@@ -131,20 +137,30 @@
   align-items: center;
   justify-content: space-between;
   height: 72px;
-  padding: 0 2px;
+  padding: 0 12px;
   background-color: var(--black);
 }
 
 .input-message-content {
   width: 100%;
-  margin-bottom: 0;
+  margin: 0 16px;
 }
 
 .input-message {
+  box-sizing: border-box;
   width: 100%;
   height: 40px;
-  border-radius: 20px;
+  padding: 0 20px;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-m);
   outline: none;
+  transition: border var(--transition-medium-rapid);
+  transition-delay: var(--transition-extra-rapid);
+}
+
+.input-message:focus {
+  border: 2px solid var(--cyan);
+  transition: border var(--transition-extra-rapid);
 }
 
 .attach-button {
@@ -163,7 +179,7 @@
 }
 
 .attach-button:hover {
-  background-color: var(--dark-blue);
+  background-color: var(--blue);
   cursor: pointer;
 }
 
@@ -172,8 +188,7 @@
   align-items: center;
   justify-content: space-between;
   width: 20px;
-  margin-right: 5px;
-  margin-left: 15px;
+  margin: 0 12px 0 0;
   padding: 10px;
   font-weight: bold;
   font-size: 20px;
@@ -183,9 +198,10 @@
 }
 
 .send-button:hover {
-  background-color: var(--dark-blue);
+  background-color: var(--blue);
   cursor: pointer;
 }
+
 @media only screen and (--viewport-phone) {
   .chat-window-header {
     justify-content: center;

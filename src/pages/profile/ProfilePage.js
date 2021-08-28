@@ -4,7 +4,6 @@ import Timetable from "../../components/Profile/Timetable";
 import Reviewer from "../../components/Profile/Reviewer";
 
 import * as style from "./ProfilePage.module.css";
-import OwnProfileInfo from "../../components/Profile/OwnProfileInfo";
 
 const ProfilePage = () => {
   return (

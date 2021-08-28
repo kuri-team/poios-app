@@ -5,7 +5,7 @@ const TutorProfileInfo = () => {
     <div className={style["profile-bigcontainer"]}>
       <div className={style["profile-container"]}>
         <div className={style["user-avatar"]}>
-          <img className={style["avatar-image"]} src={"media/venti.jpg"} alt="" />
+          <img className={style["avatar-image"]} src={"/media/venti.jpg"} alt="" />
           <div className={style["rating-comment-container"]}>
             <div className={style["five-stars"]}>
               <img src={"/media/icons/star.svg"} alt="" />

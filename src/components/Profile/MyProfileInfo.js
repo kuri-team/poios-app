@@ -1,7 +1,7 @@
 import { useState } from "react";
-import * as style from "./OwnProfileInfo.module.css";
+import * as style from "./MyProfileInfo.module.css";
 
-const OwnProfileInfo = (editAva, editName, editEmail, editPassword, editSubject) => {
+const MyProfileInfo = (editAva, editName, editEmail, editPassword, editSubject) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -128,4 +128,4 @@ const OwnProfileInfo = (editAva, editName, editEmail, editPassword, editSubject)
   );
 };
 
-export default OwnProfileInfo;
+export default MyProfileInfo;
