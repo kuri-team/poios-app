@@ -15,6 +15,12 @@ const RoomList = () => {
         <div className={style["dropdown-item"]}>Room COSC2469</div>
         <div className={style["dropdown-item"]}>Room COSC2543</div>
         <div className={style["dropdown-item"]}>Room COSC2659</div>
+        <div className={style["dropdown-item"]}>Room COSC0000</div>
+        <div className={style["dropdown-item"]}>Room COSC0000</div>
+        <div className={style["dropdown-item"]}>Room COSC0000</div>
+        <div className={style["dropdown-item"]}>Room COSC0000</div>
+        <div className={style["dropdown-item"]}>Room COSC0000</div>
+
         <div className={style["add-room"]}>
           <img src={"/media/chatroom-icons/plus-icon.svg"} alt="Plus Icon" className={style["plus-icon"]} />
           Add room

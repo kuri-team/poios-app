@@ -7,21 +7,21 @@ const ChatWindow = ({ roomName }) => {
   const messages = [
     {
       fromMe: true,
-      sender: "hlinh_santa_claus",
+      sender: "Anonymous",
       photo: "/media/chatroom-icons/hacker.svg",
       content: "Welcome to Mars!",
       timestamp: "2021",
     },
     {
       fromMe: false,
-      sender: "hlinh_pr0_vjp",
+      sender: "Mr.Robot",
       photo: "/media/chatroom-icons/hacker.svg",
       content: "Hello World!",
       timestamp: "2021",
     },
     {
       fromMe: true,
-      sender: "hlinh_pr0_vjp",
+      sender: "Anonymous",
       photo: "/media/chatroom-icons/hacker.svg",
       content: "Hello World!",
       timestamp: "2021",
