@@ -59,9 +59,9 @@ const ChatWindow = ({ roomName }) => {
           <div className={style["function-button"]}>
             <img className={style["function-icon"]} src={"/media/chatroom-icons/call.svg"} alt="Voice call icon" />
           </div>
-          <div className={style["function-button"]}>
+          <Link to="/" className={style["mobile-menu-button"]}>
             <img className={style["function-icon"]} src={"/media/chatroom-icons/hamburger.svg"} alt="Hamburger icon" />
-          </div>
+          </Link>
         </div>
       </div>
 

@@ -68,9 +68,12 @@
 }
 
 @media only screen and (--viewport-phone) {
+  .message {
+    margin-bottom: 2px;
+  }
   .message .header .avatar {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin: 15px;
     vertical-align: middle;
     border-radius: 50%;
