@@ -36,7 +36,9 @@ const ChatWindow = ({ roomName }) => {
           <Link to="/">
             <img className={style["profile-avatar"]} src="/media/chatroom-icons/hacker.svg" alt="avatar" />
           </Link>
-          <div className={style["profile-username"]}>Username</div>
+          <Link to="/profile/my-profile" className={style["profile-username"]}>
+            Username
+          </Link>
         </div>
 
         <div className={style["header-button-group"]}>
@@ -56,6 +58,9 @@ const ChatWindow = ({ roomName }) => {
           </div>
           <div className={style["function-button"]}>
             <img className={style["function-icon"]} src={"/media/chatroom-icons/call.svg"} alt="Voice call icon" />
+          </div>
+          <div className={style["function-button"]}>
+            <img className={style["function-icon"]} src={"/media/chatroom-icons/hamburger.svg"} alt="Hamburger icon" />
           </div>
         </div>
       </div>

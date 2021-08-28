@@ -8,8 +8,7 @@
 }
 
 .chat-window-header {
-  display: grid;
-  grid-template-columns: 250px auto;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   height: 72px;
@@ -106,6 +105,7 @@
   color: white;
   font-weight: 700;
   font-size: 20px;
+  text-decoration: none;
 }
 .chat-window-content {
   display: flex;
@@ -210,7 +210,6 @@
 
 @media only screen and (--viewport-tablet) {
   .chat-window-header {
-    grid-template-columns: 100px auto;
     padding: 0 20px;
   }
   .header-title {
@@ -230,9 +229,6 @@
 }
 
 @media only screen and (--viewport-phone) {
-  .chat-window-header {
-    grid-template-columns: 0 auto;
-  }
   .header-title {
     display: none;
   }
@@ -257,7 +253,7 @@
   }
 
   .input-message-content {
-    width: 55%;
+    width: 75%;
   }
 
   .form {
@@ -266,4 +262,40 @@
 }
 
 @media only screen and (--viewport-phone-small) {
+  .form {
+    display: inline-flex;
+    justify-items: flex-start;
+  }
+
+  .profile-avatar {
+    width: 30px;
+    height: 30px;
+  }
+  .profile-username {
+    display: flex;
+    font-weight: 600;
+    font-size: 11px;
+  }
+
+  .leave-button {
+    margin-right: 2px;
+    padding: 5px 5px;
+  }
+  .function-button {
+    width: 10px;
+    margin-right: 5px;
+    margin-left: 3px;
+    padding: 3px;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .function-icon {
+    width: auto;
+    height: 10px;
+  }
 }

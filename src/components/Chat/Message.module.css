@@ -66,3 +66,49 @@
   background: var(--blue);
   border-radius: var(--border-radius-m) 0 var(--border-radius-m) var(--border-radius-m);
 }
+
+@media only screen and (--viewport-phone) {
+  .message .header .avatar {
+    width: 40px;
+    height: 40px;
+    margin: 15px;
+    vertical-align: middle;
+    border-radius: 50%;
+  }
+
+  .message .header .sender {
+    font-weight: 500;
+    font-family: var(--header-font);
+  }
+
+  .message .header .timestamp {
+    margin: 0 14px 20px;
+    color: var(--light-gray);
+    font-size: 8px;
+  }
+  .message .body .content {
+    margin: 0 18px 10px 18px;
+    padding: 18px 28px;
+  }
+}
+
+@media only screen and (--viewport-phone-small) {
+  .message .header .avatar {
+    width: 30px;
+    height: 30px;
+    margin: 15px;
+    vertical-align: middle;
+    border-radius: 50%;
+  }
+
+  .message .header .sender {
+    font-weight: 200;
+    font-family: var(--header-font);
+  }
+
+  .message .header .timestamp {
+    margin: 0 14px 20px;
+    color: var(--light-gray);
+    font-size: 8px;
+  }
+}
