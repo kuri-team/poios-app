@@ -44,21 +44,25 @@
 .form-control {
   top: 13.5rem;
   left: 23.5rem;
+  box-sizing: border-box;
   width: 100%;
   height: 3.5rem;
-  border-radius: 5px;
+  padding: 0 48px;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-xs);
+  outline: none;
+  transition: border var(--transition-medium);
 }
 
-.search-container form input[type="text"] {
-  box-sizing: border-box;
-  padding: 0 48px;
+.form-control:focus {
+  border: 2px solid var(--cyan);
 }
 
 @media only screen and (--viewport-phone) {
   .search-container form input {
     box-sizing: border-box;
     padding-left: 2.7rem;
-    font-size: 11.5px;
+    font-size: 12px;
   }
 
   .search-container form input[type="text"] {

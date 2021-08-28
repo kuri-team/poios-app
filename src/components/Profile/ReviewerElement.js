@@ -5,7 +5,7 @@ const Reviewer = () => {
     <div className={style["reviewer-element-bigcontainer"]}>
       <div className={style["reviewer-element-container"]}>
         <div className={style["avatar-name-star"]}>
-          <img className={style["avatar-image"]} src={"media/kequing.jpg"} alt="" />
+          <img className={style["avatar-image"]} src={"/media/kequing.jpg"} alt="" />
           <div className={style["name-star"]}>
             <span>Kequing</span>
             <div className={style["five-stars"]}>
