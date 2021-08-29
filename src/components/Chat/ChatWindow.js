@@ -112,15 +112,17 @@ const ChatWindow = ({ tutorName }) => {
       </div>
 
       <div className={style["chat-window-content"]}>
-        {messages.map(message => (
-          <Message
-            fromMe={message.fromMe}
-            sender={message.sender}
-            photo={message.photo}
-            content={message.content}
-            timestamp={message.timestamp}
-          />
-        ))}
+        <div className={style["inner"]}>
+          {messages.map(message => (
+            <Message
+              fromMe={message.fromMe}
+              sender={message.sender}
+              photo={message.photo}
+              content={message.content}
+              timestamp={message.timestamp}
+            />
+          ))}
+        </div>
       </div>
 
       <div className={style["form"]}>
