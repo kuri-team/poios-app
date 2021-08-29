@@ -8,56 +8,56 @@ const ChatWindow = ({ tutorName }) => {
     {
       fromMe: true,
       sender: "Anonymous",
-      photo: "/media/chatroom-icons/hacker.svg",
+      photo: "/media/profile-placeholder_143x143.png",
       content: "Welcome to Mars!",
       timestamp: "2021",
     },
     {
       fromMe: false,
       sender: "Mr. Robot",
-      photo: "/media/chatroom-icons/hacker.svg",
+      photo: "/media/profile-placeholder_143x143.png",
       content: "Hello World!",
       timestamp: "2021",
     },
     {
       fromMe: true,
       sender: "Anonymous",
-      photo: "/media/chatroom-icons/hacker.svg",
+      photo: "/media/profile-placeholder_143x143.png",
       content: "Hello World!",
       timestamp: "2021",
     },
     {
       fromMe: false,
       sender: "Mr. Robot",
-      photo: "/media/chatroom-icons/hacker.svg",
+      photo: "/media/profile-placeholder_143x143.png",
       content: "Hello World!",
       timestamp: "2021",
     },
     {
       fromMe: true,
       sender: "Anonymous",
-      photo: "/media/chatroom-icons/hacker.svg",
+      photo: "/media/profile-placeholder_143x143.png",
       content: "Welcome to Mars!",
       timestamp: "2021",
     },
     {
       fromMe: false,
       sender: "Mr. Robot",
-      photo: "/media/chatroom-icons/hacker.svg",
+      photo: "/media/profile-placeholder_143x143.png",
       content: "Hello World!",
       timestamp: "2021",
     },
     {
       fromMe: true,
       sender: "Anonymous",
-      photo: "/media/chatroom-icons/hacker.svg",
+      photo: "/media/profile-placeholder_143x143.png",
       content: "Hello World!",
       timestamp: "2021",
     },
     {
       fromMe: false,
       sender: "Mr. Robot",
-      photo: "/media/chatroom-icons/hacker.svg",
+      photo: "/media/profile-placeholder_143x143.png",
       content: "Hello World!",
       timestamp: "2021",
     },
@@ -66,9 +66,9 @@ const ChatWindow = ({ tutorName }) => {
   return (
     <div className={style["chat-window"]}>
       <div className={style["chat-window-header"]}>
-        <div className={style["tutor-wrapper"]}>
-          <Link to="/">
-            <img className={style["tutor-avatar"]} src={"/media/chatroom-icons/hacker.svg"} alt="avatar" />
+        <div className={[style["tutor-wrapper"], style["desktop-only"]].join(" ")}>
+          <Link to="/profile">
+            <img className={style["tutor-avatar"]} src={"/media/profile-placeholder_143x143.png"} alt="avatar" />
           </Link>
           <Link to="/profile" className={style["tutor-name"]}>
             {tutorName}
@@ -76,7 +76,10 @@ const ChatWindow = ({ tutorName }) => {
         </div>
 
         <div className={style["header-button-group"]}>
-          <button className={style["leave-button"]}>Leave</button>
+          <button className={style["leave-button"]}>
+            <tspan>Leave</tspan>
+            <img src={"/media/chatroom-icons/call_end_24dp.svg"} alt="" />
+          </button>
           <div className={style["functions"]}>
             <div className={style["function-button"]}>
               <img
@@ -86,7 +89,7 @@ const ChatWindow = ({ tutorName }) => {
                 style={{ width: "22px", height: "22px", transform: "translateY(1px)" }}
               />
             </div>
-            <div className={style["function-button"]}>
+            <div className={[style["function-button"], style["desktop-only"]].join(" ")}>
               <img
                 className={style["function-icon"]}
                 src={"/media/chatroom-icons/screen_share_24dp.svg"}
@@ -104,13 +107,6 @@ const ChatWindow = ({ tutorName }) => {
             <div className={style["function-button"]}>
               <img className={style["function-icon"]} src={"/media/chatroom-icons/call_24dp.svg"} alt="Voice call" />
             </div>
-            <button className={style["mobile-menu-button"]}>
-              <img
-                className={style["function-icon"]}
-                src={"/media/chatroom-icons/hamburger.svg"}
-                alt="Hamburger icon"
-              />
-            </button>
           </div>
         </div>
       </div>
