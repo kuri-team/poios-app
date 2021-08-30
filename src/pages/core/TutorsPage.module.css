@@ -16,7 +16,7 @@
 .tutor-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 120px 20px 200px 20px;
 }
 

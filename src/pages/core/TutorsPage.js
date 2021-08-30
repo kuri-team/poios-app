@@ -85,16 +85,6 @@ const TutorsPage = ({ active }) => {
       <div className={style["tutor-list"]}>
         <TutorListElement />
         <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
       </div>
     </Layout>
   );
