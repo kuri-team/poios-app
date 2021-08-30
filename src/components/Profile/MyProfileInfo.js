@@ -7,18 +7,27 @@ const MyProfileInfo = (editAva, editName, editEmail, editPassword, editSubject) 
   const [password, setPassword] = useState("");
   const [subject, setSubject] = useState("");
   const [file, setFile] = useState(null);
+  const [isOn, setIsOn] = useState(false);
+
+  const displayForm = () => {
+    setIsOn(!isOn);
+    console.log("hello");
+  };
 
   return (
     <div className={style["profile-bigcontainer"]}>
       <div className={style["profile-container"]}>
         <div className={style["user-avatar"]}>
-          <img className={style["avatar-image"]} src={"media/kequing.jpg"} alt="" />
+          <img className={style["avatar-image"]} src={"/media/kequing.jpg"} alt="" />
           <div className={style["upload-image-form"]}>
-            <form className={style["form-image-upload"]}>
-              <input type="file" value={file} onChange={e => setFile(e.target.files[0])} />
-            </form>
+            <div className={style["form-image-upload"]}>
+              <input type="file" id="contained-button-file" value={file} onChange={e => setFile(e.target.files[0])} />
+              <div className={style["fake-file"]}>
+                <label htmlFor="contained-button-file">Upload Image</label>
+              </div>
+            </div>
             <div>
-              <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={editAva} />
+              <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" />
             </div>
           </div>
         </div>
@@ -27,11 +36,15 @@ const MyProfileInfo = (editAva, editName, editEmail, editPassword, editSubject) 
           <div className={style["user-info-element"]}>
             <div className={style["user-info-row"]}>
               <label htmlFor="name">Name: </label>
-              <div>
-                <p>Sup Lo</p>
+              <div className={style["input-place"]}>
+                {isOn ? (
+                  <input type="text" className={style["form-control"]} value={e => e.target.value} />
+                ) : (
+                  <span>Sup Lo</span>
+                )}
               </div>
             </div>
-            <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={editName} />
+            <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={() => displayForm()} />
             <hr />
           </div>
 
@@ -39,7 +52,7 @@ const MyProfileInfo = (editAva, editName, editEmail, editPassword, editSubject) 
             <div className={style["user-info-row"]}>
               <label htmlFor="name">Email: </label>
               <div>
-                <p>s1234567@rmit.edu.vn</p>
+                <span>s1234567@rmit.edu.vn</span>
               </div>
             </div>
             <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={editEmail} />
@@ -50,7 +63,7 @@ const MyProfileInfo = (editAva, editName, editEmail, editPassword, editSubject) 
             <div className={style["user-info-row"]}>
               <label htmlFor="name">Password: </label>
               <div>
-                <p>*********</p>
+                <span>*********</span>
               </div>
             </div>
             <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={editPassword} />

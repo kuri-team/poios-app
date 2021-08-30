@@ -47,12 +47,15 @@ const TutorProfileInfo = () => {
               </div>
             </div>
             <div className={style["button-container"]}>
-              <button className={style["book-button"]} type="submit" value="BookAppointment">
-                BOOK AN APPOINTMENT
-              </button>
-              <button className={style["message-button"]} type="submit" value="SendMessage">
-                SEND A MESSAGE
-              </button>
+              <div className={style["status"]}>
+                <div>Status:</div>
+                <div className={style["status-detail"]}>
+                  <img className={style["green"]} src={"/media/icons/Green_sphere.svg"} alt="" />
+                  <span className={style["green-active"]}>Online</span>
+                  {/*<img className={style["red"]} src={"/media/icons/red-circle.svg"} alt="" />*/}
+                  {/*<span className={style["red-offline"]}>Offline</span>*/}
+                </div>
+              </div>
             </div>
           </div>
         </div>
