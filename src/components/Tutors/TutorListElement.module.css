@@ -1,59 +1,52 @@
-.tutor-element {
-  position: relative;
+.profile-big-container {
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.profile-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-content: center;
   justify-content: center;
-  margin: 1.8rem 3rem;
+  background-color: var(--white);
+  border-radius: 25px;
 }
 
-.avatar,
-.avatar-name,
-.avatar-subject {
-  text-align: center;
+.user-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem;
 }
 
-.avatar-subject {
-  font-size: 16px;
+.avatar-image {
+  width: 18rem;
+  border-radius: 25px;
 }
 
-.avatar,
-.avatar-name,
-.avatar-subject:hover {
-  cursor: pointer;
+.user-info-display {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  width: 45%;
+  margin: 0 1.5rem 3rem 0;
+  color: var(--black);
 }
 
-.avatar img {
-  width: 160px;
-  border-radius: 50%;
+.subject-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 
-@media only screen and (--viewport-tablet) {
-  .tutor-element {
-    margin: 1.8rem 2rem;
-  }
-}
-
-@media only screen and (--viewport-phone) {
-  .tutor-element {
-    margin: 1.8rem 1.8rem;
-  }
-
-  .avatar img {
-    width: 9.5rem;
-  }
-
-  .avatar-subject {
-    font-size: 13px;
-  }
-}
-
-@media only screen and (--viewport-phone-small) {
-  .avatar img {
-    width: 10rem;
-  }
-
-  .tutor-element {
-    margin: 1.8rem 1rem;
-  }
+.subject-list > div {
+  margin-top: 10px;
+  margin-right: 8px;
+  padding: 5px 10px;
+  color: var(--black);
+  font-weight: lighter;
+  font-size: 0.8rem;
+  background-color: var(--lighter-gray);
 }
