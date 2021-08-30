@@ -1,6 +1,4 @@
-import useDetectCloseDropdown from "../../hooks/Header/useDetectCloseDropdown";
 import * as style from "./Searchbar.module.css";
-import { useState } from "react";
 
 const Searchbar = ({ searchQuery, setSearchQuery, openState }) => {
   return (

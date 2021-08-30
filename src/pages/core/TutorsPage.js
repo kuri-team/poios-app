@@ -71,10 +71,10 @@ const TutorsPage = ({ active }) => {
       <div className={style["title"]}>
         <h1>OUR TUTORS</h1>
       </div>
-      <div className={style["searchbar-container"]} ref={ref}>
+      <div className={style["searchbar-container"]}>
         <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} openState={() => setOpen(!open)} />
       </div>
-      <div className={open ? style["filter-window"] : [style["filterWindow"], style["hidden"]].join(" ")}>
+      <div className={open ? style["filter-window"] : [style["filterWindow"], style["hidden"]].join(" ")} ref={ref}>
         <FilterWindow filterQuery={filterQuery} setFilterQuery={setFilterQuery} filteredSubject={filteredSubject} />
       </div>
       {/*<ul>*/}
