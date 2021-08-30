@@ -12,11 +12,14 @@ const MyProfileInfo = (editAva, editName, editEmail, editPassword, editSubject) 
     <div className={style["profile-bigcontainer"]}>
       <div className={style["profile-container"]}>
         <div className={style["user-avatar"]}>
-          <img className={style["avatar-image"]} src={"media/kequing.jpg"} alt="" />
+          <img className={style["avatar-image"]} src={"/media/kequing.jpg"} alt="" />
           <div className={style["upload-image-form"]}>
-            <form className={style["form-image-upload"]}>
+            <div className={style["form-image-upload"]}>
               <input type="file" value={file} onChange={e => setFile(e.target.files[0])} />
-            </form>
+              <div className={style["fake-file"]}>
+                <span>Upload Image</span>
+              </div>
+            </div>
             <div>
               <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={editAva} />
             </div>

@@ -1,7 +1,6 @@
 import Layout from "../../components/Layout";
 import MyProfileInfo from "../../components/Profile/MyProfileInfo";
 import Timetable from "../../components/Profile/Timetable";
-import TimetableDay from "../../components/Profile/TimetableDay";
 
 import * as style from "./MyProfilePage.module.css";
 
