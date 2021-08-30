@@ -20,6 +20,10 @@
   margin: 120px 20px 200px 20px;
 }
 
+.hidden {
+  display: none;
+}
+
 @media only screen and (--viewport-phone) {
   .searchbar {
     padding: 0;

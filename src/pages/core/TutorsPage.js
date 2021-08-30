@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useDetectCloseDropdown from "../../hooks/Header/useDetectCloseDropdown";
 
 import Layout from "../../components/Layout";
 import Searchbar from "../../components/Tutors/Searchbar";
@@ -29,7 +30,7 @@ const dummySubject = [
   { id: 12, name: "Diplomacy" },
 ];
 
-const TutorsPage = () => {
+const TutorsPage = ({ active }) => {
   //"Search functions"
   const { paramsString } = window.location;
   const tutorQuery = new URLSearchParams(paramsString).get("search-result");
@@ -62,25 +63,20 @@ const TutorsPage = () => {
   const filteredSubject = filterSubject(dummySubject, filterQuery);
 
   //"toggle FilterWindow"
-  const [isOn, setIsOn] = useState(false);
-  const displayState = () => {
-    setIsOn(!isOn);
-    return isOn;
-  };
+  const [open, setOpen] = useState(false);
+  const ref = useDetectCloseDropdown(setOpen, [open]);
 
   return (
     <Layout className={style["container"]} header footer>
       <div className={style["title"]}>
         <h1>OUR TUTORS</h1>
       </div>
-      <div className={style["searchbar-container"]}>
-        <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} displayState={displayState} />
+      <div className={style["searchbar-container"]} ref={ref}>
+        <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} openState={() => setOpen(!open)} />
       </div>
-      {isOn ? (
-        <div className={style["filter-window"]}>
-          <FilterWindow filterQuery={filterQuery} setFilterQuery={setFilterQuery} filteredSubject={filteredSubject} />
-        </div>
-      ) : null}
+      <div className={open ? style["filter-window"] : [style["filterWindow"], style["hidden"]].join(" ")}>
+        <FilterWindow filterQuery={filterQuery} setFilterQuery={setFilterQuery} filteredSubject={filteredSubject} />
+      </div>
       {/*<ul>*/}
       {/*  {filteredTutors.map(tutor => (*/}
       {/*    <li key={tutor.id}>{tutor.name}</li>*/}
