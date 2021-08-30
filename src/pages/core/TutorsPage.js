@@ -83,8 +83,18 @@ const TutorsPage = ({ active }) => {
       {/*  ))}*/}
       {/*</ul>*/}
       <div className={style["tutor-list"]}>
-        <TutorListElement />
-        <TutorListElement />
+        <TutorListElement
+          name={"Han Sooyoung"}
+          major={"Literature"}
+          src={"/media/hansooyoung.jpg"}
+          subject={"Korean Literature"}
+        />
+        <TutorListElement
+          name={"Han Sooyoung"}
+          major={"Literature"}
+          src={"/media/hansooyoung.jpg"}
+          subject={"Creative Writing"}
+        />
       </div>
     </Layout>
   );

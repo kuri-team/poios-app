@@ -1,5 +1,5 @@
 import * as style from "./SubjectTag.module.css";
 
-const SubjectTag = () => <div className={style["subject-tag"]}>Javascript</div>;
+const SubjectTag = ({ subject }) => <div className={style["subject-tag"]}>{subject}</div>;
 
 export default SubjectTag;
