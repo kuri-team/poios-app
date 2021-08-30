@@ -1,5 +1,7 @@
 import * as style from "./TutorListElement.module.css";
 import SubjectTag from "./SubjectTag";
+import JoinButton from "./JoinButton";
+import MoreTag from "./MoreTag";
 
 const TutorListElement = () => {
   return (
@@ -11,19 +13,19 @@ const TutorListElement = () => {
       <div className={style["user-info-display"]}>
         <div>
           <h4>Han Sooyoung</h4>
-          <p>Major: Musical Instruments</p>
         </div>
+        <p>Major: Creative Writing</p>
         <div>
           <span>Subjects:</span>
           <div className={style["subject-list"]}>
             <SubjectTag />
             <SubjectTag />
             <SubjectTag />
-            <SubjectTag />
-            <SubjectTag />
-            <SubjectTag />
+            <MoreTag />
           </div>
         </div>
+
+        <JoinButton />
       </div>
     </div>
   );
