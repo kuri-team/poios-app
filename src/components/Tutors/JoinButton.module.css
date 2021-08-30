@@ -1,0 +1,22 @@
+.btn {
+  width: 120px;
+  padding: 14px 0;
+  color: var(--white);
+  font-weight: 600;
+  background-color: var(--cyan);
+  border: none;
+  border-radius: var(--border-radius-xs);
+  transform: scale(1);
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-rapid);
+}
+
+.btn:hover {
+  background-color: var(--blue);
+  cursor: pointer;
+  transition: var(--transition-rapid);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
