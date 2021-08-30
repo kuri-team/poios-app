@@ -1,0 +1,29 @@
+.subject-tag {
+  width: fit-content;
+  padding: 5px 15px;
+  color: var(--gray);
+  font-weight: lighter;
+  text-align: center;
+  background-color: var(--lighter-gray);
+  border-radius: var(--border-radius-xxs);
+}
+
+.link {
+  text-decoration: none;
+  transform: scale(1);
+  cursor: pointer;
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-rapid);
+}
+.link:visited {
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+.link:active {
+  text-decoration: none;
+  transform: scale(0.95);
+}
