@@ -1,10 +1,10 @@
 import * as style from "./TutorStatus.module.css";
 
-const TutorStatus = status => {
+const TutorStatus = ({ status }) => {
   return (
-    <div>
-      <div className={style["available"]}></div>
-      {status}
+    <div className={style["available"]}>
+      <span className={style["status-dot"]}></span>
+      {status.toUpperCase()}
     </div>
   );
 };

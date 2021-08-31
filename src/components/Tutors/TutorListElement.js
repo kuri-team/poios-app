@@ -3,6 +3,7 @@ import SubjectTag from "./SubjectTag";
 import JoinButton from "./JoinButton";
 import MoreTag from "./MoreTag";
 import { Link } from "react-router-dom";
+import TutorStatus from "./TutorStatus";
 
 const TutorListElement = ({ src, name, major, subjects }) => {
   let subjectList;
@@ -23,9 +24,12 @@ const TutorListElement = ({ src, name, major, subjects }) => {
       </div>
 
       <div className={style["user-info-display"]}>
-        <Link to="/profile">
-          <h4>{name}</h4>
-        </Link>
+        <div className={style["user-info-header"]}>
+          <Link to="/profile">
+            <h4>{name}</h4>
+          </Link>
+          <TutorStatus status="available" />
+        </div>
         <p>Major: {major}</p>
         <div>
           <span>Subjects:</span>

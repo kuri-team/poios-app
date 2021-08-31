@@ -1,17 +1,26 @@
 .available {
   color: #25a122;
-}
-
-.available .status-dot {
-  background: #25a122;
-  border-radius: 50%;
+  font-weight: 500;
 }
 
 .busy {
   color: #ec3a3aff;
+  font-weight: 500;
+}
+
+.available .status-dot,
+.busy .status-dot {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  margin-right: 7px;
+  border-radius: 50%;
+}
+
+.available .status-dot {
+  background: #25a122;
 }
 
 .busy .status-dot {
   background: #ec3a3aff;
-  border-radius: 50%;
 }
