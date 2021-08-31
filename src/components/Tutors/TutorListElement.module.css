@@ -22,6 +22,20 @@
   width: 9rem;
   height: 9rem;
   border-radius: 50%;
+  transform: scale(1);
+  transition: var(--transition-medium-relaxed);
+  transition-delay: var(--transition-rapid);
+  will-change: transform;
+}
+
+.avatar-image:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  transition: var(--transition-medium-rapid);
+}
+
+.avatar-image:active {
+  transform: scale(1);
 }
 
 .user-info-display {
@@ -35,6 +49,10 @@
 
 .user-info-display h4 {
   margin: 0 0 5px;
+}
+
+.user-info-display h4:hover {
+  cursor: pointer;
 }
 
 .user-info-display p,

@@ -11,9 +11,7 @@ const TutorListElement = ({ src, name, major, subject }) => {
       </div>
 
       <div className={style["user-info-display"]}>
-        <div>
-          <h4>{name}</h4>
-        </div>
+        <h4>{name}</h4>
         <p>Major: {major}</p>
         <div>
           <span>Subjects:</span>
