@@ -2,9 +2,6 @@ import { Link } from "react-router-dom";
 
 import { pages, PagesContext } from "../Pages";
 import Nav from "./Header/Nav";
-import Notifications from "./Header/Notifications";
-import Messages from "./Header/Messages";
-import Calendar from "./Header/Calendar";
 import AccountMenu from "./Header/AccountMenu";
 import MobileNav from "./Header/MobileNav";
 import * as style from "./Header.module.css";
@@ -20,10 +17,6 @@ const Header = () => (
       </PagesContext.Provider>
     </div>
     <div className={style["controls"]}>
-      <Notifications active={true} />
-      <Messages active={true} />
-      <Calendar active={true} />
-      <span className={style["divider"]} />
       <PagesContext.Provider value={pages.account}>
         <AccountMenu />
       </PagesContext.Provider>
