@@ -15,6 +15,7 @@ const dummyTutors = [
     major: "Literature",
     src: "/media/hansooyoung.jpg",
     subjects: ["Korean Literature", "Creative Writing"],
+    status: "busy",
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const dummyTutors = [
     major: "Visual Arts",
     src: "/media/hansooyoung.jpg",
     subjects: ["Art History", "Modern Art", "Greek Art & Architecture"],
+    status: "busy",
   },
   {
     id: 3,
@@ -36,6 +38,7 @@ const dummyTutors = [
       "Macroeconomics",
       "Financial Accounting",
     ],
+    status: "available",
   },
   {
     id: 4,
@@ -43,6 +46,7 @@ const dummyTutors = [
     major: "Computer Science",
     src: "/media/hansooyoung.jpg",
     subjects: ["Algorithm & Analysis", "Introduction to Programming", "Web Programming"],
+    status: "busy",
   },
   {
     id: 5,
@@ -50,6 +54,7 @@ const dummyTutors = [
     major: "Design Studies",
     src: "/media/hansooyoung.jpg",
     subjects: ["Graphic Design"],
+    status: "available",
   },
   {
     id: 6,
@@ -57,6 +62,7 @@ const dummyTutors = [
     major: "Psychology",
     src: "/media/hansooyoung.jpg",
     subjects: ["Cognitive Psychology", "Mental Health Studies"],
+    status: "available",
   },
 ];
 
@@ -136,6 +142,7 @@ const TutorsPage = ({ active }) => {
             name={tutor.name}
             major={tutor.major}
             subjects={tutor.subjects}
+            status={tutor.status}
           />
         ))}
       </div>

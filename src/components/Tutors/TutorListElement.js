@@ -5,7 +5,7 @@ import MoreTag from "./MoreTag";
 import { Link } from "react-router-dom";
 import TutorStatus from "./TutorStatus";
 
-const TutorListElement = ({ src, name, major, subjects }) => {
+const TutorListElement = ({ src, name, major, subjects, status }) => {
   let subjectList;
   const maxSubjectCards = 4;
 
@@ -28,7 +28,7 @@ const TutorListElement = ({ src, name, major, subjects }) => {
           <Link to="/profile">
             <h4>{name}</h4>
           </Link>
-          <TutorStatus status="available" />
+          <TutorStatus status={status} />
         </div>
         <p>Major: {major}</p>
         <div>

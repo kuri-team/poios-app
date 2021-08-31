@@ -1,5 +1,5 @@
 .available {
-  color: #25a122;
+  color: #2bb928;
   font-weight: 500;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .available .status-dot {
-  background: #25a122;
+  background: #2bb928;
 }
 
 .busy .status-dot {
