@@ -9,9 +9,41 @@ import * as style from "./TutorsPage.module.css";
 
 //'searching function'
 const dummyTutors = [
-  { id: 1, name: "Eula" },
-  { id: 2, name: "Mona" },
-  { id: 3, name: "Jean" },
+  {
+    id: 1,
+    name: "Han Sooyoung",
+    major: "Literature",
+    src: "/media/hansooyoung.jpg",
+    subjects: ["Korean Literature", "Creative Writing"],
+  },
+  {
+    id: 2,
+    name: "Kieran White",
+    major: "Visual Arts",
+    src: "/media/hansooyoung.jpg",
+    subjects: ["Art History", "Modern Art", "Greek Art & Architecture"],
+  },
+  {
+    id: 3,
+    name: "Kim Dokja",
+    major: "Business Management",
+    src: "/media/hansooyoung.jpg",
+    subjects: [
+      "Marketing",
+      "Digital Business",
+      "Human Resources Management",
+      "Microeconomics",
+      "Macroeconomics",
+      "Financial Accounting",
+    ],
+  },
+  {
+    id: 4,
+    name: "Yoo Joonghyuk",
+    major: "Computer Science",
+    src: "/media/hansooyoung.jpg",
+    subjects: ["Algorithm & Analysis", "Introduction to Programming", "Web Programming"],
+  },
 ];
 
 //"searching subjects"
@@ -83,18 +115,15 @@ const TutorsPage = ({ active }) => {
       {/*  ))}*/}
       {/*</ul>*/}
       <div className={style["tutor-list"]}>
-        <TutorListElement
-          name={"Han Sooyoung"}
-          major={"Literature"}
-          src={"/media/hansooyoung.jpg"}
-          subject={"Korean Literature"}
-        />
-        <TutorListElement
-          name={"Han Sooyoung"}
-          major={"Literature"}
-          src={"/media/hansooyoung.jpg"}
-          subject={"Creative Writing"}
-        />
+        {dummyTutors.map(tutor => (
+          <TutorListElement
+            key={tutor.id}
+            src={tutor.src}
+            name={tutor.name}
+            major={tutor.major}
+            subjects={tutor.subjects}
+          />
+        ))}
       </div>
     </Layout>
   );

@@ -4,7 +4,16 @@ import JoinButton from "./JoinButton";
 import MoreTag from "./MoreTag";
 import { Link } from "react-router-dom";
 
-const TutorListElement = ({ src, name, major, subject }) => {
+const TutorListElement = ({ src, name, major, subjects }) => {
+  let subjectList;
+  const maxSubjectCards = 4;
+
+  if (subjects.length > maxSubjectCards) {
+    subjectList = subjects.slice(0, maxSubjectCards);
+  } else {
+    subjectList = subjects;
+  }
+
   return (
     <div className={style["profile-container"]}>
       <div className={style["user-avatar"]}>
@@ -21,10 +30,10 @@ const TutorListElement = ({ src, name, major, subject }) => {
         <div>
           <span>Subjects:</span>
           <div className={style["subject-list"]}>
-            <SubjectTag subject={subject} />
-            <SubjectTag subject={subject} />
-            <SubjectTag subject={subject} />
-            <MoreTag />
+            {subjectList.map((subject, key) => (
+              <SubjectTag key={key} subject={subject} />
+            ))}
+            {subjects.length > maxSubjectCards ? <MoreTag /> : <MoreTag hidden />}
           </div>
         </div>
 

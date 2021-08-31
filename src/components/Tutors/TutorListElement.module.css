@@ -5,6 +5,7 @@
   align-content: center;
   justify-content: space-evenly;
   width: 40%;
+  margin-bottom: 4em;
   padding: 10px 15px 10px 0;
   background-color: var(--white);
   border-radius: var(--border-radius-m);
@@ -81,4 +82,5 @@
 
 .subject-list div {
   margin: 7px 10px 0 0;
+  font-size: 14px;
 }
