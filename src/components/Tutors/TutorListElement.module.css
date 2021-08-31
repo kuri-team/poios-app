@@ -47,6 +47,18 @@
   color: var(--black);
 }
 
+.user-info-display a {
+  color: inherit;
+  text-decoration: underline transparent;
+  transition: var(--transition-relaxed);
+  will-change: text-decoration-color;
+}
+
+.user-info-display a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .user-info-display h4 {
   margin: 0 0 5px;
 }
