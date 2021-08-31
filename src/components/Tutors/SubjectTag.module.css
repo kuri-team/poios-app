@@ -27,3 +27,7 @@
   text-decoration: none;
   transform: scale(0.95);
 }
+
+.hidden {
+  display: none;
+}
