@@ -7,7 +7,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 15px;
   font-weight: 500;
 }
 
@@ -24,7 +23,7 @@
   display: inline-block;
   width: 0.9em;
   height: 0.9em;
-  margin-right: 7px;
+  margin-right: 5px;
   border-radius: 50%;
 }
 
