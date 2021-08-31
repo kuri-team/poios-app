@@ -44,6 +44,20 @@ const dummyTutors = [
     src: "/media/hansooyoung.jpg",
     subjects: ["Algorithm & Analysis", "Introduction to Programming", "Web Programming"],
   },
+  {
+    id: 5,
+    name: "Belladonna Davenport",
+    major: "Design Studies",
+    src: "/media/hansooyoung.jpg",
+    subjects: ["Graphic Design"],
+  },
+  {
+    id: 6,
+    name: "Neyra Elena Darcy",
+    major: "Psychology",
+    src: "/media/hansooyoung.jpg",
+    subjects: ["Cognitive Psychology", "Mental Health Studies"],
+  },
 ];
 
 //"searching subjects"
