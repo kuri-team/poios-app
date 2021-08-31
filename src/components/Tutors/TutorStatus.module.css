@@ -1,11 +1,22 @@
+.available,
+.busy {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+  font-weight: 500;
+}
+
 .available {
   color: #2bb928;
-  font-weight: 500;
 }
 
 .busy {
   color: #ec3a3aff;
-  font-weight: 500;
 }
 
 .available .status-dot,

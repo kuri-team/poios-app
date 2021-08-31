@@ -1,5 +1,16 @@
-.profile-container {
+.profile-container,
+.user-avatar,
+.user-info-display,
+.user-info-header,
+.subject-list {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
   display: flex;
+}
+
+.profile-container {
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
@@ -12,7 +23,6 @@
 }
 
 .user-avatar {
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -40,7 +50,6 @@
 }
 
 .user-info-display {
-  display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: 55%;
@@ -74,8 +83,13 @@
   font-size: 14px;
 }
 
+.user-info-header {
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 0.75em;
+}
+
 .subject-list {
-  display: flex;
   flex-wrap: wrap;
   margin-bottom: 2rem;
 }

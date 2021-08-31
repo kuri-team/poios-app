@@ -30,6 +30,7 @@ const TutorListElement = ({ src, name, major, subjects, status }) => {
           </Link>
           <TutorStatus status={status} />
         </div>
+
         <p>Major: {major}</p>
         <div>
           <span>Subjects:</span>
