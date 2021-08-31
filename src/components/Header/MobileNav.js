@@ -25,6 +25,9 @@ const MobileNav = () => {
               <Link to={navLink.path}>{navLink.name}</Link>
             </li>
           ))}
+          <li>
+            <Link to="/">Logout</Link>
+          </li>
         </ul>
       </div>
     </div>
