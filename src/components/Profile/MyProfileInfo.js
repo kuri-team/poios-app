@@ -10,7 +10,7 @@ const MyProfileInfo = (editAva, editName, editEmail, editPassword, editSubject) 
   const [isOn, setIsOn] = useState(false);
 
   const displayForm = () => {
-    setIsOn(!isOn);
+    setIsOn(true);
     console.log("hello");
   };
 
@@ -51,11 +51,15 @@ const MyProfileInfo = (editAva, editName, editEmail, editPassword, editSubject) 
           <div className={style["user-info-element"]}>
             <div className={style["user-info-row"]}>
               <label htmlFor="name">Email: </label>
-              <div>
-                <span>s1234567@rmit.edu.vn</span>
+              <div className={style["input-place"]}>
+                {isOn ? (
+                  <input type="text" className={style["form-control"]} value={e => e.target.value} />
+                ) : (
+                  <span>s1234567@rmit.edu.vn</span>
+                )}
               </div>
             </div>
-            <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={editEmail} />
+            <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={() => displayForm()} />
             <hr />
           </div>
 

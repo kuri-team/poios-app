@@ -206,3 +206,24 @@ hr {
     width: 3rem;
   }
 }
+
+@media only screen and (--viewport-phone-small) {
+  .avatar-image {
+    width: 14rem;
+    border-radius: 25px;
+  }
+
+  .user-info-row label {
+    padding-left: 3rem;
+  }
+
+  .user-info-row > div:not(label .subject-list) {
+    display: block;
+    padding-top: 1rem;
+    padding-left: 2rem;
+  }
+
+  .subject-list {
+    margin-left: 0rem;
+  }
+}

@@ -14,7 +14,6 @@ const TutorProfileInfo = () => {
               <img src={"/media/icons/star_empty.svg"} alt="" />
               <img src={"/media/icons/star_empty.svg"} alt="" />
             </div>
-            <span className={style["view-comments"]}>View all comments</span>
           </div>
         </div>
 
