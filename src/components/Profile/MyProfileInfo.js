@@ -1,13 +1,6 @@
 import { useState } from "react";
 import * as style from "./MyProfileInfo.module.css";
 
-// const profileInfo = {
-//   UserName: name,
-//   UserEmail: email,
-//   UserPassword: password,
-//   UserSubject: subject,
-// };
-
 const MyProfileInfo = () => {
   const [file, setFile] = useState(null);
   const [name, setName] = useState("");
@@ -34,24 +27,22 @@ const MyProfileInfo = () => {
     console.log("setSubjectDisplay");
   };
 
-  const handleChanged = () => {};
-  const handleButtonClicked = () => {};
-
   return (
     <div className={style["profile-bigcontainer"]}>
       <div className={style["profile-container"]}>
         <div className={style["user-avatar"]}>
+          <span>{file}</span>
           <img className={style["avatar-image"]} src={"/media/kequing.jpg"} alt="" />
           <div className={style["upload-image-form"]}>
             <div className={style["form-image-upload"]}>
-              <input type="file" id="contained-button-file" value={file} onChange={e => setFile(e.target.files[0])} />
+              <input type="file" id="contained-button-file" onChange={e => setFile(e.target.files[0])} />
               <div className={style["fake-file"]}>
                 <label htmlFor="contained-button-file">Upload Image</label>
               </div>
             </div>
-            <div>
+            <label htmlFor="contained-button-file">
               <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" />
-            </div>
+            </label>
           </div>
         </div>
 

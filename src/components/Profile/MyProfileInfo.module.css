@@ -36,6 +36,10 @@
   font-size: 15px;
 }
 
+.fake-file label:hover {
+  cursor: pointer;
+}
+
 .upload-image-form img {
   width: 3rem;
 }
