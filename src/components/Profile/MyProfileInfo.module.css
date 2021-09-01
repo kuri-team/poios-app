@@ -69,6 +69,7 @@
 .user-info-display {
   width: 60%;
   margin-top: 1rem;
+  padding-bottom: 2rem;
   color: var(--black);
 }
 
@@ -175,14 +176,6 @@ hr {
   cursor: pointer;
 }
 
-@media only screen and (--viewport-tablet) {
-  .user-info-display {
-    width: 100%;
-    padding-bottom: 2rem;
-    color: var(--black);
-  }
-}
-
 @media only screen and (--viewport-desktop) {
   .user-info-display {
     width: 100%;
@@ -214,11 +207,15 @@ hr {
   }
 
   .label-container {
-    width: 4rem;
+    width: 5.3rem;
     font-size: 13px;
   }
 
   .user-info-row {
+    font-size: 13px;
+  }
+
+  .mini-save-button {
     font-size: 13px;
   }
 }
