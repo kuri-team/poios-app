@@ -15,12 +15,17 @@
   transition: var(--transition-medium);
   transition-delay: var(--transition-rapid);
 }
+div a {
+  text-decoration: none;
+}
+
 .link:visited {
   text-decoration: none;
 }
 
 .link:hover {
   text-decoration: none;
+  background-color: var(--light-gray);
 }
 
 .link:active {
@@ -30,4 +35,9 @@
 
 .hidden {
   display: none;
+}
+
+@media only screen and (--viewport-phone) {
+  align-content: center;
+  align-items: center;
 }

@@ -121,7 +121,7 @@ const TutorsPage = ({ active }) => {
   return (
     <Layout className={style["container"]} header footer>
       <div className={style["title"]}>
-        <h1>OUR TUTORS</h1>
+        <h1>CHAT ROOMS</h1>
       </div>
       <div className={style["searchbar-container"]}>
         <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} openState={() => setOpen(!open)} />
@@ -134,17 +134,21 @@ const TutorsPage = ({ active }) => {
       {/*    <li key={tutor.id}>{tutor.name}</li>*/}
       {/*  ))}*/}
       {/*</ul>*/}
-      <div className={style["tutor-list"]}>
-        {dummyTutors.map(tutor => (
-          <TutorListElement
-            key={tutor.id}
-            src={tutor.src}
-            name={tutor.name}
-            major={tutor.major}
-            subjects={tutor.subjects}
-            status={tutor.status}
-          />
-        ))}
+      <div className={style["big-container"]}>
+        <div className={[style["tutor-list"], style["x"], style["mandatory-scroll-snapping"]].join(" ")} dir="ltr">
+          {dummyTutors.map(tutor => (
+            <div className={style["tutor"]}>
+              <TutorListElement
+                key={tutor.id}
+                src={tutor.src}
+                name={tutor.name}
+                major={tutor.major}
+                subjects={tutor.subjects}
+                status={tutor.status}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </Layout>
   );

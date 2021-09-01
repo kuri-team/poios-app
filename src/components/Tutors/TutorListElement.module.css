@@ -66,11 +66,17 @@
 .user-info-header {
   flex-direction: row;
   flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
   margin-bottom: 0.75em;
+  text-align: center;
 }
 
 .user-info-header a {
+  align-content: center;
+  align-items: center;
   color: inherit;
+  text-align: center;
   text-decoration: underline transparent;
   transition: var(--transition-relaxed);
   will-change: text-decoration-color;
@@ -82,7 +88,10 @@
 }
 
 .user-info-header h4 {
+  align-content: center;
+  align-items: center;
   margin: 0 15px 3px 0;
+  text-align: center;
 }
 
 .user-info-header h4:hover {
@@ -97,4 +106,20 @@
 .subject-list div {
   margin: 7px 10px 0 0;
   font-size: 14px;
+}
+
+@media only screen and (--viewport-phone) {
+  .profile-container {
+    width: 90%;
+  }
+
+  .user-info-display,
+  .user-info-header,
+  .subject-list {
+    align-content: center;
+    text-align: center;
+  }
+  .subject-list {
+    width: 100%;
+  }
 }

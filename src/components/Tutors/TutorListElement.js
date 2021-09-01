@@ -14,7 +14,6 @@ const TutorListElement = ({ src, name, major, subjects, status }) => {
   } else {
     subjectList = subjects;
   }
-
   return (
     <div className={style["profile-container"]}>
       <div className={style["user-avatar"]}>
@@ -40,9 +39,10 @@ const TutorListElement = ({ src, name, major, subjects, status }) => {
             ))}
             {subjects.length > maxSubjectCards ? <MoreTag /> : <MoreTag hidden />}
           </div>
+          <div className={style["btn-container"]}>
+            {status === "available" ? <JoinButton /> : <JoinButton hidden />}
+          </div>
         </div>
-
-        <JoinButton />
       </div>
     </div>
   );
