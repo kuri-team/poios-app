@@ -60,32 +60,38 @@
 }
 
 .user-info-row {
+  display: flex;
+  justify-content: center;
   padding-top: 1.4rem;
   padding-bottom: 1.4rem;
-  overflow: visible;
 }
 
 .user-info-display {
-  width: 55%;
+  width: 60%;
   margin-top: 1rem;
   color: var(--black);
 }
 
-.user-info-row > div:not(label .subject-list) {
-  display: inline-block;
-  padding-left: 3rem;
+.label-container {
+  display: flex;
+  align-items: center;
 }
 
-.user-info-row label {
-  padding-left: 5rem;
+.label-container label {
+  display: block;
+  width: 3rem;
+  padding-right: 4rem;
 }
 
 .user-info-row .input-place {
-  width: 35%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 50%;
 }
 
 .user-info-row .form-control {
-  width: 100%;
+  width: 85%;
   height: 24px;
   padding: 0 10px;
   border: 2px solid var(--gray);
@@ -102,10 +108,19 @@
 }
 
 .user-info-element img {
-  position: absolute;
-  top: 0.6rem;
-  right: 4.5rem;
   width: 3rem;
+  padding-right: 0.5rem;
+}
+
+.mini-save-button {
+  width: 4rem;
+  height: 28px;
+  color: var(--white);
+  font-size: 14px;
+  text-align: center;
+  background-color: var(--dark-cyan);
+  border: none;
+  border-radius: 5px;
 }
 
 .user-info-element img:hover {
@@ -125,7 +140,6 @@ hr {
   justify-content: left;
   width: 50%;
   margin-bottom: 1rem;
-  padding-left: 1rem;
 }
 
 .subject-title {
@@ -164,66 +178,47 @@ hr {
 @media only screen and (--viewport-tablet) {
   .user-info-display {
     width: 100%;
+    padding-bottom: 2rem;
     color: var(--black);
-  }
-
-  .user-info-row label {
-    padding-left: 6rem;
   }
 }
 
 @media only screen and (--viewport-desktop) {
-  .user-info-row > div:not(label .subject-list) {
-    margin: 0 4rem;
-    padding-left: 0rem;
+  .user-info-display {
+    width: 100%;
+    padding-bottom: 2rem;
+    color: var(--black);
   }
 
   .subject-list {
-    width: 60%;
     margin-left: 0rem;
   }
 }
 
 @media only screen and (--viewport-phone) {
-  .user-info-row > div:not(label .subject-list) {
-    margin: 0 0rem 0rem 0.8rem;
-    padding-left: 0;
-  }
-
-  .subject-list {
-    width: 60%;
-    margin-left: 2rem;
-  }
-
-  .user-info-row label {
-    padding-left: 4rem;
-  }
-
-  .user-info-element img {
-    position: absolute;
-    top: 0.5rem;
-    right: 3rem;
+  .label-container label {
+    display: block;
     width: 3rem;
+    padding-right: 4rem;
+  }
+
+  .input-place .form-control {
+    width: 80%;
   }
 }
 
 @media only screen and (--viewport-phone-small) {
   .avatar-image {
-    width: 14rem;
+    width: 13rem;
     border-radius: 25px;
   }
 
-  .user-info-row label {
-    padding-left: 3rem;
+  .label-container {
+    width: 4rem;
+    font-size: 13px;
   }
 
-  .user-info-row > div:not(label .subject-list) {
-    display: block;
-    padding-top: 1rem;
-    padding-left: 2rem;
-  }
-
-  .subject-list {
-    margin-left: 0rem;
+  .user-info-row {
+    font-size: 13px;
   }
 }
