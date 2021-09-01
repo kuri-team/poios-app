@@ -1,6 +1,8 @@
 import { useState } from "react";
 import * as style from "./MyProfileInfo.module.css";
 
+const subjectList = ["JavaScript", "PHP", "SQL", "ReactJS", "JavaScript", "JavaScript", "PHP"];
+
 const MyProfileInfo = () => {
   const [file, setFile] = useState(null);
   const [name, setName] = useState("");
@@ -145,13 +147,9 @@ const MyProfileInfo = () => {
                 </div>
               ) : (
                 <div className={style["subject-list"]}>
-                  <div>JavaScript</div>
-                  <div>ReactJS</div>
-                  <div>NoSQL</div>
-                  <div>PHP</div>
-                  <div>PHP</div>
-                  <div>PHP</div>
-                  <div>PHP</div>
+                  {subjectList.map(subject => (
+                    <div>{subject}</div>
+                  ))}
                 </div>
               )}
               {subjectDisplay ? (

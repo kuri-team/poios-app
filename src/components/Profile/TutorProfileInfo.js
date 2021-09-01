@@ -1,4 +1,7 @@
 import * as style from "./TutorProfileInfo.module.css";
+import { useState } from "react";
+
+const subjectList = ["JavaScript", "PHP", "SQL", "ReactJS", "JavaScript", "JavaScript", "PHP"];
 
 const TutorProfileInfo = () => {
   return (
@@ -36,13 +39,9 @@ const TutorProfileInfo = () => {
             <div className={style["user-info-element"]}>
               <label htmlFor="name">Subject: </label>
               <div className={style["subject-list"]}>
-                <div>JavaScript</div>
-                <div>ReactJS</div>
-                <div>NoSQL</div>
-                <div>PHP</div>
-                <div>PHP</div>
-                <div>PHP</div>
-                <div>PHP</div>
+                {subjectList.map(subject => (
+                  <div>{subject}</div>
+                ))}
               </div>
             </div>
             <div className={style["button-container"]}>
@@ -50,9 +49,9 @@ const TutorProfileInfo = () => {
                 <div>Status:</div>
                 <div className={style["status-detail"]}>
                   <img className={style["green"]} src={"/media/icons/Green_sphere.svg"} alt="" />
-                  <span className={style["green-active"]}>Online</span>
+                  <span className={style["green-active"]}>Available</span>
                   {/*<img className={style["red"]} src={"/media/icons/red-circle.svg"} alt="" />*/}
-                  {/*<span className={style["red-offline"]}>Offline</span>*/}
+                  {/*<span className={style["red-offline"]}>Busy</span>*/}
                 </div>
               </div>
             </div>
