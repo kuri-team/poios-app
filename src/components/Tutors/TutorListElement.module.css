@@ -15,9 +15,9 @@
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-evenly;
-  width: 40%;
+  width: 85%;
   margin-bottom: 4em;
-  padding: 10px 15px 10px 0;
+  padding: 10px 10px 10px 0;
   background-color: var(--white);
   border-radius: var(--border-radius-m);
 }
