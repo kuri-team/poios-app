@@ -16,6 +16,7 @@
   align-content: center;
   justify-content: space-evenly;
   width: 85%;
+  height: 325px;
   margin-bottom: 4em;
   padding: 10px 10px 10px 0;
   background-color: var(--white);
@@ -108,9 +109,16 @@
   font-size: 14px;
 }
 
+@media only screen and (--viewport-desktop) {
+  .profile-container {
+    height: 600px;
+  }
+}
+
 @media only screen and (--viewport-phone) {
   .profile-container {
     width: 90%;
+    height: auto;
   }
 
   .user-info-display,

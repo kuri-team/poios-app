@@ -22,7 +22,7 @@
   display: grid;
   flex-wrap: wrap;
   grid-template-columns: 50% 50%;
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .hidden {
