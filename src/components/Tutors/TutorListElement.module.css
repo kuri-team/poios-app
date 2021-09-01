@@ -53,7 +53,7 @@
 .user-info-display {
   flex-direction: column;
   flex-wrap: wrap;
-  width: 55%;
+  width: 60%;
   margin: 2em 0;
   color: var(--black);
 }
@@ -66,11 +66,7 @@
 
 .user-info-header {
   flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
-  align-items: center;
   margin-bottom: 0.75em;
-  text-align: center;
 }
 
 .user-info-header a {
@@ -92,7 +88,6 @@
   align-content: center;
   align-items: center;
   margin: 0 15px 3px 0;
-  text-align: center;
 }
 
 .user-info-header h4:hover {
@@ -105,13 +100,32 @@
 }
 
 .subject-list div {
-  margin: 7px 10px 0 0;
+  margin: 7px;
   font-size: 14px;
 }
 
 @media only screen and (--viewport-desktop) {
   .profile-container {
+    align-content: center;
     height: 600px;
+    text-align: center;
+  }
+  .user-info-display {
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    width: 70%;
+  }
+  .user-info-header {
+    flex-direction: column;
+  }
+  .user-info-header h4 {
+    margin: 0;
+  }
+  .subject-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
