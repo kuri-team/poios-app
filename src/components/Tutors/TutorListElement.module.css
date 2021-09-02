@@ -70,10 +70,7 @@
 }
 
 .user-info-header a {
-  align-content: center;
-  align-items: center;
   color: inherit;
-  text-align: center;
   text-decoration: underline transparent;
   transition: var(--transition-relaxed);
   will-change: text-decoration-color;
