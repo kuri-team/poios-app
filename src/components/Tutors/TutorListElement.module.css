@@ -16,7 +16,7 @@
   align-content: center;
   justify-content: space-evenly;
   width: 85%;
-  height: 325px;
+  height: 350px;
   margin-bottom: 4em;
   padding: 10px 10px 10px 0;
   background-color: var(--white);
@@ -85,8 +85,6 @@
 }
 
 .user-info-header h4 {
-  align-content: center;
-  align-items: center;
   margin: 0 15px 3px 0;
 }
 
@@ -100,7 +98,7 @@
 }
 
 .subject-list div {
-  margin: 7px;
+  margin: 7px 7px 7px 0;
   font-size: 14px;
 }
 
