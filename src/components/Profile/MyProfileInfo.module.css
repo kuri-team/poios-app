@@ -123,9 +123,22 @@
   color: var(--white);
   font-size: 14px;
   text-align: center;
-  background-color: var(--dark-cyan);
+  background-color: var(--cyan);
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  transform: scale(1);
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-rapid);
+}
+
+.mini-save-button:hover {
+  background: var(--dark-cyan);
+  cursor: pointer;
+  transition: var(--transition-rapid);
+}
+
+.mini-save-button:active {
+  transform: scale(0.95);
 }
 
 .user-info-element img:hover {
@@ -159,25 +172,6 @@ hr {
   font-weight: lighter;
   font-size: 0.8rem;
   background-color: var(--lighter-gray);
-}
-
-.savebutton {
-  display: block;
-  margin-top: 3rem;
-  margin-right: auto;
-  margin-bottom: 3rem;
-  margin-left: auto;
-  padding: 10px 80px;
-  color: var(--white);
-  font-size: 1.2rem;
-  text-align: center;
-  background-color: var(--dark-cyan);
-  border: none;
-  border-radius: 15px;
-}
-
-.savebutton:hover {
-  cursor: pointer;
 }
 
 @media only screen and (--viewport-desktop) {
