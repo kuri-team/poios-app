@@ -1,13 +1,13 @@
 import * as style from "./Searchbar.module.css";
 
-const Searchbar = ({ searchQuery, setSearchQuery, displayState }) => (
-  <>
+const Searchbar = ({ searchQuery, setSearchQuery, openState }) => {
+  return (
     <div className={style["search-bigcontainer"]}>
       <div className={style["search-container"]}>
         <span className={style["search-icon-container"]}>
           <img className={style["searchIcon"]} src={"/media/icons/search_black_24dp.svg"} alt="" />
         </span>
-        <span className={style["filter-icon-container"]} onClick={displayState}>
+        <span className={style["filter-icon-container"]} onClick={openState}>
           <img className={style["filterIcon"]} src={"/media/icons/filter.svg"} alt="" />
         </span>
 
@@ -22,7 +22,7 @@ const Searchbar = ({ searchQuery, setSearchQuery, displayState }) => (
         />
       </div>
     </div>
-  </>
-);
+  );
+};
 
 export default Searchbar;

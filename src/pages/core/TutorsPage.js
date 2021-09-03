@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useDetectCloseDropdown from "../../hooks/Header/useDetectCloseDropdown";
 
 import Layout from "../../components/Layout";
 import Searchbar from "../../components/Tutors/Searchbar";
@@ -8,9 +9,61 @@ import * as style from "./TutorsPage.module.css";
 
 //'searching function'
 const dummyTutors = [
-  { id: 1, name: "Eula" },
-  { id: 2, name: "Mona" },
-  { id: 3, name: "Jean" },
+  {
+    id: 1,
+    name: "Han Sooyoung",
+    major: "Literature",
+    src: "/media/hansooyoung.jpg",
+    subjects: ["Korean Literature", "Creative Writing"],
+    status: "busy",
+  },
+  {
+    id: 2,
+    name: "Kieran White",
+    major: "Visual Arts",
+    src: "/media/hansooyoung.jpg",
+    subjects: ["Art History", "Modern Art", "Greek Art & Architecture"],
+    status: "busy",
+  },
+  {
+    id: 3,
+    name: "Kim Dokja",
+    major: "Business Management",
+    src: "/media/hansooyoung.jpg",
+    subjects: [
+      "Marketing",
+      "Digital Business",
+      "Human Resources Management",
+      "Microeconomics",
+      "Macroeconomics",
+      "Financial Accounting",
+    ],
+    status: "available",
+  },
+  {
+    id: 4,
+    name: "Yoo Joonghyuk",
+    major: "Computer Science",
+    src: "/media/hansooyoung.jpg",
+    subjects: ["Algorithm & Analysis", "Introduction to Programming", "Web Programming"],
+    status: "busy",
+  },
+  {
+    id: 5,
+    name: "Belladonna Davenport",
+    major: "Design Studies",
+    src: "/media/hansooyoung.jpg",
+    subjects: ["Graphic Design"],
+    status: "available",
+  },
+  {
+    id: 6,
+    name: "Neyra Elena Darcy",
+    major: "Psychology",
+    src: "/media/hansooyoung.jpg",
+    subjects: ["Cognitive Psychology", "Mental Health Studies"],
+    status: "available",
+  },
 ];
 
 //"searching subjects"
@@ -29,7 +82,7 @@ const dummySubject = [
   { id: 12, name: "Diplomacy" },
 ];
 
-const TutorsPage = () => {
+const TutorsPage = ({ active }) => {
   //"Search functions"
   const { paramsString } = window.location;
   const tutorQuery = new URLSearchParams(paramsString).get("search-result");
@@ -62,43 +115,40 @@ const TutorsPage = () => {
   const filteredSubject = filterSubject(dummySubject, filterQuery);
 
   //"toggle FilterWindow"
-  const [isOn, setIsOn] = useState(false);
-  const displayState = () => {
-    setIsOn(!isOn);
-    return isOn;
-  };
+  const [open, setOpen] = useState(false);
+  const ref = useDetectCloseDropdown(setOpen, [open]);
 
   return (
     <Layout className={style["container"]} header footer>
       <div className={style["title"]}>
-        <h1>OUR TUTORS</h1>
+        <h1>CHAT ROOMS</h1>
       </div>
       <div className={style["searchbar-container"]}>
-        <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} displayState={displayState} />
+        <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} openState={() => setOpen(!open)} />
       </div>
-      {isOn ? (
-        <div className={style["filter-window"]}>
-          <FilterWindow filterQuery={filterQuery} setFilterQuery={setFilterQuery} filteredSubject={filteredSubject} />
-        </div>
-      ) : null}
+      <div className={open ? style["filter-window"] : [style["filterWindow"], style["hidden"]].join(" ")} ref={ref}>
+        <FilterWindow filterQuery={filterQuery} setFilterQuery={setFilterQuery} filteredSubject={filteredSubject} />
+      </div>
       {/*<ul>*/}
       {/*  {filteredTutors.map(tutor => (*/}
       {/*    <li key={tutor.id}>{tutor.name}</li>*/}
       {/*  ))}*/}
       {/*</ul>*/}
-      <div className={style["tutor-list"]}>
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
-        <TutorListElement />
+      <div className={style["big-container"]}>
+        <div className={[style["tutor-list"], style["x"], style["mandatory-scroll-snapping"]].join(" ")} dir="ltr">
+          {dummyTutors.map(tutor => (
+            <div className={style["tutor"]}>
+              <TutorListElement
+                key={tutor.id}
+                src={tutor.src}
+                name={tutor.name}
+                major={tutor.major}
+                subjects={tutor.subjects}
+                status={tutor.status}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </Layout>
   );
