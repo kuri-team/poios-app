@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useDetectCloseDropdown from "../../hooks/Header/useDetectCloseDropdown";
+import useDetectCloseDropdown from "../../hooks/useDetectCloseDropdown";
 
 import Layout from "../../components/Layout";
 import Searchbar from "../../components/Tutors/Searchbar";
