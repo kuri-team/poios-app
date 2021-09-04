@@ -114,6 +114,10 @@ const TutorsPage = ({ active }) => {
   const [filterQuery, setFilterQuery] = useState(subjectQuery || "");
   const filteredSubject = filterSubject(dummySubject, filterQuery);
 
+  //"toggle FilterWindow"
+  const [open, setOpen] = useState(false);
+  const ref = useDetectCloseDropdown(setOpen, [open]);
+
   return (
     <Layout className={style["container"]} header footer>
       <div className={style["title"]}>
