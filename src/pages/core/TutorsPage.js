@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useDetectCloseDropdown from "../../hooks/Header/useDetectCloseDropdown";
+import useDetectCloseDropdown from "../../hooks/useDetectCloseDropdown";
 
 import Layout from "../../components/Layout";
 import Searchbar from "../../components/Tutors/Searchbar";
@@ -113,10 +113,6 @@ const TutorsPage = ({ active }) => {
   };
   const [filterQuery, setFilterQuery] = useState(subjectQuery || "");
   const filteredSubject = filterSubject(dummySubject, filterQuery);
-
-  //"toggle FilterWindow"
-  const [open, setOpen] = useState(false);
-  const ref = useDetectCloseDropdown(setOpen, [open]);
 
   return (
     <Layout className={style["container"]} header footer>
