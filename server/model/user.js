@@ -5,10 +5,12 @@ const userSchema = new Schema({
   name: {
     type: String,
     required: true,
+    trim: true,
   },
   email: {
     type: String,
     required: true,
+    trim: tru,
   },
   password: {
     type: String,
@@ -25,8 +27,7 @@ const userSchema = new Schema({
   token: {
     type: String,
   },
-  timestamps: true,
 });
-const Userdb = mongoose.model("user-info", userSchema);
+const Userdb = mongoose.model("users", userSchema);
 
 module.exports = Userdb;
