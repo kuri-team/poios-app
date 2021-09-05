@@ -3,12 +3,14 @@
   align-content: center;
   justify-content: center;
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
   text-align: center;
 }
 
 .search-container {
   position: relative;
-  width: 50%;
+  width: 100%;
 }
 
 .search-icon-container {
@@ -33,15 +35,8 @@
 }
 
 .filterIcon {
-  position: relative;
   width: 25px;
   height: auto;
-}
-
-.filter-window {
-  position: absolute;
-  right: calc(100% - 75%);
-  z-index: 1;
 }
 
 .filterIcon:hover {

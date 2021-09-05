@@ -1,10 +1,6 @@
 import * as style from "./Searchbar.module.css";
-import FilterWindow from "./FilterWindow";
-import { useState } from "react";
 
-const Searchbar = ({ searchQuery, setSearchQuery }) => {
-  const [open, setOpen] = useState(false);
-  const ref = useDetectCloseDropdown(setOpen, [open]);
+const Searchbar = ({ searchQuery, setSearchQuery, openState }) => {
   return (
     <div className={style["search-bigcontainer"]}>
       <div className={style["search-container"]}>
@@ -12,12 +8,8 @@ const Searchbar = ({ searchQuery, setSearchQuery }) => {
           <img className={style["searchIcon"]} src={"/media/icons/search_black_24dp.svg"} alt="" />
         </span>
         <span className={style["filter-icon-container"]}>
-          <img className={style["filterIcon"]} src={"/media/icons/filter.svg"} alt="" onClick={() => setOpen(!open)} />
+          <img className={style["filterIcon"]} src={"/media/icons/filter.svg"} alt="" onClick={openState} />
         </span>
-
-        <div className={open ? style["filter-window"] : [style["filterWindow"], style["hidden"]].join(" ")}>
-          <FilterWindow filterQuery={filterQuery} setFilterQuery={setFilterQuery} filteredSubject={filteredSubject} />
-        </div>
 
         <input
           className={style["form-control"]}

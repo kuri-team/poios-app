@@ -4,16 +4,20 @@ const app = express();
 const cors = require("cors");
 
 // const fileUpload = require("express-fileupload");
-// const cookieParser = require("cookie-parser");
+// OR multer
+const cookieParser = require("cookie-parser");
+
 require("dotenv").config();
 
 app.use(express.json());
+app.use(cookieParser());
 app.use(cors());
 
-//Routers
-app.use("/auth", require("./routes/userRouter"));
+//Routers for signup/login
+app.use("/", require("./routes/userRouter"));
+app.use("/api", require("./routes/uploadFile"));
 
-require("./config/user-db").connect();
+require("./config/user_db").connect();
 const { API_PORT } = process.env;
 const port = process.env.PORT || API_PORT;
 

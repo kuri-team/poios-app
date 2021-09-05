@@ -4,6 +4,7 @@ import Layout from "../../components/Layout";
 import Searchbar from "../../components/Tutors/Searchbar";
 import FilterWindow from "../../components/Tutors/FilterWindow";
 import TutorListElement from "../../components/Tutors/TutorListElement";
+import useDetectCloseDropdown from "../../hooks/useDetectCloseDropdown";
 import * as style from "./TutorsPage.module.css";
 
 //'searching function'
@@ -84,6 +85,22 @@ const dummySubject = [
 const TutorsPage = ({ active }) => {
   //"Search functions"
   const { paramsString } = window.location;
+  //"searching subjects"
+  const subjectQuery = new URLSearchParams(paramsString).get("subject-result");
+  const filterSubject = (dummySubject, subjectQuery) => {
+    if (!subjectQuery) {
+      return dummySubject;
+    }
+
+    return dummySubject.filter(subject => {
+      const subjectName = subject.name.toLowerCase();
+      return subjectName.includes(subjectQuery);
+    });
+  };
+
+  const [filterQuery, setFilterQuery] = useState(subjectQuery || "");
+  const filteredSubject = filterSubject(dummySubject, filterQuery);
+
   const tutorQuery = new URLSearchParams(paramsString).get("search-result");
   const filterTutors = (dummyTutors, tutorQuery) => {
     if (!tutorQuery) {
@@ -97,28 +114,20 @@ const TutorsPage = ({ active }) => {
   };
   const [searchQuery, setSearchQuery] = useState(tutorQuery || "");
   const filteredTutors = filterTutors(dummyTutors, searchQuery);
+  const [open, setOpen] = useState(false);
+  const ref = useDetectCloseDropdown(setOpen, [open]);
 
-  //"searching subjects"
-  const subjectQuery = new URLSearchParams(paramsString).get("subject-result");
-  const filterSubject = (dummySubject, subjectQuery) => {
-    if (!subjectQuery) {
-      return dummySubject;
-    }
-
-    return dummySubject.filter(subject => {
-      const subjectName = subject.name.toLowerCase();
-      return subjectName.includes(subjectQuery);
-    });
-  };
-  const [filterQuery, setFilterQuery] = useState(subjectQuery || "");
-  const filteredSubject = filterSubject(dummySubject, filterQuery);
   return (
     <Layout className={style["container"]} header footer>
       <div className={style["title"]}>
         <h1>CHAT ROOMS</h1>
       </div>
-      <div className={style["searchbar-container"]}>
-        <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <div className={style["searchbar-container"]} ref={ref}>
+        <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} openState={() => setOpen(!open)} />
+      </div>
+
+      <div className={open ? style["filter-window"] : [style["filterWindow"], style["hidden"]].join(" ")}>
+        <FilterWindow filterQuery={filterQuery} setFilterQuery={setFilterQuery} filteredSubject={filteredSubject} />
       </div>
 
       {/*<ul>*/}

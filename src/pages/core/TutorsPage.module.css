@@ -1,5 +1,14 @@
 .searchbar-container {
   position: relative;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.filter-window {
+  position: absolute;
+  right: calc(100% - 75%);
+  z-index: 1;
 }
 
 .title {
