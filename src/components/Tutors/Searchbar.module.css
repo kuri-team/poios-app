@@ -33,8 +33,15 @@
 }
 
 .filterIcon {
+  position: relative;
   width: 25px;
   height: auto;
+}
+
+.filter-window {
+  position: absolute;
+  right: calc(100% - 75%);
+  z-index: 1;
 }
 
 .filterIcon:hover {

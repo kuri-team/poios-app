@@ -2,12 +2,6 @@
   position: relative;
 }
 
-.filter-window {
-  position: absolute;
-  right: calc(100% - 75%);
-  z-index: 1;
-}
-
 .title {
   padding-top: 120px;
   text-align: center;

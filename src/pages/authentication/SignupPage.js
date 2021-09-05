@@ -9,11 +9,37 @@ import * as formStyle from "../../styles/form.module.css";
 import * as commonStyle from "../../styles/common.module.css";
 import * as dialogBoxStyle from "../../components/DialogBox.module.css";
 
+const initialState = {
+  name: "",
+  email: "",
+  password: "",
+  verify_password: "",
+  err: "",
+  success: "",
+};
+
 const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
   const [avatar, setAvatar] = useState(null);
+  const [user, setUser] = useState(initialState);
+  const { name, email, password, verify_password, err, success } = user;
+
   const [showPassword, setShowPassword] = useState(false);
   const [showVerifyPassword, setShowVerifyPassword] = useState(false);
 
+  const handleChangeInput = e => {
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value, err: "", success: "" });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    //add validation here
+    try {
+      setUser({ ...user, err: "", success: "succeed" });
+    } catch (err) {
+      setUser({ ...user, err: "fail", success: "" });
+    }
+  };
   return (
     <Layout>
       <DialogBox background logo scroll>
@@ -63,11 +89,23 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
           </div>
           <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
             <label htmlFor="email">Email</label>
-            <input id="email" name="email" className={commonStyle["text-align-center"]} type="email" />
+            <input
+              id="email"
+              name="email"
+              className={commonStyle["text-align-center"]}
+              type="email"
+              onChange={handleChangeInput}
+            />
           </div>
           <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
             <label htmlFor="username">Username</label>
-            <input id="username" name="username" className={commonStyle["text-align-center"]} type="email" />
+            <input
+              id="username"
+              name="username"
+              className={commonStyle["text-align-center"]}
+              type="text"
+              onChange={handleChangeInput}
+            />
           </div>
           <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
             <label htmlFor="password">
@@ -86,6 +124,7 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
               name="password"
               className={commonStyle["text-align-center"]}
               type={showPassword ? "text" : "password"}
+              onChange={handleChangeInput}
             />
           </div>
           <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
@@ -104,6 +143,7 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
               id="verify-password"
               className={commonStyle["text-align-center"]}
               type={showPassword ? "text" : "password"}
+              onChange={handleChangeInput}
             />
           </div>
         </div>
@@ -113,6 +153,7 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
               className={dialogBoxStyle["primary"]}
               onClick={() => {
                 setShowPassword(false);
+                handleSubmit();
               }}
             >
               Signup

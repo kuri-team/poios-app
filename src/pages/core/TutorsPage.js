@@ -1,5 +1,4 @@
 import { useState } from "react";
-import useDetectCloseDropdown from "../../hooks/useDetectCloseDropdown";
 
 import Layout from "../../components/Layout";
 import Searchbar from "../../components/Tutors/Searchbar";
@@ -113,22 +112,15 @@ const TutorsPage = ({ active }) => {
   };
   const [filterQuery, setFilterQuery] = useState(subjectQuery || "");
   const filteredSubject = filterSubject(dummySubject, filterQuery);
-
-  //"toggle FilterWindow"
-  const [open, setOpen] = useState(false);
-  const ref = useDetectCloseDropdown(setOpen, [open]);
-
   return (
     <Layout className={style["container"]} header footer>
       <div className={style["title"]}>
         <h1>CHAT ROOMS</h1>
       </div>
       <div className={style["searchbar-container"]}>
-        <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} openState={() => setOpen(!open)} />
+        <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       </div>
-      <div className={open ? style["filter-window"] : [style["filterWindow"], style["hidden"]].join(" ")} ref={ref}>
-        <FilterWindow filterQuery={filterQuery} setFilterQuery={setFilterQuery} filteredSubject={filteredSubject} />
-      </div>
+
       {/*<ul>*/}
       {/*  {filteredTutors.map(tutor => (*/}
       {/*    <li key={tutor.id}>{tutor.name}</li>*/}
