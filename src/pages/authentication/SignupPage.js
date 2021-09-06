@@ -71,7 +71,7 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
               formStyle["field"],
               formStyle["field-column"],
               style["acc-type"],
-              commonStyle["text-align-center",
+              commonStyle["text-align-center"],
             ].join(" ")}
           >
             <label htmlFor="acc-type" className={commonStyle["text-align-center"]}>
