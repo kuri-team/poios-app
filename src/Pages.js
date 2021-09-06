@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 
 import IndexPage from "./pages/IndexPage";
 import SignupPage from "./pages/authentication/SignupPage";

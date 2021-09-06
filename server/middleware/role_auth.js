@@ -7,7 +7,7 @@ const role_auth = async (req, res, next) => {
       _id: req.user.id,
     });
     if (user.role === "tutor") {
-      //limit some functions in the web
+      //to limit some functions in the web
       return res.status(400).json({ msg: "" });
     }
     next();

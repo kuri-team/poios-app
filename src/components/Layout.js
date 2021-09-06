@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { GlobalState } from "../GlobalState";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -5,6 +7,8 @@ import Footer from "./Footer";
  * Needs to be wrapped around all pages
  */
 const Layout = ({ className, header, footer, children }) => {
+  const state = useContext(GlobalState);
+  console.log(state);
   return (
     <>
       {header ? <Header /> : null}

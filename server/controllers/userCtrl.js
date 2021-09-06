@@ -11,10 +11,11 @@ const userCtrl = {
       // Validate if user exist in our database
       const oldEmail = await Userdb.findOne({ email });
       const oldName = await Userdb.findOne({ name });
-      if (oldEmail || oldName) {
-        return res.status(409).send("User Already Exist. Please Login");
-      }
-      if (password.length < 6) {
+      if (oldEmail) {
+        return res.status(400).send("User Already Exist. Please Login");
+      } else if (oldName) {
+        return res.status(400).send("User Already Exist. Please Login");
+      } else if (password.length < 6) {
         return res.status(400).json({ msg: "Password must be at least 6 characters." });
       }
 
@@ -27,7 +28,7 @@ const userCtrl = {
         email: email.toLowerCase(), // sanitize: convert email to lowercase
         role,
         password: passwordHash,
-        avatar
+        avatar,
       });
       //Save mongoDB
       await newUser.save();
@@ -38,7 +39,7 @@ const userCtrl = {
 
       res.cookie("refreshtoken", refreshtoken, {
         httpOnly: true,
-        path: "/auth/refresh_token"
+        path: "/auth/refresh_token,
       });
 
       // res.json({ accesstoken });
@@ -106,7 +107,7 @@ const userCtrl = {
     } catch (err) {
       return res.status(500).json({ msg: err.message });
     }
-  }
+  },
 };
 
 const createAccessToken = user => {

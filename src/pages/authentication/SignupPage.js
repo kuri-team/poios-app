@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import Layout from "../../components/Layout";
 import DialogBox from "../../components/DialogBox";
@@ -9,35 +10,33 @@ import * as formStyle from "../../styles/form.module.css";
 import * as commonStyle from "../../styles/common.module.css";
 import * as dialogBoxStyle from "../../components/DialogBox.module.css";
 
-const initialState = {
-  name: "",
-  email: "",
-  password: "",
-  verify_password: "",
-  err: "",
-  success: "",
-};
-
 const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
-  const [avatar, setAvatar] = useState(null);
-  const [user, setUser] = useState(initialState);
-  const { name, email, password, verify_password, err, success } = user;
+  const [avatar, setAvatar] = useState("");
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    role: "",
+    password: "",
+  });
 
   const [showPassword, setShowPassword] = useState(false);
   const [showVerifyPassword, setShowVerifyPassword] = useState(false);
 
-  const handleChangeInput = e => {
+  const onChangeInput = e => {
     const { name, value } = e.target;
-    setUser({ ...user, [name]: value, err: "", success: "" });
+    setUser({ ...user, [name]: value });
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    // e.preventDefault();
     //add validation here
     try {
-      setUser({ ...user, err: "", success: "succeed" });
+      await axios.post("/auth/signup", { ...user });
+
+      localStorage.setItem("firstLogin", true);
+      window.location.href = "/core/fields-of-study";
     } catch (err) {
-      setUser({ ...user, err: "fail", success: "" });
+      alert(err.response.data.msg);
     }
   };
   return (
@@ -72,14 +71,22 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
               formStyle["field"],
               formStyle["field-column"],
               style["acc-type"],
-              commonStyle["text-align-center"],
+              commonStyle["text-align-center",
             ].join(" ")}
           >
             <label htmlFor="acc-type" className={commonStyle["text-align-center"]}>
               Hello, I am a
             </label>
-            <select id="acc-type" name="acc-type" className={commonStyle["text-align-center"]}>
-              <option value="student">Student</option>
+            <select
+              id="acc-type"
+              name="role"
+              className={commonStyle["text-align-center"]}
+              value={user.role}
+              onChange={onChangeInput}
+            >
+              <option value="student" selected="selected">
+                Student
+              </option>
               <option value="tutor">Tutor</option>
             </select>
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#ffffff">
@@ -94,17 +101,19 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
               name="email"
               className={commonStyle["text-align-center"]}
               type="email"
-              onChange={handleChangeInput}
+              value={user.email}
+              onChange={onChangeInput}
             />
           </div>
           <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
-            <label htmlFor="username">Username</label>
+            <label htmlFor="name">Username</label>
             <input
-              id="username"
-              name="username"
+              id="name"
+              name="name"
               className={commonStyle["text-align-center"]}
               type="text"
-              onChange={handleChangeInput}
+              value={user.name}
+              onChange={onChangeInput}
             />
           </div>
           <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
@@ -124,7 +133,8 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
               name="password"
               className={commonStyle["text-align-center"]}
               type={showPassword ? "text" : "password"}
-              onChange={handleChangeInput}
+              value={user.password}
+              onChange={onChangeInput}
             />
           </div>
           <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
@@ -143,22 +153,19 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
               id="verify-password"
               className={commonStyle["text-align-center"]}
               type={showPassword ? "text" : "password"}
-              onChange={handleChangeInput}
             />
           </div>
         </div>
         <div className={[dialogBoxStyle["button-wrapper"], dialogBoxStyle["button-wrapper-col"]].join(" ")}>
-          <Link to={authRedirectTo}>
-            <button
-              className={dialogBoxStyle["primary"]}
-              onClick={() => {
-                setShowPassword(false);
-                handleSubmit();
-              }}
-            >
-              Signup
-            </button>
-          </Link>
+          <button
+            className={dialogBoxStyle["primary"]}
+            onClick={() => {
+              setShowPassword(false);
+              handleSubmit();
+            }}
+          >
+            Signup
+          </button>
         </div>
         <div className={style["nav"]}>
           <Link to={prevStepUrl} className={style["primary"]}>
