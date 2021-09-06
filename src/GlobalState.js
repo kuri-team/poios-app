@@ -6,10 +6,10 @@ export const GlobalState = createContext();
 
 export const DataProvider = ({ children }) => {
   const [token, setToken] = useState(false);
+
   const refreshToken = async () => {
-    const token = await axios.get("/auth/refresh_token");
-    console.log(res);
-    // setToken(res.data.accesstoken);
+    const res = await axios.get("/auth/refresh_token");
+    setToken(res.data.accesstoken);
   };
 
   useEffect(() => {

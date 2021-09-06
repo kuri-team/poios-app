@@ -39,7 +39,7 @@ const userCtrl = {
 
       res.cookie("refreshtoken", refreshtoken, {
         httpOnly: true,
-        path: "/auth/refresh_token,
+        path: "/auth/refresh_token",
       });
 
       // res.json({ accesstoken });
@@ -65,7 +65,7 @@ const userCtrl = {
 
       res.cookie("refreshtoken", refreshtoken, {
         httpOnly: true,
-        path: "/auth/refresh_token"
+        path: "/auth/refresh_token,
       });
 
       res.json({ accesstoken });

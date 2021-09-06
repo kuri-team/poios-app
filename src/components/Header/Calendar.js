@@ -64,8 +64,8 @@ const Calendar = ({ active }) => {
               <p>Nothing new for now...</p>
             </div>
           ) : (
-            meetings.map(meeting => (
-              <div className={[commonStyle["item"], style["item"]].join(" ")}>
+            meetings.map((meeting, key) => (
+              <div className={[commonStyle["item"], style["item"]].join(" ")} key={key}>
                 <Link to={meeting.link}>
                   <img src={meeting.picture} alt={meeting.who} className={style["picture"]} />
                 </Link>

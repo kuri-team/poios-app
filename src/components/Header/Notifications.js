@@ -61,8 +61,8 @@ const Notifications = ({ active }) => {
               <p>Nothing new for now...</p>
             </div>
           ) : (
-            notifications.map(notification => (
-              <div className={commonStyle["item"]}>
+            notifications.map((notification, key) => (
+              <div className={commonStyle["item"]} key={key}>
                 <Link to={notification.link}>
                   <h2>{notification.title}</h2>
                 </Link>

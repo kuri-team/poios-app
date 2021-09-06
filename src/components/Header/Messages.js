@@ -53,8 +53,8 @@ const Messages = ({ active }) => {
               <p>Nothing new for now...</p>
             </div>
           ) : (
-            messages.map(message => (
-              <div className={[commonStyle["item"], style["item"]].join(" ")}>
+            messages.map((message, key) => (
+              <div className={[commonStyle["item"], style["item"]].join(" ")} key={key}>
                 <Link to={message.link}>
                   <img src={message.picture} alt={message.who} className={style["picture"]} />
                 </Link>
