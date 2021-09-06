@@ -14,9 +14,9 @@ const UserApi = token => {
           });
 
           setIsLogged(true);
-          res.data.role === "tutor" ? setIsTutor(true) : setIsTutor(false);
+          res.data.role == "tutor" ? setIsTutor(true) : setIsTutor(false);
         } catch (err) {
-          alert(err.res.msg);
+          alert(err.res.data.msg);
         }
       };
       getUser();

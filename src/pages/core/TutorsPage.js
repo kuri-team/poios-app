@@ -1,4 +1,5 @@
-import { useState, useContext } from "react";
+import React from "react";
+import { Redirect } from "react-router-dom";
 
 import { GlobalState } from "../../GlobalState";
 import Layout from "../../components/Layout";
@@ -6,6 +7,7 @@ import Searchbar from "../../components/Tutors/Searchbar";
 import FilterWindow from "../../components/Tutors/FilterWindow";
 import TutorListElement from "../../components/Tutors/TutorListElement";
 import useDetectCloseDropdown from "../../hooks/useDetectCloseDropdown";
+import { useState, useContext } from "react";
 import * as style from "./TutorsPage.module.css";
 
 //'searching function'
@@ -84,16 +86,6 @@ const dummySubject = [
 ];
 
 const TutorsPage = ({ active }) => {
-  //manage state(logged, role) in all websites
-  const state = useContext(GlobalState);
-  console.log(state);
-  const [isLogged, setIsLogged] = state.userApi.isLogged;
-  const [isTutor, setIsTutor] = state.userApi.isTuTor;
-
-  if (isLogged) {
-    return <Redirect to="/core/chat" />;
-  }
-
   //"Search functions"
   const { paramsString } = window.location;
   //"searching subjects"
