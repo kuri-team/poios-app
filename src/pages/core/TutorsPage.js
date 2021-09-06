@@ -85,7 +85,19 @@ const dummySubject = [
   { id: 12, name: "Diplomacy" },
 ];
 
-const TutorsPage = ({ active }) => {
+const TutorsPage = () => {
+  //manage state(logged, role) in all websites
+  const state = useContext(GlobalState);
+  console.log(state);
+  const [isLogged, setIsLogged] = state.userApi.isLogged;
+  const [isTutor, setIsTutor] = state.userApi.isTuTor;
+
+  {
+    if (isTutor) {
+      return <Redirect to="/core/chat" />;
+    }
+  }
+
   //"Search functions"
   const { paramsString } = window.location;
   //"searching subjects"
@@ -128,7 +140,12 @@ const TutorsPage = ({ active }) => {
       </div>
 
       <div className={open ? style["filter-window"] : [style["filterWindow"], style["hidden"]].join(" ")}>
-        <FilterWindow filterQuery={filterQuery} setFilterQuery={setFilterQuery} filteredSubject={filteredSubject} />
+        <FilterWindow
+          filterQuery={filterQuery}
+          setFilterQuery={setFilterQuery}
+          filteredSubject={filteredSubject}
+          ref={ref}
+        />
       </div>
 
       {/*<ul>*/}
