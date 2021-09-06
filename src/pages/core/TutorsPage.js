@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 
+import { GlobalState } from "../../GlobalState";
 import Layout from "../../components/Layout";
 import Searchbar from "../../components/Tutors/Searchbar";
 import FilterWindow from "../../components/Tutors/FilterWindow";
@@ -83,6 +84,16 @@ const dummySubject = [
 ];
 
 const TutorsPage = ({ active }) => {
+  //manage state(logged, role) in all websites
+  const state = useContext(GlobalState);
+  console.log(state);
+  const [isLogged, setIsLogged] = state.userApi.isLogged;
+  const [isTutor, setIsTutor] = state.userApi.isTuTor;
+
+  if (isLogged) {
+    return <Redirect to="/core/chat" />;
+  }
+
   //"Search functions"
   const { paramsString } = window.location;
   //"searching subjects"
@@ -100,13 +111,11 @@ const TutorsPage = ({ active }) => {
 
   const [filterQuery, setFilterQuery] = useState(subjectQuery || "");
   const filteredSubject = filterSubject(dummySubject, filterQuery);
-
   const tutorQuery = new URLSearchParams(paramsString).get("search-result");
   const filterTutors = (dummyTutors, tutorQuery) => {
     if (!tutorQuery) {
       return dummyTutors;
     }
-
     return dummyTutors.filter(tutor => {
       const tutorName = tutor.name.toLowerCase();
       return tutorName.includes(tutorQuery);

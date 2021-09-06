@@ -12,9 +12,9 @@ const userCtrl = {
       const oldEmail = await Userdb.findOne({ email });
       const oldName = await Userdb.findOne({ name });
       if (oldEmail) {
-        return res.status(400).send("User Already Exist. Please Login");
+        return res.status(400).json({ msg: "User Already Exist. Please Login" });
       } else if (oldName) {
-        return res.status(400).send("User Already Exist. Please Login");
+        return res.status(400).json({ msg: "User Already Exist. Please Login" });
       } else if (password.length < 6) {
         return res.status(400).json({ msg: "Password must be at least 6 characters." });
       }
@@ -65,7 +65,7 @@ const userCtrl = {
 
       res.cookie("refreshtoken", refreshtoken, {
         httpOnly: true,
-        path: "/auth/refresh_token,
+        path: "/auth/refresh_token",
       });
 
       res.json({ accesstoken });

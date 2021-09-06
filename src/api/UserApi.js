@@ -12,10 +12,11 @@ const UserApi = token => {
           const res = await axios.get("/profile/my-profile", {
             headers: { Authorization: token },
           });
+
           setIsLogged(true);
           res.data.role === "tutor" ? setIsTutor(true) : setIsTutor(false);
         } catch (err) {
-          alert(err.response.data.msg);
+          alert(err.res.msg);
         }
       };
       getUser();
