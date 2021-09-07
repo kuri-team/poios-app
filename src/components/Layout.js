@@ -7,10 +7,6 @@ import Footer from "./Footer";
  * Needs to be wrapped around all pages
  */
 const Layout = ({ className, header, footer, children }) => {
-  //manage state(logged, role) in all websites
-  const state = useContext(GlobalState);
-  // console.log(state);
-
   return (
     <>
       {header ? <Header /> : null}

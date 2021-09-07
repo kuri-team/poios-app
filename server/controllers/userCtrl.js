@@ -85,7 +85,7 @@ const userCtrl = {
   },
   getUser: async (req, res) => {
     try {
-      const user = await Userdb.findById(req.user.id).select("-password");
+      const user = await Userdb.findById(req.user.id).select(-"password");
       if (!user) return res.status(400).json({ msg: "User does not exist." });
 
       res.json(user);
@@ -95,6 +95,44 @@ const userCtrl = {
       return res.status(500).json({ msg: err.message });
     }
   },
+
+  updateUser: async (req, res) => {
+    try {
+      const { name, email, role, subject, avatar } = req.body;
+      await Userdb.findOneAndUpdate(
+        { _id: req.user.id },
+        {
+          name,
+          email,
+          role,
+          subject,
+          avatar
+        }
+      );
+      res.json({ msg: "Update Success!" });
+    } catch (err) {
+      return res.status(500).json({ msg: err.message });
+    }
+  },
+
+  resetPassword: async (req, res) => {
+    try {
+      const { password } = req.body;
+      console.log(password);
+      const passwordHash = await bcrypt.hash(password, 10);
+
+      await Userdb.findOneAndUpdate(
+        { _id: req.user.id },
+        {
+          password: passwordHash
+        }
+      );
+      res.json({ msg: "Password successfully changed!" });
+    } catch (err) {
+      return res.status(500).json({ msg: err.message });
+    }
+  },
+
   refreshToken: (req, res) => {
     try {
       const rf_token = req.cookies.refreshtoken;

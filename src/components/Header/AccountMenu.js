@@ -5,14 +5,14 @@ import { PagesContext } from "../../Pages";
 import * as style from "./AccountMenu.module.css";
 import * as commonStyle from "./common.module.css";
 
-const AccountMenu = () => {
+const AccountMenu = ({ logoutUser }) => {
   const navLinks = useContext(PagesContext);
 
   return (
     <>
       <div className={style["menu"]}>
         <Link to={navLinks[0].path}>
-          <button>
+          <button onClick={logoutUser}>
             <tspan>Logout</tspan>
           </button>
         </Link>

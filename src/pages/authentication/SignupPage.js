@@ -28,7 +28,6 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
   };
 
   const handleSubmit = async () => {
-    // e.preventDefault();
     //add validation here
     try {
       await axios.post("/auth/signup", { ...user });

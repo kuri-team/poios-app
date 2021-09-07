@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import axios from "axios";
 
 import { pages, PagesContext } from "../Pages";
+import { GlobalState } from "../GlobalState";
 import Nav from "./Header/Nav";
 import AccountMenu from "./Header/AccountMenu";
 import MobileNav from "./Header/MobileNav";
@@ -31,7 +34,7 @@ const Header = () => {
       </div>
       <div className={style["controls"]}>
         <PagesContext.Provider value={pages.account}>
-          <AccountMenu />
+          <AccountMenu logoutUser={logoutUser} />
         </PagesContext.Provider>
       </div>
       <PagesContext.Provider value={pages.mobileNav}>

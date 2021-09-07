@@ -4,6 +4,7 @@ import axios from "axios";
 const UserApi = token => {
   const [isLogged, setIsLogged] = useState(false);
   const [isTutor, setIsTutor] = useState(false);
+  const [userInfo, setUserInfo] = useState("");
 
   useEffect(() => {
     if (token) {
@@ -12,9 +13,11 @@ const UserApi = token => {
           const res = await axios.get("/profile/my-profile", {
             headers: { Authorization: token },
           });
-
           setIsLogged(true);
           res.data.role == "tutor" ? setIsTutor(true) : setIsTutor(false);
+
+          setUserInfo(res.data);
+          console.log(res);
         } catch (err) {
           alert(err.res.data.msg);
         }
@@ -26,6 +29,7 @@ const UserApi = token => {
   return {
     isLogged: [isLogged, setIsLogged],
     isTuTor: [isTutor, setIsTutor],
+    userInfo: [userInfo, setUserInfo],
   };
 };
 
