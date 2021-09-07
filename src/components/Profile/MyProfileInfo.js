@@ -15,12 +15,12 @@ const MyProfileInfo = () => {
     name: "",
     email: "",
     role: "",
-    subject: "",
+    subjects: [],
     avatar: "",
   };
 
   const [editUser, setEditUser] = useState(initialState);
-  const { name, email, role, subject, avatar } = editUser;
+  const { name, email, role, subjects, avatar } = editUser;
 
   const [file, setFile] = useState(null);
   const [nameDisplay, setNameDisplay] = useState(false);
@@ -42,13 +42,14 @@ const MyProfileInfo = () => {
           name: name ? editUser.name : userInfo.name,
           email: email ? editUser.email : userInfo.email,
           role: role ? editUser.role : userInfo.role,
-          subject: subject ? editUser.subject : userInfo.subject,
+          subjects: subjects ? editUser.subjects : userInfo.subjects,
           avatar: avatar ? editUser.avatar : userInfo.avatar,
         },
         {
           headers: { Authorization: token },
         },
       );
+
       setEditUser({ ...editUser });
       alert("Update Successfully!");
     } catch (err) {
@@ -58,11 +59,11 @@ const MyProfileInfo = () => {
 
   console.log(nameDisplay);
   const handleSubmit = () => {
-    if (name || email || role || subject) {
+    if (name || email || role || subjects) {
       updateInfo();
     }
 
-    if ((nameDisplay || emailDisplay || subjectDisplay) == true) {
+    if ((nameDisplay || emailDisplay || roleDisplay || subjectDisplay) == true) {
       setNameDisplay(false);
       setEmailDisplay(false);
       setSubjectDisplay(false);
@@ -183,14 +184,30 @@ const MyProfileInfo = () => {
               </div>
               <div className={style["input-place"]}>
                 {roleDisplay ? (
-                  <input
-                    id="role"
-                    type="text"
-                    className={style["form-control"]}
-                    name="role"
-                    defaultValue={userInfo.role}
-                    onChange={onChangeInput}
-                  />
+                  <>
+                    <div className={style["student-radio"]}>
+                      <input
+                        id="student"
+                        type="radio"
+                        className={style["radio-form-control"]}
+                        name="role"
+                        value="student"
+                        onChange={onChangeInput}
+                      />
+                      <label htmlFor="student">Student</label>
+                    </div>
+                    <div className={style["tutor-radio"]}>
+                      <input
+                        id="tutor"
+                        type="radio"
+                        className={style["radio-form-control"]}
+                        name="role"
+                        value="tutor"
+                        onChange={onChangeInput}
+                      />
+                      <label htmlFor="tutor">Tutor</label>
+                    </div>
+                  </>
                 ) : (
                   <span>{userInfo.role}</span>
                 )}
@@ -215,22 +232,22 @@ const MyProfileInfo = () => {
           <div className={style["user-info-element"]}>
             <div className={style["user-info-row"]}>
               <div className={style["label-container"]}>
-                <label htmlFor="subject">Subject: </label>
+                <label htmlFor="subject">Subjects: </label>
               </div>
               {subjectDisplay ? (
                 <div className={style["input-place"]}>
                   <input
                     type="text"
                     className={style["form-control"]}
-                    id="subject"
-                    name="subject"
-                    defaultValue={userInfo.subject}
+                    id="subjects"
+                    name="subjects"
+                    defaultValue={userInfo.subjects}
                     onChange={onChangeInput}
                   />
                 </div>
               ) : (
                 <div className={style["subject-list"]}>
-                  {subjectList.map(subject => (
+                  {userInfo.subjects.map(subject => (
                     <div>{subject}</div>
                   ))}
                 </div>

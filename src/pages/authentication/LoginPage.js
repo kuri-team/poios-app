@@ -20,9 +20,9 @@ const LoginPage = ({ prevStepUrl, authRedirectTo, forgotPasswordUrl }) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
-  const loginSubmit = async () => {
+  const loginSubmit = () => {
     try {
-      await axios.post("/auth/login", { ...user });
+      axios.post("/auth/login", { ...user });
 
       localStorage.setItem("firstLogin", true);
       window.location.href = "/core/fields-of-study";
@@ -74,7 +74,6 @@ const LoginPage = ({ prevStepUrl, authRedirectTo, forgotPasswordUrl }) => {
         </div>
         <div className={[dialogBoxStyle["button-wrapper"], dialogBoxStyle["button-wrapper-col"]].join(" ")}>
           <button
-            type="submit"
             className={[dialogBoxStyle["primary"], style["button"]].join(" ")}
             onClick={() => {
               setShowPassword(false);

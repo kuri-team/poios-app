@@ -175,6 +175,10 @@ hr {
   background-color: var(--lighter-gray);
 }
 
+.student-radio {
+  padding-right: 16px;
+}
+
 @media only screen and (--viewport-desktop) {
   .user-info-display {
     width: 100%;

@@ -106,8 +106,8 @@ const userCtrl = {
           email,
           role,
           subject,
-          avatar
-        }
+          avatar,
+        },
       );
       res.json({ msg: "Update Success!" });
     } catch (err) {
@@ -124,8 +124,8 @@ const userCtrl = {
       await Userdb.findOneAndUpdate(
         { _id: req.user.id },
         {
-          password: passwordHash
-        }
+          password: passwordHash,
+        },
       );
       res.json({ msg: "Password successfully changed!" });
     } catch (err) {
