@@ -155,8 +155,8 @@ const TutorsPage = () => {
       {/*</ul>*/}
       <div className={style["big-container"]}>
         <div className={[style["tutor-list"], style["x"], style["mandatory-scroll-snapping"]].join(" ")} dir="ltr">
-          {dummyTutors.map(tutor => (
-            <div className={style["tutor"]}>
+          {dummyTutors.map((tutor, key) => (
+            <div className={style["tutor"]} key={key}>
               <TutorListElement
                 key={tutor.id}
                 src={tutor.src}
