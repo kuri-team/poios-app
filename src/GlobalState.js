@@ -7,16 +7,32 @@ export const GlobalState = createContext();
 export const DataProvider = ({ children }) => {
   const [token, setToken] = useState(false);
 
-  const refreshToken = async () => {
-    const res = await axios.get("/auth/refresh_token");
-    console.log(res);
-    setToken(res.data.accesstoken);
-  };
+  // const refreshToken = async () => {
+  //   const res = await axios.get("/auth/refresh_token");
+  //   console.log(res);
+  //   setToken(res.data.accesstoken);
+  // };
 
   useEffect(() => {
     const firstLogin = localStorage.getItem("firstLogin");
-    if (firstLogin) refreshToken(), [];
-  });
+    if (firstLogin) {
+      const refreshToken = async () => {
+        const res = await axios.get("/auth/refresh_token");
+        console.log(res);
+
+        setToken(res.data.accesstoken);
+        setTimeout(() => {
+          refreshToken();
+        }, 60 * 10 * 1000);
+      };
+      refreshToken();
+    }
+  }, []);
+
+  // useEffect(() => {
+  //   const firstLogin = localStorage.getItem("firstLogin");
+  //   if (firstLogin) refreshToken(), [];
+  // });
 
   const state = {
     token: [token, setToken],

@@ -85,7 +85,19 @@ const dummySubject = [
   { id: 12, name: "Diplomacy" },
 ];
 
-const TutorsPage = ({ active }) => {
+const TutorsPage = () => {
+  //manage state(logged, role) in all websites
+  const state = useContext(GlobalState);
+  console.log(state);
+  const [isLogged, setIsLogged] = state.userApi.isLogged;
+  const [isTutor, setIsTutor] = state.userApi.isTuTor;
+
+  {
+    if (isTutor) {
+      return <Redirect to="/core/chat" />;
+    }
+  }
+
   //"Search functions"
   const { paramsString } = window.location;
   //"searching subjects"
@@ -128,7 +140,12 @@ const TutorsPage = ({ active }) => {
       </div>
 
       <div className={open ? style["filter-window"] : [style["filterWindow"], style["hidden"]].join(" ")}>
-        <FilterWindow filterQuery={filterQuery} setFilterQuery={setFilterQuery} filteredSubject={filteredSubject} />
+        <FilterWindow
+          filterQuery={filterQuery}
+          setFilterQuery={setFilterQuery}
+          filteredSubject={filteredSubject}
+          ref={ref}
+        />
       </div>
 
       {/*<ul>*/}
@@ -138,8 +155,8 @@ const TutorsPage = ({ active }) => {
       {/*</ul>*/}
       <div className={style["big-container"]}>
         <div className={[style["tutor-list"], style["x"], style["mandatory-scroll-snapping"]].join(" ")} dir="ltr">
-          {dummyTutors.map(tutor => (
-            <div className={style["tutor"]}>
+          {dummyTutors.map((tutor, key) => (
+            <div className={style["tutor"]} key={key}>
               <TutorListElement
                 key={tutor.id}
                 src={tutor.src}

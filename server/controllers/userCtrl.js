@@ -40,6 +40,7 @@ const userCtrl = {
       res.cookie("refreshtoken", refreshtoken, {
         httpOnly: true,
         path: "/auth/refresh_token",
+        maxAge: 60 * 60 * 24 * 7 * 1000, //7d
       });
 
       // res.json({ accesstoken });
@@ -66,6 +67,7 @@ const userCtrl = {
       res.cookie("refreshtoken", refreshtoken, {
         httpOnly: true,
         path: "/auth/refresh_token",
+        maxAge: 60 * 60 * 24 * 7 * 100, //7d
       });
 
       res.json({ accesstoken });

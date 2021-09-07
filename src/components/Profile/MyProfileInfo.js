@@ -74,7 +74,6 @@ const MyProfileInfo = () => {
                 <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={() => displayNameEdit()} />
               )}
             </div>
-
             <hr />
           </div>
 

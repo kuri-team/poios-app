@@ -1,4 +1,4 @@
-.button img {
+.avatar img {
   width: auto;
   height: 36px !important;
 }
@@ -52,10 +52,6 @@
   transform: scale(1.1);
   transition: var(--transition-near-instant);
   transition-delay: 0ms;
-}
-
-.hidden {
-  display: none;
 }
 
 @media only screen and (--viewport-desktop) {

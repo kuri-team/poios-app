@@ -1,10 +1,8 @@
 import * as style from "./FilterWindow.module.css";
-import useDetectCloseDropdown from "../../hooks/useDetectCloseDropdown";
 
-const FilterWindow = ({ filterQuery, setFilterQuery, filteredSubject, open, setOpen }) => {
-  const ref = useDetectCloseDropdown(setOpen, [open]);
+const FilterWindow = ({ filterQuery, setFilterQuery, filteredSubject }) => {
   return (
-    <div className={style["window-container"]} ref={ref}>
+    <div className={style["window-container"]}>
       <div className={style["search-input-container"]}>
         <input
           type="text"
