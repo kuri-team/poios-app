@@ -75,7 +75,7 @@ const LoginPage = ({ prevStepUrl, authRedirectTo, forgotPasswordUrl }) => {
         <div className={[dialogBoxStyle["button-wrapper"], dialogBoxStyle["button-wrapper-col"]].join(" ")}>
           <button
             type="submit"
-            className={dialogBoxStyle["primary"]}
+            className={[dialogBoxStyle["primary"], style["button"]].join(" ")}
             onClick={() => {
               setShowPassword(false);
               loginSubmit();

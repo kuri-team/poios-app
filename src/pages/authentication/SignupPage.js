@@ -17,6 +17,7 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
     email: "",
     role: "",
     password: "",
+    avatar: "",
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -56,7 +57,7 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
               id="avatar"
               name="avatar"
               type="file"
-              accept="image/jpeg,image/png"
+              accept="image/jpeg,image/png,image/jpg"
               onChange={e => {
                 const file = new FileReader();
                 file.readAsDataURL(e.target.files[0]);
@@ -84,6 +85,7 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
               value={user.role}
               onChange={onChangeInput}
             >
+              <option value="">Choose a role</option>
               <option value="student">Student</option>
               <option value="tutor">Tutor</option>
             </select>
@@ -156,7 +158,7 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
         </div>
         <div className={[dialogBoxStyle["button-wrapper"], dialogBoxStyle["button-wrapper-col"]].join(" ")}>
           <button
-            className={dialogBoxStyle["primary"]}
+            className={[dialogBoxStyle["primary"], style["button"]].join(" ")}
             onClick={() => {
               setShowPassword(false);
               handleSubmit();
