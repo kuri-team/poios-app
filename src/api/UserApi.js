@@ -17,7 +17,6 @@ const UserApi = token => {
           res.data.role == "tutor" ? setIsTutor(true) : setIsTutor(false);
 
           setUserInfo(res.data);
-          console.log(res);
         } catch (err) {
           alert(err.res.data.msg);
         }
