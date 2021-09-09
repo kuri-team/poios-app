@@ -2,12 +2,12 @@ require("../config/user_db").connect();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Userdb = require("../model/user");
-
+const { v4: uuidv4 } = require("uuid");
+const path = require("path");
 const userCtrl = {
   signup: async (req, res) => {
     try {
-      const { name, email, role, password, avatar } = req.body;
-
+      const { email, name, role, password, image } = req.body;
       // Validate if user exist in our database
       const oldEmail = await Userdb.findOne({ email });
       const oldName = await Userdb.findOne({ name });
@@ -21,15 +21,17 @@ const userCtrl = {
 
       //Password Encryption
       const passwordHash = await bcrypt.hash(password, 10);
-
       // Create user in our database
       const newUser = await Userdb.create({
         name,
         email: email.toLowerCase(), // sanitize: convert email to lowercase
         role,
         password: passwordHash,
-        avatar,
+        image,
       });
+      if (req.file) {
+        newUser.image = req.file.path;
+      }
       //Save mongoDB
       await newUser.save();
 

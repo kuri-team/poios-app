@@ -24,9 +24,8 @@ const userSchema = new Schema({
     type: [String],
     default: null,
   },
-  avatar: {
-    type: String,
-    default: null,
+  image: {
+    type: Object,
   },
   token: {
     type: String,

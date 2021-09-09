@@ -3,7 +3,6 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
-// const fileUpload = require("express-fileupload");
 // OR multer
 const cookieParser = require("cookie-parser");
 
@@ -15,8 +14,6 @@ app.use(cors());
 
 //Routers for signup/login
 app.use("/", require("./routes/userRouter"));
-app.use("/api", require("./routes/uploadFile"));
-
 require("./config/user_db").connect();
 const { API_PORT } = process.env;
 const port = process.env.PORT || API_PORT;
