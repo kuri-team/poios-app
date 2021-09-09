@@ -1,11 +1,11 @@
+import React, { useContext } from "react";
+import { Link, Redirect } from "react-router-dom";
+
+import { GlobalState } from "../../GlobalState";
 import Layout from "../../components/Layout";
 import SubjectBoxes from "../../components/FieldsOfStudy/SubjectBoxes";
 import MajorSelectMenu from "../../components/FieldsOfStudy/MajorSelectMenu";
-
 import * as style from "./FieldsOfStudyPage.module.css";
-import React, { useContext } from "react";
-import { GlobalState } from "../../GlobalState";
-import { Link, Redirect } from "react-router-dom";
 
 const FieldsOfStudyPage = () => {
   //manage state(logged, role) in all websites

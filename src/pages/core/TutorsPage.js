@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Redirect } from "react-router-dom";
 
 import { GlobalState } from "../../GlobalState";
@@ -7,7 +7,6 @@ import Searchbar from "../../components/Tutors/Searchbar";
 import FilterWindow from "../../components/Tutors/FilterWindow";
 import TutorListElement from "../../components/Tutors/TutorListElement";
 import useDetectCloseDropdown from "../../hooks/useDetectCloseDropdown";
-import { useState, useContext } from "react";
 import * as style from "./TutorsPage.module.css";
 
 //'searching function'
