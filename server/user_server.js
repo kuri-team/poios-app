@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -14,7 +15,6 @@ app.use(cors());
 
 //Routers for signup/login
 app.use("/", require("./routes/userRouter"));
-app.use("/api", require("./routes/uploadFile"));
 app.use("/", require("./routes/subjectRouter"));
 
 require("./config/user_db").connect();
