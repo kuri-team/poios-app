@@ -11,7 +11,6 @@ import * as style from "./FieldsOfStudyPage.module.css";
 const FieldsOfStudyPage = () => {
   //manage state(logged, role) in all websites
   const state = useContext(GlobalState);
-  console.log(state);
   const [isLogged, setIsLogged] = state.userApi.isLogged;
   const [isTutor, setIsTutor] = state.userApi.isTuTor;
   const [subjects, setSubjects] = useState([]);

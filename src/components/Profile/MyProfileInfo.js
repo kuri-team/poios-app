@@ -4,11 +4,12 @@ import { GlobalState } from "../../GlobalState";
 import * as style from "./MyProfileInfo.module.css";
 import axios from "axios";
 
-const subjectList = ["JavaScript", "PHP", "SQL", "ReactJS", "JavaScript", "JavaScript", "PHP"];
-
 const MyProfileInfo = () => {
   const state = useContext(GlobalState);
-  const [userInfo, setUserInfo] = state.userApi.userInfo;
+  const [userInfo] = state.userApi.userInfo;
+  const token = state.token[0];
+  const subjectList = userInfo.subjects;
+  console.log(userInfo.subjects);
   console.log(userInfo);
 
   const initialState = {
@@ -31,19 +32,18 @@ const MyProfileInfo = () => {
   const onChangeInput = e => {
     const { name, value } = e.target;
     setEditUser({ ...editUser, [name]: value });
-    console.log(editUser.name);
   };
 
   const updateInfo = () => {
     try {
       axios.patch(
-        "/profile/my-profile",
+        "/profile/my-profile/update",
         {
-          name: name ? editUser.name : userInfo.name,
-          email: email ? editUser.email : userInfo.email,
-          role: role ? editUser.role : userInfo.role,
-          subjects: subjects ? editUser.subjects : userInfo.subjects,
-          avatar: avatar ? editUser.avatar : userInfo.avatar,
+          name: name ? name : userInfo.name,
+          email: email ? email : userInfo.email,
+          role: role ? role : userInfo.role,
+          subjects: subjects ? subjects : userInfo.subjects,
+          avatar: avatar ? avatar : userInfo.avatar,
         },
         {
           headers: { Authorization: token },
@@ -51,13 +51,14 @@ const MyProfileInfo = () => {
       );
 
       setEditUser({ ...editUser });
+
       alert("Update Successfully!");
+      window.location.reload();
     } catch (err) {
       alert("Update Failed.");
     }
   };
 
-  console.log(nameDisplay);
   const handleSubmit = () => {
     if (name || email || role || subjects) {
       updateInfo();
@@ -247,9 +248,9 @@ const MyProfileInfo = () => {
                 </div>
               ) : (
                 <div className={style["subject-list"]}>
-                  {userInfo.subjects.map(subject => (
-                    <div>{subject}</div>
-                  ))}
+                  {subjectList.map((subject, key) => {
+                    return <div key={key}>{subject}</div>;
+                  })}
                 </div>
               )}
               {subjectDisplay ? (

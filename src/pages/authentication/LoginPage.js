@@ -20,9 +20,9 @@ const LoginPage = ({ prevStepUrl, authRedirectTo, forgotPasswordUrl }) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
-  const loginSubmit = () => {
+  const loginSubmit = async () => {
     try {
-      axios.post("/auth/login", { ...user });
+      await axios.post("/auth/login", { ...user });
 
       localStorage.setItem("firstLogin", true);
       window.location.href = "/core/fields-of-study";

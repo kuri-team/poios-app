@@ -87,7 +87,7 @@ const dummySubject = [
 const TutorsPage = () => {
   //manage state(logged, role) in all websites
   const state = useContext(GlobalState);
-  console.log(state);
+
   const [isLogged, setIsLogged] = state.userApi.isLogged;
   const [isTutor, setIsTutor] = state.userApi.isTuTor;
 

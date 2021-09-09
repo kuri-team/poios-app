@@ -5,7 +5,7 @@ import axios from "axios";
 export const GlobalState = createContext();
 
 export const DataProvider = ({ children }) => {
-  const [token, setToken] = useState(false);
+  const [token, setToken] = useState("");
 
   useEffect(() => {
     const firstLogin = localStorage.getItem("firstLogin");
