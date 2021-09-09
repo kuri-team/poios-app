@@ -12,12 +12,12 @@ import * as dialogBoxStyle from "../../components/DialogBox.module.css";
 
 const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
   const [avatar, setAvatar] = useState("");
+  const [avaObj, setAvaObj] = useState();
   const [user, setUser] = useState({
     name: "",
     email: "",
     role: "",
     password: "",
-    avatar: "",
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -31,7 +31,10 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
   const handleSubmit = async () => {
     //add validation here
     try {
-      await axios.post("/auth/signup", { ...user });
+      await axios.post("/auth/signup", {
+        ...user,
+        avatar: avaObj,
+      });
 
       localStorage.setItem("firstLogin", true);
       window.location.href = "/core/fields-of-study";
@@ -61,6 +64,7 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
                 const file = new FileReader();
                 file.readAsDataURL(e.target.files[0]);
                 file.onloadend = () => setAvatar(file.result);
+                setAvaObj(e.target.files[0]);
               }}
               hidden
               aria-hidden
