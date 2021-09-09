@@ -4,7 +4,7 @@ import ToggleButton from "./ToggleButton";
 import SubjectBox from "./SubjectBox";
 import * as style from "./SubjectBoxes.module.css";
 
-const SubjectBoxes = ({ subjects }) => {
+const SubjectBoxes = ({ subjects, callback, selected }) => {
   const boxesPerPage = 12;
 
   const [currentPage, setCurrentPage] = useState(0);
@@ -52,9 +52,15 @@ const SubjectBoxes = ({ subjects }) => {
       <div className={style["content"]}>
         {subjects.map((subject, i) =>
           visibleSubjectsIndex.startIndex <= i && i <= visibleSubjectsIndex.endIndex ? (
-            <SubjectBox key={i} subject={subject} />
+            <SubjectBox key={i} subject={subject} callback={callback} selectedSubjects={selected} />
           ) : (
-            <SubjectBox key={i} subject={subject} styleObject={{ display: "none" }} />
+            <SubjectBox
+              key={i}
+              subject={subject}
+              styleObject={{ display: "none" }}
+              callback={callback}
+              selectedSubjects={selected}
+            />
           ),
         )}
       </div>
