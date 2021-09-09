@@ -7,7 +7,7 @@ router.post("/auth/login", userCtrl.login);
 router.get("/auth/logout", userCtrl.logout);
 router.get("/auth/refresh_token", userCtrl.refreshToken);
 router.get("/profile/my-profile", user_auth, userCtrl.getUser);
-router.patch("/profile/my-profile", user_auth, userCtrl.updateUser);
+router.patch("/profile/my-profile/update", user_auth, userCtrl.updateUser);
 
 // router.patch("/profile/my-profile/reset_pass", user_auth, userCtrl.resetPassword);
 // router.post("/auth/reset_pass", user_auth, userCtrl.resetPassword);

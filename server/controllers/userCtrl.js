@@ -1,4 +1,3 @@
-require("../config/user_db").connect();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Userdb = require("../model/user");
