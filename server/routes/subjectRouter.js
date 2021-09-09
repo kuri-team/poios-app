@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const subjectCtrl = require("../controllers/subjectCtrl");
+const fieldCtrl = require("../controllers/fieldCtrl");
 
-router.get("/core/fields-of-study", subjectCtrl.getSubjects);
+router.get("/core/fields-of-study", fieldCtrl);
 
 module.exports = router;
