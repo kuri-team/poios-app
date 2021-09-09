@@ -2,7 +2,8 @@ const router = require("express").Router();
 const userCtrl = require("../controllers/userCtrl");
 const user_auth = require("../middleware/user_auth");
 const upload = require("../routes/upload");
-router.post("/auth/signup", upload.single("image"), userCtrl.signup);
+
+router.post("/auth/signup", upload.single("avatar"), userCtrl.signup);
 router.post("/auth/login", userCtrl.login);
 router.get("/auth/logout", userCtrl.logout);
 router.get("/auth/refresh_token", userCtrl.refreshToken);

@@ -6,7 +6,7 @@ const path = require("path");
 const userCtrl = {
   signup: async (req, res) => {
     try {
-      const { email, name, role, password, image } = req.body;
+      const { email, name, role, password, avatar } = req.body;
       // Validate if user exist in our database
       const oldEmail = await Userdb.findOne({ email });
       const oldName = await Userdb.findOne({ name });
@@ -26,10 +26,10 @@ const userCtrl = {
         email: email.toLowerCase(), // sanitize: convert email to lowercase
         role,
         password: passwordHash,
-        image,
+        avatar,
       });
       if (req.file) {
-        newUser.image = req.file.path;
+        newUser.avatar = req.file.path;
       }
       //Save mongoDB
       await newUser.save();
