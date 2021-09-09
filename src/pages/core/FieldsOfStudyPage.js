@@ -16,11 +16,13 @@ const FieldsOfStudyPage = () => {
   const [isTutor, setIsTutor] = state.userApi.isTuTor;
   const [subjects, setSubjects] = useState([]);
 
-  const getFields = () => axios.get("/core/fields-of-study").then(res => console.log(res.data));
+  const getFields = () =>
+    axios.get("/core/fields-of-study").then(res => {
+      setSubjects(res.data[1]);
+    });
 
   useEffect(() => {
     getFields();
-    console.log(subjects);
   }, []);
 
   const tutorRouter = () => {
@@ -32,12 +34,18 @@ const FieldsOfStudyPage = () => {
   };
   return (
     <Layout header footer className={style["container"]}>
-      <h1 className={style["h1"]}>Choose a major</h1>
-      <MajorSelectMenu />
+      {subjects.length === 0 ? (
+        <h3>Loading...</h3>
+      ) : (
+        <>
+          <h1 className={style["h1"]}>Choose a major</h1>
+          <MajorSelectMenu />
 
-      <p className={style["subheading"]}>WHICH SUBJECTS ARE YOU INTERESTED IN?</p>
-      <SubjectBoxes subjects={subjects} />
-      {isTutor ? tutorRouter() : <button className={style["btn"]}>SET</button>}
+          <p className={style["subheading"]}>WHICH SUBJECTS ARE YOU INTERESTED IN?</p>
+          <SubjectBoxes subjects={subjects} />
+          {isTutor ? tutorRouter() : <button className={style["btn"]}>SET</button>}
+        </>
+      )}
     </Layout>
   );
 };

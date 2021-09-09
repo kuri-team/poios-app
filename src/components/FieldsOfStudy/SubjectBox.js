@@ -11,7 +11,7 @@ const SubjectBox = ({ subject, styleObject }) => {
       style={styleObject}
       onClick={() => setSelected(!selected)}
     >
-      {subject}
+      {subject.name}
     </div>
   );
 };
