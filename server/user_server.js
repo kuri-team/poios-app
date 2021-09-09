@@ -15,7 +15,6 @@ app.use(cors());
 
 //Routers for signup/login
 app.use("/", require("./routes/userRouter"));
-app.use("/api", require("./routes/uploadFile"));
 app.use("/", require("./routes/subjectRouter"));
 
 require("./config/user_db").connect();
