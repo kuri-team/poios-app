@@ -14,9 +14,11 @@ const FieldsOfStudyPage = () => {
   const [isLogged, setIsLogged] = state.userApi.isLogged;
   const [isTutor, setIsTutor] = state.userApi.isTuTor;
   const [subjects, setSubjects] = useState([]);
+  const [majors, setMajors] = useState([]);
 
   const getFields = () =>
     axios.get("/core/fields-of-study").then(res => {
+      setMajors(res.data[0]);
       setSubjects(res.data[1]);
     });
 
@@ -38,7 +40,7 @@ const FieldsOfStudyPage = () => {
       ) : (
         <>
           <h1 className={style["h1"]}>Choose a major</h1>
-          <MajorSelectMenu />
+          <MajorSelectMenu majors={majors} />
 
           <p className={style["subheading"]}>WHICH SUBJECTS ARE YOU INTERESTED IN?</p>
           <SubjectBoxes subjects={subjects} />

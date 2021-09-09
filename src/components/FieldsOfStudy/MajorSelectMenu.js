@@ -1,14 +1,6 @@
 import * as style from "./MajorSelectMenu.module.css";
 
-const MajorSelectMenu = () => {
-  const majors = [
-    { code: "BP162", name: "Information Technology" },
-    { code: "BP251", name: "Economics and Finance" },
-    { code: "BP316", name: "Design Studies" },
-    { code: "BP222", name: "Professional Communication" },
-    { code: "BP317", name: "Languages" },
-  ];
-
+const MajorSelectMenu = ({ majors }) => {
   return (
     <div className={style["wrapper"]}>
       <select className={style["select"]} name="major" id="major">
