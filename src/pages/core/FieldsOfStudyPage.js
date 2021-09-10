@@ -85,9 +85,7 @@ const FieldsOfStudyPage = () => {
   const filterSubjects = option => {
     let filtered = [];
 
-    if (option === "") {
-      filtered = subjects;
-    } else {
+    if (option !== "") {
       subjects.map(subject => {
         for (let i = 0; i < subject.major.length; i++) {
           if (subject.major[i] === option) {
@@ -106,18 +104,18 @@ const FieldsOfStudyPage = () => {
 
   return (
     <Layout header footer className={style["container"]}>
-      {filteredSubjects.length === 0 ? (
-        <h3>Loading...</h3>
+      <h1 className={style["h1"]}>Choose a major</h1>
+      <MajorSelectMenu
+        majors={majors}
+        callback={setSelectedMajor}
+        filter={filterSubjects}
+        setCurrentPage={setCurrentPage}
+        setSelectedSubjects={setSelectedSubjects}
+      />
+      {filteredSubjects.length === 0 || selectedMajor === undefined || selectedMajor === "" ? (
+        <></>
       ) : (
         <>
-          <h1 className={style["h1"]}>Choose a major</h1>
-          <MajorSelectMenu
-            majors={majors}
-            callback={setSelectedMajor}
-            filter={filterSubjects}
-            setCurrentPage={setCurrentPage}
-            setSelectedSubjects={setSelectedSubjects}
-          />
           <p className={style["subheading"]}>WHICH SUBJECTS ARE YOU INTERESTED IN?</p>
           <SubjectBoxes
             subjects={filteredSubjects}

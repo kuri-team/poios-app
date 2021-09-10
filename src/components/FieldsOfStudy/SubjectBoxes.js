@@ -35,7 +35,7 @@ const SubjectBoxes = ({ subjects, callback, selected, currentPage, setCurrentPag
           ? currentPage * boxesPerPage + boxesPerPage - 1
           : subjects.length - 1,
     });
-  }, [currentPage]);
+  }, [currentPage, subjects]);
 
   return subjects.length === 0 ? (
     <></>
