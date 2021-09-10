@@ -99,14 +99,14 @@ const userCtrl = {
 
   updateUser: async (req, res) => {
     try {
-      const { name, email, role, subject, avatar } = req.body;
+      const { name, email, role, subjects, avatar } = req.body;
       await Userdb.findOneAndUpdate(
         { _id: req.user.id },
         {
           name,
           email,
           role,
-          subject,
+          subjects,
           avatar,
         },
       );
