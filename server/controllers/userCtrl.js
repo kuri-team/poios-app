@@ -1,8 +1,7 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Userdb = require("../model/user");
-const { v4: uuidv4 } = require("uuid");
-const path = require("path");
+
 const userCtrl = {
   signup: async (req, res) => {
     try {
@@ -28,6 +27,7 @@ const userCtrl = {
         password: passwordHash,
         image,
       });
+      console.log(req.file);
       if (req.file) {
         newUser.image = req.file.path;
       }
