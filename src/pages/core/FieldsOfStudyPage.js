@@ -18,7 +18,6 @@ const FieldsOfStudyPage = () => {
   const [majors, setMajors] = useState([]);
   const [selectedMajor, setSelectedMajor] = useState(undefined);
   const [selectedSubjects, setSelectedSubjects] = useState([]);
-  const [subjectsCode, setSubjectsCode] = useState([]);
 
   const getFields = () =>
     axios.get("/core/fields-of-study").then(res => {
@@ -29,7 +28,7 @@ const FieldsOfStudyPage = () => {
   const setSubject = async () => {
     try {
       const subjectCodeList = [];
-      selectedSubjects.map((subject, key) => {
+      selectedSubjects.map(subject => {
         subjectCodeList.push(subject.code);
       });
 
@@ -62,6 +61,19 @@ const FieldsOfStudyPage = () => {
     }
   };
 
+  const filterSubjects = option => {
+    let filteredSubjects = [];
+    subjects.map(subject => {
+      for (let i = 0; i < subject.major.length; i++) {
+        if (subject.major[i] === option) {
+          filteredSubjects.push(subject);
+          break;
+        }
+      }
+    });
+    setSubjects(filteredSubjects);
+  };
+
   useEffect(() => {
     getFields();
   }, []);
@@ -73,7 +85,7 @@ const FieldsOfStudyPage = () => {
       ) : (
         <>
           <h1 className={style["h1"]}>Choose a major</h1>
-          <MajorSelectMenu majors={majors} callback={setSelectedMajor} />
+          <MajorSelectMenu majors={majors} callback={setSelectedMajor} filter={filterSubjects} />
           <p className={style["subheading"]}>WHICH SUBJECTS ARE YOU INTERESTED IN?</p>
           <SubjectBoxes subjects={subjects} callback={setSelectedSubjects} selected={selectedSubjects} />
           <button
