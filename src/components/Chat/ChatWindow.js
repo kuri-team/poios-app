@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 
 import Message from "./Message";
+import { SocketContext } from "../../SocketContext";
+import VideoChatWindow from "./VideoChat/VideoChatWindow";
+
 import * as style from "./ChatWindow.module.css";
 
 const ChatWindow = ({ tutorName }) => {
@@ -63,6 +67,8 @@ const ChatWindow = ({ tutorName }) => {
     },
   ];
 
+  const { me, isCalling, callUser, leaveCall } = useContext(SocketContext);
+
   return (
     <div className={style["chat-window"]}>
       <div className={style["chat-window-header"]}>
@@ -76,7 +82,7 @@ const ChatWindow = ({ tutorName }) => {
         </div>
 
         <div className={style["header-button-group"]}>
-          <button className={style["leave-button"]}>
+          <button className={style["leave-button"]} onClick={leaveCall}>
             <tspan>Leave</tspan>
             <img src={"/media/chatroom-icons/call_end_24dp.svg"} alt="" />
           </button>
@@ -96,7 +102,7 @@ const ChatWindow = ({ tutorName }) => {
                 alt="Screen share"
               />
             </div>
-            <div className={style["function-button"]}>
+            <div className={style["function-button"]} onClick={() => callUser(me)}>
               <img
                 className={style["function-icon"]}
                 src={"/media/chatroom-icons/video_call_24dp.svg"}
@@ -104,41 +110,56 @@ const ChatWindow = ({ tutorName }) => {
                 style={{ width: "30px", height: "30px", transform: "translateX(1px)" }}
               />
             </div>
-            <div className={style["function-button"]}>
+            <div className={style["function-button"]} onClick={() => callUser(me)}>
               <img className={style["function-icon"]} src={"/media/chatroom-icons/call_24dp.svg"} alt="Voice call" />
             </div>
           </div>
         </div>
       </div>
 
-      <div className={style["chat-window-content"]}>
-        <div className={style["inner"]}>
-          {messages.map(message => (
-            <Message
-              fromMe={message.fromMe}
-              sender={message.sender}
-              photo={message.photo}
-              content={message.content}
-              timestamp={message.timestamp}
-            />
-          ))}
-        </div>
-      </div>
+      {!isCalling && (
+        <div>
+          <div className={style["chat-window-content"]}>
+            <div className={style["inner"]}>
+              {messages.map(message => (
+                <Message
+                  fromMe={message.fromMe}
+                  sender={message.sender}
+                  photo={message.photo}
+                  content={message.content}
+                  timestamp={message.timestamp}
+                />
+              ))}
+            </div>
+          </div>
 
-      <div className={style["form"]}>
-        <div className={style["attach-button"]}>
-          <img className={style["function-icon"]} src={"/media/chatroom-icons/photo.svg"} alt="Attach a photo" />
+          <div className={style["form"]}>
+            <div className={style["attach-button"]}>
+              <img className={style["function-icon"]} src={"/media/chatroom-icons/photo.svg"} alt="Attach a photo" />
+            </div>
+            <div className={style["attach-button"]}>
+              <img
+                className={style["function-icon"]}
+                src={"/media/chatroom-icons/attachment.svg"}
+                alt="Attach a file"
+              />
+            </div>
+            <div className={style["input-message-content"]}>
+              <input
+                type="text"
+                className={style["input-message"]}
+                name="input-message"
+                placeholder="Write a message..."
+              />
+            </div>
+            <div className={style["send-button"]}>
+              <img className={style["function-icon"]} src={"/media/chatroom-icons/send_24dp.svg"} alt="Send" />
+            </div>
+          </div>
         </div>
-        <div className={style["attach-button"]}>
-          <img className={style["function-icon"]} src={"/media/chatroom-icons/attachment.svg"} alt="Attach a file" />
-        </div>
-        <div className={style["input-message-content"]}>
-          <input type="text" className={style["input-message"]} name="input-message" placeholder="Write a message..." />
-        </div>
-        <div className={style["send-button"]}>
-          <img className={style["function-icon"]} src={"/media/chatroom-icons/send_24dp.svg"} alt="Send" />
-        </div>
-      </div>
+      )}
+
+      {isCalling && <VideoChatWindow />}
     </div>
   );
 };
