@@ -15,6 +15,8 @@ const FieldsOfStudyPage = () => {
   const [isTutor, setIsTutor] = state.userApi.isTuTor;
   const [subjects, setSubjects] = useState([]);
   const [majors, setMajors] = useState([]);
+  const [selectedMajor, setSelectedMajor] = useState(undefined);
+  const [selectedSubjects, setSelectedSubjects] = useState([]);
 
   const getFields = () =>
     axios.get("/core/fields-of-study").then(res => {
@@ -22,17 +24,19 @@ const FieldsOfStudyPage = () => {
       setSubjects(res.data[1]);
     });
 
+  const sendData = () => {
+    if (!selectedMajor) {
+      alert("Please select a major.");
+    } else {
+      console.log(selectedMajor);
+      console.log(selectedSubjects);
+    }
+  };
+
   useEffect(() => {
     getFields();
   }, []);
 
-  const tutorRouter = () => {
-    return (
-      <Link to="/core/chat">
-        <button className={style["btn"]}>SET</button>
-      </Link>
-    );
-  };
   return (
     <Layout header footer className={style["container"]}>
       {subjects.length === 0 ? (
@@ -40,11 +44,31 @@ const FieldsOfStudyPage = () => {
       ) : (
         <>
           <h1 className={style["h1"]}>Choose a major</h1>
-          <MajorSelectMenu majors={majors} />
+          <MajorSelectMenu majors={majors} callback={setSelectedMajor} />
 
           <p className={style["subheading"]}>WHICH SUBJECTS ARE YOU INTERESTED IN?</p>
-          <SubjectBoxes subjects={subjects} />
-          {isTutor ? tutorRouter() : <button className={style["btn"]}>SET</button>}
+          <SubjectBoxes subjects={subjects} callback={setSelectedSubjects} selected={selectedSubjects} />
+          {isTutor ? (
+            <Link to="/core/chat">
+              <button
+                className={style["btn"]}
+                onClick={() => {
+                  sendData();
+                }}
+              >
+                SET
+              </button>
+            </Link>
+          ) : (
+            <button
+              className={style["btn"]}
+              onClick={() => {
+                sendData();
+              }}
+            >
+              SET
+            </button>
+          )}
         </>
       )}
     </Layout>
