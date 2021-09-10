@@ -33,7 +33,7 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
     try {
       await axios.post("/auth/signup", {
         ...user,
-        avatar: avaObj,
+        image: avaObj,
       });
 
       localStorage.setItem("firstLogin", true);
@@ -42,6 +42,7 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
       alert(err.response.data.msg);
     }
   };
+
   return (
     <Layout>
       <DialogBox background logo scroll>
