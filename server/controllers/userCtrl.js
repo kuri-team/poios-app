@@ -27,7 +27,6 @@ const userCtrl = {
         password: passwordHash,
         image,
       });
-      console.log(req.file);
       if (req.file) {
         newUser.image = req.file.path;
       }
