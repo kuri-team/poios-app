@@ -3,13 +3,16 @@ import { useState } from "react";
 import * as style from "./MyProfileInfo.module.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
 const MyProfileInfo = ({ state }) => {
   const [userInfo, setUserInfo] = state.userApi.userInfo;
   const token = state.token[0];
   const getMajor = userInfo.major;
   const subjectList = userInfo.subjects;
-  console.log(getMajor);
+  const ava = userInfo.image;
+  const avaRegex = (ava) => {
+    const avareplace = ava.replace(/avatar\\*/, 'server/avatar');
+    return avareplace
+  }
 
   const initialState = {
     name: "",
@@ -79,13 +82,14 @@ const MyProfileInfo = ({ state }) => {
 
   return (
     <div className={style["profile-bigcontainer"]}>
-      {subjectList == null || token == null || getMajor == null ? (
+      {subjectList == null || token == null || getMajor == null || ava == null ? (
         "Loading..."
       ) : (
         <div className={style["profile-container"]}>
           <div className={style["user-avatar"]}>
             <span>{file}</span>
-            <img className={style["avatar-image"]} src={"/media/kequing.jpg"} alt="" />
+            <img className={style["avatar-image"]} src={avaRegex(ava)} alt="" />
+            {console.log(avaRegex(ava))}
             <div className={style["upload-image-form"]}>
               <div className={style["form-image-upload"]}>
                 <input type="file" id="contained-button-file" onChange={e => setFile(e.target.files[0])} />
