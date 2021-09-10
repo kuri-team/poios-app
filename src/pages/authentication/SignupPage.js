@@ -31,9 +31,16 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
   const handleSubmit = async () => {
     //add validation here
     try {
-      await axios.post("/auth/signup", {
-        ...user,
-        image: avaObj,
+      let data = new FormData();
+      Object.entries(user).forEach(entry => {
+        data.append(entry[0], entry[1]);
+      });
+      data.append("image", avaObj);
+      await axios({
+        method: "post",
+        url:"/auth/signup",
+        data: data,
+        headers: { "Content-Type": "multipart/form-data" }
       });
 
       localStorage.setItem("firstLogin", true);
