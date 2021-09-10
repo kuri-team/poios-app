@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 
 import { GlobalState } from "../../GlobalState";
@@ -8,6 +8,8 @@ import FilterWindow from "../../components/Tutors/FilterWindow";
 import TutorListElement from "../../components/Tutors/TutorListElement";
 import useDetectCloseDropdown from "../../hooks/useDetectCloseDropdown";
 import * as style from "./TutorsPage.module.css";
+import axios from "axios";
+import { set } from "mongoose";
 
 //'searching function'
 const dummyTutors = [
@@ -87,7 +89,6 @@ const dummySubject = [
 const TutorsPage = () => {
   //manage state(logged, role) in all websites
   const state = useContext(GlobalState);
-
   const [isLogged, setIsLogged] = state.userApi.isLogged;
   const [isTutor, setIsTutor] = state.userApi.isTuTor;
   console.log(state);
@@ -98,23 +99,37 @@ const TutorsPage = () => {
     }
   }
 
+  const [subjects, setSubjects] = useState([]);
+  const [majors, setMajors] = useState([]);
+
+  const getFields = () =>
+    axios.get("/core/fields-of-study").then(res => {
+      setMajors(res.data[0]);
+      setSubjects(res.data[1]);
+    });
+
+  useEffect(() => {
+    getFields();
+  }, []);
+
   //"Search functions"
   const { paramsString } = window.location;
   //"searching subjects"
   const subjectQuery = new URLSearchParams(paramsString).get("subject-result");
-  const filterSubject = (dummySubject, subjectQuery) => {
+  const filterSubject = (subjects, subjectQuery) => {
     if (!subjectQuery) {
-      return dummySubject;
+      return subjects;
     }
 
-    return dummySubject.filter(subject => {
+    return subjects.filter(subject => {
       const subjectName = subject.name.toLowerCase();
       return subjectName.includes(subjectQuery);
     });
   };
-
   const [filterQuery, setFilterQuery] = useState(subjectQuery || "");
-  const filteredSubject = filterSubject(dummySubject, filterQuery);
+  const filteredSubject = filterSubject(subjects, filterQuery);
+
+  //searching tutors
   const tutorQuery = new URLSearchParams(paramsString).get("search-result");
   const filterTutors = (dummyTutors, tutorQuery) => {
     if (!tutorQuery) {
@@ -141,7 +156,13 @@ const TutorsPage = () => {
         </div>
 
         <div className={open ? style["filter-window"] : [style["filterWindow"], style["hidden"]].join(" ")}>
-          <FilterWindow filterQuery={filterQuery} setFilterQuery={setFilterQuery} filteredSubject={filteredSubject} />
+          <FilterWindow
+            filterQuery={filterQuery}
+            setFilterQuery={setFilterQuery}
+            filteredSubject={filteredSubject}
+            state={state}
+            majors={majors}
+          />
         </div>
       </div>
 

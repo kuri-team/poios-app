@@ -1,6 +1,6 @@
 import * as style from "./FilterWindow.module.css";
 
-const FilterWindow = ({ filterQuery, setFilterQuery, filteredSubject }) => {
+const FilterWindow = ({ filterQuery, setFilterQuery, filteredSubject, majors }) => {
   return (
     <div className={style["window-container"]}>
       <div className={style["search-input-container"]}>
@@ -15,27 +15,22 @@ const FilterWindow = ({ filterQuery, setFilterQuery, filteredSubject }) => {
       </div>
 
       <div className={style["subject-result-element"]}>
-        <div className={style["subject-general"]}>
-          <img className={style["arrow-drop-down"]} src={"/media/icons/arrow_drop_down_black_24dp.svg"} alt="" />
-          <span>Subject 1</span>
-        </div>
-        <ul className={style["subject-result-list"]}>
-          {filteredSubject.map(subject => {
-            if (subject.id < 4) return <li key={subject.id}>{subject.name}</li>;
-          })}
-        </ul>
-      </div>
-
-      <div className={style["subject-result-element"]}>
-        <div className={style["subject-general"]}>
-          <img className={style["arrow-drop-down"]} src={"/media/icons/arrow_drop_down_black_24dp.svg"} alt="" />
-          <span>Subject 2</span>
-        </div>
-        <ul className={style["subject-result-list"]}>
-          {filteredSubject.map(subject => (
-            <li key={subject.id}>{subject.name}</li>
-          ))}
-        </ul>
+        {majors.map(major => (
+          <>
+            <div className={style["subject-general"]}>
+              <img className={style["arrow-drop-down"]} src={"/media/icons/arrow_drop_down_black_24dp.svg"} alt="" />
+              <span key={major.code}>{major.name}</span>
+            </div>
+            {filteredSubject.map(subject => {
+              if (subject.major == major.code)
+                return (
+                  <ul className={style["subject-result-list"]}>
+                    <li key={subject.id}>{subject.name}</li>
+                  </ul>
+                );
+            })}
+          </>
+        ))}
       </div>
     </div>
   );

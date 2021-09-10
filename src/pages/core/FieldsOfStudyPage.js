@@ -11,6 +11,10 @@ import * as style from "./FieldsOfStudyPage.module.css";
 const FieldsOfStudyPage = () => {
   //manage state(logged, role) in all websites
   const state = useContext(GlobalState);
+  const [userInfo, setUserInfo] = state.userApi.userInfo;
+  const majorAvail = userInfo.major;
+  console.log(majorAvail);
+
   const token = state.token[0];
   const [isTutor, setIsTutor] = state.userApi.isTuTor;
   const [subjects, setSubjects] = useState([]);
@@ -19,6 +23,14 @@ const FieldsOfStudyPage = () => {
   const [selectedMajor, setSelectedMajor] = useState(undefined);
   const [selectedSubjects, setSelectedSubjects] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
+  console.log(isTutor);
+
+  if (majorAvail != null && isTutor == true) {
+    window.location.href = "/core/chat";
+  }
+  if (majorAvail != null && isTutor == false) {
+    window.location.href = "/core/tutors";
+  }
 
   const getFields = () =>
     axios.get("/core/fields-of-study").then(res => {
@@ -31,19 +43,24 @@ const FieldsOfStudyPage = () => {
     try {
       const subjectCodeList = [];
       selectedSubjects.map(subject => {
-        subjectCodeList.push(subject.code);
+        subjectCodeList.push(subject.name);
+      });
+
+      const majorName = [];
+      majors.map(major => {
+        if (major.code == selectedMajor) majorName[0] = major.name;
       });
 
       await axios.patch(
         "/profile/my-profile/update",
         {
+          major: majorName[0],
           subjects: subjectCodeList,
         },
         {
           headers: { Authorization: token },
         },
       );
-
       alert("Update Subjects Successfully!");
       if (isTutor) {
         window.location.href = "/core/chat";

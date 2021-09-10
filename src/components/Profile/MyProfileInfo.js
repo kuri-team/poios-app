@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 const MyProfileInfo = ({ state }) => {
   const [userInfo, setUserInfo] = state.userApi.userInfo;
   const token = state.token[0];
-  console.log(token);
-  console.log(userInfo);
+  const getMajor = userInfo.major;
   const subjectList = userInfo.subjects;
+  console.log(getMajor);
 
   const initialState = {
     name: "",
@@ -79,7 +79,7 @@ const MyProfileInfo = ({ state }) => {
 
   return (
     <div className={style["profile-bigcontainer"]}>
-      {subjectList == null || token == null ? (
+      {subjectList == null || token == null || getMajor == null ? (
         "Loading..."
       ) : (
         <div className={style["profile-container"]}>
@@ -228,6 +228,21 @@ const MyProfileInfo = ({ state }) => {
             <div className={style["user-info-element"]}>
               <div className={style["user-info-row"]}>
                 <div className={style["label-container"]}>
+                  <label htmlFor="major">Major: </label>
+                </div>
+                <div className={style["input-place"]}>
+                  <span>{getMajor}</span>
+                </div>
+                <Link to={"/core/fields-of-study"}>
+                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" />
+                </Link>
+              </div>
+              <hr />
+            </div>
+
+            <div className={style["user-info-element"]}>
+              <div className={style["user-info-row"]}>
+                <div className={style["label-container"]}>
                   <label htmlFor="subject">Subjects: </label>
                 </div>
                 <div className={style["subject-list"]}>
@@ -236,10 +251,9 @@ const MyProfileInfo = ({ state }) => {
                   })}
                 </div>
                 <Link to={"/core/fields-of-study"}>
-                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" onClick={() => displaySubjectEdit()} />
+                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" />
                 </Link>
               </div>
-
               <hr />
             </div>
           </div>

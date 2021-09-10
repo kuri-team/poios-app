@@ -23,6 +23,10 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  major: {
+    type: String,
+    default: null,
+  },
   subjects: {
     type: [String],
     default: null,
