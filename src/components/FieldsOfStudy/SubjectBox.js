@@ -7,11 +7,11 @@ const SubjectBox = ({ subject, styleObject, callback, selectedSubjects }) => {
 
   return (
     <div
-      className={selected ? style["subject-box-selected"] : style["subject-box"]}
+      className={selectedSubjects.includes(subject) ? style["subject-box-selected"] : style["subject-box"]}
       style={styleObject}
       onClick={() => {
         let buffer = selectedSubjects;
-        if (!selected) {
+        if (!selectedSubjects.includes(subject)) {
           buffer.push(subject);
         } else {
           const index = buffer.indexOf(subject);
