@@ -85,9 +85,7 @@ const FieldsOfStudyPage = () => {
   const filterSubjects = option => {
     let filtered = [];
 
-    if (option === "") {
-      filtered = subjects;
-    } else {
+    if (option !== "") {
       subjects.map(subject => {
         for (let i = 0; i < subject.major.length; i++) {
           if (subject.major[i] === option) {
@@ -107,7 +105,7 @@ const FieldsOfStudyPage = () => {
   return (
     <Layout header footer className={style["container"]}>
       {filteredSubjects.length === 0 ? (
-        <h3>Loading...</h3>
+        <></>
       ) : (
         <>
           <h1 className={style["h1"]}>Choose a major</h1>
@@ -118,22 +116,28 @@ const FieldsOfStudyPage = () => {
             setCurrentPage={setCurrentPage}
             setSelectedSubjects={setSelectedSubjects}
           />
-          <p className={style["subheading"]}>WHICH SUBJECTS ARE YOU INTERESTED IN?</p>
-          <SubjectBoxes
-            subjects={filteredSubjects}
-            callback={setSelectedSubjects}
-            selected={selectedSubjects}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-          />
-          <button
-            className={style["btn"]}
-            onClick={() => {
-              sendData();
-            }}
-          >
-            SET
-          </button>
+          {selectedMajor === undefined || selectedMajor === "" ? (
+            <></>
+          ) : (
+            <>
+              <p className={style["subheading"]}>WHICH SUBJECTS ARE YOU INTERESTED IN?</p>
+              <SubjectBoxes
+                subjects={filteredSubjects}
+                callback={setSelectedSubjects}
+                selected={selectedSubjects}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+              />
+              <button
+                className={style["btn"]}
+                onClick={() => {
+                  sendData();
+                }}
+              >
+                SET
+              </button>
+            </>
+          )}
         </>
       )}
     </Layout>
