@@ -79,8 +79,8 @@ const MyProfileInfo = ({ state }) => {
 
   return (
     <div className={style["profile-bigcontainer"]}>
-      {token == null ? (
-        "Loading"
+      {subjectList == null ? (
+        "Loading..."
       ) : (
         <div className={style["profile-container"]}>
           <div className={style["user-avatar"]}>
@@ -231,9 +231,9 @@ const MyProfileInfo = ({ state }) => {
                   <label htmlFor="subject">Subjects: </label>
                 </div>
                 <div className={style["subject-list"]}>
-                  {/*{subjectList.map((subject, key) => {*/}
-                  {/*  return <div key={key}>{subject}</div>;*/}
-                  {/*})}*/}
+                  {subjectList.map((subject, key) => {
+                    return <div key={key}>{subject}</div>;
+                  })}
                 </div>
                 <Link to={"/core/fields-of-study"}>
                   <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" onClick={() => displaySubjectEdit()} />
