@@ -135,17 +135,14 @@ const TutorsPage = () => {
       <div className={style["title"]}>
         <h1>CHAT ROOMS</h1>
       </div>
-      <div className={style["searchbar-container"]} ref={ref}>
-        <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} openState={() => setOpen(!open)} />
-      </div>
+      <div className={style["cut-width-container"]} ref={ref}>
+        <div className={style["searchbar-container"]}>
+          <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} openState={() => setOpen(!open)} />
+        </div>
 
-      <div className={open ? style["filter-window"] : [style["filterWindow"], style["hidden"]].join(" ")}>
-        <FilterWindow
-          filterQuery={filterQuery}
-          setFilterQuery={setFilterQuery}
-          filteredSubject={filteredSubject}
-          ref={ref}
-        />
+        <div className={open ? style["filter-window"] : [style["filterWindow"], style["hidden"]].join(" ")}>
+          <FilterWindow filterQuery={filterQuery} setFilterQuery={setFilterQuery} filteredSubject={filteredSubject} />
+        </div>
       </div>
 
       {/*<ul>*/}
