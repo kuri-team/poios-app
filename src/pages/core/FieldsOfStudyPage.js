@@ -25,10 +25,10 @@ const FieldsOfStudyPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
   console.log(isTutor);
 
-  if (majorAvail != null && isTutor == true) {
+  if (majorAvail != null && majorAvail != "" && isTutor === true) {
     window.location.href = "/core/chat";
   }
-  if (majorAvail != null && isTutor == false) {
+  if (majorAvail != null && majorAvail != "" && isTutor === false) {
     window.location.href = "/core/tutors";
   }
 
@@ -48,7 +48,9 @@ const FieldsOfStudyPage = () => {
 
       const majorName = [];
       majors.map(major => {
-        if (major.code == selectedMajor) majorName[0] = major.name;
+        if (major.code == selectedMajor) {
+          majorName[0] = major.name;
+        }
       });
 
       await axios.patch(
