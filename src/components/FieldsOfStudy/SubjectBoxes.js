@@ -4,10 +4,9 @@ import ToggleButton from "./ToggleButton";
 import SubjectBox from "./SubjectBox";
 import * as style from "./SubjectBoxes.module.css";
 
-const SubjectBoxes = ({ subjects, callback, selected }) => {
+const SubjectBoxes = ({ subjects, callback, selected, currentPage, setCurrentPage }) => {
   const boxesPerPage = 12;
 
-  const [currentPage, setCurrentPage] = useState(0);
   const [visibleSubjectsIndex, setVisibleSubjectsIndex] = useState({
     startIndex: 0,
     endIndex: 11,

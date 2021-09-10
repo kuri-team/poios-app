@@ -1,6 +1,6 @@
 import * as style from "./MajorSelectMenu.module.css";
 
-const MajorSelectMenu = ({ majors, callback, filter }) => {
+const MajorSelectMenu = ({ majors, callback, filter, setCurrentPage }) => {
   return (
     <div className={style["wrapper"]}>
       <select
@@ -11,6 +11,7 @@ const MajorSelectMenu = ({ majors, callback, filter }) => {
         onChange={e => {
           callback(e.target.value);
           filter(e.target.value);
+          setCurrentPage(0);
         }}
       >
         <option value="">Please select a major</option>

@@ -18,6 +18,7 @@ const FieldsOfStudyPage = () => {
   const [majors, setMajors] = useState([]);
   const [selectedMajor, setSelectedMajor] = useState(undefined);
   const [selectedSubjects, setSelectedSubjects] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const getFields = () =>
     axios.get("/core/fields-of-study").then(res => {
@@ -91,9 +92,20 @@ const FieldsOfStudyPage = () => {
       ) : (
         <>
           <h1 className={style["h1"]}>Choose a major</h1>
-          <MajorSelectMenu majors={majors} callback={setSelectedMajor} filter={filterSubjects} />
+          <MajorSelectMenu
+            majors={majors}
+            callback={setSelectedMajor}
+            filter={filterSubjects}
+            setCurrentPage={setCurrentPage}
+          />
           <p className={style["subheading"]}>WHICH SUBJECTS ARE YOU INTERESTED IN?</p>
-          <SubjectBoxes subjects={filteredSubjects} callback={setSelectedSubjects} selected={selectedSubjects} />
+          <SubjectBoxes
+            subjects={filteredSubjects}
+            callback={setSelectedSubjects}
+            selected={selectedSubjects}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
           <button
             className={style["btn"]}
             onClick={() => {
