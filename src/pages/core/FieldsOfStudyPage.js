@@ -12,8 +12,8 @@ const FieldsOfStudyPage = () => {
   //manage state(logged, role) in all websites
   const state = useContext(GlobalState);
   const [userInfo, setUserInfo] = state.userApi.userInfo;
-  const subjectAvail = userInfo.subjects;
-  console.log(subjectAvail);
+  const majorAvail = userInfo.major;
+  console.log(majorAvail);
 
   const token = state.token[0];
   const [isTutor, setIsTutor] = state.userApi.isTuTor;
@@ -25,10 +25,10 @@ const FieldsOfStudyPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
   console.log(isTutor);
 
-  if (subjectAvail != null && isTutor == true) {
+  if (majorAvail != null && isTutor == true) {
     window.location.href = "/core/chat";
   }
-  if (subjectAvail != null && isTutor == false) {
+  if (majorAvail != null && isTutor == false) {
     window.location.href = "/core/tutors";
   }
 
