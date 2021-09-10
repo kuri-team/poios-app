@@ -16,6 +16,9 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  verifypassword: {
+    type: String,
+  },
   role: {
     type: String,
     required: true,

@@ -18,9 +18,11 @@ const FieldsOfStudyPage = () => {
   const token = state.token[0];
   const [isTutor, setIsTutor] = state.userApi.isTuTor;
   const [subjects, setSubjects] = useState([]);
+  const [filteredSubjects, setFilteredSubjects] = useState([]);
   const [majors, setMajors] = useState([]);
   const [selectedMajor, setSelectedMajor] = useState(undefined);
   const [selectedSubjects, setSelectedSubjects] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
 
   if (subjectAvail != null && isTutor) {
     window.location.href = "/core/chat";
@@ -32,6 +34,7 @@ const FieldsOfStudyPage = () => {
     axios.get("/core/fields-of-study").then(res => {
       setMajors(res.data[0]);
       setSubjects(res.data[1]);
+      setFilteredSubjects(res.data[1]);
     });
 
   const setSubject = async () => {
@@ -76,16 +79,21 @@ const FieldsOfStudyPage = () => {
   };
 
   const filterSubjects = option => {
-    let filteredSubjects = [];
-    subjects.map(subject => {
-      for (let i = 0; i < subject.major.length; i++) {
-        if (subject.major[i] === option) {
-          filteredSubjects.push(subject);
-          break;
+    let filtered = [];
+
+    if (option === "") {
+      filtered = subjects;
+    } else {
+      subjects.map(subject => {
+        for (let i = 0; i < subject.major.length; i++) {
+          if (subject.major[i] === option) {
+            filtered.push(subject);
+            break;
+          }
         }
-      }
-    });
-    setSubjects(filteredSubjects);
+      });
+    }
+    setFilteredSubjects(filtered);
   };
 
   useEffect(() => {
@@ -94,14 +102,25 @@ const FieldsOfStudyPage = () => {
 
   return (
     <Layout header footer className={style["container"]}>
-      {subjects.length === 0 ? (
+      {filteredSubjects.length === 0 ? (
         <h3>Loading...</h3>
       ) : (
         <>
           <h1 className={style["h1"]}>Choose a major</h1>
-          <MajorSelectMenu majors={majors} callback={setSelectedMajor} filter={filterSubjects} />
+          <MajorSelectMenu
+            majors={majors}
+            callback={setSelectedMajor}
+            filter={filterSubjects}
+            setCurrentPage={setCurrentPage}
+          />
           <p className={style["subheading"]}>WHICH SUBJECTS ARE YOU INTERESTED IN?</p>
-          <SubjectBoxes subjects={subjects} callback={setSelectedSubjects} selected={selectedSubjects} />
+          <SubjectBoxes
+            subjects={filteredSubjects}
+            callback={setSelectedSubjects}
+            selected={selectedSubjects}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
           <button
             className={style["btn"]}
             onClick={() => {
