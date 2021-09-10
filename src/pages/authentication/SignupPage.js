@@ -18,6 +18,7 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
     email: "",
     role: "",
     password: "",
+    verifypassword: "",
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -40,7 +41,7 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
         method: "post",
         url:"/auth/signup",
         data: data,
-        headers: { "Content-Type": "multipart/form-data" }
+        headers: {"Content-Type": "multipart/form-data"}
       });
 
       localStorage.setItem("firstLogin", true);
@@ -162,8 +163,11 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
             </label>
             <input
               id="verify-password"
+              name="verifypassword"
               className={commonStyle["text-align-center"]}
               type={showPassword ? "text" : "password"}
+              value={user.verifypassword}
+              onChange={onChangeInput}
             />
           </div>
         </div>
