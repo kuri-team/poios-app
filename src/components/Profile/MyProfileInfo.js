@@ -79,7 +79,7 @@ const MyProfileInfo = ({ state }) => {
 
   return (
     <div className={style["profile-bigcontainer"]}>
-      {subjectList == null || token == null ? (
+      {subjectList == null || token == null || getMajor == null ? (
         "Loading..."
       ) : (
         <div className={style["profile-container"]}>
