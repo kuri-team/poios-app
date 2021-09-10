@@ -97,6 +97,7 @@ const FieldsOfStudyPage = () => {
             callback={setSelectedMajor}
             filter={filterSubjects}
             setCurrentPage={setCurrentPage}
+            setSelectedSubjects={setSelectedSubjects}
           />
           <p className={style["subheading"]}>WHICH SUBJECTS ARE YOU INTERESTED IN?</p>
           <SubjectBoxes
