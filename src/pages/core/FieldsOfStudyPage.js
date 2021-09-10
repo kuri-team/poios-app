@@ -13,6 +13,7 @@ const FieldsOfStudyPage = () => {
   const state = useContext(GlobalState);
   const [userInfo, setUserInfo] = state.userApi.userInfo;
   const subjectAvail = userInfo.subjects;
+  console.log(subjectAvail);
 
   const token = state.token[0];
   const [isTutor, setIsTutor] = state.userApi.isTuTor;
@@ -40,10 +41,15 @@ const FieldsOfStudyPage = () => {
         subjectCodeList.push(subject.name);
       });
 
+      const majorName = [];
+      majors.map(major => {
+        if (major.code == selectedMajor) majorName[0] = major.name;
+      });
+
       await axios.patch(
         "/profile/my-profile/update",
         {
-          major: selectedMajor.name,
+          major: majorName[0],
           subjects: subjectCodeList,
         },
         {

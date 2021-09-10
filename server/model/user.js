@@ -22,6 +22,7 @@ const userSchema = new Schema({
   },
   major: {
     type: String,
+    default: null,
   },
   subjects: {
     type: [String],

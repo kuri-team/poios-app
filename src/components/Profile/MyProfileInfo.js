@@ -7,8 +7,9 @@ import { Link } from "react-router-dom";
 const MyProfileInfo = ({ state }) => {
   const [userInfo, setUserInfo] = state.userApi.userInfo;
   const token = state.token[0];
-
+  const getMajor = userInfo.major;
   const subjectList = userInfo.subjects;
+  console.log(getMajor);
 
   const initialState = {
     name: "",
@@ -230,10 +231,10 @@ const MyProfileInfo = ({ state }) => {
                   <label htmlFor="major">Major: </label>
                 </div>
                 <div className={style["input-place"]}>
-                  <span>{userInfo.major}</span>
+                  <span>{getMajor}</span>
                 </div>
                 <Link to={"/core/fields-of-study"}>
-                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" onClick={() => displaySubjectEdit()} />
+                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" />
                 </Link>
               </div>
               <hr />
@@ -250,7 +251,7 @@ const MyProfileInfo = ({ state }) => {
                   })}
                 </div>
                 <Link to={"/core/fields-of-study"}>
-                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" onClick={() => displaySubjectEdit()} />
+                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" />
                 </Link>
               </div>
               <hr />
