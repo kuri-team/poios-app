@@ -90,6 +90,7 @@ const TutorsPage = () => {
 
   const [isLogged, setIsLogged] = state.userApi.isLogged;
   const [isTutor, setIsTutor] = state.userApi.isTuTor;
+  console.log(state);
 
   {
     if (isTutor) {

@@ -17,7 +17,7 @@ export const DataProvider = ({ children }) => {
         setToken(res.data.accesstoken);
         setTimeout(() => {
           refreshToken();
-        }, 60 * 10 * 1000);
+        }, 30 * 60 * 1000);
       };
       refreshToken();
     }
