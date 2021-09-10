@@ -12,7 +12,6 @@ const FieldsOfStudyPage = () => {
   //manage state(logged, role) in all websites
   const state = useContext(GlobalState);
   const token = state.token[0];
-  const [isLogged, setIsLogged] = state.userApi.isLogged;
   const [isTutor, setIsTutor] = state.userApi.isTuTor;
   const [subjects, setSubjects] = useState([]);
   const [majors, setMajors] = useState([]);
