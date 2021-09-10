@@ -23,10 +23,12 @@ const FieldsOfStudyPage = () => {
   const [selectedMajor, setSelectedMajor] = useState(undefined);
   const [selectedSubjects, setSelectedSubjects] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
+  console.log(isTutor);
 
-  if (subjectAvail != null && isTutor) {
+  if (subjectAvail != null && isTutor == true) {
     window.location.href = "/core/chat";
-  } else if (subjectAvail != null && isTutor == false) {
+  }
+  if (subjectAvail != null && isTutor == false) {
     window.location.href = "/core/tutors";
   }
 
