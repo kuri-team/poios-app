@@ -104,40 +104,34 @@ const FieldsOfStudyPage = () => {
 
   return (
     <Layout header footer className={style["container"]}>
-      {filteredSubjects.length === 0 ? (
+      <h1 className={style["h1"]}>Choose a major</h1>
+      <MajorSelectMenu
+        majors={majors}
+        callback={setSelectedMajor}
+        filter={filterSubjects}
+        setCurrentPage={setCurrentPage}
+        setSelectedSubjects={setSelectedSubjects}
+      />
+      {filteredSubjects.length === 0 || selectedMajor === undefined || selectedMajor === "" ? (
         <></>
       ) : (
         <>
-          <h1 className={style["h1"]}>Choose a major</h1>
-          <MajorSelectMenu
-            majors={majors}
-            callback={setSelectedMajor}
-            filter={filterSubjects}
+          <p className={style["subheading"]}>WHICH SUBJECTS ARE YOU INTERESTED IN?</p>
+          <SubjectBoxes
+            subjects={filteredSubjects}
+            callback={setSelectedSubjects}
+            selected={selectedSubjects}
+            currentPage={currentPage}
             setCurrentPage={setCurrentPage}
-            setSelectedSubjects={setSelectedSubjects}
           />
-          {selectedMajor === undefined || selectedMajor === "" ? (
-            <></>
-          ) : (
-            <>
-              <p className={style["subheading"]}>WHICH SUBJECTS ARE YOU INTERESTED IN?</p>
-              <SubjectBoxes
-                subjects={filteredSubjects}
-                callback={setSelectedSubjects}
-                selected={selectedSubjects}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-              />
-              <button
-                className={style["btn"]}
-                onClick={() => {
-                  sendData();
-                }}
-              >
-                SET
-              </button>
-            </>
-          )}
+          <button
+            className={style["btn"]}
+            onClick={() => {
+              sendData();
+            }}
+          >
+            SET
+          </button>
         </>
       )}
     </Layout>
