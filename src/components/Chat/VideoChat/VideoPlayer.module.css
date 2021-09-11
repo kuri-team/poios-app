@@ -82,3 +82,30 @@
   transition: var(--transition-extra-rapid);
   transition-delay: 0ms;
 }
+
+.make-a-call {
+  position: relative;
+  box-sizing: border-box;
+  height: 30px;
+  margin: 0 0 10px 0;
+  padding: 0 25px;
+  overflow: hidden;
+  color: var(--white);
+  font-size: 100%;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  text-transform: none;
+  background-color: var(--cyan);
+  border-width: 0;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s, box-shadow 0.08s ease-in;
+}
+
+.make-a-call:hover {
+  background-color: var(--dark-cyan);
+  cursor: pointer;
+  transition: var(--transition-extra-rapid);
+  transition-delay: 0ms;
+}

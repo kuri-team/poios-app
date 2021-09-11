@@ -22,6 +22,7 @@ const VideoPlayer = ({ tutorName }) => {
               setButtonPopUp(true);
               callUser(me);
             }}
+            className={style["make-a-call"]}
           >
             Call
           </button>
