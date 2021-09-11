@@ -21,12 +21,6 @@ const ContextProvider = ({ children }) => {
   const connectionRef = useRef();
 
   useEffect(() => {
-    // navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(currentStream => {
-    //   setStream(currentStream);
-    //
-    //   myVideo.current.srcObject = currentStream;
-    // });
-
     socket.on("me", id => setMe(id));
 
     socket.on("callUser", ({ from, name: callerName, signal }) => {
@@ -84,10 +78,14 @@ const ContextProvider = ({ children }) => {
 
   const leaveCall = () => {
     setCallEnded(true);
-    setIsCalling(false);
 
     connectionRef.current.destroy();
 
+    window.location.reload();
+  };
+
+  const leaveCallScene = () => {
+    setIsCalling(false);
     window.location.reload();
   };
 
@@ -107,6 +105,7 @@ const ContextProvider = ({ children }) => {
         callUser,
         leaveCall,
         answerCall,
+        leaveCallScene,
       }}
     >
       {children}

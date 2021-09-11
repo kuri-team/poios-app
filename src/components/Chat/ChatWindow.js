@@ -67,7 +67,7 @@ const ChatWindow = ({ tutorName }) => {
     },
   ];
 
-  const { me, isCalling, callUser, leaveCall } = useContext(SocketContext);
+  const { me, isCalling, callUser, leaveCallScene } = useContext(SocketContext);
 
   return (
     <div className={style["chat-window"]}>
@@ -82,7 +82,7 @@ const ChatWindow = ({ tutorName }) => {
         </div>
 
         <div className={style["header-button-group"]}>
-          <button className={style["leave-button"]} onClick={leaveCall}>
+          <button className={style["leave-button"]} onClick={leaveCallScene}>
             <tspan>Leave</tspan>
             <img src={"/media/chatroom-icons/call_end_24dp.svg"} alt="" />
           </button>
@@ -159,7 +159,7 @@ const ChatWindow = ({ tutorName }) => {
         </div>
       )}
 
-      {isCalling && <VideoChatWindow />}
+      {isCalling && <VideoChatWindow tutorName={tutorName} />}
     </div>
   );
 };

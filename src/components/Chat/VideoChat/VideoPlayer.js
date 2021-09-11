@@ -4,14 +4,14 @@ import { SocketContext } from "../../../SocketContext";
 
 import * as style from "./VideoPlayer.module.css";
 
-const VideoPlayer = () => {
+const VideoPlayer = ({ tutorName }) => {
   const { name, callAccepted, myVideo, userVideo, callEnded, stream, call } = useContext(SocketContext);
 
   return (
     <div className={style["video-wrapper"]}>
       {stream && (
         <div className={style["video-content"]}>
-          <h3 className={style["video-username"]}>{name || "Name"}</h3>
+          <h3 className={style["video-username"]}>{name || "Name" || tutorName}</h3>
           <video playsInline muted ref={myVideo} autoPlay className={style["video"]} />
         </div>
       )}
