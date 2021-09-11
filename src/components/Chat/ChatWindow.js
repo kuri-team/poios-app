@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import Message from "./Message";
 import { SocketContext } from "../../SocketContext";
@@ -68,6 +68,8 @@ const ChatWindow = ({ tutorName }) => {
   ];
 
   const { me, isCalling, callUser, leaveCallScene } = useContext(SocketContext);
+
+  const [messPopUp, setMessPopUp] = useState(false);
 
   return (
     <div className={style["chat-window"]}>
@@ -159,7 +161,7 @@ const ChatWindow = ({ tutorName }) => {
         </div>
       )}
 
-      {isCalling && <VideoChatWindow tutorName={tutorName} />}
+      {isCalling && <VideoChatWindow tutorName={tutorName} messPopUp={messPopUp} />}
     </div>
   );
 };
