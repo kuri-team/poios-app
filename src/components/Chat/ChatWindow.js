@@ -69,8 +69,6 @@ const ChatWindow = ({ tutorName }) => {
 
   const { me, isCalling, callUser, leaveCallScene } = useContext(SocketContext);
 
-  const [messPopUp, setMessPopUp] = useState(false);
-
   return (
     <div className={style["chat-window"]}>
       <div className={style["chat-window-header"]}>
@@ -161,7 +159,7 @@ const ChatWindow = ({ tutorName }) => {
         </div>
       )}
 
-      {isCalling && <VideoChatWindow tutorName={tutorName} messPopUp={messPopUp} />}
+      {isCalling && <VideoChatWindow tutorName={tutorName} />}
     </div>
   );
 };

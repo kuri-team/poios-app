@@ -5,7 +5,7 @@ import Notification from "./Notification";
 
 import * as style from "./VideoPlayer.module.css";
 
-const VideoPlayer = ({ tutorName, messPopUp }) => {
+const VideoPlayer = ({ tutorName }) => {
   const { name, callAccepted, myVideo, userVideo, callEnded, stream, call, answerCall, callUser, me, leaveCall } =
     useContext(SocketContext);
 
