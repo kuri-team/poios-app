@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import Layout from "../../components/Layout";
 import DialogBox from "../../components/DialogBox";
@@ -10,9 +11,45 @@ import * as commonStyle from "../../styles/common.module.css";
 import * as dialogBoxStyle from "../../components/DialogBox.module.css";
 
 const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
-  const [avatar, setAvatar] = useState(null);
+  const [avatar, setAvatar] = useState("");
+  const [avaObj, setAvaObj] = useState();
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    role: "",
+    password: "",
+    verifypassword: "",
+  });
+
   const [showPassword, setShowPassword] = useState(false);
   const [showVerifyPassword, setShowVerifyPassword] = useState(false);
+
+  const onChangeInput = e => {
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
+  };
+
+  const handleSubmit = async () => {
+    //add validation here
+    try {
+      let data = new FormData();
+      Object.entries(user).forEach(entry => {
+        data.append(entry[0], entry[1]);
+      });
+      data.append("image", avaObj);
+      await axios({
+        method: "post",
+        url:"/auth/signup",
+        data: data,
+        headers: {"Content-Type": "multipart/form-data"}
+      });
+
+      localStorage.setItem("firstLogin", true);
+      window.location.href = "/core/fields-of-study";
+    } catch (err) {
+      alert(err.response.data.msg);
+    }
+  };
 
   return (
     <Layout>
@@ -31,11 +68,12 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
               id="avatar"
               name="avatar"
               type="file"
-              accept="image/jpeg,image/png"
+              accept="image/jpeg,image/png,image/jpg"
               onChange={e => {
                 const file = new FileReader();
                 file.readAsDataURL(e.target.files[0]);
                 file.onloadend = () => setAvatar(file.result);
+                setAvaObj(e.target.files[0]);
               }}
               hidden
               aria-hidden
@@ -52,7 +90,14 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
             <label htmlFor="acc-type" className={commonStyle["text-align-center"]}>
               Hello, I am a
             </label>
-            <select id="acc-type" name="acc-type" className={commonStyle["text-align-center"]}>
+            <select
+              id="acc-type"
+              name="role"
+              className={commonStyle["text-align-center"]}
+              value={user.role}
+              onChange={onChangeInput}
+            >
+              <option value="">Choose a role</option>
               <option value="student">Student</option>
               <option value="tutor">Tutor</option>
             </select>
@@ -63,11 +108,25 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
           </div>
           <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
             <label htmlFor="email">Email</label>
-            <input id="email" name="email" className={commonStyle["text-align-center"]} type="email" />
+            <input
+              id="email"
+              name="email"
+              className={commonStyle["text-align-center"]}
+              type="email"
+              value={user.email}
+              onChange={onChangeInput}
+            />
           </div>
           <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
-            <label htmlFor="username">Username</label>
-            <input id="username" name="username" className={commonStyle["text-align-center"]} type="email" />
+            <label htmlFor="name">Username</label>
+            <input
+              id="name"
+              name="name"
+              className={commonStyle["text-align-center"]}
+              type="text"
+              value={user.name}
+              onChange={onChangeInput}
+            />
           </div>
           <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
             <label htmlFor="password">
@@ -86,6 +145,8 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
               name="password"
               className={commonStyle["text-align-center"]}
               type={showPassword ? "text" : "password"}
+              value={user.password}
+              onChange={onChangeInput}
             />
           </div>
           <div className={[formStyle["field"], formStyle["field-column"]].join(" ")}>
@@ -102,22 +163,24 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
             </label>
             <input
               id="verify-password"
+              name="verifypassword"
               className={commonStyle["text-align-center"]}
               type={showPassword ? "text" : "password"}
+              value={user.verifypassword}
+              onChange={onChangeInput}
             />
           </div>
         </div>
         <div className={[dialogBoxStyle["button-wrapper"], dialogBoxStyle["button-wrapper-col"]].join(" ")}>
-          <Link to={authRedirectTo}>
-            <button
-              className={dialogBoxStyle["primary"]}
-              onClick={() => {
-                setShowPassword(false);
-              }}
-            >
-              Signup
-            </button>
-          </Link>
+          <button
+            className={[dialogBoxStyle["primary"], style["button"]].join(" ")}
+            onClick={() => {
+              setShowPassword(false);
+              handleSubmit();
+            }}
+          >
+            Signup
+          </button>
         </div>
         <div className={style["nav"]}>
           <Link to={prevStepUrl} className={style["primary"]}>

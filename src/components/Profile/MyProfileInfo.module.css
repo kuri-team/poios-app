@@ -66,8 +66,8 @@
 .user-info-row {
   display: flex;
   justify-content: center;
-  padding-top: 1.4rem;
-  padding-bottom: 1.4rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
 }
 
 .user-info-display {
@@ -113,6 +113,7 @@
 }
 
 .user-info-element img {
+  z-index: 1;
   width: 3rem;
   padding-right: 0.5rem;
 }
@@ -172,6 +173,10 @@ hr {
   font-weight: lighter;
   font-size: 0.8rem;
   background-color: var(--lighter-gray);
+}
+
+.student-radio {
+  padding-right: 16px;
 }
 
 @media only screen and (--viewport-desktop) {

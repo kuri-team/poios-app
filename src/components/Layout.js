@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { GlobalState } from "../GlobalState";
 import Header from "./Header";
 import Footer from "./Footer";
 
