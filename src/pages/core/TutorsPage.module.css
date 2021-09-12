@@ -1,3 +1,9 @@
+.cut-width-container {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .searchbar-container {
   position: relative;
 }

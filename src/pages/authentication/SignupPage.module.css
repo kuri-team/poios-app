@@ -121,6 +121,32 @@
   text-decoration: none;
 }
 
+.button {
+  width: 140px;
+  padding: 14px 0;
+  color: var(--white);
+  font-weight: 600;
+  text-transform: uppercase;
+  background: var(--white);
+  background: var(--cyan);
+  border: none;
+  border-radius: var(--border-radius-m);
+  transform: scale(1);
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-rapid);
+  will-change: background, transform;
+}
+
+.button:hover {
+  background: var(--gray);
+  cursor: pointer;
+  transition: var(--transition-rapid);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
 @media only screen and (--viewport-phone) {
   .form {
     display: block;

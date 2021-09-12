@@ -4,38 +4,9 @@ import ToggleButton from "./ToggleButton";
 import SubjectBox from "./SubjectBox";
 import * as style from "./SubjectBoxes.module.css";
 
-const SubjectBoxes = () => {
-  const subjects = [
-    "Omniscient Reader's Viewpoint",
-    "Purple Hyacinth",
-    "Kieran White",
-    "Han Sooyoung",
-    "Kim Dokja",
-    "Yoo Joonghyuk",
-    "Belladonna Davenport",
-    "Lauren Sinclair",
-    "Akashi Seijuro",
-    "Introduction to Programming",
-    "Prices and Markets",
-    "Asian Cinemas",
-    "History and Theory of Design 1",
-    "Japanese 1",
-    "Organisational Analysis",
-    "International Business",
-    "Machine Learning",
-    "Engineering Computing 1",
-    "Photography 101",
-    "Introduction to Language",
-    "Introduction to Fashion Enterprise",
-    "Accounting in Organisations & Society",
-    "Web Programming",
-    "Commercial Law",
-    "Business Statistics 1",
-  ];
-
+const SubjectBoxes = ({ subjects, callback, selected, currentPage, setCurrentPage }) => {
   const boxesPerPage = 12;
 
-  const [currentPage, setCurrentPage] = useState(0);
   const [visibleSubjectsIndex, setVisibleSubjectsIndex] = useState({
     startIndex: 0,
     endIndex: 11,
@@ -64,9 +35,11 @@ const SubjectBoxes = () => {
           ? currentPage * boxesPerPage + boxesPerPage - 1
           : subjects.length - 1,
     });
-  }, [currentPage]);
+  }, [currentPage, subjects]);
 
-  return (
+  return subjects.length === 0 ? (
+    <></>
+  ) : (
     <div className={style["container"]}>
       <div className={style["prev-btn"]}>
         {currentPage === 0 ? (
@@ -78,9 +51,15 @@ const SubjectBoxes = () => {
       <div className={style["content"]}>
         {subjects.map((subject, i) =>
           visibleSubjectsIndex.startIndex <= i && i <= visibleSubjectsIndex.endIndex ? (
-            <SubjectBox key={i} subject={subject} />
+            <SubjectBox key={i} subject={subject} callback={callback} selectedSubjects={selected} />
           ) : (
-            <SubjectBox key={i} subject={subject} styleObject={{ display: "none" }} />
+            <SubjectBox
+              key={i}
+              subject={subject}
+              styleObject={{ display: "none" }}
+              callback={callback}
+              selectedSubjects={selected}
+            />
           ),
         )}
       </div>

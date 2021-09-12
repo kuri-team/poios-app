@@ -1,11 +1,15 @@
-import { useState } from "react";
-import useDetectCloseDropdown from "../../hooks/useDetectCloseDropdown";
+import React, { useState, useContext, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 
+import { GlobalState } from "../../GlobalState";
 import Layout from "../../components/Layout";
 import Searchbar from "../../components/Tutors/Searchbar";
 import FilterWindow from "../../components/Tutors/FilterWindow";
 import TutorListElement from "../../components/Tutors/TutorListElement";
+import useDetectCloseDropdown from "../../hooks/useDetectCloseDropdown";
 import * as style from "./TutorsPage.module.css";
+import axios from "axios";
+import { set } from "mongoose";
 
 //'searching function'
 const dummyTutors = [
@@ -82,15 +86,55 @@ const dummySubject = [
   { id: 12, name: "Diplomacy" },
 ];
 
-const TutorsPage = ({ active }) => {
+const TutorsPage = () => {
+  //manage state(logged, role) in all websites
+  const state = useContext(GlobalState);
+  const [isLogged, setIsLogged] = state.userApi.isLogged;
+  const [isTutor, setIsTutor] = state.userApi.isTuTor;
+  console.log(state);
+
+  {
+    if (isTutor) {
+      return <Redirect to="/core/chat" />;
+    }
+  }
+
+  const [subjects, setSubjects] = useState([]);
+  const [majors, setMajors] = useState([]);
+
+  const getFields = () =>
+    axios.get("/core/fields-of-study").then(res => {
+      setMajors(res.data[0]);
+      setSubjects(res.data[1]);
+    });
+
+  useEffect(() => {
+    getFields();
+  }, []);
+
   //"Search functions"
   const { paramsString } = window.location;
+  //"searching subjects"
+  const subjectQuery = new URLSearchParams(paramsString).get("subject-result");
+  const filterSubject = (subjects, subjectQuery) => {
+    if (!subjectQuery) {
+      return subjects;
+    }
+
+    return subjects.filter(subject => {
+      const subjectName = subject.name.toLowerCase();
+      return subjectName.includes(subjectQuery);
+    });
+  };
+  const [filterQuery, setFilterQuery] = useState(subjectQuery || "");
+  const filteredSubject = filterSubject(subjects, filterQuery);
+
+  //searching tutors
   const tutorQuery = new URLSearchParams(paramsString).get("search-result");
   const filterTutors = (dummyTutors, tutorQuery) => {
     if (!tutorQuery) {
       return dummyTutors;
     }
-
     return dummyTutors.filter(tutor => {
       const tutorName = tutor.name.toLowerCase();
       return tutorName.includes(tutorQuery);
@@ -98,23 +142,6 @@ const TutorsPage = ({ active }) => {
   };
   const [searchQuery, setSearchQuery] = useState(tutorQuery || "");
   const filteredTutors = filterTutors(dummyTutors, searchQuery);
-
-  //"searching subjects"
-  const subjectQuery = new URLSearchParams(paramsString).get("subject-result");
-  const filterSubject = (dummySubject, subjectQuery) => {
-    if (!subjectQuery) {
-      return dummySubject;
-    }
-
-    return dummySubject.filter(subject => {
-      const subjectName = subject.name.toLowerCase();
-      return subjectName.includes(subjectQuery);
-    });
-  };
-  const [filterQuery, setFilterQuery] = useState(subjectQuery || "");
-  const filteredSubject = filterSubject(dummySubject, filterQuery);
-
-  //"toggle FilterWindow"
   const [open, setOpen] = useState(false);
   const ref = useDetectCloseDropdown(setOpen, [open]);
 
@@ -123,12 +150,22 @@ const TutorsPage = ({ active }) => {
       <div className={style["title"]}>
         <h1>CHAT ROOMS</h1>
       </div>
-      <div className={style["searchbar-container"]}>
-        <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} openState={() => setOpen(!open)} />
+      <div className={style["cut-width-container"]} ref={ref}>
+        <div className={style["searchbar-container"]}>
+          <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} openState={() => setOpen(!open)} />
+        </div>
+
+        <div className={open ? style["filter-window"] : [style["filterWindow"], style["hidden"]].join(" ")}>
+          <FilterWindow
+            filterQuery={filterQuery}
+            setFilterQuery={setFilterQuery}
+            filteredSubject={filteredSubject}
+            state={state}
+            majors={majors}
+          />
+        </div>
       </div>
-      <div className={open ? style["filter-window"] : [style["filterWindow"], style["hidden"]].join(" ")} ref={ref}>
-        <FilterWindow filterQuery={filterQuery} setFilterQuery={setFilterQuery} filteredSubject={filteredSubject} />
-      </div>
+
       {/*<ul>*/}
       {/*  {filteredTutors.map(tutor => (*/}
       {/*    <li key={tutor.id}>{tutor.name}</li>*/}
@@ -136,8 +173,8 @@ const TutorsPage = ({ active }) => {
       {/*</ul>*/}
       <div className={style["big-container"]}>
         <div className={[style["tutor-list"], style["x"], style["mandatory-scroll-snapping"]].join(" ")} dir="ltr">
-          {dummyTutors.map(tutor => (
-            <div className={style["tutor"]}>
+          {dummyTutors.map((tutor, key) => (
+            <div className={style["tutor"]} key={key}>
               <TutorListElement
                 key={tutor.id}
                 src={tutor.src}
