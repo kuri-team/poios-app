@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import useDetectCloseDropdown from "../../hooks/Header/useDetectCloseDropdown";
+import useDetectCloseDropdown from "../../hooks/useDetectCloseDropdown";
 import * as style from "./Messages.module.css";
 import * as commonStyle from "./common.module.css";
 

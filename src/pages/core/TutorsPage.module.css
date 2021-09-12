@@ -13,11 +13,16 @@
   text-align: center;
 }
 
-.tutor-list {
+.tutor {
   display: flex;
+  justify-content: space-evenly;
+}
+
+.tutor-list {
+  display: grid;
   flex-wrap: wrap;
-  justify-content: center;
-  margin: 120px 20px 200px 20px;
+  grid-template-columns: 50% 50%;
+  padding-top: 40px;
 }
 
 .hidden {
@@ -27,5 +32,38 @@
 @media only screen and (--viewport-phone) {
   .searchbar {
     padding: 0;
+  }
+
+  .big-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    margin-top: 20%;
+  }
+
+  .tutor-list {
+    display: flex;
+    flex: none;
+    overflow: auto;
+  }
+
+  .tutor-list.x {
+    flex-flow: row nowrap;
+    width: 80%;
+  }
+
+  .x.mandatory-scroll-snapping {
+    scroll-snap-type: x mandatory;
+  }
+
+  .tutor-list > .tutor {
+    flex: none;
+    scroll-snap-align: center;
+  }
+
+  .x.tutor-list > .tutor {
+    width: 100%;
   }
 }

@@ -1,16 +1,14 @@
-import Sidebar from "../../components/Chat/Sidebar";
+import { useLocation } from "react-router-dom";
+
+import Layout from "../../components/Layout";
 import ChatWindow from "../../components/Chat/ChatWindow";
 
-import * as style from "./ChatPage.module.css";
-import Layout from "../../components/Layout";
-
 const ChatPage = () => {
+  let queries = new URLSearchParams(useLocation().search);
+
   return (
     <Layout>
-      <div className={style["chatroom-content"]}>
-        <ChatWindow roomName="Room Name" />
-        <Sidebar />
-      </div>
+      <ChatWindow tutorName={queries.get("tutor")} />
     </Layout>
   );
 };

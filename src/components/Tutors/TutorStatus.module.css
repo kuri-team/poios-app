@@ -1,0 +1,36 @@
+.available,
+.busy {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.available {
+  color: #2bb928;
+}
+
+.busy {
+  color: #ec3a3aff;
+}
+
+.available .status-dot,
+.busy .status-dot {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+.available .status-dot {
+  background: #2bb928;
+}
+
+.busy .status-dot {
+  background: #ec3a3aff;
+}

@@ -1,131 +1,177 @@
 import { useState } from "react";
 import * as style from "./MyProfileInfo.module.css";
 
-const MyProfileInfo = (editAva, editName, editEmail, editPassword, editSubject) => {
+const subjectList = ["JavaScript", "PHP", "SQL", "ReactJS", "JavaScript", "JavaScript", "PHP"];
+
+const MyProfileInfo = () => {
+  const [file, setFile] = useState(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [subject, setSubject] = useState("");
-  const [file, setFile] = useState(null);
+  const [nameDisplay, setNameDisplay] = useState(false);
+  const [emailDisplay, setEmailDisplay] = useState(false);
+  const [passDisplay, setPassDisplay] = useState(false);
+  const [subjectDisplay, setSubjectDisplay] = useState(false);
+
+  const displayNameEdit = () => {
+    setNameDisplay(true);
+  };
+  const displayEmailEdit = () => {
+    setEmailDisplay(true);
+  };
+  const displayPassEdit = () => {
+    setPassDisplay(true);
+    console.log("setPassDisplay");
+  };
+  const displaySubjectEdit = () => {
+    setSubjectDisplay(true);
+    console.log("setSubjectDisplay");
+  };
 
   return (
     <div className={style["profile-bigcontainer"]}>
       <div className={style["profile-container"]}>
         <div className={style["user-avatar"]}>
+          <span>{file}</span>
           <img className={style["avatar-image"]} src={"/media/kequing.jpg"} alt="" />
           <div className={style["upload-image-form"]}>
             <div className={style["form-image-upload"]}>
-              <input type="file" value={file} onChange={e => setFile(e.target.files[0])} />
+              <input type="file" id="contained-button-file" onChange={e => setFile(e.target.files[0])} />
               <div className={style["fake-file"]}>
-                <span>Upload Image</span>
+                <label htmlFor="contained-button-file">Upload Image</label>
               </div>
             </div>
-            <div>
-              <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={editAva} />
-            </div>
+            <label htmlFor="contained-button-file">
+              <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" />
+            </label>
           </div>
         </div>
 
         <div className={style["user-info-display"]}>
           <div className={style["user-info-element"]}>
             <div className={style["user-info-row"]}>
-              <label htmlFor="name">Name: </label>
-              <div>
-                <p>Sup Lo</p>
+              <div className={style["label-container"]}>
+                <label htmlFor="name">Name: </label>
               </div>
+              <div className={style["input-place"]}>
+                {nameDisplay ? (
+                  <input type="text" className={style["form-control"]} onChange={e => setName(e.target.value)} />
+                ) : (
+                  <span>{name}</span>
+                )}
+              </div>
+              {nameDisplay ? (
+                <button
+                  className={style["mini-save-button"]}
+                  type="submit"
+                  value="SAVE"
+                  onClick={() => setNameDisplay(false)}
+                >
+                  SAVE
+                </button>
+              ) : (
+                <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={() => displayNameEdit()} />
+              )}
             </div>
-            <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={editName} />
+
             <hr />
           </div>
 
           <div className={style["user-info-element"]}>
             <div className={style["user-info-row"]}>
-              <label htmlFor="name">Email: </label>
-              <div>
-                <p>s1234567@rmit.edu.vn</p>
+              <div className={style["label-container"]}>
+                <label htmlFor="name">Email: </label>
               </div>
+              <div className={style["input-place"]}>
+                {emailDisplay ? (
+                  <input type="text" className={style["form-control"]} onChange={e => setEmail(e.target.value)} />
+                ) : (
+                  <span>{email}</span>
+                )}
+              </div>
+              {emailDisplay ? (
+                <button
+                  className={style["mini-save-button"]}
+                  type="submit"
+                  value="SAVE"
+                  onClick={() => setEmailDisplay(false)}
+                >
+                  SAVE
+                </button>
+              ) : (
+                <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={() => displayEmailEdit()} />
+              )}
             </div>
-            <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={editEmail} />
+
             <hr />
           </div>
 
           <div className={style["user-info-element"]}>
             <div className={style["user-info-row"]}>
-              <label htmlFor="name">Password: </label>
-              <div>
-                <p>*********</p>
+              <div className={style["label-container"]}>
+                <label htmlFor="name">Password: </label>
               </div>
+              <div className={style["input-place"]}>
+                {passDisplay ? (
+                  <input type="text" className={style["form-control"]} onChange={e => setPassword(e.target.value)} />
+                ) : (
+                  <span>{password}</span>
+                )}
+              </div>
+              {passDisplay ? (
+                <button
+                  className={style["mini-save-button"]}
+                  type="submit"
+                  value="SAVE"
+                  onClick={() => setPassDisplay(false)}
+                >
+                  SAVE
+                </button>
+              ) : (
+                <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={() => displayPassEdit()} />
+              )}
             </div>
-            <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={editPassword} />
+
             <hr />
           </div>
 
           <div className={style["user-info-element"]}>
             <div className={style["user-info-row"]}>
-              <label htmlFor="name">Subject: </label>
-              <div>
-                <div className={style["subject-list"]}>
-                  <div>JavaScript</div>
-                  <div>ReactJS</div>
-                  <div>NoSQL</div>
-                  <div>PHP</div>
-                  <div>PHP</div>
-                  <div>PHP</div>
-                  <div>PHP</div>
+              <div className={style["label-container"]}>
+                <label htmlFor="name">Subject: </label>
+              </div>
+              {subjectDisplay ? (
+                <div className={style["input-place"]}>
+                  <input type="text" className={style["form-control"]} onChange={e => setSubject(e.target.value)} />
                 </div>
-              </div>
+              ) : (
+                <div className={style["subject-list"]}>
+                  {subjectList.map(subject => (
+                    <div>{subject}</div>
+                  ))}
+                </div>
+              )}
+              {subjectDisplay ? (
+                <button
+                  className={style["mini-save-button"]}
+                  type="submit"
+                  value="SAVE"
+                  onClick={() => setSubjectDisplay(false)}
+                >
+                  SAVE
+                </button>
+              ) : (
+                <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={() => displaySubjectEdit()} />
+              )}
             </div>
-            <img src={"/media/icons/pencil-edit-button copy.svg"} alt="" onClick={editSubject} />
+
             <hr />
           </div>
-
-          <button className={style["savebutton"]} type="submit" value="SAVE">
-            SAVE
-          </button>
+          {/*<button className={style["savebutton"]} type="submit" value="SAVE" onClick={handleButtonClicked()}>*/}
+          {/*  SAVE*/}
+          {/*</button>*/}
         </div>
-
-        {/*EDIT USER INFO*/}
-        {/*<div className={style["user-info"]}>*/}
-        {/*  <form onSubmit={e => e.preventDefault()}>*/}
-        {/*    <label htmlFor="name">Name: </label>*/}
-        {/*    <input*/}
-        {/*      type="text"*/}
-        {/*      id="name"*/}
-        {/*      value={name}*/}
-        {/*      className={style["form-control"]}*/}
-        {/*      onChange={e => setName(e.target.value)}*/}
-        {/*    />*/}
-
-        {/*    <label htmlFor="email">Email: </label>*/}
-        {/*    <input*/}
-        {/*      type="email"*/}
-        {/*      id="email"*/}
-        {/*      value={email}*/}
-        {/*      className={style["form-control"]}*/}
-        {/*      onChange={e => setEmail(e.target.value)}*/}
-        {/*    />*/}
-
-        {/*    <label htmlFor="password">Password: </label>*/}
-        {/*    <input*/}
-        {/*      type="password"*/}
-        {/*      id="password"*/}
-        {/*      value={password}*/}
-        {/*      className={style["form-control"]}*/}
-        {/*      onChange={e => setPassword(e.target.value)}*/}
-        {/*    />*/}
-
-        {/*    <label htmlFor="subject">Subject: </label>*/}
-        {/*    <input*/}
-        {/*      type="subject"*/}
-        {/*      id="subject"*/}
-        {/*      value={subject}*/}
-        {/*      className={style["form-control"]}*/}
-        {/*      onChange={e => setSubject(e.target.value)}*/}
-        {/*    />*/}
-
-        {/*    <button type="submit" value="Save">SAVE</button>*/}
-        {/*  </form>*/}
-        {/*</div>*/}
       </div>
     </div>
   );

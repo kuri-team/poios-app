@@ -1,13 +1,16 @@
-/*ChatWindow.js*/
 .chat-window {
   grid-row: 1;
   grid-column: 2;
   height: 100%;
   color: var(--black);
-  background-color: var(--white);
+  background: var(--light-black);
 }
 
 .chat-window-header {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,31 +19,21 @@
   background-color: var(--black);
 }
 
-.header-title {
-  margin: 0;
-  color: var(--white);
-  font-weight: bold;
-  font-size: 20px;
-}
-.header-description {
-  color: var(--white);
-  font-size: 10px;
-}
-.course-name {
-  color: var(--white);
-  font-weight: bold;
-  font-size: 20px;
-}
 .header-button-group {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
   display: flex;
   align-items: center;
 }
+
 .leave-button {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  margin-right: 17px;
-  margin-left: 5px;
   padding: 10px 40px;
   color: var(--white);
   font-weight: 600;
@@ -48,28 +41,116 @@
   font-family: var(--body-font);
   background-color: #ec3a3aff;
   border: none;
-  border-radius: 20px;
+  border-radius: var(--border-radius-m);
   cursor: pointer;
-  transition: 0.3s;
+  transition: var(--transition-relaxed);
+  transition-delay: var(--transition-rapid);
 }
 
 .leave-button:hover {
   background-color: #a90707;
   cursor: pointer;
+  transition: var(--transition-rapid);
+  transition-delay: 0ms;
 }
 
 .leave-button:active {
   background-color: #ec3a3aff;
 }
 
-.function-button {
-  display: inline-flex;
+.leave-button img {
+  display: none;
+}
+
+.header-button-group .functions {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
   align-items: center;
-  justify-content: space-between;
+  margin-left: 24px;
+}
+
+.header-button-group .functions .function-button {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin: 6px;
+  border-radius: 50%;
+  transition: var(--transition-relaxed);
+  transition-delay: var(--transition-rapid);
+}
+
+.header-button-group .functions .function-button:first-of-type {
+  margin-left: 0;
+}
+
+.header-button-group .functions .function-button:last-of-type {
+  margin-right: 0;
+}
+
+.header-button-group .functions .function-button:hover {
+  color: var(--white);
+  background-color: var(--cyan);
+  cursor: pointer;
+  transition: var(--transition-extra-rapid);
+  transition-delay: 0ms;
+}
+
+.header-button-group .functions .function-button:active {
+  background-color: var(--blue);
+}
+
+.header-button-group .functions .function-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.tutor-wrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tutor-wrapper .tutor-avatar {
+  width: 45px;
+  height: 45px;
+  margin-right: 12px;
+  border-radius: 50%;
+}
+
+.tutor-wrapper .tutor-name {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 20px;
+  font-family: var(--header-font);
+  text-decoration: none;
+  transition: var(--transition-medium);
+  transition-delay: var(--transition-rapid);
+}
+
+.tutor-wrapper .tutor-name:hover {
+  color: var(--cyan);
+  cursor: pointer;
+  transition: var(--transition-extra-rapid);
+  transition-delay: var(--transition-near-instant);
+}
+
+.mobile-menu-button {
+  display: none;
   width: 20px;
-  margin-right: 10px;
-  margin-left: 5px;
-  padding: 10px;
+  padding: 10px 0 10px 10px;
   color: var(--white);
   font-weight: 700;
   font-size: 20px;
@@ -78,38 +159,18 @@
   transition: 0.3s;
 }
 
-.function-button:hover {
+.mobile-menu-button:hover {
   color: var(--white);
   background-color: var(--blue);
   cursor: pointer;
 }
-.function-icon {
-  width: auto;
-  height: 20px;
-  margin-right: 5px;
-}
-
-.profile-wrapper {
-  display: inline-flex;
-}
-
-.avatar {
-  width: 30px;
-  height: 30px;
-  margin-left: 12px;
-  vertical-align: middle;
-  border-radius: 50%;
-}
 
 .chat-window-content {
-  display: flex;
-  flex-direction: column;
   box-sizing: border-box;
-  height: calc(100% - 144px);
-  padding: 15px;
+  height: calc(100vh - 144px);
+  padding: 20px;
   overflow-y: scroll;
   color: var(--white);
-  background: var(--light-black);
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb) transparent;
 }
@@ -128,11 +189,25 @@
   background-color: var(--scrollbar-thumb);
 }
 
-.chat-window-content .wrapper {
-  max-height: 0; /* TODO: Find out why the fuck does this work??? */
+.chat-window-content .inner {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--content-w-min);
+  max-width: var(--content-w-regular);
+  margin: 0 auto;
 }
 
 .form {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -141,15 +216,20 @@
   background-color: var(--black);
 }
 
-.input-message-content {
-  width: 100%;
-  margin: 0 16px;
+.form * {
+  margin: 0 6px;
+}
+
+.form:first-child,
+.form:last-child {
+  margin: 0;
 }
 
 .input-message {
   box-sizing: border-box;
   width: 100%;
   height: 40px;
+  margin: 0;
   padding: 0 20px;
   border: 2px solid transparent;
   border-radius: var(--border-radius-m);
@@ -163,64 +243,95 @@
   transition: border var(--transition-extra-rapid);
 }
 
-.attach-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 20px;
-  margin-right: 5px;
-  margin-left: 5px;
-  padding: 10px;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: 0.3s;
+.input-message-content {
+  width: 100%;
 }
 
-.attach-button:hover {
-  background-color: var(--blue);
-  cursor: pointer;
-}
-
+.attach-button,
 .send-button {
-  display: inline-flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 20px;
-  margin: 0 12px 0 0;
-  padding: 10px;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 20px;
+  justify-content: center;
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: var(--transition-relaxed);
+  transition-delay: var(--transition-rapid);
+}
+
+.attach-button:hover,
+.send-button:hover {
+  background-color: var(--light-black);
   cursor: pointer;
-  transition: 0.3s;
+  transition: var(--transition-extra-rapid);
+  transition-delay: 0ms;
+}
+
+.attach-button:active {
+  background-color: var(--lighter-black);
 }
 
 .send-button:hover {
+  background-color: var(--cyan);
+}
+
+.send-button:active {
   background-color: var(--blue);
-  cursor: pointer;
+}
+
+.attach-button .function-icon,
+.send-button .function-icon {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.send-button .function-icon {
+  width: 24px;
+  height: 24px;
+  transform: translateX(2px);
 }
 
 @media only screen and (--viewport-phone) {
-  .chat-window-header {
-    justify-content: center;
+  .desktop-only {
+    display: none !important;
   }
-  .header-title {
-    padding-right: 5px;
-    font-size: 11px;
+
+  .chat-window-header {
+    padding: 0 20px;
+  }
+
+  .header-button-group {
+    justify-content: space-between;
+    width: 100%;
   }
 
   .leave-button {
-    margin-right: 2px;
-    padding: 10px 10px;
+    padding: 10px 22px;
   }
 
-  .input-message-content {
-    width: 55%;
+  .leave-button tspan {
+    display: none;
+  }
+
+  .leave-button img {
+    display: block;
   }
 
   .form {
-    justify-content: flex-start;
+    padding: 0 6px;
+  }
+
+  .form * {
+    margin: 0 2px;
+  }
+
+  .input-message {
+    padding: 0 12px;
   }
 }

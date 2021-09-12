@@ -84,31 +84,17 @@
   background-color: var(--lighter-gray);
 }
 
-.button-container {
+.status {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
 }
 
-.book-button,
-.message-button {
-  margin-top: 8px;
-  margin-right: 1rem;
-  padding: 10px 18px;
-  color: var(--white);
-  font-weight: bold;
-  font-size: 0.9rem;
-  text-align: center;
-  background-color: var(--dark-cyan);
-  border: none;
-  border-radius: 10px;
+.status-detail .green,
+.status-detail .red {
+  width: 14px;
+  margin-right: 4px;
+  margin-left: 10px;
 }
 
-.message-button {
-  background-color: var(--gray);
-}
-
-.book-button,
-.message-button:hover {
-  cursor: pointer;
+.green-active {
+  color: green;
 }

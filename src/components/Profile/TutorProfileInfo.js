@@ -1,4 +1,7 @@
 import * as style from "./TutorProfileInfo.module.css";
+import { useState } from "react";
+
+const subjectList = ["JavaScript", "PHP", "SQL", "ReactJS", "JavaScript", "JavaScript", "PHP"];
 
 const TutorProfileInfo = () => {
   return (
@@ -14,7 +17,6 @@ const TutorProfileInfo = () => {
               <img src={"/media/icons/star_empty.svg"} alt="" />
               <img src={"/media/icons/star_empty.svg"} alt="" />
             </div>
-            <span className={style["view-comments"]}>View all comments</span>
           </div>
         </div>
 
@@ -37,22 +39,21 @@ const TutorProfileInfo = () => {
             <div className={style["user-info-element"]}>
               <label htmlFor="name">Subject: </label>
               <div className={style["subject-list"]}>
-                <div>JavaScript</div>
-                <div>ReactJS</div>
-                <div>NoSQL</div>
-                <div>PHP</div>
-                <div>PHP</div>
-                <div>PHP</div>
-                <div>PHP</div>
+                {subjectList.map(subject => (
+                  <div>{subject}</div>
+                ))}
               </div>
             </div>
             <div className={style["button-container"]}>
-              <button className={style["book-button"]} type="submit" value="BookAppointment">
-                BOOK AN APPOINTMENT
-              </button>
-              <button className={style["message-button"]} type="submit" value="SendMessage">
-                SEND A MESSAGE
-              </button>
+              <div className={style["status"]}>
+                <div>Status:</div>
+                <div className={style["status-detail"]}>
+                  <img className={style["green"]} src={"/media/icons/Green_sphere.svg"} alt="" />
+                  <span className={style["green-active"]}>Available</span>
+                  {/*<img className={style["red"]} src={"/media/icons/red-circle.svg"} alt="" />*/}
+                  {/*<span className={style["red-offline"]}>Busy</span>*/}
+                </div>
+              </div>
             </div>
           </div>
         </div>
