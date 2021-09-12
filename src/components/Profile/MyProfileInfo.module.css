@@ -21,6 +21,7 @@
 }
 
 .upload-image-form .form-image-upload {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,6 +38,20 @@
 }
 
 .fake-file label:hover {
+  cursor: pointer;
+}
+
+.form-image-upload input {
+  visibility: hidden;
+}
+
+.form-image-upload .fake-file {
+  position: absolute;
+  top: 14px;
+  color: var(--black);
+}
+
+.fake-file:hover {
   cursor: pointer;
 }
 
