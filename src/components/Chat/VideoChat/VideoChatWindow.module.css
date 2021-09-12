@@ -16,8 +16,15 @@
 
 @media only screen and (--viewport-phone) {
   .wrapper .app-bar {
-    padding: 10px 50px;
-    font-size: 10px;
+    padding: 10px 10px;
+    font-size: 8px;
+    white-space: nowrap;
+  }
+}
+
+@media only screen and (--viewport-tablet) {
+  .wrapper .app-bar {
+    padding: 10px 40px;
     white-space: nowrap;
   }
 }

@@ -17,3 +17,10 @@
   border: 3px solid var(--black);
   border-radius: 15px;
 }
+
+@media only screen and (--viewport-phone) {
+  .popup {
+    width: 250px;
+    height: 150px;
+  }
+}

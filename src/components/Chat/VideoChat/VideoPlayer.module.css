@@ -129,3 +129,17 @@
     border-color: var(--white);
   }
 }
+
+@media only screen and (--viewport-tablet) {
+  .video-wrapper {
+    flex-direction: column;
+  }
+  .video-wrapper .video-content {
+    margin: 10px 0 0 0;
+  }
+  .video-wrapper .video-content .video {
+    width: 250px;
+    margin: 0 10px 5px 10px;
+    border-radius: 8px;
+  }
+}
