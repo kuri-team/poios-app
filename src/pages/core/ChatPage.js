@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { useLocation } from "react-router-dom";
 
 import Layout from "../../components/Layout";

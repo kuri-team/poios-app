@@ -1,0 +1,26 @@
+.popup {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 200px;
+}
+
+.popup-inner {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  padding: 32px;
+  color: var(--black);
+  background-color: var(--white);
+  border: 3px solid var(--black);
+  border-radius: 15px;
+}
+
+@media only screen and (--viewport-phone) {
+  .popup {
+    width: 250px;
+    height: 150px;
+  }
+}

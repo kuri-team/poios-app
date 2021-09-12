@@ -1,0 +1,145 @@
+.video-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.video-wrapper .video-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 15px;
+  color: white;
+  background-color: var(--black);
+  border: 2px solid white;
+  border-radius: 8px;
+}
+
+.video-wrapper .video-content .video-username {
+  margin: 10px;
+  padding: 0;
+  text-align: center;
+}
+
+.video-wrapper .video-content .video {
+  width: 350px;
+  margin: 0 10px 15px 10px;
+  border-radius: 8px;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg); /* Safari and Chrome */
+  -moz-transform: rotateY(180deg); /* Firefox */
+}
+
+.caller-name {
+  text-align: center;
+}
+
+.call-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.accept-call {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin: 6px;
+  border-radius: 50%;
+  transition: var(--transition-relaxed);
+  transition-delay: var(--transition-rapid);
+}
+
+.accept-call:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: var(--transition-extra-rapid);
+  transition-delay: 0ms;
+}
+
+.decline-call {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin: 6px;
+  border-radius: 50%;
+  transition: var(--transition-relaxed);
+  transition-delay: var(--transition-rapid);
+}
+
+.decline-call:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: var(--transition-extra-rapid);
+  transition-delay: 0ms;
+}
+
+.make-a-call {
+  position: relative;
+  box-sizing: border-box;
+  height: 30px;
+  margin: 0 0 10px 0;
+  padding: 0 25px;
+  overflow: hidden;
+  color: var(--white);
+  font-size: 100%;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  text-transform: none;
+  background-color: var(--cyan);
+  border-width: 0;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s, box-shadow 0.08s ease-in;
+}
+
+.make-a-call:hover {
+  background-color: var(--dark-cyan);
+  cursor: pointer;
+  transition: var(--transition-extra-rapid);
+  transition-delay: 0ms;
+}
+.avatar-container {
+  display: flex;
+  justify-content: center;
+}
+.avatar {
+  width: 100px;
+  height: 100px;
+  border: 3px solid;
+  border-radius: 50%;
+  animation: changeColor 1s infinite alternate;
+}
+
+@keyframes changeColor {
+  from {
+    border-color: #2bb928;
+  }
+  to {
+    border-color: var(--white);
+  }
+}
+
+@media only screen and (--viewport-tablet) {
+  .video-wrapper {
+    flex-direction: column;
+  }
+  .video-wrapper .video-content {
+    margin: 10px 0 0 0;
+  }
+  .video-wrapper .video-content .video {
+    width: 250px;
+    margin: 0 10px 5px 10px;
+    border-radius: 8px;
+  }
+}
