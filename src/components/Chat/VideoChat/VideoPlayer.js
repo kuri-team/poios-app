@@ -4,6 +4,7 @@ import { SocketContext } from "../../../SocketContext";
 import Notification from "./Notification";
 
 import * as style from "./VideoPlayer.module.css";
+import { Link } from "react-router-dom";
 
 const VideoPlayer = ({ tutorName }) => {
   const { name, callAccepted, myVideo, userVideo, callEnded, stream, call, answerCall, callUser, me, leaveCall } =
@@ -29,6 +30,10 @@ const VideoPlayer = ({ tutorName }) => {
           <Notification trigger={buttonPopUp}>
             {call.isReceivingCall && !callAccepted && (
               <div>
+                <div className={style["avatar-container"]}>
+                  <img className={style["avatar"]} src={"/media/profile-placeholder_143x143.png"} alt="avatar" />
+                </div>
+                <audio src={"/media/chatroom-icons/phone_call.mp3"} autoPlay loop />
                 <h3 className={style["caller-name"]}>{call.name} is calling ...</h3>
                 <div className={style["call-button"]}>
                   <div
