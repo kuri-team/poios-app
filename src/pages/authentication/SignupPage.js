@@ -39,9 +39,9 @@ const SignupPage = ({ prevStepUrl, authRedirectTo }) => {
       data.append("image", avaObj);
       await axios({
         method: "post",
-        url:"/auth/signup",
+        url: "/auth/signup",
         data: data,
-        headers: {"Content-Type": "multipart/form-data"}
+        headers: { "Content-Type": "multipart/form-data" },
       });
 
       localStorage.setItem("firstLogin", true);

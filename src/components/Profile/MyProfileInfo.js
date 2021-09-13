@@ -9,10 +9,10 @@ const MyProfileInfo = ({ state }) => {
   const getMajor = userInfo.major;
   const subjectList = userInfo.subjects;
   const ava = userInfo.image;
-  const avaRegex = (ava) => {
-    const avareplace = ava.replace(/avatar\\*/, 'server/avatar');
-    return avareplace
-  }
+  const avaRegex = ava => {
+    const avareplace = ava.replace(/avatar\\*/, "server/avatar");
+    return avareplace;
+  };
 
   const initialState = {
     name: "",

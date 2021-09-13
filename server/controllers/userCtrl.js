@@ -10,14 +10,15 @@ const userCtrl = {
       const oldEmail = await Userdb.findOne({ email });
       const oldName = await Userdb.findOne({ name });
       const usernameRegex = /^[a-zA-Z0-9]+$/;
-      const emailRegex = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+      const emailRegex =
+        /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
       if (oldEmail) {
         return res.status(400).json({ msg: "User Already Exist. Please Login" });
       } else if (oldName) {
         return res.status(400).json({ msg: "User Already Exist. Please Login" });
       } else if (password.length < 6) {
         return res.status(400).json({ msg: "Password must be at least 6 characters." });
-      } else if (name.length >20 || !name.match(usernameRegex)) {
+      } else if (name.length > 20 || !name.match(usernameRegex)) {
         return res.status(400).json({ msg: "Invalid Username" });
       } else if (!email.match(emailRegex)) {
         return res.status(400).json({ msg: "Invalid Email" });
