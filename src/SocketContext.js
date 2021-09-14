@@ -15,10 +15,12 @@ const ContextProvider = ({ children }) => {
   const [call, setCall] = useState({});
   const [me, setMe] = useState("");
   const [isCalling, setIsCalling] = useState(false);
+  const [isSharing, setIsSharing] = useState(false);
 
   const myVideo = useRef();
   const userVideo = useRef();
   const connectionRef = useRef();
+  const myPeer = useRef();
 
   useEffect(() => {
     socket.on("me", id => setMe(id));
@@ -46,10 +48,41 @@ const ContextProvider = ({ children }) => {
     connectionRef.current = peer;
   };
 
-  const callUser = id => {
+  const cameraOff = () => {
+    navigator.mediaDevices.getUserMedia({ video: false, audio: true }).then(currentStream => {
+      setStream(currentStream);
+
+      myVideo.current.srcObject = currentStream;
+    });
+  };
+
+  const cameraOn = () => {
     navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(currentStream => {
       setStream(currentStream);
 
+      myVideo.current.srcObject = currentStream;
+    });
+  };
+
+  const voiceOn = () => {
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(currentStream => {
+      setStream(currentStream);
+
+      myVideo.current.srcObject = currentStream;
+    });
+  };
+  const voiceOff = () => {
+    navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then(currentStream => {
+      setStream(currentStream);
+
+      myVideo.current.srcObject = currentStream;
+    });
+  };
+
+  const callUser = id => {
+    setIsSharing(false);
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(currentStream => {
+      setStream(currentStream);
       myVideo.current.srcObject = currentStream;
     });
     const peer = new Peer({ initiator: true, trickle: false, stream });
@@ -89,6 +122,18 @@ const ContextProvider = ({ children }) => {
     window.location.reload();
   };
 
+  const shareScreen = () => {
+    setIsSharing(true);
+    navigator.mediaDevices.getDisplayMedia({ cursor: true }).then(currentStream => {
+      setStream(currentStream);
+      myVideo.current.srcObject = currentStream;
+    });
+    const peer = new Peer({ initiator: true, trickle: false, stream });
+    peer.on("stream", currentStream => {
+      userVideo.current.srcObject = currentStream;
+    });
+  };
+
   return (
     <SocketContext.Provider
       value={{
@@ -106,6 +151,12 @@ const ContextProvider = ({ children }) => {
         leaveCall,
         answerCall,
         leaveCallScene,
+        cameraOn,
+        cameraOff,
+        voiceOn,
+        voiceOff,
+        shareScreen,
+        isSharing,
       }}
     >
       {children}

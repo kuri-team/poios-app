@@ -6,6 +6,7 @@ import { SocketContext } from "../../SocketContext";
 import VideoChatWindow from "./VideoChat/VideoChatWindow";
 
 import * as style from "./ChatWindow.module.css";
+import ScreenSharing from "./VideoChat/ScreenSharing";
 
 const ChatWindow = ({ tutorName }) => {
   const messages = [
@@ -67,7 +68,7 @@ const ChatWindow = ({ tutorName }) => {
     },
   ];
 
-  const { me, isCalling, callUser, leaveCallScene } = useContext(SocketContext);
+  const { me, isCalling, callUser, leaveCallScene, shareScreen, isSharing } = useContext(SocketContext);
 
   return (
     <div className={style["chat-window"]}>
@@ -84,7 +85,7 @@ const ChatWindow = ({ tutorName }) => {
         <div className={style["header-button-group"]}>
           <button className={style["leave-button"]} onClick={leaveCallScene}>
             <tspan>Leave</tspan>
-            <img src={"/media/chatroom-icons/call_end_24dp.svg"} alt="" />
+            <img src={"/media/chatroom-icons/call_end_24dp.svg"} alt="Leave call" />
           </button>
           <div className={style["functions"]}>
             <div className={style["function-button"]}>
@@ -95,7 +96,16 @@ const ChatWindow = ({ tutorName }) => {
                 style={{ width: "22px", height: "22px", transform: "translateY(1px)" }}
               />
             </div>
-            <div className={[style["function-button"], style["desktop-only"]].join(" ")}>
+            <div
+              className={[style["function-button"], style["desktop-only"]].join(" ")}
+              onClick={() => {
+                if (isCalling === true) {
+                  shareScreen();
+                } else {
+                  alert("Please start a call to share screen.");
+                }
+              }}
+            >
               <img
                 className={style["function-icon"]}
                 src={"/media/chatroom-icons/screen_share_24dp.svg"}
@@ -159,7 +169,9 @@ const ChatWindow = ({ tutorName }) => {
         </div>
       )}
 
-      {isCalling && <VideoChatWindow tutorName={tutorName} />}
+      {isCalling && !isSharing && <VideoChatWindow tutorName={tutorName} />}
+
+      {isCalling && isSharing && <ScreenSharing />}
     </div>
   );
 };

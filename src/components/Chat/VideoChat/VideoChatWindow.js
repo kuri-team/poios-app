@@ -6,7 +6,7 @@ const VideoChatWindow = ({ tutorName }) => {
   return (
     <div className={style["wrapper"]}>
       <div className={style["app-bar"]}>
-        <h1 className={style["app-bar-header"]}>Video Call Application</h1>
+        <h1 className={style["app-bar-header"]}>Video Call</h1>
       </div>
       <VideoPlayer tutorName={tutorName} />
     </div>
