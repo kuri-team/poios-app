@@ -23,11 +23,16 @@
 
 .video-wrapper .video-content .video {
   width: 350px;
+  height: 250px;
   margin: 0 10px 15px 10px;
   border-radius: 8px;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg); /* Safari and Chrome */
   -moz-transform: rotateY(180deg); /* Firefox */
+}
+
+.hide {
+  display: none;
 }
 
 .caller-name {
@@ -40,7 +45,38 @@
   align-items: center;
   justify-content: center;
 }
+.video-feature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.video-feature-icon-function {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 5px 5px;
+  background-color: var(--light-black);
+  border-radius: 50%;
+  transition: var(--transition-relaxed);
+  transition-delay: var(--transition-rapid);
+}
+.video-feature-icon-function:hover {
+  background-color: var(--dark-cyan);
+  cursor: pointer;
+  transition: var(--transition-extra-rapid);
+  transition-delay: 0ms;
+}
 
+.video-feature-icon {
+  width: 20px;
+  height: 20px;
+}
 .accept-call {
   display: -webkit-flex;
   display: -moz-flex;
@@ -84,17 +120,15 @@
 }
 
 .make-a-call {
-  position: relative;
-  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 30px;
-  margin: 0 0 10px 0;
+  margin: 0 0 5px 5px;
   padding: 0 25px;
   overflow: hidden;
   color: var(--white);
-  font-size: 100%;
   font-family: "Open Sans", sans-serif;
-  text-align: center;
-  text-transform: none;
   background-color: var(--cyan);
   border-width: 0;
   border-radius: 6px;
@@ -108,6 +142,40 @@
   cursor: pointer;
   transition: var(--transition-extra-rapid);
   transition-delay: 0ms;
+}
+
+.end-call {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  margin: 0 0 5px 5px;
+  padding: 0 25px;
+  overflow: hidden;
+  color: var(--white);
+  font-family: "Open Sans", sans-serif;
+  background-color: #ec3a3aff;
+  border-width: 0;
+  border-radius: var(--border-radius-m);
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s, box-shadow 0.08s ease-in;
+}
+
+.end-call:hover {
+  background-color: #a90707;
+  cursor: pointer;
+  transition: var(--transition-extra-rapid);
+  transition-delay: 0ms;
+}
+
+.avatar-alter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 250px;
+  margin: 0 10px 15px 10px;
 }
 .avatar-container {
   display: flex;
