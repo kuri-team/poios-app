@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Redirect } from "react-router-dom";
+import axios from "axios";
 
 import { GlobalState } from "../../GlobalState";
 import Layout from "../../components/Layout";
@@ -8,10 +9,8 @@ import FilterWindow from "../../components/Tutors/FilterWindow";
 import TutorListElement from "../../components/Tutors/TutorListElement";
 import useDetectCloseDropdown from "../../hooks/useDetectCloseDropdown";
 import * as style from "./TutorsPage.module.css";
-import axios from "axios";
-import { set } from "mongoose";
 
-//'searching function'
+// searching function
 const dummyTutors = [
   {
     id: 1,
