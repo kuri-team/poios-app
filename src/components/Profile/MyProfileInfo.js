@@ -237,7 +237,7 @@ const MyProfileInfo = ({ state }) => {
                 <div className={style["input-place"]}>
                   <span>{getMajor}</span>
                 </div>
-                <Link to={"/core/fields-of-study"}>
+                <Link to={"/core/update-fields-of-study"}>
                   <img src={"/media/icons/pencil-edit-button.svg"} alt="" />
                 </Link>
               </div>
@@ -254,7 +254,7 @@ const MyProfileInfo = ({ state }) => {
                     return <div key={key}>{subject}</div>;
                   })}
                 </div>
-                <Link to={"/core/fields-of-study"}>
+                <Link to={"/core/update-fields-of-study"}>
                   <img src={"/media/icons/pencil-edit-button.svg"} alt="" />
                 </Link>
               </div>
