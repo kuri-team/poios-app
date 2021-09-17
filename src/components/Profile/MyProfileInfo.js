@@ -98,7 +98,7 @@ const MyProfileInfo = ({ state }) => {
                 </div>
               </div>
               <label htmlFor="contained-button-file">
-                <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" />
+                <img src={"/media/icons/pencil-edit-button.svg"} alt="" />
               </label>
             </div>
           </div>
@@ -134,7 +134,7 @@ const MyProfileInfo = ({ state }) => {
                     SAVE
                   </button>
                 ) : (
-                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" onClick={() => displayNameEdit()} />
+                  <img src={"/media/icons/pencil-edit-button.svg"} alt="" onClick={() => displayNameEdit()} />
                 )}
               </div>
               <hr />
@@ -170,7 +170,7 @@ const MyProfileInfo = ({ state }) => {
                     SAVE
                   </button>
                 ) : (
-                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" onClick={() => displayEmailEdit()} />
+                  <img src={"/media/icons/pencil-edit-button.svg"} alt="" onClick={() => displayEmailEdit()} />
                 )}
               </div>
 
@@ -223,7 +223,7 @@ const MyProfileInfo = ({ state }) => {
                     SAVE
                   </button>
                 ) : (
-                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" onClick={() => displayRoleEdit()} />
+                  <img src={"/media/icons/pencil-edit-button.svg"} alt="" onClick={() => displayRoleEdit()} />
                 )}
               </div>
               <hr />
@@ -238,7 +238,7 @@ const MyProfileInfo = ({ state }) => {
                   <span>{getMajor}</span>
                 </div>
                 <Link to={"/core/fields-of-study"}>
-                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" />
+                  <img src={"/media/icons/pencil-edit-button.svg"} alt="" />
                 </Link>
               </div>
               <hr />
@@ -255,7 +255,7 @@ const MyProfileInfo = ({ state }) => {
                   })}
                 </div>
                 <Link to={"/core/fields-of-study"}>
-                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" />
+                  <img src={"/media/icons/pencil-edit-button.svg"} alt="" />
                 </Link>
               </div>
               <hr />
