@@ -44,17 +44,13 @@ We came up with an idea to build a real-time online instant messaging service ai
 specifically at higher education students to connect 1-on-1 with tutors.
 With this service, the user needs to register as a student or tutor, then set up their profile
 appropriately, such as declaring their major and the subjects they’re interested in.
-After logging in, the student user can view the timetable (appointment schedule) of any
-tutor to see their schedule and book a 1-on-1 “Study Session” with that tutor when they
-are available. The tutor can choose to accept or decline the student’s appointment.
-The application provides features including text messaging, voice call, video call, and a
-whiteboard (optional), to assist the study session. After finishing the tutoring session, the student
-can leave a star rating and constructive feedback for the tutor.
+After logging in, the student user can see the tutor lists and choose an availbe tutor.
+The application provides features including text messaging, voice call, video call, and screen sharing to assist the study session.
 
 ### 3. Technologies
 
 - Front-end stack: ReactJS, PostCSS
-- Back-end stack: NodeJS, MongoDB, Socket.io, ExpressJS
+- Back-end stack: NodeJS, MongoDB Atlas, Socket.io, ExpressJS
 - Hosting: Netlify, AWS
 
 ### 4. Functional Requirements
@@ -63,14 +59,15 @@ can leave a star rating and constructive feedback for the tutor.
 - User can register a tutor account.
 - User can login to their respective account and manage their information:
   - Both the student and tutor account have an “avatar” and a “bio” section.
-  - Student user can choose a subject that they’re interested in.
-  - Tutor user can choose a subject that they want to mentor.
+  - Student user can choose a major and subjects that they’re interested in.
+  - Tutor user can choose a major and subjects that they want to mentor.
 - The student and the tutor have the option to communicate 1-on-1 using real-time
   messaging.
 - The student and the tutor have the option to communicate 1-on-1 using voice
   call.
 - The student and the tutor have the option to communicate 1-on-1 using video
   call.
+- The student can share their screen during a video call.
 - Search bar and filter for tutor lists
 
 ### 5. Non-functional Requirements
@@ -78,6 +75,7 @@ can leave a star rating and constructive feedback for the tutor.
 - All the user-inputs should be validated before submission (Pay attention on XSS bugs and SQL Injection)
 - The front-end will be hosted on Netlify
 - AWS for back-end hosting.
+- MongoDB Atlas for storage.
 - Write a report
 
 ### More specific details provided on [RMIT Canvas](https://rmit.instructure.com/courses/88702/assignments/596400) (Login with RMIT ID)
