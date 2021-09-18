@@ -109,7 +109,15 @@ can leave a star rating and constructive feedback for the tutor.
 ---
 
 ## Work distribution
-Due to health problems, the group leader has disappeared for 1 week twice during the progress of building the webapp, which causes the slow development progress and we have not able to deploy the backend. The leader built the backend repo and took responsibility for the implement the others’ works into the backend repo 1 week before the deadline then disappeared without having the jobs done and noticing the other members. Currently, the website’s frontend is hosted on Netlify but it does not have full functions due to the lack of data from backend. Full functions can only be tested on localhost. Please consider the situation of our group.
+Due to health problems, the group leader has disappeared twice during the progress (once it last for 1 week) of building the webapp, which causes the slow development progress and we have not able to deploy the backend. The others had built their features before handed them to the leader. The leader built the backend repo and took responsibility for the implement the others’ works into the backend repo 1 week before the deadline then disappeared without having the jobs done and noticing the other members. Currently, the website’s frontend is hosted on Netlify but it does not have full functions due to the lack of data from backend. Full functions can only be tested on localhost. Please consider the situation of our group.
+
+Doan Yen Nhi : Developer, Github Administrator </br>
+Du Duc Manh : Developer, Report writer </br>
+Nguyen Hoang Linh : Developer, Github Administrator </br>
+Nguyen Hoang To Nhu : Developer, UI Designer </br>
+Tuong-Minh “Mike” Vo : Developer, UI Designer, Leader </br>
+Vu Bui Khanh Linh : Developer, UI Designer </br>
+
 
 ### Key people
 
