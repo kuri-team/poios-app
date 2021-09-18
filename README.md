@@ -109,6 +109,7 @@ can leave a star rating and constructive feedback for the tutor.
 ---
 
 ## Work distribution
+Due to health problems, the group leader has disappeared for 1 week twice during the progress of building the webapp, which causes the slow development progress and we have not able to deploy the backend. The leader built the backend repo and took responsibility for the implement the others’ works into the backend repo 1 week before the deadline then disappeared without having the jobs done and noticing the other members. Currently, the website’s frontend is hosted on Netlify but it does not have full functions due to the lack of data from backend. Full functions can only be tested on localhost. Please consider the situation of our group.
 
 ### Key people
 
