@@ -79,35 +79,6 @@ can leave a star rating and constructive feedback for the tutor.
 
 ### More specific details provided on [RMIT Canvas](https://rmit.instructure.com/courses/88702/assignments/596400) (Login with RMIT ID)
 
----
-
-## Implementation
-
-### 1. Deployment
-
-#### - Poios web/mobile tutor instant messaging application, deployed with Netlify: https://poios.netlify.app (`main` branch)
-
-#### - Database hosted with AWS/ Firebase
-
-#### - App demo video: https://youtu.be/fTh-6qXN13A
-
-### 2. Coding styles & conventions
-
-#### Front-end
-
-- [HTML & CSS The Right Way](http://htmlcsstherightway.org/)
-- [Kuri Front-end Guidelines](https://github.com/kuri-team/front-end-guidelines)
-
-#### Back-end
-
-**crtl /**
-
-#### Further readings
-
-**crtl /**
-
----
-
 ## Work distribution
 Due to health problems, the group leader has disappeared twice during the progress (once it last for 1 week) of building the webapp, which causes the slow development progress and we have not able to deploy the backend. The others had built their features before handed them to the leader. The leader built the backend repo and took responsibility for the implement the others’ works into the backend repo 1 week before the deadline then disappeared without having the jobs done and noticing the other members. Currently, the website’s frontend is hosted on Netlify but it does not have full functions due to the lack of data from backend. Full functions can only be tested on localhost. Please consider the situation of our group.
 
