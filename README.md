@@ -14,7 +14,7 @@
 4. Type “npm run start” for both directories so that they are running at the same time. </br>
 5. Run “localhost:8000” on a browser after both the backend and frontend have started. </br>
 6. Register new account using email and password with proper format to test full functions. If you want to login, use this credential:
-- username: Kuri
+- username: Kuri,
 - password: 123456
 
 ### Links
@@ -41,10 +41,10 @@ learning.
 ### 2. Topic
 
 We came up with an idea to build a real-time online instant messaging service aimed
-specifically at higher education students to connect 1-on-1 with tutors.
+specifically at higher education students to connect with tutors.
 With this service, the user needs to register as a student or tutor, then set up their profile
 appropriately, such as declaring their major and the subjects they’re interested in.
-After logging in, the student user can see the tutor lists and choose an availbe tutor.
+After logging in, the student user can see the tutor lists and join a chat room of an available tutor.
 The application provides features including text messaging, voice call, video call, and screen sharing to assist the study session.
 
 ### 3. Technologies
@@ -58,16 +58,16 @@ The application provides features including text messaging, voice call, video ca
 - User can register a student account.
 - User can register a tutor account.
 - User can login to their respective account and manage their information:
-  - Both the student and tutor account have an “avatar” and a “bio” section.
+  - Both the student and the tutor can edit their profile on the "My profile" page.
   - Student user can choose a major and subjects that they’re interested in.
   - Tutor user can choose a major and subjects that they want to mentor.
-- The student and the tutor have the option to communicate 1-on-1 using real-time
+- The student and the tutor have the option to communicate using real-time
   messaging.
-- The student and the tutor have the option to communicate 1-on-1 using voice
+- The student and the tutor have the option to communicate using voice
   call.
-- The student and the tutor have the option to communicate 1-on-1 using video
+- The student and the tutor have the option to communicate using video
   call.
-- The student can share their screen during a video call.
+- The student and the tutor can share the screen during a video call.
 - Search bar and filter for tutor lists
 
 ### 5. Non-functional Requirements
@@ -81,14 +81,14 @@ The application provides features including text messaging, voice call, video ca
 ### More specific details provided on [RMIT Canvas](https://rmit.instructure.com/courses/88702/assignments/596400) (Login with RMIT ID)
 
 ## Work distribution
-Due to health problems, the group leader has disappeared twice during the progress (once it last for 1 week) of building the webapp, which causes the slow development progress and we have not able to deploy the backend. The others had built their features before handed them to the leader. The leader built the backend repo and took responsibility for the implement the others’ works into the backend repo 1 week before the deadline then disappeared without having the jobs done and noticing the other members. Currently, the website’s frontend is hosted on Netlify but it does not have full functions due to the lack of data from backend. Full functions can only be tested on localhost. Please consider the situation of our group.
+Due to health problems, the group leader has disappeared twice during the progress (once it last for 1 week) of building the webapp, which causes the slow development progress and we have not been able to deploy the backend. The others had built their features before handed them to the leader. The leader built the backend repo and took responsibility for the implement the others’ works into the backend repo 1 week before the deadline then disappeared without having the jobs done and noticing the other members. Currently, the website’s frontend is hosted on Netlify but it does not have full functions due to the lack of data from backend. Full functions can only be tested on localhost. Please consider the situation of our group.
 
-Doan Yen Nhi : Developer, Github Administrator </br>
-Du Duc Manh : Developer, Report writer </br>
-Nguyen Hoang Linh : Developer, Github Administrator </br>
-Nguyen Hoang To Nhu : Developer, UI Designer </br>
-Tuong-Minh “Mike” Vo : Developer, UI Designer, Leader </br>
-Vu Bui Khanh Linh : Developer, UI Designer </br>
+- Doan Yen Nhi : Developer, Github Administrator
+- Du Duc Manh : Developer, Report writer
+- Nguyen Hoang Linh : Developer, Github Administrator
+- Nguyen Hoang To Nhu : Developer, UI Designer
+- Tuong-Minh “Mike” Vo : Developer, UI Designer, Leader
+- Vu Bui Khanh Linh : Developer, UI Designer
 
 
 ### Key people
