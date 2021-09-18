@@ -98,7 +98,7 @@ const MyProfileInfo = ({ state }) => {
                 </div>
               </div>
               <label htmlFor="contained-button-file">
-                <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" />
+                <img src={"/media/icons/pencil-edit-button.svg"} alt="" />
               </label>
             </div>
           </div>
@@ -134,7 +134,7 @@ const MyProfileInfo = ({ state }) => {
                     SAVE
                   </button>
                 ) : (
-                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" onClick={() => displayNameEdit()} />
+                  <img src={"/media/icons/pencil-edit-button.svg"} alt="" onClick={() => displayNameEdit()} />
                 )}
               </div>
               <hr />
@@ -170,7 +170,7 @@ const MyProfileInfo = ({ state }) => {
                     SAVE
                   </button>
                 ) : (
-                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" onClick={() => displayEmailEdit()} />
+                  <img src={"/media/icons/pencil-edit-button.svg"} alt="" onClick={() => displayEmailEdit()} />
                 )}
               </div>
 
@@ -212,19 +212,12 @@ const MyProfileInfo = ({ state }) => {
                     <span>{userInfo.role}</span>
                   )}
                 </div>
-                {roleDisplay ? (
-                  <button
-                    className={style["mini-save-button"]}
-                    value="SAVE"
-                    onClick={() => {
-                      handleSubmit();
-                    }}
-                  >
-                    SAVE
-                  </button>
-                ) : (
-                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" onClick={() => displayRoleEdit()} />
-                )}
+                <img
+                  style={{ visibility: "hidden" }}
+                  src={"/media/icons/pencil-edit-button.svg"}
+                  alt=""
+                  onClick={() => displayRoleEdit()}
+                />
               </div>
               <hr />
             </div>
@@ -237,8 +230,8 @@ const MyProfileInfo = ({ state }) => {
                 <div className={style["input-place"]}>
                   <span>{getMajor}</span>
                 </div>
-                <Link to={"/core/fields-of-study"}>
-                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" />
+                <Link to={"/core/update-fields-of-study"}>
+                  <img src={"/media/icons/pencil-edit-button.svg"} alt="" />
                 </Link>
               </div>
               <hr />
@@ -254,8 +247,8 @@ const MyProfileInfo = ({ state }) => {
                     return <div key={key}>{subject}</div>;
                   })}
                 </div>
-                <Link to={"/core/fields-of-study"}>
-                  <img src={"/media/icons/pencil-edit-button-copy.svg"} alt="" />
+                <Link to={"/core/update-fields-of-study"}>
+                  <img src={"/media/icons/pencil-edit-button.svg"} alt="" />
                 </Link>
               </div>
               <hr />

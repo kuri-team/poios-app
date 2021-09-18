@@ -10,6 +10,7 @@ import ProfilePage from "./pages/profile/ProfilePage";
 import MyProfilePage from "./pages/profile/MyProfilePage";
 import TutorsPage from "./pages/core/TutorsPage";
 import FieldsOfStudyPage from "./pages/core/FieldsOfStudyPage";
+import FieldsOfStudyUpdatePage from "./pages/core/FieldsOfStudyUpdatePage";
 import ChatPage from "./pages/core/ChatPage";
 
 const allPages = {
@@ -22,6 +23,11 @@ const allPages = {
     name: "Fields",
     path: "/core/fields-of-study",
     reactComponent: <FieldsOfStudyPage />,
+  },
+  fieldsOfStudyUpdate: {
+    name: "FieldsUpdate",
+    path: "/core/update-fields-of-study",
+    reactComponent: <FieldsOfStudyUpdatePage />,
   },
   tutors: {
     name: "Tutors",

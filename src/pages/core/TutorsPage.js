@@ -165,14 +165,9 @@ const TutorsPage = () => {
         </div>
       </div>
 
-      {/*<ul>*/}
-      {/*  {filteredTutors.map(tutor => (*/}
-      {/*    <li key={tutor.id}>{tutor.name}</li>*/}
-      {/*  ))}*/}
-      {/*</ul>*/}
       <div className={style["big-container"]}>
         <div className={[style["tutor-list"], style["x"], style["mandatory-scroll-snapping"]].join(" ")} dir="ltr">
-          {dummyTutors.map((tutor, key) => (
+          {filteredTutors.map((tutor, key) => (
             <div className={style["tutor"]} key={key}>
               <TutorListElement
                 key={tutor.id}

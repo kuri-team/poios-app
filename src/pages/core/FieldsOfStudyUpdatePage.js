@@ -8,7 +8,7 @@ import SubjectBoxes from "../../components/FieldsOfStudy/SubjectBoxes";
 import MajorSelectMenu from "../../components/FieldsOfStudy/MajorSelectMenu";
 import * as style from "./FieldsOfStudyPage.module.css";
 
-const FieldsOfStudyPage = () => {
+const FieldsOfStudyUpdatePage = () => {
   //manage state(logged, role) in all websites
   const state = useContext(GlobalState);
   const [userInfo, setUserInfo] = state.userApi.userInfo;
@@ -22,13 +22,6 @@ const FieldsOfStudyPage = () => {
   const [selectedMajor, setSelectedMajor] = useState(undefined);
   const [selectedSubjects, setSelectedSubjects] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
-
-  if (majorAvail != null && majorAvail != "" && isTutor === true) {
-    window.location.href = "/core/chat";
-  }
-  if (majorAvail != null && majorAvail != "" && isTutor === false) {
-    window.location.href = "/core/tutors";
-  }
 
   const getFields = () =>
     axios.get("/core/fields-of-study").then(res => {
@@ -136,4 +129,4 @@ const FieldsOfStudyPage = () => {
   );
 };
 
-export default FieldsOfStudyPage;
+export default FieldsOfStudyUpdatePage;
