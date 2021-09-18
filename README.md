@@ -54,7 +54,7 @@ can leave a star rating and constructive feedback for the tutor.
 ### 3. Technologies
 
 - Front-end stack: ReactJS, PostCSS
-- Back-end stack: NodeJS, MongoDB
+- Back-end stack: NodeJS, MongoDB, Socket.io, ExpressJS
 - Hosting: Netlify, AWS
 
 ### 4. Functional Requirements
