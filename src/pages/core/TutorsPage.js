@@ -11,63 +11,6 @@ import useDetectCloseDropdown from "../../hooks/useDetectCloseDropdown";
 import * as style from "./TutorsPage.module.css";
 
 // searching function
-const tutors = [
-  {
-    id: 1,
-    name: "Han Sooyoung",
-    major: "Literature",
-    src: "/media/hansooyoung.jpg",
-    subjects: ["Korean Literature", "Creative Writing"],
-    status: "busy",
-  },
-  {
-    id: 2,
-    name: "Kieran White",
-    major: "Visual Arts",
-    src: "/media/hansooyoung.jpg",
-    subjects: ["Art History", "Modern Art", "Greek Art & Architecture"],
-    status: "busy",
-  },
-  {
-    id: 3,
-    name: "Kim Dokja",
-    major: "Business Management",
-    src: "/media/hansooyoung.jpg",
-    subjects: [
-      "Marketing",
-      "Digital Business",
-      "Human Resources Management",
-      "Microeconomics",
-      "Macroeconomics",
-      "Financial Accounting",
-    ],
-    status: "available",
-  },
-  {
-    id: 4,
-    name: "Yoo Joonghyuk",
-    major: "Computer Science",
-    src: "/media/hansooyoung.jpg",
-    subjects: ["Algorithm & Analysis", "Introduction to Programming", "Web Programming"],
-    status: "busy",
-  },
-  {
-    id: 5,
-    name: "Belladonna Davenport",
-    major: "Design Studies",
-    src: "/media/hansooyoung.jpg",
-    subjects: ["Graphic Design"],
-    status: "available",
-  },
-  {
-    id: 6,
-    name: "Neyra Elena Darcy",
-    major: "Psychology",
-    src: "/media/hansooyoung.jpg",
-    subjects: ["Cognitive Psychology", "Mental Health Studies"],
-    status: "available",
-  },
-];
 
 const TutorsPage = () => {
   //manage state(logged, role) in all websites
@@ -79,9 +22,6 @@ const TutorsPage = () => {
   {
     if (isTutor) {
       return <Redirect to="/core/chat" />;
-    }
-    if (isLogged === false) {
-      return <Redirect to="/auth/login" />;
     }
   }
 
@@ -164,8 +104,8 @@ const TutorsPage = () => {
           {filteredTutors.map((tutor, key) => (
             <div className={style["tutor"]} key={key}>
               <TutorListElement
-                key={tutor.id}
-                src={tutor.src}
+                key={tutor._id}
+                src={tutor.avatar}
                 name={tutor.name}
                 major={tutor.major}
                 subjects={tutor.subjects}
