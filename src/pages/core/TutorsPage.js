@@ -11,7 +11,7 @@ import useDetectCloseDropdown from "../../hooks/useDetectCloseDropdown";
 import * as style from "./TutorsPage.module.css";
 
 // searching function
-const dummyTutors = [
+const tutors = [
   {
     id: 1,
     name: "Han Sooyoung",
@@ -69,22 +69,6 @@ const dummyTutors = [
   },
 ];
 
-//"searching subjects"
-const dummySubject = [
-  { id: 1, name: "Alchemy" },
-  { id: 2, name: "Astrology" },
-  { id: 3, name: "Swordsmanship" },
-  { id: 4, name: "Sorcery" },
-  { id: 5, name: "Botany" },
-  { id: 6, name: "Linguistics" },
-  { id: 7, name: "Diplomacy" },
-  { id: 8, name: "Linguistics" },
-  { id: 9, name: "Diplomacy" },
-  { id: 10, name: "Diplomacy" },
-  { id: 11, name: "Linguistics" },
-  { id: 12, name: "Diplomacy" },
-];
-
 const TutorsPage = () => {
   //manage state(logged, role) in all websites
   const state = useContext(GlobalState);
@@ -96,10 +80,14 @@ const TutorsPage = () => {
     if (isTutor) {
       return <Redirect to="/core/chat" />;
     }
+    if (isLogged === false) {
+      return <Redirect to="/auth/login" />;
+    }
   }
 
   const [subjects, setSubjects] = useState([]);
   const [majors, setMajors] = useState([]);
+  const [tutors, setTutors] = useState([]);
 
   const getFields = () =>
     axios.get("/core/fields-of-study").then(res => {
@@ -107,8 +95,15 @@ const TutorsPage = () => {
       setSubjects(res.data[1]);
     });
 
+  const getTutors = () => {
+    axios.get("/core/tutors").then(res => {
+      setTutors(res.data);
+    });
+  };
+
   useEffect(() => {
     getFields();
+    getTutors();
   }, []);
 
   //"Search functions"
@@ -130,17 +125,17 @@ const TutorsPage = () => {
 
   //searching tutors
   const tutorQuery = new URLSearchParams(paramsString).get("search-result");
-  const filterTutors = (dummyTutors, tutorQuery) => {
+  const filterTutors = (tutors, tutorQuery) => {
     if (!tutorQuery) {
-      return dummyTutors;
+      return tutors;
     }
-    return dummyTutors.filter(tutor => {
+    return tutors.filter(tutor => {
       const tutorName = tutor.name.toLowerCase();
       return tutorName.includes(tutorQuery);
     });
   };
   const [searchQuery, setSearchQuery] = useState(tutorQuery || "");
-  const filteredTutors = filterTutors(dummyTutors, searchQuery);
+  const filteredTutors = filterTutors(tutors, searchQuery);
   const [open, setOpen] = useState(false);
   const ref = useDetectCloseDropdown(setOpen, [open]);
 
@@ -159,7 +154,6 @@ const TutorsPage = () => {
             filterQuery={filterQuery}
             setFilterQuery={setFilterQuery}
             filteredSubject={filteredSubject}
-            state={state}
             majors={majors}
           />
         </div>
