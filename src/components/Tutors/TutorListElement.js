@@ -40,7 +40,7 @@ const TutorListElement = ({ src, name, major, subjects, status }) => {
             {subjects.length > maxSubjectCards ? <MoreTag /> : <MoreTag hidden />}
           </div>
           <div className={style["btn-container"]}>
-            {status === "Available" ? <JoinButton /> : <JoinButton hidden />}
+            {status === "available" ? <JoinButton /> : <JoinButton hidden />}
           </div>
         </div>
       </div>
