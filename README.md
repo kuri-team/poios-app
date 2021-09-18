@@ -14,7 +14,7 @@
 4. Type “npm run start” for both directories so that they are running at the same time. </br>
 5. Run “localhost:8000” on a browser after both the backend and frontend have started. </br>
 6. Register new account using email and password with proper format to test full functions. If you want to login, use this credential:
-- username: Kuri,
+- username: Kuri
 - password: 123456
 
 ### Links
