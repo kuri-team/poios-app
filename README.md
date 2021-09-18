@@ -8,11 +8,14 @@
 ## Project Details
 
 ### Instruction
-Unzip “poios-app-main” and “poios-api-backend-main” </br>
+Download and unzip “poios-app-main” and “poios-api-backend-main” </br>
+Open both folders on VSCode or your chosen IDE at the same time </br>
 Type “npm install” in the terminal for both directories </br>
-Type “npm run start” for both directories. </br>
-Run “localhost:8000” on the browser. </br>
-Register new account using email and password with proper format to test full functions.
+Type “npm run start” for both directories so that they are running at the same time. </br>
+Run “localhost:8000” on a browser after both the backend and frontend have started. </br>
+Register new account using email and password with proper format to test full functions. If you want to login, use this credential:
+username:,
+password:
 
 ### Links
 Demo video: https://youtu.be/fTh-6qXN13A </br>
@@ -40,7 +43,7 @@ learning.
 We came up with an idea to build a real-time online instant messaging service aimed
 specifically at higher education students to connect 1-on-1 with tutors.
 With this service, the user needs to register as a student or tutor, then set up their profile
-appropriately, such as declaring their major/minor and the subjects they’re interested in.
+appropriately, such as declaring their major and the subjects they’re interested in.
 After logging in, the student user can view the timetable (appointment schedule) of any
 tutor to see their schedule and book a 1-on-1 “Study Session” with that tutor when they
 are available. The tutor can choose to accept or decline the student’s appointment.
