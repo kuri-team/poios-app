@@ -8,14 +8,14 @@
 ## Project Details
 
 ### Instruction
-Download and unzip “poios-app-main” and “poios-api-backend-main” </br>
-Open both folders on VSCode or your chosen IDE at the same time </br>
-Type “npm install” in the terminal for both directories </br>
-Type “npm run start” for both directories so that they are running at the same time. </br>
-Run “localhost:8000” on a browser after both the backend and frontend have started. </br>
-Register new account using email and password with proper format to test full functions. If you want to login, use this credential:
-username:,
-password:
+1. Download and unzip “poios-app-main” and “poios-api-backend-main” </br>
+2. Open both folders on VSCode or your chosen IDE at the same time </br>
+3. Type “npm install” in the terminal for both directories </br>
+4. Type “npm run start” for both directories so that they are running at the same time. </br>
+5. Run “localhost:8000” on a browser after both the backend and frontend have started. </br>
+6. Register new account using email and password with proper format to test full functions. If you want to login, use this credential:
+- username: Kuri,
+- password: 123456
 
 ### Links
 Demo video: https://youtu.be/fTh-6qXN13A </br>
