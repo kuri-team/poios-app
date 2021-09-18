@@ -18,9 +18,9 @@
 - password: 123456
 
 ### Links
-Demo video: https://youtu.be/fTh-6qXN13A </br>
-Frontend:  https://poios.netlify.app </br>
-Backend: http://ec2-18-141-141-162.ap-southeast-1.compute.amazonaws.com:3000/ </br>
+- Demo video: https://youtu.be/fTh-6qXN13A </br>
+- Frontend:  https://poios.netlify.app </br>
+- Backend: http://ec2-18-141-141-162.ap-southeast-1.compute.amazonaws.com:3000/ </br>
 
 
 ### 1. Motivation
@@ -81,7 +81,7 @@ The application provides features including text messaging, voice call, video ca
 ### More specific details provided on [RMIT Canvas](https://rmit.instructure.com/courses/88702/assignments/596400) (Login with RMIT ID)
 
 ## Work distribution
-Due to health problems, the group leader has disappeared twice during the progress (once it last for 1 week) of building the webapp, which causes the slow development progress and we have not been able to deploy the backend. The others had built their features before handed them to the leader. The leader built the backend repo and took responsibility for the implement the others’ works into the backend repo 1 week before the deadline then disappeared without having the jobs done and noticing the other members. Currently, the website’s frontend is hosted on Netlify but it does not have full functions due to the lack of data from backend. Full functions can only be tested on localhost. Please consider the situation of our group.
+Due to health problems, the group leader has disappeared twice without any communication during the progress of building the webapp (one time it lasts for 1 week), which causes the slow development progress and we have not been able to deploy the backend. The others had built their backend features beforehand, and 1 week before the deadline, the leader said he would take responsibility of merging everyone's work together into a backend repo, fix bugs, and deploy the backend as well as incorporate it with the frontend. However, he disappeared again right on Friday (1 day before the deadline) and did not tell us what he had accomplished. Due to this emergency situation, we managed to deploy the backend but we did not have enough time to incorporate frontend and backend together. Currently, the website’s frontend is hosted on Netlify but it does not have full functions sinct it could not work with the backend. Full functions can only be tested on localhost. Please consider the situation of our group.
 
 - Doan Yen Nhi : Developer, Github Administrator
 - Du Duc Manh : Developer, Report writer
