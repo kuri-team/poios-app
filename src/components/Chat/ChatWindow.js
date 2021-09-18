@@ -21,14 +21,14 @@ const ChatWindow = ({ tutorName }) => {
   const [messages, setMessages] = useState([
     {
       fromMe: true,
-      sender: "Student",
+      sender: "Luke",
       photo: "/media/profile-placeholder_143x143.png",
       content: "Hello World!",
       timestamp: new Date().getFullYear(),
     },
     {
       fromMe: false,
-      sender: "Tutor",
+      sender: "Venti",
       photo: "/media/profile-placeholder_143x143.png",
       content: "Hello World!",
       timestamp: new Date().getFullYear(),
@@ -40,7 +40,7 @@ const ChatWindow = ({ tutorName }) => {
       ...messages,
       {
         fromMe: true,
-        sender: "Student",
+        sender: "Luke",
         photo: "/media/profile-placeholder_143x143.png",
         content: messageContent,
         timestamp: new Date().getFullYear(),
@@ -60,7 +60,7 @@ const ChatWindow = ({ tutorName }) => {
             <img className={style["tutor-avatar"]} src={"/media/profile-placeholder_143x143.png"} alt="avatar" />
           </Link>
           <Link to={link} className={style["tutor-name"]}>
-            {tutorName}
+            Venti
           </Link>
         </div>
 
