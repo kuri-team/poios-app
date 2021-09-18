@@ -212,19 +212,12 @@ const MyProfileInfo = ({ state }) => {
                     <span>{userInfo.role}</span>
                   )}
                 </div>
-                {roleDisplay ? (
-                  <button
-                    className={style["mini-save-button"]}
-                    value="SAVE"
-                    onClick={() => {
-                      handleSubmit();
-                    }}
-                  >
-                    SAVE
-                  </button>
-                ) : (
-                  <img src={"/media/icons/pencil-edit-button.svg"} alt="" onClick={() => displayRoleEdit()} />
-                )}
+                <img
+                  style={{ visibility: "hidden" }}
+                  src={"/media/icons/pencil-edit-button.svg"}
+                  alt=""
+                  onClick={() => displayRoleEdit()}
+                />
               </div>
               <hr />
             </div>
