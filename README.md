@@ -16,7 +16,7 @@ Register new account using email and password with proper format to test full fu
 
 ### Links
 Demo video: https://youtu.be/fTh-6qXN13A </br>
-Frontend: poios.netlify.app </br>
+Frontend:  https://poios.netlify.app </br>
 Backend: http://ec2-18-141-141-162.ap-southeast-1.compute.amazonaws.com:3000/ </br>
 
 
