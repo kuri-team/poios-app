@@ -15,9 +15,9 @@ Run “localhost:8000” on the browser. </br>
 Register new account using email and password with proper format to test full functions.
 
 ### Links
-Demo video: https://youtu.be/fTh-6qXN13A
-Frontend: poios.netlify.app
-Backend: http://ec2-18-141-141-162.ap-southeast-1.compute.amazonaws.com:3000/
+Demo video: https://youtu.be/fTh-6qXN13A </br>
+Frontend: poios.netlify.app </br>
+Backend: http://ec2-18-141-141-162.ap-southeast-1.compute.amazonaws.com:3000/ </br>
 
 
 ### 1. Motivation
