@@ -10,8 +10,6 @@ import TutorListElement from "../../components/Tutors/TutorListElement";
 import useDetectCloseDropdown from "../../hooks/useDetectCloseDropdown";
 import * as style from "./TutorsPage.module.css";
 
-// searching function
-
 const TutorsPage = () => {
   //manage state(logged, role) in all websites
   const state = useContext(GlobalState);
