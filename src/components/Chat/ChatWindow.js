@@ -9,66 +9,39 @@ import * as style from "./ChatWindow.module.css";
 import ScreenSharing from "./VideoChat/ScreenSharing";
 
 const ChatWindow = ({ tutorName }) => {
-  const messages = [
+  const [messages, setMessages] = useState([
     {
       fromMe: true,
-      sender: "Anonymous",
+      sender: "Student",
       photo: "/media/profile-placeholder_143x143.png",
-      content: "Welcome to Mars!",
-      timestamp: "2021",
+      content: "Hello World!",
+      timestamp: new Date().getFullYear(),
     },
     {
       fromMe: false,
-      sender: "Mr. Robot",
+      sender: "Tutor",
       photo: "/media/profile-placeholder_143x143.png",
       content: "Hello World!",
-      timestamp: "2021",
+      timestamp: new Date().getFullYear(),
     },
-    {
-      fromMe: true,
-      sender: "Anonymous",
-      photo: "/media/profile-placeholder_143x143.png",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      fromMe: false,
-      sender: "Mr. Robot",
-      photo: "/media/profile-placeholder_143x143.png",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      fromMe: true,
-      sender: "Anonymous",
-      photo: "/media/profile-placeholder_143x143.png",
-      content: "Welcome to Mars!",
-      timestamp: "2021",
-    },
-    {
-      fromMe: false,
-      sender: "Mr. Robot",
-      photo: "/media/profile-placeholder_143x143.png",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      fromMe: true,
-      sender: "Anonymous",
-      photo: "/media/profile-placeholder_143x143.png",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-    {
-      fromMe: false,
-      sender: "Mr. Robot",
-      photo: "/media/profile-placeholder_143x143.png",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-  ];
+  ]);
 
-  const { me, isCalling, callUser, leaveCallScene, shareScreen, isSharing } = useContext(SocketContext);
+  const pushMessage = () => {
+    setMessages([
+      ...messages,
+      {
+        fromMe: true,
+        sender: "Student",
+        photo: "/media/profile-placeholder_143x143.png",
+        content: messageContent,
+        timestamp: new Date().getFullYear(),
+      },
+    ]);
+  };
+
+  const { me, isCalling, callUser, leaveCallScene, shareScreen, isSharing, notCalling } = useContext(SocketContext);
+
+  const [messageContent, setMessageContent] = useState("");
 
   return (
     <div className={style["chat-window"]}>
@@ -83,12 +56,16 @@ const ChatWindow = ({ tutorName }) => {
         </div>
 
         <div className={style["header-button-group"]}>
-          <button className={style["leave-button"]} onClick={leaveCallScene}>
-            <tspan>Leave</tspan>
-            <img src={"/media/chatroom-icons/call_end_24dp.svg"} alt="Leave call" />
-          </button>
+          {!isCalling && (
+            <Link to="/core/tutors">
+              <button className={style["leave-button"]}>
+                <tspan>Leave</tspan>
+                <img src={"/media/chatroom-icons/call_end_24dp.svg"} alt="Leave call" />
+              </button>
+            </Link>
+          )}
           <div className={style["functions"]}>
-            <div className={style["function-button"]}>
+            <div className={style["function-button"]} onClick={leaveCallScene}>
               <img
                 className={style["function-icon"]}
                 src={"/media/chatroom-icons/chat_24dp.svg"}
@@ -145,13 +122,41 @@ const ChatWindow = ({ tutorName }) => {
 
           <div className={style["form"]}>
             <div className={style["attach-button"]}>
-              <img className={style["function-icon"]} src={"/media/chatroom-icons/photo.svg"} alt="Attach a photo" />
+              <label htmlFor="send-photo" className={style["label"]}>
+                <img className={style["function-icon"]} src={"/media/chatroom-icons/photo.svg"} alt="Attach a photo" />
+              </label>
+              <input
+                id="send-photo"
+                name="send-photo"
+                type="file"
+                accept="image/jpeg, image/png, image/jpg"
+                onChange={e => {
+                  const file = new FileReader();
+                  file.readAsDataURL(e.target.files[0]);
+                }}
+                hidden
+                aria-hidden
+              />
             </div>
             <div className={style["attach-button"]}>
-              <img
-                className={style["function-icon"]}
-                src={"/media/chatroom-icons/attachment.svg"}
-                alt="Attach a file"
+              <label htmlFor="send-file" className={style["label"]}>
+                <img
+                  className={style["function-icon"]}
+                  src={"/media/chatroom-icons/attachment.svg"}
+                  alt="Attach a file"
+                />
+              </label>
+              <input
+                id="send-file"
+                name="send-file"
+                type="file"
+                accept=""
+                onChange={e => {
+                  const file = new FileReader();
+                  file.readAsDataURL(e.target.files[0]);
+                }}
+                hidden
+                aria-hidden
               />
             </div>
             <div className={style["input-message-content"]}>
@@ -160,9 +165,10 @@ const ChatWindow = ({ tutorName }) => {
                 className={style["input-message"]}
                 name="input-message"
                 placeholder="Write a message..."
+                onChange={e => setMessageContent(e.target.value)}
               />
             </div>
-            <div className={style["send-button"]}>
+            <div className={style["send-button"]} onClick={pushMessage}>
               <img className={style["function-icon"]} src={"/media/chatroom-icons/send_24dp.svg"} alt="Send" />
             </div>
           </div>
