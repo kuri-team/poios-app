@@ -8,10 +8,10 @@
 ## Project Details
 
 ### Instruction
-Unzip “poios-app-main” and “poios-api-backend-main”
-Type “npm install” in the terminal for both directories
-Type “npm run start” for both directories.
-Run “localhost:8000” on the browser.
+Unzip “poios-app-main” and “poios-api-backend-main” </br>
+Type “npm install” in the terminal for both directories </br>
+Type “npm run start” for both directories. </br>
+Run “localhost:8000” on the browser. </br>
 Register new account using email and password with proper format to test full functions.
 
 ### Links
