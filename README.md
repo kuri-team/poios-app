@@ -7,6 +7,19 @@
 
 ## Project Details
 
+### Instruction
+Unzip “poios-app-main” and “poios-api-backend-main”
+Type “npm install” in the terminal for both directories
+Type “npm run start” for both directories.
+Run “localhost:8000” on the browser.
+Register new account using email and password with proper format to test full functions.
+
+### Links
+Demo video: https://youtu.be/fTh-6qXN13A
+Frontend: poios.netlify.app
+Backend: http://ec2-18-141-141-162.ap-southeast-1.compute.amazonaws.com:3000/
+
+
 ### 1. Motivation
 
 Due to the COVID-19 situation, many higher education students struggle with online
@@ -39,7 +52,7 @@ can leave a star rating and constructive feedback for the tutor.
 
 - Front-end stack: ReactJS, PostCSS
 - Back-end stack: NodeJS, MongoDB
-- Hosting: Netlify, AWS/ Firebase
+- Hosting: Netlify, AWS
 
 ### 4. Functional Requirements
 
@@ -48,39 +61,20 @@ can leave a star rating and constructive feedback for the tutor.
 - User can login to their respective account and manage their information:
   - Both the student and tutor account have an “avatar” and a “bio” section.
   - Student user can choose a subject that they’re interested in.
-  - Student user can book an appointment with a tutor at the tutor’s available time. No double-booking.
-  - When booking an appointment with a tutor, the student decides the duration of the meeting, given there is no conflict with that tutor’s schedule.
   - Tutor user can choose a subject that they want to mentor.
-  - Tutor user can manage their appointment schedule.
-  - Tutor user can choose to accept or decline an appointment booking from their students.
 - The student and the tutor have the option to communicate 1-on-1 using real-time
   messaging.
 - The student and the tutor have the option to communicate 1-on-1 using voice
   call.
 - The student and the tutor have the option to communicate 1-on-1 using video
   call.
-- The student and the tutor can share files to each other.
-- (Optional - can implement if we have time) The student and the tutor have access to a real-time online “whiteboard”:
-  - They can both post virtual “post-it-notes”.
-  - They can both draw on the board.
-  - They can both put text boxes on the board.
-  - They can both upload images and put them on the board.
-  - They can both erase each other’s content on the board.
-  - They can both “undo” and “redo” their operations on the board.
-- The study session between the student and the tutor must be 1-on-1 to ensure
-  quality learning and reduce the risk of technology “hick-ups”, as mentioned in the
-  proposal above.
-- After a “Study Session”, the student is prompted to rate the tutor and leave an
-  optional text message feedback.
-- The average rating of a tutor is displayed on that tutor’s profile and cannot be
-  modified by the tutor.
-- Tutors are ranked by their rating.
+- Search bar and filter for tutor lists
 
 ### 5. Non-functional Requirements
 
 - All the user-inputs should be validated before submission (Pay attention on XSS bugs and SQL Injection)
 - The front-end will be hosted on Netlify
-- AWS or Firebase is used for cloud storage and back-end hosting.
+- AWS for back-end hosting.
 - Write a report
 
 ### More specific details provided on [RMIT Canvas](https://rmit.instructure.com/courses/88702/assignments/596400) (Login with RMIT ID)
@@ -95,7 +89,7 @@ can leave a star rating and constructive feedback for the tutor.
 
 #### - Database hosted with AWS/ Firebase
 
-#### - App demo video:
+#### - App demo video: https://youtu.be/fTh-6qXN13A
 
 ### 2. Coding styles & conventions
 
