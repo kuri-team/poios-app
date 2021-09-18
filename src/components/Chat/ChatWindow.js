@@ -4,11 +4,20 @@ import { useContext, useState } from "react";
 import Message from "./Message";
 import { SocketContext } from "../../SocketContext";
 import VideoChatWindow from "./VideoChat/VideoChatWindow";
+import { GlobalState } from "../../GlobalState";
 
 import * as style from "./ChatWindow.module.css";
 import ScreenSharing from "./VideoChat/ScreenSharing";
 
 const ChatWindow = ({ tutorName }) => {
+  const state = useContext(GlobalState);
+  const [isTutor, setIsTutor] = state.userApi.isTuTor;
+  let link = "/profile";
+
+  if (isTutor) {
+    link = "/profile/my-profile";
+  }
+
   const [messages, setMessages] = useState([
     {
       fromMe: true,
@@ -47,10 +56,10 @@ const ChatWindow = ({ tutorName }) => {
     <div className={style["chat-window"]}>
       <div className={style["chat-window-header"]}>
         <div className={[style["tutor-wrapper"], style["desktop-only"]].join(" ")}>
-          <Link to="/profile">
+          <Link to={link}>
             <img className={style["tutor-avatar"]} src={"/media/profile-placeholder_143x143.png"} alt="avatar" />
           </Link>
-          <Link to="/profile" className={style["tutor-name"]}>
+          <Link to={link} className={style["tutor-name"]}>
             {tutorName}
           </Link>
         </div>
