@@ -57,7 +57,7 @@
 }
 
 .subject-result-element {
-  margin: 16px 0 16px 8px;
+  margin: 4px 0 16px 8px;
   font-size: 0.8rem;
 }
 
@@ -68,10 +68,11 @@
 .subject-general {
   display: flex;
   align-items: center;
+  padding-top: 13px;
 }
 
 .subject-result-list li {
-  padding: 7px 0;
+  padding-top: 3px;
   list-style: circle;
 }
 

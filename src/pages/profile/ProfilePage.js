@@ -1,6 +1,5 @@
 import Layout from "../../components/Layout";
 import TutorProfileInfo from "../../components/Profile/TutorProfileInfo";
-import Timetable from "../../components/Profile/Timetable";
 import Reviewer from "../../components/Profile/Reviewer";
 
 import * as style from "./ProfilePage.module.css";
@@ -14,10 +13,6 @@ const ProfilePage = () => {
       </div>
       <div className={style["reviewer-center-container"]}>
         <Reviewer />
-      </div>
-      <div className={style["timetable-center-container"]}>
-        <h2 className={style["title-header"]}>TimeTable</h2>
-        <Timetable />
       </div>
     </Layout>
   );

@@ -1,24 +1,14 @@
 import * as style from "./Message.module.css";
 
 const Message = ({ fromMe, sender, photo, content, timestamp }) => (
-  <div className={fromMe ? [style["wrapper"], style["from-me"]].join(" ") : style["wrapper"]}>
+  <div className={fromMe ? style["wrapper-from-me"] : style["wrapper"]}>
     <div className={style["message"]}>
-      {fromMe ? (
-        <div className={[style["header"], style["from-me"]].join(" ")}>
-          <div className={style["timestamp"]}>{timestamp}</div>
-          <div className={style["sender"]}>{sender}</div>
-          <img src={photo} alt="avatar" className={style["avatar"]} />
-        </div>
-      ) : (
-        <div className={style["header"]}>
-          <img src={photo} alt="avatar" className={style["avatar"]} />
-          <div className={style["sender"]}>{sender}</div>
-          <div className={style["timestamp"]}>{timestamp}</div>
-        </div>
-      )}
-      <div className={style["body"]}>
-        <div className={fromMe ? [style["content"], style["from-me"]].join(" ") : style["content"]}>{content}</div>
+      <img src={photo} alt="avatar" className={style["avatar"]} draggable={false} />
+      <div className={style["header"]}>
+        <h2>{sender}</h2>
+        <h3>{timestamp}</h3>
       </div>
+      <p className={fromMe ? [style["content"], style["from-me"]].join(" ") : style["content"]}>{content}</p>
     </div>
   </div>
 );

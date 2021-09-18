@@ -1,19 +1,23 @@
 import * as style from "./MajorSelectMenu.module.css";
 
-const MajorSelectMenu = () => {
-  const majors = [
-    { code: "BP162", name: "Information Technology" },
-    { code: "BP251", name: "Economics and Finance" },
-    { code: "BP316", name: "Design Studies" },
-    { code: "BP222", name: "Professional Communication" },
-    { code: "BP317", name: "Languages" },
-  ];
-
+const MajorSelectMenu = ({ majors, callback, filter, setCurrentPage, setSelectedSubjects }) => {
   return (
     <div className={style["wrapper"]}>
-      <select className={style["select"]} name="major" id="major">
+      <select
+        defaultValue=""
+        className={style["select"]}
+        name="major"
+        id="major"
+        onChange={e => {
+          callback(e.target.value);
+          filter(e.target.value);
+          setCurrentPage(0);
+          setSelectedSubjects([]);
+        }}
+      >
+        <option value="">Please select a major</option>
         {majors.map(major => (
-          <option key={major.code} value={major.code}>
+          <option key={major._id} value={major.code}>
             {major.name}
           </option>
         ))}

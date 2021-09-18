@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 72px);
+}
+
+.wrapper .app-bar {
+  margin: 30px 100px;
+  padding: 3px 120px;
+  color: var(--white);
+  background-color: var(--black);
+  border: 2px solid var(--white);
+  border-radius: 15px;
+}
+
+@media only screen and (--viewport-phone) {
+  .wrapper .app-bar {
+    padding: 10px 10px;
+    font-size: 8px;
+    white-space: nowrap;
+  }
+}
+
+@media only screen and (--viewport-tablet) {
+  .wrapper .app-bar {
+    padding: 10px 40px;
+    white-space: nowrap;
+  }
+}

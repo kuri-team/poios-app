@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 // Application Components
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { ContextProvider } from "./SocketContext";
 
 // Fonts
 import "@fontsource/open-sans/700.css";
@@ -33,7 +34,9 @@ import "./styles/global.module.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ContextProvider>
+      <App />
+    </ContextProvider>
   </React.StrictMode>,
   document.getElementById("root"),
 );

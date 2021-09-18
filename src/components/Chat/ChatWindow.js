@@ -1,94 +1,192 @@
 import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
 
 import Message from "./Message";
-import * as style from "./ChatWindow.module.css";
+import { SocketContext } from "../../SocketContext";
+import VideoChatWindow from "./VideoChat/VideoChatWindow";
+import { GlobalState } from "../../GlobalState";
 
-const ChatWindow = ({ roomName }) => {
-  const messages = [
+import * as style from "./ChatWindow.module.css";
+import ScreenSharing from "./VideoChat/ScreenSharing";
+
+const ChatWindow = ({ tutorName }) => {
+  const state = useContext(GlobalState);
+  const [isTutor, setIsTutor] = state.userApi.isTuTor;
+  let link = "/profile";
+
+  if (isTutor) {
+    link = "/profile/my-profile";
+  }
+
+  const [messages, setMessages] = useState([
     {
       fromMe: true,
-      sender: "hlinh_santa_claus",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Welcome to Mars!",
-      timestamp: "2021",
+      sender: "Luke",
+      photo: "/media/profile-placeholder_143x143.png",
+      content: "Hello World!",
+      timestamp: new Date().getFullYear(),
     },
     {
       fromMe: false,
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
+      sender: "Venti",
+      photo: "/media/profile-placeholder_143x143.png",
       content: "Hello World!",
-      timestamp: "2021",
+      timestamp: new Date().getFullYear(),
     },
-    {
-      fromMe: true,
-      sender: "hlinh_pr0_vjp",
-      photo: "/media/chatroom-icons/hacker.svg",
-      content: "Hello World!",
-      timestamp: "2021",
-    },
-  ];
+  ]);
+
+  const pushMessage = () => {
+    setMessages([
+      ...messages,
+      {
+        fromMe: true,
+        sender: "Luke",
+        photo: "/media/profile-placeholder_143x143.png",
+        content: messageContent,
+        timestamp: new Date().getFullYear(),
+      },
+    ]);
+  };
+
+  const { me, isCalling, callUser, leaveCallScene, shareScreen, isSharing, notCalling } = useContext(SocketContext);
+
+  const [messageContent, setMessageContent] = useState("");
 
   return (
     <div className={style["chat-window"]}>
       <div className={style["chat-window-header"]}>
-        <h1 className={style["header-title"]}>{roomName}</h1>
-
-        <div className={style["header-button-group"]}>
-          <button className={style["leave-button"]}>Leave</button>
-          <div className={style["function-button"]}>
-            <img className={style["function-icon"]} src={"/media/chatroom-icons/chat.svg"} alt="Chat icon" />
-          </div>
-          <div className={style["function-button"]}>
-            <img className={style["function-icon"]} src={"/media/chatroom-icons/screen.svg"} alt="Screen share icon" />
-          </div>
-          <div className={style["function-button"]}>
-            <img
-              className={style["function-icon"]}
-              src={"/media/chatroom-icons/video-camera.svg"}
-              alt="Video call icon"
-            />
-          </div>
-          <div className={style["function-button"]}>
-            <img className={style["function-icon"]} src={"/media/chatroom-icons/call.svg"} alt="Voice call icon" />
-          </div>
-          <Link to="/" className={style["profile-wrapper"]}>
-            <img
-              className={style["avatar"]}
-              src="https://i1.sndcdn.com/avatars-000538032087-4mfpm1-t500x500.jpg"
-              alt="avatar"
-            />
+        <div className={[style["tutor-wrapper"], style["desktop-only"]].join(" ")}>
+          <Link to={link}>
+            <img className={style["tutor-avatar"]} src={"/media/profile-placeholder_143x143.png"} alt="avatar" />
+          </Link>
+          <Link to={link} className={style["tutor-name"]}>
+            Venti
           </Link>
         </div>
+
+        <div className={style["header-button-group"]}>
+          {!isCalling && (
+            <Link to="/core/tutors">
+              <button className={style["leave-button"]}>
+                <tspan>Leave</tspan>
+                <img src={"/media/chatroom-icons/call_end_24dp.svg"} alt="Leave call" />
+              </button>
+            </Link>
+          )}
+          <div className={style["functions"]}>
+            <div className={style["function-button"]} onClick={leaveCallScene}>
+              <img
+                className={style["function-icon"]}
+                src={"/media/chatroom-icons/chat_24dp.svg"}
+                alt="Messages"
+                style={{ width: "22px", height: "22px", transform: "translateY(1px)" }}
+              />
+            </div>
+            <div
+              className={[style["function-button"], style["desktop-only"]].join(" ")}
+              onClick={() => {
+                if (isCalling === true) {
+                  shareScreen();
+                } else {
+                  alert("Please start a call to share screen.");
+                }
+              }}
+            >
+              <img
+                className={style["function-icon"]}
+                src={"/media/chatroom-icons/screen_share_24dp.svg"}
+                alt="Screen share"
+              />
+            </div>
+            <div className={style["function-button"]} onClick={() => callUser(me)}>
+              <img
+                className={style["function-icon"]}
+                src={"/media/chatroom-icons/video_call_24dp.svg"}
+                alt="Video call"
+                style={{ width: "30px", height: "30px", transform: "translateX(1px)" }}
+              />
+            </div>
+            <div className={style["function-button"]} onClick={() => callUser(me)}>
+              <img className={style["function-icon"]} src={"/media/chatroom-icons/call_24dp.svg"} alt="Voice call" />
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className={style["chat-window-content"]}>
-        <div className={style["wrapper"]}>
-          {messages.map(message => (
-            <Message
-              fromMe={message.fromMe}
-              sender={message.sender}
-              photo={message.photo}
-              content={message.content}
-              timestamp={message.timestamp}
-            />
-          ))}
-        </div>
-      </div>
+      {!isCalling && (
+        <div>
+          <div className={style["chat-window-content"]}>
+            <div className={style["inner"]}>
+              {messages.map(message => (
+                <Message
+                  fromMe={message.fromMe}
+                  sender={message.sender}
+                  photo={message.photo}
+                  content={message.content}
+                  timestamp={message.timestamp}
+                />
+              ))}
+            </div>
+          </div>
 
-      <div className={style["form"]}>
-        <div className={style["attach-button"]}>
-          <img className={style["function-icon"]} src={"/media/chatroom-icons/photo.svg"} alt="Send photo icon" />
+          <div className={style["form"]}>
+            <div className={style["attach-button"]}>
+              <label htmlFor="send-photo" className={style["label"]}>
+                <img className={style["function-icon"]} src={"/media/chatroom-icons/photo.svg"} alt="Attach a photo" />
+              </label>
+              <input
+                id="send-photo"
+                name="send-photo"
+                type="file"
+                accept="image/jpeg, image/png, image/jpg"
+                onChange={e => {
+                  const file = new FileReader();
+                  file.readAsDataURL(e.target.files[0]);
+                }}
+                hidden
+                aria-hidden
+              />
+            </div>
+            <div className={style["attach-button"]}>
+              <label htmlFor="send-file" className={style["label"]}>
+                <img
+                  className={style["function-icon"]}
+                  src={"/media/chatroom-icons/attachment.svg"}
+                  alt="Attach a file"
+                />
+              </label>
+              <input
+                id="send-file"
+                name="send-file"
+                type="file"
+                accept=""
+                onChange={e => {
+                  const file = new FileReader();
+                  file.readAsDataURL(e.target.files[0]);
+                }}
+                hidden
+                aria-hidden
+              />
+            </div>
+            <div className={style["input-message-content"]}>
+              <input
+                type="text"
+                className={style["input-message"]}
+                name="input-message"
+                placeholder="Write a message..."
+                onChange={e => setMessageContent(e.target.value)}
+              />
+            </div>
+            <div className={style["send-button"]} onClick={pushMessage}>
+              <img className={style["function-icon"]} src={"/media/chatroom-icons/send_24dp.svg"} alt="Send" />
+            </div>
+          </div>
         </div>
-        <div className={style["attach-button"]}>
-          <img className={style["function-icon"]} src={"/media/chatroom-icons/attachment.svg"} alt="Send file icon" />
-        </div>
-        <div className={style["input-message-content"]}>
-          <input type="text" className={style["input-message"]} name="input-message" placeholder="Write a message..." />
-        </div>
-        <div className={style["send-button"]}>
-          <img className={style["function-icon"]} src={"/media/chatroom-icons/send.svg"} alt="Send icon" />
-        </div>
-      </div>
+      )}
+
+      {isCalling && !isSharing && <VideoChatWindow tutorName={tutorName} />}
+
+      {isCalling && isSharing && <ScreenSharing />}
     </div>
   );
 };

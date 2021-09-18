@@ -3,17 +3,19 @@
   align-content: center;
   justify-content: center;
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
   text-align: center;
 }
 
 .search-container {
   position: relative;
-  width: 50%;
+  width: 100%;
 }
 
 .search-icon-container {
   position: absolute;
-  top: 0.7rem;
+  top: 0.8rem;
   left: 1.2rem;
   display: flex;
   justify-content: space-between;
