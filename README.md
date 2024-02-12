@@ -81,7 +81,7 @@ The application provides features including text messaging, voice call, video ca
 ### More specific details provided on [RMIT Canvas](https://rmit.instructure.com/courses/88702/assignments/596400) (Login with RMIT ID)
 
 ## Work distribution
-Due to health problems, the group leader has disappeared twice without any communication during the progress of building the webapp (one time it lasts for 1 week), which causes the slow development progress and we have not been able to deploy the backend. The others had built their backend features beforehand, and 1 week before the deadline, the leader said he would take responsibility of merging everyone's work together into a backend repo, fix bugs, and deploy the backend as well as incorporate it with the frontend. However, he disappeared again right on Friday (1 day before the deadline) and did not tell us what he had accomplished. Due to this emergency situation, we managed to deploy the backend but we did not have enough time to incorporate frontend and backend together. Currently, the website’s frontend is hosted on Netlify but it does not have full functions sinct it could not work with the backend. Full functions can only be tested on localhost. Please consider the situation of our group.
+We managed to deploy the backend but we did not have enough time to incorporate frontend and backend together. Currently, the website’s frontend is hosted on Netlify but it does not have full functions sinct it could not work with the backend. Full functions can only be tested on localhost. Please consider the situation of our group.
 
 - Doan Yen Nhi : Developer, Github Administrator
 - Du Duc Manh : Developer, Report writer
